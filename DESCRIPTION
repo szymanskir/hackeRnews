@@ -19,6 +19,11 @@ Encoding: UTF-8
 LazyData: true
 Suggests: 
     covr,
-    testthat (>= 2.1.0)
+    testthat (>= 2.1.0),
+    httptest
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
+Imports: 
+    utils,
+    httr,
+    jsonlite
