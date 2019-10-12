@@ -21,7 +21,7 @@ parse_json <- function(response) {
 #' expression is not fulfilled
 #'
 assert <- function(expression, error) {
-  if (!expression()) {
+  if (!expression) {
     stop(error, call. = FALSE)
   }
 }

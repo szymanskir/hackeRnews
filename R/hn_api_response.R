@@ -22,12 +22,23 @@ create_hn_api_response <- function(response) {
 #' Checks whether the given object is of the class
 #' hn_api_response.
 #'
-#' @param x objet to test if it is of the class hn_api_response
+#' @param x object to test if it is of the class hn_api_response
 #'
 #' @return TRUE if the object is of the class hn_api_response
 #'
 is_hn_api_response <- function(x) {
   inherits(x, "hn_api_response")
+}
+
+#' Retrieves the response content
+#'
+#' @param x hn_api_response object to retrieve content from
+#'
+#' @return content of the given hn_api_response object
+#'
+get_content <- function(x) {
+  assert(is_hn_api_response(x))
+  x$content
 }
 
 #' @export
