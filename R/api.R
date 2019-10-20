@@ -18,6 +18,8 @@
 
 #' Retrieves the item corresponding to the specified id
 #'
+#' @export
+#'
 #' @param id id of the item that should be retrieved
 #'
 #' @return item correspoing to the specified id
@@ -28,6 +30,8 @@ get_item_by_id <- function(id) {
 }
 
 #' Get user corresponding to the specified username
+#'
+#' @export
 #'
 #' @param username of the user that should be retrieved
 #'
@@ -40,6 +44,8 @@ get_user_by_username <- function(username) {
 
 #' Get the current largest item id
 #'
+#' @export
+#'
 #' @return current largest item id
 get_max_item_id <- function() {
   request_url <- create_request_url(.base_url(), c("maxitem"))
@@ -47,6 +53,8 @@ get_max_item_id <- function() {
 }
 
 #' Get top stories
+#'
+#' @export
 #'
 #' @return list of top stories ids
 get_top_stories <- function() {
@@ -56,6 +64,8 @@ get_top_stories <- function() {
 
 #' Get new stories
 #'
+#' @export
+#'
 #' @return list of new stories ids
 get_new_stories <- function() {
   request_url <- create_request_url(.base_url(), c("newstories"))
@@ -63,6 +73,8 @@ get_new_stories <- function() {
 }
 
 #' Get best stories
+#'
+#' @export
 #'
 #' @return list of best stories ids
 get_best_stories <- function() {
@@ -72,6 +84,8 @@ get_best_stories <- function() {
 
 #' Get latest ask HN stories
 #'
+#' @export
+#'
 #' @return list of latest ask HN stories ids
 get_latest_ask_stories <- function() {
   request_url <- create_request_url(.base_url(), c("askstories"))
@@ -79,6 +93,8 @@ get_latest_ask_stories <- function() {
 }
 
 #' Get latest show HN stories
+#'
+#' @export
 #'
 #' @return list of latest show HN stories ids
 get_latest_show_stories <- function() {
@@ -88,6 +104,8 @@ get_latest_show_stories <- function() {
 
 #' Get latest job stories
 #'
+#' @export
+#'
 #' @return list of latest job stories ids
 get_latest_job_stories <- function() {
   request_url <- create_request_url(.base_url(), c("jobstories"))
@@ -96,6 +114,8 @@ get_latest_job_stories <- function() {
 
 
 #' Get changed items and profiles
+#'
+#' @export
 #'
 #' @return list of changed item ids and list of changed profile usernames
 get_updates <- function() {
