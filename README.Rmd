@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# hackeRnews
+# hackeRnews <img src="man/figures/logo.png" align="right" width="120" />
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.com/szymanskir/hackeRnews.svg?branch=master)](https://travis-ci.com/szymanskir/hackeRnews)
