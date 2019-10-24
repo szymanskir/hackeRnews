@@ -4,10 +4,13 @@
 \alias{get_new_stories}
 \title{Get new stories}
 \usage{
-get_new_stories()
+get_new_stories(max_items = NULL)
+}
+\arguments{
+\item{max_items}{Maximum number of items to retrive. If max_items = NULL, returns all available}
 }
 \value{
-list of new stories ids
+list of new stories
 }
 \description{
 Get new stories

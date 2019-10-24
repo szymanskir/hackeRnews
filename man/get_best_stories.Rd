@@ -4,10 +4,13 @@
 \alias{get_best_stories}
 \title{Get best stories}
 \usage{
-get_best_stories()
+get_best_stories(max_items = NULL)
+}
+\arguments{
+\item{max_items}{Maximum number of items to retrive. If max_items = NULL, returns all available}
 }
 \value{
-list of best stories ids
+list of best stories
 }
 \description{
 Get best stories
