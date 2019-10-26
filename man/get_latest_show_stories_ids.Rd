@@ -7,7 +7,7 @@
 get_latest_show_stories_ids()
 }
 \value{
-list of latest show HN stories ids
+list of latest show Hacker News stories ids
 }
 \description{
 Retrives latest show stories ids using Hacker News API

@@ -4,7 +4,10 @@
 \alias{get_latest_ask_stories}
 \title{Hacker News latest ask stories}
 \usage{
-get_latest_ask_stories()
+get_latest_ask_stories(max_items = NULL)
+}
+\arguments{
+\item{max_items}{Maximum number of items to retrive. If max_items = NULL, returns all available}
 }
 \value{
 list of latest ask HN stories ids
@@ -13,5 +16,7 @@ list of latest ask HN stories ids
 Retrives latest ask stories using Hacker News API
 }
 \examples{
+\dontrun{
 ask_stories <- get_latest_ask_stories()
+}
 }

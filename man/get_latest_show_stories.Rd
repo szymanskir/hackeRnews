@@ -4,7 +4,10 @@
 \alias{get_latest_show_stories}
 \title{Hacker News latest show stories}
 \usage{
-get_latest_show_stories()
+get_latest_show_stories(max_items = NULL)
+}
+\arguments{
+\item{max_items}{Maximum number of items to retrive. If max_items = NULL, returns all available}
 }
 \value{
 list of latest show HN stories
@@ -13,5 +16,7 @@ list of latest show HN stories
 Retrives latest show stories using Hacker News API
 }
 \examples{
+\dontrun{
 show_stories <- get_latest_show_stories()
+}
 }
