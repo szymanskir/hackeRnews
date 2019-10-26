@@ -2,7 +2,7 @@
 % Please edit documentation in R/api.R
 \name{get_new_stories}
 \alias{get_new_stories}
-\title{Get new stories}
+\title{Hacker News newest stories}
 \usage{
 get_new_stories(max_items = NULL)
 }
@@ -13,5 +13,11 @@ get_new_stories(max_items = NULL)
 list of new stories
 }
 \description{
-Get new stories
+Retrives newest stories ids using Hacker News API
+}
+\examples{
+\dontrun{
+new_stories <- get_new_stories()
+new_5_stories <- get_new_stories(5)
+}
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/api.R
 \name{get_top_stories_ids}
 \alias{get_top_stories_ids}
-\title{Get ids of top stories}
+\title{Hacker News top stories ids}
 \usage{
 get_top_stories_ids()
 }
@@ -10,5 +10,9 @@ get_top_stories_ids()
 list of top stories ids
 }
 \description{
-Get ids of top stories
+Retrives top stories ids using Hacker News API
+}
+\examples{
+top_stories_ids <- get_top_stories_ids()
+
 }

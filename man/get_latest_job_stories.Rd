@@ -2,7 +2,7 @@
 % Please edit documentation in R/api.R
 \name{get_latest_job_stories}
 \alias{get_latest_job_stories}
-\title{Get latest job stories}
+\title{Hacker News latest job stories}
 \usage{
 get_latest_job_stories()
 }
@@ -10,5 +10,9 @@ get_latest_job_stories()
 list of latest job stories
 }
 \description{
-Get latest job stories
+Retrives latest job stories using Hacker News API
+}
+\examples{
+job_stories <- get_latest_job_stories()
+
 }

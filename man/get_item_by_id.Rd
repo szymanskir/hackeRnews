@@ -2,7 +2,7 @@
 % Please edit documentation in R/api.R
 \name{get_item_by_id}
 \alias{get_item_by_id}
-\title{Retrieves the item corresponding to the specified id}
+\title{Get Hacker News by Id}
 \usage{
 get_item_by_id(id)
 }
@@ -13,5 +13,11 @@ get_item_by_id(id)
 item correspoing to the specified id
 }
 \description{
-Retrieves the item corresponding to the specified id
+Retrieves the item corresponding to specified id using Hacker News API
+}
+\examples{
+
+h_id <- get_max_item_id()
+hacker_article <- get_item_by_id(h_id)
+
 }

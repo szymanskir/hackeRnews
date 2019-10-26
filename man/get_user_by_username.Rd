@@ -2,7 +2,7 @@
 % Please edit documentation in R/api.R
 \name{get_user_by_username}
 \alias{get_user_by_username}
-\title{Get user corresponding to the specified username}
+\title{Get Hacker News user}
 \usage{
 get_user_by_username(username)
 }
@@ -14,4 +14,8 @@ user corresponding to the specified username
 }
 \description{
 Get user corresponding to the specified username
+}
+\examples{
+user <- get_user_by_username("steveddaniels")
+print(user)
 }

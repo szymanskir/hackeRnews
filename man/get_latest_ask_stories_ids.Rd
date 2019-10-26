@@ -2,13 +2,17 @@
 % Please edit documentation in R/api.R
 \name{get_latest_ask_stories_ids}
 \alias{get_latest_ask_stories_ids}
-\title{Get latest ask HN stories}
+\title{Hacker News latest ask stories ids}
 \usage{
 get_latest_ask_stories_ids()
 }
 \value{
-list of latest ask HN stories ids
+list of latest ask Hacker News stories ids
 }
 \description{
-Get latest ask HN stories
+Retrives latest ask stories ids using Hacker News API
+}
+\examples{
+ask_stories_ids <- get_latest_ask_stories_ids()
+
 }

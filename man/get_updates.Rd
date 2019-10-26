@@ -2,7 +2,7 @@
 % Please edit documentation in R/api.R
 \name{get_updates}
 \alias{get_updates}
-\title{Get changed items and profiles}
+\title{Hacker News updated profiles}
 \usage{
 get_updates()
 }
@@ -10,5 +10,10 @@ get_updates()
 list of changed item ids and list of changed profile usernames
 }
 \description{
-Get changed items and profiles
+Retrives changed item ids and changed profile usernames using Hacker News API
+}
+\examples{
+hacker_updates <- get_updates()
+print(hacker_updates)
+
 }

@@ -2,16 +2,22 @@
 % Please edit documentation in R/api.R
 \name{get_top_stories}
 \alias{get_top_stories}
-\title{Get top stories}
+\title{Hacker News top stories}
 \usage{
 get_top_stories(max_items = NULL)
 }
 \arguments{
-\item{max_items}{Maximum number of items to retrive. If max_items = NULL, returns all available}
+\item{max_items}{Maximum number of items to retrive. If max_items = NULL, returns all available stories}
 }
 \value{
 List of top stories
 }
 \description{
-Get top stories
+Retrives top stories using Hacker News API
+}
+\examples{
+\dontrun{
+top_stories <- get_top_stories()
+top_5_stories <- get_top_stories(5)
+}
 }

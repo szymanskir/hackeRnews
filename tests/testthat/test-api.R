@@ -9,11 +9,12 @@ httptest::with_mock_api({
       id = 8863,
       kids = c(9224, 8876),
       score = 104,
-      time = 1175714200,
+      time = as.POSIXct(1175714200, origin="1970-01-01"),
       title = "My YC app: Dropbox - Throw away your USB drive",
       type = "story",
       url = "http://www.getdropbox.com/u/2/screencast.html"
     )
+    class(expected) <- 'hackerlist'
 
     expect_equal(result, expected)
   })
@@ -23,13 +24,13 @@ httptest::with_mock_api({
   test_that("Retrieve by username function is working correctly", {
     result <- get_user_by_username('tomek')
     expected <- list(
-      created = 1185850697,
+      created = as.POSIXct(1185850697, origin="1970-01-01"),
       delay = 0,
       id = "tomek",
       karma = 6,
       submitted = c(1194446, 677151, 314161, 292943, 273424, 257198, 236583, 48012, 46649, 46647, 44939, 44009, 43894, 43886, 42193, 42192, 42177, 41987, 38790, 37822)
     )
-
+    class(expected) <- 'hackeruser'
     expect_equal(result, expected)
   })
 })

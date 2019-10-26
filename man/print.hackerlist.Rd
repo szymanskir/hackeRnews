@@ -2,15 +2,20 @@
 % Please edit documentation in R/api.R
 \name{print.hackerlist}
 \alias{print.hackerlist}
-\title{Define print for "hackerlist" type objects}
+\title{Print for "hackerlist" type objects}
 \usage{
 \method{print}{hackerlist}(x, ...)
 }
 \arguments{
 \item{x}{"hackerlist" type list}
 
-\item{...}{further arguments passed to or from other methods.}
+\item{...}{further arguments passed to or from other methods}
 }
 \description{
-Define print for "hackerlist" type objects
+Print for "hackerlist" type objects
+}
+\examples{
+
+hacker_news <- get_top_stories(max_items = 5)
+print(hacker_news)
 }

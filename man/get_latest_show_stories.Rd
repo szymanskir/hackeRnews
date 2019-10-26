@@ -2,7 +2,7 @@
 % Please edit documentation in R/api.R
 \name{get_latest_show_stories}
 \alias{get_latest_show_stories}
-\title{Get latest show HN stories}
+\title{Hacker News latest show stories}
 \usage{
 get_latest_show_stories()
 }
@@ -10,5 +10,8 @@ get_latest_show_stories()
 list of latest show HN stories
 }
 \description{
-Get latest show HN stories
+Retrives latest show stories using Hacker News API
+}
+\examples{
+show_stories <- get_latest_show_stories()
 }
