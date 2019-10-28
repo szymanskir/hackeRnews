@@ -13,7 +13,8 @@ get_item_by_id(id)
 item correspoing to the specified id
 }
 \description{
-Retrieves the item corresponding to specified id using Hacker News API
+Retrieves the item
+corresponding to specified id using Hacker News API
 }
 \examples{
 

@@ -7,7 +7,8 @@
 get_latest_job_stories(max_items = NULL)
 }
 \arguments{
-\item{max_items}{Maximum number of items to retrive. If max_items = NULL, returns all available}
+\item{max_items}{Maximum number of items to retrive.
+If max_items = NULL, returns all available}
 }
 \value{
 list of latest job stories

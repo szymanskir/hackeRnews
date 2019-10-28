@@ -7,7 +7,8 @@
 get_top_stories(max_items = NULL)
 }
 \arguments{
-\item{max_items}{Maximum number of items to retrive. If max_items = NULL, returns all available stories}
+\item{max_items}{Maximum number of items to retrive.
+If max_items = NULL, returns all available stories}
 }
 \value{
 List of top stories
