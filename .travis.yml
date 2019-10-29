@@ -3,5 +3,13 @@
 language: R
 cache: packages
 
+os:
+  - linux
+  - osx
+
+r:
+  - oldrel
+  - release
+
 after_success:
   - Rscript -e 'covr::codecov()'
