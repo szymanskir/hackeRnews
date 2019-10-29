@@ -14,7 +14,7 @@ If max_items = NULL, returns all available}
 list of latest job stories
 }
 \description{
-Retrives latest job stories using Hacker News API
+Retrieves latest job stories using Hacker News API
 }
 \examples{
 job_stories <- get_latest_job_stories()

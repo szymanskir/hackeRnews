@@ -10,7 +10,7 @@ get_latest_job_stories_ids()
 list of latest job stories ids
 }
 \description{
-Retrives latest job stories ids using Hacker News API
+Retrieves latest job stories ids using Hacker News API
 }
 \examples{
 job_stories_ids <- get_latest_job_stories_ids()

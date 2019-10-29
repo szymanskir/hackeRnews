@@ -17,41 +17,6 @@
 }
 
 
-#' Checks whether max_items is correctly defined. If not throws an error
-#'
-#' @param max_items maximum number of ids to retrieve
-#
-.assert_max_items <- function(max_items) {
-  if (!is.null(max_items)) {
-    assert(is.numeric(max_items), "max_items must be a numeric type")
-    assert(max_items > 0,
-           "max_items must be greater than 0")
-  }
-}
-
-#' Checks whether ids are correctly defined. If not throws an error
-#'
-#' @param ids maximum number of ids to retrieve
-#
-.assert_ids <- function(ids) {
-    assert(all(is.numeric(ids)), "every id must be a numeric type")
-    assert(all(ids > 0),
-           "every id must be greater than 0")
-}
-
-
-#' Selects only limited number of ids
-#'
-#' @param ids_list list of ids to be trimed
-#'
-#' @param max_items maximum number of ids to retrieve
-#'
-#' @return list of ids
-#'
-.trim_ids_list <- function(ids_list, max_items) {
-  ids_list[1:min(max_items, length(ids_list))]
-}
-
 #' @title Get Hacker News by Id
 #'
 #' @description Retrieves the item
@@ -69,22 +34,25 @@
 #' hacker_article <- get_item_by_id(h_id)
 #'
 get_item_by_id <- function(id) {
-  .assert_ids(id)
+  assert_ids(id)
   request_url <- create_request_url(.base_url(), c("item", id))
   item <- .send_request(request_url)
   create_hn_item(item)
 }
 
-#' Retrieves items for given ids list
+#' @title Get Hacker News by ids
 #'
-#' @param ids list of ids to be trimed
+#' @description Retrieves items
+#' corresponding to specified list of ids using Hacker News API
+#'
+#' @param ids list of ids
 #'
 #' @export
 #'
 #' @return list of hn_item objects
 #'
 get_items_by_ids <- function(ids) {
-  .assert_ids(ids)
+  assert_ids(ids)
   lapply(ids, get_item_by_id)
 }
 
@@ -110,7 +78,7 @@ get_user_by_username <- function(username) {
 
 #' @title Hacker News item largest id
 #'
-#' @description Retrives largest item id available via Hacker News API
+#' @description Retrieves largest item id available via Hacker News API
 #'
 #' @export
 #'
@@ -126,7 +94,7 @@ get_max_item_id <- function() {
 
 #' @title Hacker News top stories ids
 #'
-#' @description Retrives top stories ids using Hacker News API
+#' @description Retrieves top stories ids using Hacker News API
 #'
 #' @export
 #'
@@ -142,7 +110,7 @@ get_top_stories_ids <- function() {
 
 #' @title Hacker News top stories
 #'
-#' @description Retrives top stories using Hacker News API
+#' @description Retrieves top stories using Hacker News API
 #'
 #' @param max_items Maximum number of items to retrive.
 #' If max_items = NULL, returns all available stories
@@ -157,15 +125,15 @@ get_top_stories_ids <- function() {
 #' top_5_stories <- get_top_stories(5)
 #' }
 get_top_stories <- function(max_items = NULL) {
-  .assert_max_items(max_items)
+  assert_max_items(max_items)
   ids_list <- get_top_stories_ids()
-  ids_list <- .trim_ids_list(ids_list, max_items)
+  ids_list <- trim_ids_list(ids_list, max_items)
   get_items_by_ids(ids_list)
 }
 
 #' @title Hacker News newest stories ids
 #'
-#' @description Retrives newest stories ids using Hacker News API
+#' @description Retrieves newest stories ids using Hacker News API
 #'
 #' @export
 #'
@@ -181,7 +149,7 @@ get_new_stories_ids <- function() {
 
 #' @title Hacker News newest stories
 #'
-#' @description Retrives newest stories ids using Hacker News API
+#' @description Retrieves newest stories ids using Hacker News API
 #'
 #' @param max_items Maximum number of items to retrive.
 #' If max_items = NULL, returns all available
@@ -196,15 +164,15 @@ get_new_stories_ids <- function() {
 #' new_5_stories <- get_new_stories(5)
 #' }
 get_new_stories <- function(max_items = NULL) {
-  .assert_max_items(max_items)
+  assert_max_items(max_items)
   ids_list <- get_new_stories_ids()
-  ids_list <- .trim_ids_list(ids_list, max_items)
+  ids_list <- trim_ids_list(ids_list, max_items)
   get_items_by_ids(ids_list)
 }
 
 #' @title Hacker News best stories ids
 #'
-#' @description Retrives best stories ids using Hacker News API
+#' @description Retrieves best stories ids using Hacker News API
 #'
 #' @export
 #'
@@ -220,7 +188,7 @@ get_best_stories_ids <- function() {
 
 #' @title Hacker News best stories
 #'
-#' @description Retrives best stories using Hacker News API
+#' @description Retrieves best stories using Hacker News API
 #'
 #' @param max_items Maximum number of items to retrive.
 #' If max_items = NULL, returns all available
@@ -235,15 +203,15 @@ get_best_stories_ids <- function() {
 #' best_5_stories <- get_best_stories(5)
 #' }
 get_best_stories <- function(max_items = NULL) {
-  .assert_max_items(max_items)
+  assert_max_items(max_items)
   ids_list <- get_best_stories_ids()
-  ids_list <- .trim_ids_list(ids_list, max_items)
+  ids_list <- trim_ids_list(ids_list, max_items)
   get_items_by_ids(ids_list)
 }
 
 #' @title Hacker News latest ask stories ids
 #'
-#' @description Retrives latest ask stories ids using Hacker News API
+#' @description Retrieves latest ask stories ids using Hacker News API
 #'
 #' @export
 #'
@@ -259,7 +227,7 @@ get_latest_ask_stories_ids <- function() {
 
 #' @title Hacker News latest ask stories
 #'
-#' @description Retrives latest ask stories using Hacker News API
+#' @description Retrieves latest ask stories using Hacker News API
 #'
 #' @param max_items Maximum number of items to retrive.
 #' If max_items = NULL, returns all available
@@ -274,15 +242,15 @@ get_latest_ask_stories_ids <- function() {
 #' }
 
 get_latest_ask_stories <- function(max_items = NULL) {
-  .assert_max_items(max_items)
+  assert_max_items(max_items)
   ids_list <- get_latest_ask_stories_ids()
-  ids_list <- .trim_ids_list(ids_list, max_items)
+  ids_list <- trim_ids_list(ids_list, max_items)
   get_items_by_ids(ids_list)
 }
 
 #' @title Hacker News latest show stories ids
 #'
-#' @description Retrives latest show stories ids using Hacker News API
+#' @description Retrieves latest show stories ids using Hacker News API
 #'
 #' @export
 #'
@@ -298,7 +266,7 @@ get_latest_show_stories_ids <- function() {
 
 #' @title Hacker News latest show stories
 #'
-#' @description Retrives latest show stories using Hacker News API
+#' @description Retrieves latest show stories using Hacker News API
 #'
 #' @param max_items Maximum number of items to retrive.
 #' If max_items = NULL, returns all available
@@ -313,15 +281,15 @@ get_latest_show_stories_ids <- function() {
 #' }
 
 get_latest_show_stories <- function(max_items = NULL) {
-  .assert_max_items(max_items)
+  assert_max_items(max_items)
   ids_list <- get_latest_show_stories_ids()
-  ids_list <- .trim_ids_list(ids_list, max_items)
+  ids_list <- trim_ids_list(ids_list, max_items)
   get_items_by_ids(ids_list)
 }
 
 #' @title Hacker News latest job stories ids
 #'
-#' @description Retrives latest job stories ids using Hacker News API
+#' @description Retrieves latest job stories ids using Hacker News API
 #'
 #' @export
 #'
@@ -337,7 +305,7 @@ get_latest_job_stories_ids <- function() {
 
 #' @title Hacker News latest job stories
 #'
-#' @description Retrives latest job stories using Hacker News API
+#' @description Retrieves latest job stories using Hacker News API
 #'
 #' @param max_items Maximum number of items to retrive.
 #' If max_items = NULL, returns all available
@@ -350,16 +318,16 @@ get_latest_job_stories_ids <- function() {
 #' job_stories <- get_latest_job_stories()
 #'
 get_latest_job_stories <- function(max_items = NULL) {
-  .assert_max_items(max_items)
+  assert_max_items(max_items)
   ids_list <- get_latest_job_stories_ids()
-  ids_list <- .trim_ids_list(ids_list, max_items)
+  ids_list <- trim_ids_list(ids_list, max_items)
   get_items_by_ids(ids_list)
 }
 
 
 #' @title Hacker News updated profiles
 #'
-#' @description Retrives changed item ids and changed profile usernames
+#' @description Retrieves changed item ids and changed profile usernames
 #' using Hacker News API
 #'
 #' @export

@@ -10,7 +10,7 @@ get_latest_show_stories_ids()
 list of latest show Hacker News stories ids
 }
 \description{
-Retrives latest show stories ids using Hacker News API
+Retrieves latest show stories ids using Hacker News API
 }
 \examples{
 show_stories_ids <- get_latest_show_stories_ids()

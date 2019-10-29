@@ -14,7 +14,7 @@ If max_items = NULL, returns all available}
 list of latest show HN stories
 }
 \description{
-Retrives latest show stories using Hacker News API
+Retrieves latest show stories using Hacker News API
 }
 \examples{
 \donttest{

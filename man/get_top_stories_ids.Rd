@@ -10,7 +10,7 @@ get_top_stories_ids()
 list of top stories ids
 }
 \description{
-Retrives top stories ids using Hacker News API
+Retrieves top stories ids using Hacker News API
 }
 \examples{
 top_stories_ids <- get_top_stories_ids()

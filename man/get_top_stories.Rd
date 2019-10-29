@@ -14,7 +14,7 @@ If max_items = NULL, returns all available stories}
 List of top stories
 }
 \description{
-Retrives top stories using Hacker News API
+Retrieves top stories using Hacker News API
 }
 \examples{
 \donttest{

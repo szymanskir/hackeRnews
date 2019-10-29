@@ -2,16 +2,17 @@
 % Please edit documentation in R/api.R
 \name{get_items_by_ids}
 \alias{get_items_by_ids}
-\title{Retrieves items for given ids list}
+\title{Get Hacker News by ids}
 \usage{
 get_items_by_ids(ids)
 }
 \arguments{
-\item{ids}{list of ids to be trimed}
+\item{ids}{list of ids}
 }
 \value{
 list of hn_item objects
 }
 \description{
-Retrieves items for given ids list
+Retrieves items
+corresponding to specified list of ids using Hacker News API
 }

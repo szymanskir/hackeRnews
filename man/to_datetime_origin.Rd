@@ -17,8 +17,9 @@ Converts numeric value into POSIXct datetime type
 }
 \details{
 Hacker News API supplies time as a Unix Time,
-which origin date is "1970-01-01", which has to be
-supplied to as.POSIXct
+which origin date is "1970-01-01". This value has to be
+passed to as.POSIXct function in order to get
+proper time representation
 }
 \seealso{
 \code{\link[base]{as.POSIXct}}

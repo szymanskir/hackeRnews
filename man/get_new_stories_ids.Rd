@@ -10,7 +10,7 @@ get_new_stories_ids()
 list of new stories ids
 }
 \description{
-Retrives newest stories ids using Hacker News API
+Retrieves newest stories ids using Hacker News API
 }
 \examples{
 new_stories_ids <- get_new_stories_ids()

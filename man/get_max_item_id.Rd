@@ -10,7 +10,7 @@ get_max_item_id()
 current largest item id
 }
 \description{
-Retrives largest item id available via Hacker News API
+Retrieves largest item id available via Hacker News API
 }
 \examples{
 h_id <- get_max_item_id()
