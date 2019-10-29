@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Hacker News best stories — get_best_stories • hackeRnews</title>
+<title>Print for "hn_item" type objects — print.hn_item • hackeRnews</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,8 +42,8 @@
 
 
 
-<meta property="og:title" content="Hacker News best stories — get_best_stories" />
-<meta property="og:description" content="Retrieves best stories using Hacker News API" />
+<meta property="og:title" content="Print for "hn_item" type objects — print.hn_item" />
+<meta property="og:description" content="Print for &quot;hn_item&quot; type objects" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -108,42 +108,105 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Hacker News best stories</h1>
+    <h1>Print for "hn_item" type objects</h1>
     
-    <div class="hidden name"><code>get_best_stories.Rd</code></div>
+    <div class="hidden name"><code>print.hn_item.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Retrieves best stories using Hacker News API</p>
+    <p>Print for "hn_item" type objects</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_best_stories</span>(<span class='kw'>max_items</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='co'># S3 method for hn_item</span>
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>max_items</th>
-      <td><p>Maximum number of items to retrive.
-If max_items = NULL, returns all available</p></td>
+      <th>x</th>
+      <td><p>"hn_item" type list</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>further arguments passed to or from other methods</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>list of best stories</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='no'>best_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_best_stories</span>()
-<span class='no'>best_5_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_best_stories</span>(<span class='fl'>5</span>)
-<span class='co'># }</span></div></pre>
+    <pre class="examples"><div class='input'>
+<span class='no'>hacker_news</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='get_top_stories.html'>get_top_stories</a></span>(<span class='kw'>max_items</span> <span class='kw'>=</span> <span class='fl'>5</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>hacker_news</span>)</div><div class='output co'>#&gt; [[1]]
+#&gt; List of 9
+#&gt;  $ by         : chr "cyanbane"
+#&gt;  $ descendants: int 25
+#&gt;  $ id         : int 21388510
+#&gt;  $ kids       : int [1:8] 21390741 21390161 21390863 21390261 21390284 21390316 21390914 21390980
+#&gt;  $ score      : int 147
+#&gt;  $ time       : POSIXct[1:1], format: "2019-10-29 16:49:47"
+#&gt;  $ title      : chr "Hellvetica.tff – Kern in Hell"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://hellveticafont.com/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[2]]
+#&gt; List of 9
+#&gt;  $ by         : chr "hhs"
+#&gt;  $ descendants: int 69
+#&gt;  $ id         : int 21388022
+#&gt;  $ kids       : int [1:19] 21389145 21389558 21389829 21390324 21389430 21390481 21389504 21389964 21391025 21390614 ...
+#&gt;  $ score      : int 201
+#&gt;  $ time       : POSIXct[1:1], format: "2019-10-29 16:11:11"
+#&gt;  $ title      : chr "How Untitled Goose Game became a real video game"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://www.vox.com/culture/2019/10/10/20897212/what-is-untitled-goose-game-explained-nintendo-switch-pc-mac"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[3]]
+#&gt; List of 9
+#&gt;  $ by         : chr "tomduncalf"
+#&gt;  $ descendants: int 9
+#&gt;  $ id         : int 21389867
+#&gt;  $ kids       : int [1:3] 21390840 21390731 21390994
+#&gt;  $ score      : int 33
+#&gt;  $ time       : POSIXct[1:1], format: "2019-10-29 18:38:11"
+#&gt;  $ title      : chr "The iPhone 11 Camera, Part 1: A Completely New Camera"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://blog.halide.cam/inside-the-iphone-11-camera-part-1-a-completely-new-camera-28ea5d091071"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[4]]
+#&gt; List of 9
+#&gt;  $ by         : chr "carlesfe"
+#&gt;  $ descendants: int 49
+#&gt;  $ id         : int 21387480
+#&gt;  $ kids       : int [1:12] 21389247 21390213 21390885 21390629 21387945 21390841 21389536 21389314 21390494 21389251 ...
+#&gt;  $ score      : int 134
+#&gt;  $ time       : POSIXct[1:1], format: "2019-10-29 15:24:28"
+#&gt;  $ title      : chr "Mass cellphone surveillance experiment in Spain"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://cfenollosa.com/blog/mass-cellphone-surveillance-experiment-in-spain.html"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[5]]
+#&gt; List of 9
+#&gt;  $ by         : chr "evilsimon"
+#&gt;  $ descendants: int 13
+#&gt;  $ id         : int 21384396
+#&gt;  $ kids       : int [1:9] 21390938 21390619 21391076 21390709 21390551 21390957 21390385 21390792 21391009
+#&gt;  $ score      : int 49
+#&gt;  $ time       : POSIXct[1:1], format: "2019-10-29 06:13:13"
+#&gt;  $ title      : chr "Rock climbing and the economics of innovation"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "http://www.softmachines.org/wordpress/?p=2388"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 

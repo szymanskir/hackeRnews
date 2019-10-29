@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get user corresponding to the specified username — get_user_by_username • hackeRnews</title>
+<title>Get Hacker News user — get_user_by_username • hackeRnews</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,7 +42,7 @@
 
 
 
-<meta property="og:title" content="Get user corresponding to the specified username — get_user_by_username" />
+<meta property="og:title" content="Get Hacker News user — get_user_by_username" />
 <meta property="og:description" content="Get user corresponding to the specified username" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -108,7 +108,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get user corresponding to the specified username</h1>
+    <h1>Get Hacker News user</h1>
     
     <div class="hidden name"><code>get_user_by_username.Rd</code></div>
     </div>
@@ -132,12 +132,22 @@
 
     <p>user corresponding to the specified username</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='fu'>get_user_by_username</span>(<span class='st'>"steveddaniels"</span>)</div><div class='output co'>#&gt; List of 4
+#&gt;  $ created  : POSIXct[1:1], format: "2015-10-02 09:26:42"
+#&gt;  $ id       : chr "steveddaniels"
+#&gt;  $ karma    : int 2
+#&gt;  $ submitted: int [1:24] 21337777 20220149 20161329 19622504 19505583 19446387 19315384 19108904 18141892 17980891 ...
+#&gt;  - attr(*, "class")= chr "hn_user"</div><div class='input'># }
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
