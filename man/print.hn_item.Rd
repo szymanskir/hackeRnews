@@ -14,8 +14,3 @@
 \description{
 Print for "hn_item" type objects
 }
-\examples{
-
-hacker_news <- get_top_stories(max_items = 5)
-print(hacker_news)
-}

@@ -6,10 +6,6 @@
 #'
 #' @export
 #'
-#' @examples
-#'
-#' hacker_news <- get_top_stories(max_items = 5)
-#' print(hacker_news)
 
 print.hn_item <- function(x, ...) {
   utils::str(x)

@@ -14,8 +14,3 @@
 \description{
 Print for "hn_user" type objects
 }
-\examples{
-
-hacker_user <- get_user_by_username("steveddaniels")
-print(hacker_user)
-}

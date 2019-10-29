@@ -7,10 +7,6 @@
 #'
 #' @export
 #'
-#' @examples
-#'
-#' hacker_user <- get_user_by_username("steveddaniels")
-#' print(hacker_user)
 
 print.hn_user <- function(x, ...) {
   utils::str(x)
