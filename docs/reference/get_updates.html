@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get changed items and profiles — get_updates • hackeRnews</title>
+<title>Hacker News updated profiles — get_updates • hackeRnews</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,8 +42,9 @@
 
 
 
-<meta property="og:title" content="Get changed items and profiles — get_updates" />
-<meta property="og:description" content="Get changed items and profiles" />
+<meta property="og:title" content="Hacker News updated profiles — get_updates" />
+<meta property="og:description" content="Retrieves changed item ids and changed profile usernames
+using Hacker News API" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -108,13 +109,14 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get changed items and profiles</h1>
+    <h1>Hacker News updated profiles</h1>
     
     <div class="hidden name"><code>get_updates.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get changed items and profiles</p>
+    <p>Retrieves changed item ids and changed profile usernames
+using Hacker News API</p>
     </div>
 
     <pre class="usage"><span class='fu'>get_updates</span>()</pre>
@@ -124,11 +126,16 @@
 
     <p>list of changed item ids and list of changed profile usernames</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='no'>hacker_updates</span> <span class='kw'>&lt;-</span> <span class='fu'>get_updates</span>()
+<span class='co'># }</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#value">Value</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>

@@ -17,6 +17,8 @@ list of latest job stories
 Retrieves latest job stories using Hacker News API
 }
 \examples{
+\donttest{
 job_stories <- get_latest_job_stories()
+}
 
 }

@@ -147,10 +147,34 @@ if it returns FALSE</p></td>
       </tr><tr>
         
         <td>
+          <p><code><a href="assert_ids.html">assert_ids()</a></code> </p>
+        </td>
+        <td><p>Checks whether ids are correctly defined. If not throws an error</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="assert_max_items.html">assert_max_items()</a></code> </p>
+        </td>
+        <td><p>Checks whether max_items is correctly defined. If not throws an error</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="create_hn_api_response.html">create_hn_api_response()</a></code> </p>
         </td>
         <td><p>Creates an object representing a response from the
 Hacker News API</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="create_hn_item.html">create_hn_item()</a></code> </p>
+        </td>
+        <td><p>Creates an object representing Hacker News item</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="create_hn_user.html">create_hn_user()</a></code> </p>
+        </td>
+        <td><p>Creates an object representing Hacker News user</p></td>
       </tr><tr>
         
         <td>
@@ -175,7 +199,13 @@ passed paths. THe json extensions is added automatically.</p></td>
         <td>
           <p><code><a href="get_best_stories.html">get_best_stories()</a></code> </p>
         </td>
-        <td><p>Get best stories</p></td>
+        <td><p>Hacker News best stories</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="get_best_stories_ids.html">get_best_stories_ids()</a></code> </p>
+        </td>
+        <td><p>Hacker News best stories ids</p></td>
       </tr><tr>
         
         <td>
@@ -187,55 +217,91 @@ passed paths. THe json extensions is added automatically.</p></td>
         <td>
           <p><code><a href="get_item_by_id.html">get_item_by_id()</a></code> </p>
         </td>
-        <td><p>Retrieves the item corresponding to the specified id</p></td>
+        <td><p>Get Hacker News by Id</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="get_items_by_ids.html">get_items_by_ids()</a></code> </p>
+        </td>
+        <td><p>Get Hacker News by ids</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="get_latest_ask_stories.html">get_latest_ask_stories()</a></code> </p>
         </td>
-        <td><p>Get latest ask HN stories</p></td>
+        <td><p>Hacker News latest ask stories</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="get_latest_ask_stories_ids.html">get_latest_ask_stories_ids()</a></code> </p>
+        </td>
+        <td><p>Hacker News latest ask stories ids</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="get_latest_job_stories.html">get_latest_job_stories()</a></code> </p>
         </td>
-        <td><p>Get latest job stories</p></td>
+        <td><p>Hacker News latest job stories</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="get_latest_job_stories_ids.html">get_latest_job_stories_ids()</a></code> </p>
+        </td>
+        <td><p>Hacker News latest job stories ids</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="get_latest_show_stories.html">get_latest_show_stories()</a></code> </p>
         </td>
-        <td><p>Get latest show HN stories</p></td>
+        <td><p>Hacker News latest show stories</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="get_latest_show_stories_ids.html">get_latest_show_stories_ids()</a></code> </p>
+        </td>
+        <td><p>Hacker News latest show stories ids</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="get_max_item_id.html">get_max_item_id()</a></code> </p>
         </td>
-        <td><p>Get the current largest item id</p></td>
+        <td><p>Hacker News item largest id</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="get_new_stories.html">get_new_stories()</a></code> </p>
         </td>
-        <td><p>Get new stories</p></td>
+        <td><p>Hacker News newest stories</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="get_new_stories_ids.html">get_new_stories_ids()</a></code> </p>
+        </td>
+        <td><p>Hacker News newest stories ids</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="get_top_stories.html">get_top_stories()</a></code> </p>
         </td>
-        <td><p>Get top stories</p></td>
+        <td><p>Hacker News top stories</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="get_top_stories_ids.html">get_top_stories_ids()</a></code> </p>
+        </td>
+        <td><p>Hacker News top stories ids</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="get_updates.html">get_updates()</a></code> </p>
         </td>
-        <td><p>Get changed items and profiles</p></td>
+        <td><p>Hacker News updated profiles</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="get_user_by_username.html">get_user_by_username()</a></code> </p>
         </td>
-        <td><p>Get user corresponding to the specified username</p></td>
+        <td><p>Get Hacker News user</p></td>
       </tr><tr>
         
         <td>
@@ -246,9 +312,68 @@ hn_api_response.</p></td>
       </tr><tr>
         
         <td>
+          <p><code><a href="is_hn_item.html">is_hn_item()</a></code> </p>
+        </td>
+        <td><p>Checks whether the given object is of the class
+hn_item</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="is_hn_user.html">is_hn_user()</a></code> </p>
+        </td>
+        <td><p>Checks whether the given object is of the class
+hn_user</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="parse_json.html">parse_json()</a></code> </p>
         </td>
         <td><p>Parses a json response</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="print.hn_item.html">print(<i>&lt;hn_item&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Print for "hn_item" type objects</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="print.hn_user.html">print(<i>&lt;hn_user&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Print for "hn_user" type objects</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="to_datetime_origin.html">to_datetime_origin()</a></code> </p>
+        </td>
+        <td><p>Converts numeric value into POSIXct datetime type</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="trim_ids_list.html">trim_ids_list()</a></code> </p>
+        </td>
+        <td><p>Selects only limited number of ids</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="validate_hn_api_response.html">validate_hn_api_response()</a></code> </p>
+        </td>
+        <td><p>Checks if the given response is not empty and that
+it did not return an error http code.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="validate_hn_item.html">validate_hn_item()</a></code> </p>
+        </td>
+        <td><p>Checks whether the given object is correctly defined
+hn_item class</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="validate_hn_user.html">validate_hn_user()</a></code> </p>
+        </td>
+        <td><p>Checks whether the given object is correctly defined
+hn_user class</p></td>
       </tr>
     </tbody>
     </table>

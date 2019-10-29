@@ -13,6 +13,7 @@
 .send_request <- function(request_url) {
   response <- httr::GET(url = request_url)
   hn_api_response <- create_hn_api_response(response)
+  validate_hn_api_response(hn_api_response)
   get_content(hn_api_response)
 }
 
@@ -29,9 +30,10 @@
 #' @return item correspoing to the specified id
 #'
 #' @examples
-#'
+#' \donttest{
 #' h_id <- get_max_item_id()
 #' hacker_article <- get_item_by_id(h_id)
+#' }
 #'
 get_item_by_id <- function(id) {
   assert_ids(id)
@@ -51,6 +53,11 @@ get_item_by_id <- function(id) {
 #'
 #' @return list of hn_item objects
 #'
+#' @examples
+#' \donttest{
+#' get_item_by_ids(c(1,2,3))
+#' }
+#'
 get_items_by_ids <- function(ids) {
   assert_ids(ids)
   lapply(ids, get_item_by_id)
@@ -67,8 +74,9 @@ get_items_by_ids <- function(ids) {
 #' @return user corresponding to the specified username
 #'
 #' @examples
-#' user <- get_user_by_username("steveddaniels")
-#' print(user)
+#' \donttest{
+#' get_user_by_username("steveddaniels")
+#' }
 get_user_by_username <- function(username) {
   assert(is.character(username), "username must be a character type object")
   request_url <- create_request_url(.base_url(), c("user", username))
@@ -85,7 +93,9 @@ get_user_by_username <- function(username) {
 #' @return current largest item id
 #'
 #' @examples
-#' h_id <- get_max_item_id()
+#' \donttest{
+#' get_max_item_id()
+#' }
 #'
 get_max_item_id <- function() {
   request_url <- create_request_url(.base_url(), c("maxitem"))
@@ -101,7 +111,9 @@ get_max_item_id <- function() {
 #' @return list of top stories ids
 #'
 #' @examples
+#' \donttest{
 #' top_stories_ids <- get_top_stories_ids()
+#' }
 #'
 get_top_stories_ids <- function() {
   request_url <- create_request_url(.base_url(), c("topstories"))
@@ -140,7 +152,9 @@ get_top_stories <- function(max_items = NULL) {
 #' @return list of new stories ids
 #'
 #' @examples
+#' \donttest{
 #' new_stories_ids <- get_new_stories_ids()
+#' }
 #'
 get_new_stories_ids <- function() {
   request_url <- create_request_url(.base_url(), c("newstories"))
@@ -179,7 +193,9 @@ get_new_stories <- function(max_items = NULL) {
 #' @return list of best stories ids
 #'
 #' @examples
+#' \donttest{
 #' best_stories_ids <- get_best_stories_ids()
+#' }
 #'
 get_best_stories_ids <- function() {
   request_url <- create_request_url(.base_url(), c("beststories"))
@@ -218,7 +234,9 @@ get_best_stories <- function(max_items = NULL) {
 #' @return list of latest ask Hacker News stories ids
 #'
 #' @examples
+#' \donttest{
 #' ask_stories_ids <- get_latest_ask_stories_ids()
+#' }
 #'
 get_latest_ask_stories_ids <- function() {
   request_url <- create_request_url(.base_url(), c("askstories"))
@@ -257,7 +275,9 @@ get_latest_ask_stories <- function(max_items = NULL) {
 #' @return list of latest show Hacker News stories ids
 #'
 #' @examples
+#' \donttest{
 #' show_stories_ids <- get_latest_show_stories_ids()
+#' }
 
 get_latest_show_stories_ids <- function() {
   request_url <- create_request_url(.base_url(), c("showstories"))
@@ -296,7 +316,9 @@ get_latest_show_stories <- function(max_items = NULL) {
 #' @return list of latest job stories ids
 #'
 #' @examples
+#' \donttest{
 #' job_stories_ids <- get_latest_job_stories_ids()
+#' }
 #'
 get_latest_job_stories_ids <- function() {
   request_url <- create_request_url(.base_url(), c("jobstories"))
@@ -315,7 +337,9 @@ get_latest_job_stories_ids <- function() {
 #' @return list of latest job stories
 #'
 #' @examples
+#' \donttest{
 #' job_stories <- get_latest_job_stories()
+#' }
 #'
 get_latest_job_stories <- function(max_items = NULL) {
   assert_max_items(max_items)
@@ -335,8 +359,9 @@ get_latest_job_stories <- function(max_items = NULL) {
 #' @return list of changed item ids and list of changed profile usernames
 #'
 #' @examples
+#' \donttest{
 #' hacker_updates <- get_updates()
-#' print(hacker_updates)
+#' }
 #'
 get_updates <- function() {
   request_url <- create_request_url(.base_url(), c("updates"))
