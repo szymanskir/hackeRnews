@@ -17,7 +17,7 @@ List of top stories
 Retrives top stories using Hacker News API
 }
 \examples{
-\dontrun{
+\donttest{
 top_stories <- get_top_stories()
 top_5_stories <- get_top_stories(5)
 }

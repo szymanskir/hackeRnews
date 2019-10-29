@@ -17,7 +17,7 @@ list of latest ask HN stories ids
 Retrives latest ask stories using Hacker News API
 }
 \examples{
-\dontrun{
+\donttest{
 ask_stories <- get_latest_ask_stories()
 }
 }

@@ -17,7 +17,7 @@ list of new stories
 Retrives newest stories ids using Hacker News API
 }
 \examples{
-\dontrun{
+\donttest{
 new_stories <- get_new_stories()
 new_5_stories <- get_new_stories(5)
 }

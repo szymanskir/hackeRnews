@@ -30,7 +30,7 @@ assert <- function(expression, error) {
 #'
 #' @details Hacker News API supplies time as a Unix Time,
 #' which origin date is "1970-01-01", which has to be
-#' supplied to as.POSIXct
+#' passed to as.POSIXct function
 #'
 #' @param x numeric value to be converted
 #'

@@ -17,7 +17,7 @@ list of best stories
 Retrives best stories using Hacker News API
 }
 \examples{
-\dontrun{
+\donttest{
 best_stories <- get_best_stories()
 best_5_stories <- get_best_stories(5)
 }

@@ -17,7 +17,7 @@ list of latest show HN stories
 Retrives latest show stories using Hacker News API
 }
 \examples{
-\dontrun{
+\donttest{
 show_stories <- get_latest_show_stories()
 }
 }
