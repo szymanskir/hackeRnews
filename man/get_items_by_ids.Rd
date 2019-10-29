@@ -16,3 +16,9 @@ list of hn_item objects
 Retrieves items
 corresponding to specified list of ids using Hacker News API
 }
+\examples{
+\donttest{
+get_item_by_ids(c(1,2,3))
+}
+
+}

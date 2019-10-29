@@ -45,14 +45,14 @@ get_content <- function(x) {
 #' Checks if the given response is not empty and that
 #' it did not return an error http code.
 #'
-#' @param response response object to be checked
+#' @param hn_api_response hn_api_response object to be checked
 #'
 #'
 validate_hn_api_response <- function(hn_api_response) {
   assert(!httr::http_error(hn_api_response$response),
          sprintf("The request resulted with an error [%s]\n%s\n<%s>",
                  hn_api_response$response$status_code,
-                 httr::content(response, as = "text", encoding = "UTF-8"),
+                 hn_api_response$content,
                  hn_api_response$path))
   assert(!is.null(hn_api_response$content),
          sprintf("The content of the response is empty!\n<%s>", hn_api_response$path))

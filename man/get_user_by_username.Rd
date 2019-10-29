@@ -16,6 +16,7 @@ user corresponding to the specified username
 Get user corresponding to the specified username
 }
 \examples{
-user <- get_user_by_username("steveddaniels")
-print(user)
+\donttest{
+get_user_by_username("steveddaniels")
+}
 }
