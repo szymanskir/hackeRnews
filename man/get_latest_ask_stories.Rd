@@ -2,13 +2,22 @@
 % Please edit documentation in R/api.R
 \name{get_latest_ask_stories}
 \alias{get_latest_ask_stories}
-\title{Get latest ask HN stories}
+\title{Hacker News latest ask stories}
 \usage{
-get_latest_ask_stories()
+get_latest_ask_stories(max_items = NULL)
+}
+\arguments{
+\item{max_items}{Maximum number of items to retrive.
+If max_items = NULL, returns all available}
 }
 \value{
 list of latest ask HN stories ids
 }
 \description{
-Get latest ask HN stories
+Retrieves latest ask stories using Hacker News API
+}
+\examples{
+\donttest{
+ask_stories <- get_latest_ask_stories()
+}
 }

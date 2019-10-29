@@ -2,13 +2,23 @@
 % Please edit documentation in R/api.R
 \name{get_best_stories}
 \alias{get_best_stories}
-\title{Get best stories}
+\title{Hacker News best stories}
 \usage{
-get_best_stories()
+get_best_stories(max_items = NULL)
+}
+\arguments{
+\item{max_items}{Maximum number of items to retrive.
+If max_items = NULL, returns all available}
 }
 \value{
-list of best stories ids
+list of best stories
 }
 \description{
-Get best stories
+Retrieves best stories using Hacker News API
+}
+\examples{
+\donttest{
+best_stories <- get_best_stories()
+best_5_stories <- get_best_stories(5)
+}
 }

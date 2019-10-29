@@ -2,7 +2,7 @@
 % Please edit documentation in R/api.R
 \name{get_max_item_id}
 \alias{get_max_item_id}
-\title{Get the current largest item id}
+\title{Hacker News item largest id}
 \usage{
 get_max_item_id()
 }
@@ -10,5 +10,9 @@ get_max_item_id()
 current largest item id
 }
 \description{
-Get the current largest item id
+Retrieves largest item id available via Hacker News API
+}
+\examples{
+h_id <- get_max_item_id()
+
 }
