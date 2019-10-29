@@ -25,12 +25,7 @@ print.hn_user <- function(x, ...) {
 #' @return object represanting a hn_user
 #'
 create_hn_user <- function(user) {
-  if (is.null(user)) {
-    return(NULL)
-  }
-  if (is.numeric(user$created)) {
-    user$created <- as.POSIXct(user$created, origin = "1970-01-01")
-  }
+  user$created <- to_datetime_origin(user$created)
 
   hn_user <- structure(
     user,
@@ -51,6 +46,12 @@ is_hn_user <- function(x) {
   inherits(x, "hn_user")
 }
 
+
+#' Checks whether the given object is correctly defined
+#' hn_user class
+#'
+#' @param hn_user object of the class hn_user
+#'
 validate_hn_user <- function(hn_user) {
   assert(is_hn_user(hn_user), "Object must be of the class hn_user")
 }

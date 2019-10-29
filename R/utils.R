@@ -25,3 +25,21 @@ assert <- function(expression, error) {
     stop(error, call. = FALSE)
   }
 }
+
+#' Converts numeric value into POSIXct datetime type
+#'
+#' @details Hacker News API supplies time as a Unix Time,
+#' which origin date is "1970-01-01", which has to be
+#' supplied to as.POSIXct
+#'
+#' @param x numeric value to be converted
+#'
+#' @return time object of class POSIXct
+#'
+#' @seealso \code{\link[base]{as.POSIXct}}
+#' @seealso \url{https://github.com/HackerNews/API}
+#' @seealso \url{https://en.wikipedia.org/wiki/Unix_time}
+#'
+to_datetime_origin <- function(x) {
+  as.POSIXct(x, origin = "1970-01-01")
+}
