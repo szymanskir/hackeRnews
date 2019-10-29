@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Hacker News best stories — get_best_stories • hackeRnews</title>
+<title>Get Hacker News by ids — get_items_by_ids • hackeRnews</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,8 +42,9 @@
 
 
 
-<meta property="og:title" content="Hacker News best stories — get_best_stories" />
-<meta property="og:description" content="Retrieves best stories using Hacker News API" />
+<meta property="og:title" content="Get Hacker News by ids — get_items_by_ids" />
+<meta property="og:description" content="Retrieves items
+corresponding to specified list of ids using Hacker News API" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -108,36 +109,36 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Hacker News best stories</h1>
+    <h1>Get Hacker News by ids</h1>
     
-    <div class="hidden name"><code>get_best_stories.Rd</code></div>
+    <div class="hidden name"><code>get_items_by_ids.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Retrieves best stories using Hacker News API</p>
+    <p>Retrieves items
+corresponding to specified list of ids using Hacker News API</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_best_stories</span>(<span class='kw'>max_items</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>get_items_by_ids</span>(<span class='no'>ids</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>max_items</th>
-      <td><p>Maximum number of items to retrive.
-If max_items = NULL, returns all available</p></td>
+      <th>ids</th>
+      <td><p>list of ids</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>list of best stories</p>
+    <p>list of hn_item objects</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='no'>best_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_best_stories</span>()
-<span class='no'>best_5_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_best_stories</span>(<span class='fl'>5</span>)
-<span class='co'># }</span></div></pre>
+<span class='fu'>get_item_by_ids</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>2</span>,<span class='fl'>3</span>))</div><div class='output co'>#&gt; <span class='error'>Error in get_item_by_ids(c(1, 2, 3)): could not find function "get_item_by_ids"</span></div><div class='input'># }
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -17,8 +17,9 @@ Retrieves the item
 corresponding to specified id using Hacker News API
 }
 \examples{
-
+\donttest{
 h_id <- get_max_item_id()
 hacker_article <- get_item_by_id(h_id)
+}
 
 }

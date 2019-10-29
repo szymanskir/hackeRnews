@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Hacker News best stories — get_best_stories • hackeRnews</title>
+<title>Converts numeric value into POSIXct datetime type — to_datetime_origin • hackeRnews</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,8 +42,8 @@
 
 
 
-<meta property="og:title" content="Hacker News best stories — get_best_stories" />
-<meta property="og:description" content="Retrieves best stories using Hacker News API" />
+<meta property="og:title" content="Converts numeric value into POSIXct datetime type — to_datetime_origin" />
+<meta property="og:description" content="Converts numeric value into POSIXct datetime type" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -108,43 +108,49 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Hacker News best stories</h1>
+    <h1>Converts numeric value into POSIXct datetime type</h1>
     
-    <div class="hidden name"><code>get_best_stories.Rd</code></div>
+    <div class="hidden name"><code>to_datetime_origin.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Retrieves best stories using Hacker News API</p>
+    <p>Converts numeric value into POSIXct datetime type</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_best_stories</span>(<span class='kw'>max_items</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>to_datetime_origin</span>(<span class='no'>x</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>max_items</th>
-      <td><p>Maximum number of items to retrive.
-If max_items = NULL, returns all available</p></td>
+      <th>x</th>
+      <td><p>numeric value to be converted</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>list of best stories</p>
+    <p>time object of class POSIXct</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='no'>best_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_best_stories</span>()
-<span class='no'>best_5_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_best_stories</span>(<span class='fl'>5</span>)
-<span class='co'># }</span></div></pre>
+    <p>Hacker News API supplies time as a Unix Time,
+which origin date is "1970-01-01". This value has to be
+passed to as.POSIXct function in order to get
+proper time representation</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></code></p>
+<p><a href='https://github.com/HackerNews/API'>https://github.com/HackerNews/API</a></p>
+<p><a href='https://en.wikipedia.org/wiki/Unix_time'>https://en.wikipedia.org/wiki/Unix_time</a></p></div>
+
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
-      <li><a href="#examples">Examples</a></li>
+      <li><a href="#details">Details</a></li>
+      <li><a href="#see-also">See also</a></li>
     </ul>
 
   </div>

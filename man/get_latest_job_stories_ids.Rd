@@ -13,6 +13,8 @@ list of latest job stories ids
 Retrieves latest job stories ids using Hacker News API
 }
 \examples{
+\donttest{
 job_stories_ids <- get_latest_job_stories_ids()
+}
 
 }
