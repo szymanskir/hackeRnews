@@ -21,7 +21,9 @@ environment:
   # R_REMOTES_STANDALONE: true
 
 # Adapt as necessary starting from here
-
+  matrix:
+    - R_VERSION: oldrel
+    - R_VERSION: release
 build_script:
   - travis-tool.sh install_deps
 
