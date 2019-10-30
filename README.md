@@ -64,3 +64,29 @@ ggplot(df, aes(label=word, size=n)) +
 ```
 
 ![](man/figures/README-unnamed-chunk-2-1.png)<!-- -->
+
+### Best stories (based on score)
+
+``` r
+library(hackeRnews)
+library(stringi)
+library(ggplot2)
+
+best_stories <- hackeRnews::get_best_stories(max_items=10)
+df <- data.frame(
+  title=unlist(lapply(best_stories, FUN=function(best_story) { str_wrap(best_story$title, 42) })),
+  score=unlist(lapply(best_stories, FUN=function(best_story) { best_story$score })),
+  stringsAsFactors=FALSE
+)
+
+df$title = factor(df$title, levels=df$title[order(df$score)])
+
+ggplot(df, aes(x = title, y = score, label=score)) +
+  geom_col() +
+  geom_label() +
+  coord_flip() +
+  xlab('Story title') +
+  ylab('Score')
+```
+
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
