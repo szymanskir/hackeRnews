@@ -30,11 +30,15 @@ devtools::install_github("szymanskir/hackeRnews")
 
 ### Word cloud
 
-``` r{echo=t}
+Get recent words used in job story titles to build awesome word cloud.
+See what words are used the most frequently\!
+
+``` r
 library(hackeRnews)
-library(tidyverse, dplyr)
-library(tidytext, dplyr)
-library(wordcloud)
+library(tidyverse)
+library(tidytext)
+library(dplyr)
+library(ggwordcloud)
 
 job_stories <- hackeRnews::get_latest_job_stories()
 
@@ -51,13 +55,12 @@ title_words <- unlist(
 data('stop_words')
 df <- data.frame(word=title_words, stringsAsFactors=FALSE) %>% 
   filter(!str_to_lower(word) %in% stop_words$word) %>% 
-  count(word) %>% top_n(50, n)
+  count(word)
 
-#plot cloud word
+
 ggplot(df, aes(label=word, size=n)) + 
   geom_text_wordcloud() + 
-  scale_size_area(max_size = 15)
-
+  scale_size_area(max_size = 10)
 ```
 
-<img src="docs/examples/word_cloud.png" align="center" />
+![](man/figures/README-unnamed-chunk-2-1.png)<!-- -->
