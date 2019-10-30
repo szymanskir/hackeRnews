@@ -31,3 +31,43 @@ You can install the development version from [GitHub](https://github.com/) with:
 # install.packages("devtools")
 devtools::install_github("szymanskir/hackeRnews")
 ```
+
+## Examples
+
+### Word cloud
+
+Get recent words used in job stories title to build awesome word cloud. See what's trending right now!
+
+```r{echo=T}
+library(hackeRnews)
+library(tidyverse, dplyr)
+library(tidytext, dplyr)
+library(wordcloud)
+
+job_stories <- hackeRnews::get_latest_job_stories()
+
+# get titles, normalize used words, remove non alphabet characters
+title_words <- unlist(
+  lapply(job_stories, FUN=function(job_story) { job_story$title }) %>% 
+  str_replace_all('[^A-Z|a-z]', ' ') %>% 
+  str_to_upper() %>% 
+  str_replace_all('\\s\\s*', ' ') %>% 
+  str_split(' ')
+)
+
+# remove stop words
+data('stop_words')
+df <- data.frame(word=title_words, stringsAsFactors=FALSE) %>% 
+  filter(!str_to_lower(word) %in% stop_words$word) %>% 
+  count(word) %>% top_n(50, n)
+
+#plot cloud word
+ggplot(df, aes(label=word, size=n)) + 
+  geom_text_wordcloud() + 
+  scale_size_area(max_size = 15)
+
+
+```
+ <img src="docs/examples/word_cloud.png" align="center" />
+
+
