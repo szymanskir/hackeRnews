@@ -28,10 +28,11 @@ devtools::install_github("szymanskir/hackeRnews")
 
 ## Examples
 
-### Word cloud
+### Buzzwords
 
-Get recent words used in job story titles to build awesome word cloud.
-See what words are used the most frequently\!
+This example will show how to get recently used words in job story
+titles. Words will be visualized using word cloud to show which words
+were used the most.
 
 ``` r
 library(hackeRnews)
@@ -58,7 +59,7 @@ df <- data.frame(word=title_words, stringsAsFactors=FALSE) %>%
   filter(str_length(word) > 0 & !str_to_lower(word) %in% stop_words$word) %>% 
   count(word)
 
-# add some random color
+# add some random colors to beautify visualization
 df <- as.data.frame(df) %>% 
   mutate(color=factor(sample(10,nrow(df), replace=TRUE)))
 
@@ -70,7 +71,10 @@ word_cloud <- ggplot(df, aes(label=word, size=n, color=color)) +
 
 <img src="man/figures/word_cloud.png"/>
 
-### Best stories (based on score)
+### Best stories
+
+This example will fetch best stories and plot titles of most recently
+trending stories.
 
 ``` r
 library(hackeRnews)
@@ -167,5 +171,3 @@ df %>%
     labs(fill='Story') +
     ggtitle('Sentiment for 2 chosen stories')
 ```
-
-![](man/figures/README-unnamed-chunk-4-1.png)<!-- -->
