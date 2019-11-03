@@ -28,7 +28,7 @@ devtools::install_github("szymanskir/hackeRnews")
 
 ## Examples
 
-### Identify buzzwords in Job Offers of Hacker News
+### Identify buzzwords in job offers of Hacker News
 
 This example will show how to get recently used words in job story
 titles. Words will be visualized using word cloud to show which words
