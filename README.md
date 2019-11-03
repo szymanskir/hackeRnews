@@ -30,13 +30,15 @@ devtools::install_github("szymanskir/hackeRnews")
 
 ### Identify buzzwords in Job Offers of Hacker News
 
-Get recent words used in job story titles to build awesome word cloud.
-See what words are used the most frequently\!
+This example will show how to get recently used words in job story
+titles. Words will be visualized using word cloud to show which words
+were used the most.
 
 ``` r
 library(hackeRnews)
 library(tidyverse)
 library(tidytext)
+library(stringr)
 library(dplyr)
 library(ggwordcloud)
 
@@ -54,22 +56,29 @@ title_words <- unlist(
 # remove stop words
 data('stop_words')
 df <- data.frame(word=title_words, stringsAsFactors=FALSE) %>% 
-  filter(!str_to_lower(word) %in% stop_words$word) %>% 
+  filter(str_length(word) > 0 & !str_to_lower(word) %in% stop_words$word) %>% 
   count(word)
 
+# add some random colors to beautify visualization
+df <- as.data.frame(df) %>% 
+  mutate(color=factor(sample(10,nrow(df), replace=TRUE)))
 
-ggplot(df, aes(label=word, size=n)) + 
+
+word_cloud <- ggplot(df, aes(label=word, size=n, color=color)) + 
   geom_text_wordcloud() + 
-  scale_size_area(max_size = 10)
+  scale_size_area(max_size = 15)
 ```
 
-![](man/figures/README-unnamed-chunk-2-1.png)<!-- -->
+<img src="man/figures/word_cloud.png"/>
 
 ### Check what’s trending on Hacker News
 
+This example will fetch best stories and plot titles of most recently
+trending stories.
+
 ``` r
 library(hackeRnews)
-library(stringi)
+library(stringr)
 library(ggplot2)
 
 best_stories <- hackeRnews::get_best_stories(max_items=10)
@@ -81,22 +90,22 @@ df <- data.frame(
 
 df$title = factor(df$title, levels=df$title[order(df$score)])
 
-ggplot(df, aes(x = title, y = score, label=score)) +
+best_stories_plot <- ggplot(df, aes(x = title, y = score, label=score)) +
   geom_col() +
   geom_label() +
   coord_flip() +
   xlab('Story title') +
-  ylab('Score')
+  ylab('Score') +
+  ggtitle('Best stories')
 ```
 
-![](man/figures/README-unnamed-chunk-3-1.png)<!-- -->
+<img src="man/figures/best_stories.png"/>
 
 ### Sentiment analysis on two best stories from Hacker News
 
 ``` r
 library(hackeRnews)
-library(tidyverse, dplyr)
-library(tidytext, dplyr)
+library(tidyverse, tidytext, dplyr)
 
 best_stories <- hackeRnews::get_best_stories(2)
 
@@ -165,4 +174,4 @@ df %>%
     ggtitle('Sentiment for 2 chosen stories')
 ```
 
-![](man/figures/README-unnamed-chunk-4-1.png)<!-- -->
+<img src="man/figures/sentiment.png"/>
