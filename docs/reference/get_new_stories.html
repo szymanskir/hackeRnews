@@ -135,8 +135,8 @@ If max_items = NULL, returns all available</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='no'>new_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_new_stories</span>()
-<span class='no'>new_5_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_new_stories</span>(<span class='fl'>5</span>)
+<span class='no'>new_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_new_stories</span>()</div><div class='output co'>#&gt; <span class='error'>Error: The content of the response is empty!</span>
+#&gt; <span class='error'>&lt;https://hacker-news.firebaseio.com/v0/item/21431530.json&gt;</span></div><div class='input'><span class='no'>new_5_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_new_stories</span>(<span class='fl'>5</span>)
 <span class='co'># }</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
