@@ -28,7 +28,7 @@ devtools::install_github("szymanskir/hackeRnews")
 
 ## Examples
 
-### Word cloud
+### Identify buzzwords in Job Offers of Hacker News
 
 Get recent words used in job story titles to build awesome word cloud.
 See what words are used the most frequently\!
@@ -65,7 +65,7 @@ ggplot(df, aes(label=word, size=n)) +
 
 ![](man/figures/README-unnamed-chunk-2-1.png)<!-- -->
 
-### Best stories (based on score)
+### Check what’s trending on Hacker News
 
 ``` r
 library(hackeRnews)
@@ -91,7 +91,7 @@ ggplot(df, aes(x = title, y = score, label=score)) +
 
 ![](man/figures/README-unnamed-chunk-3-1.png)<!-- -->
 
-### Sentiment analysis on two best stories
+### Sentiment analysis on two best stories from Hacker News
 
 ``` r
 library(hackeRnews)
@@ -148,7 +148,8 @@ sentiment <- get_sentiments("afinn")
 
 df %>%
   inner_join(sentiment, by='word') %>%
-  ggplot(aes(x=value, fill=as.factor(story_id))) +
+  mutate(story_title=sapply(story_id, function(id){best_stories[[id]]$title}) ) %>% 
+  ggplot(aes(x=value, fill=as.factor(story_title))) +
     geom_density(alpha=0.5) +
     scale_x_continuous(breaks=c(-5, 0, 5),
                        labels=c("Negative", "Neutral", "Positive"),
@@ -158,7 +159,8 @@ df %>%
           axis.title.y=element_blank(),
           axis.text.y=element_blank(),
           axis.ticks.y=element_blank(),
-          plot.title=element_text(hjust=0.5)) +
+          plot.title=element_text(hjust=0.5),
+          legend.position = 'top') +
     labs(fill='Story') +
     ggtitle('Sentiment for 2 chosen stories')
 ```
