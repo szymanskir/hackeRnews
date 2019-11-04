@@ -28,7 +28,7 @@ devtools::install_github("szymanskir/hackeRnews")
 
 ## Cheatsheet
 
-<a href="https://github.com/szymanskir/hackeRnews/blob/cheatsheet/cheatsheet/cheatsheet.pdf"><img src="man/figures/cheatsheet.png" width="356" height="252"/></a>
+<a href="https://github.com/szymanskir/hackeRnews/blob/master/cheatsheet/cheatsheet.pdf"><img src="man/figures/cheatsheet.png" width="356" height="252"/></a>
 
 ## Examples
 
