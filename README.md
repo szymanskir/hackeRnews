@@ -26,6 +26,10 @@ You can install the development version from
 devtools::install_github("szymanskir/hackeRnews")
 ```
 
+## Cheatsheet
+
+<a href="https://github.com/szymanskir/hackeRnews/blob/cheatsheet/cheatsheet/cheatsheet.pdf"><img src="man/figures/cheatsheet.png" width="356" height="252"/></a>
+
 ## Examples
 
 ### Identify buzzwords in job offers of Hacker News
