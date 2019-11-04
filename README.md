@@ -1,34 +1,42 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-hackeRnews <img src="man/figures/logo.png" align="right" width="120" />
-=======================================================================
+
+# hackeRnews <img src="man/figures/logo.png" align="right" width="120" />
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.com/szymanskir/hackeRnews.svg?branch=master)](https://travis-ci.com/szymanskir/hackeRnews) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/szymanskir/hackeRnews?branch=master&svg=true)](https://ci.appveyor.com/project/szymanskir/hackeRnews) [![Codecov test coverage](https://codecov.io/gh/szymanskir/hackeRnews/branch/master/graph/badge.svg)](https://codecov.io/gh/szymanskir/hackeRnews?branch=master) <!-- badges: end -->
 
-The hackeRnews package is an R wrapper for the Hacker News API. Project for Advanced R classes at the Warsaw University of Technology.
+[![Travis build
+status](https://travis-ci.com/szymanskir/hackeRnews.svg?branch=master)](https://travis-ci.com/szymanskir/hackeRnews)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/szymanskir/hackeRnews?branch=master&svg=true)](https://ci.appveyor.com/project/szymanskir/hackeRnews)
+[![Codecov test
+coverage](https://codecov.io/gh/szymanskir/hackeRnews/branch/master/graph/badge.svg)](https://codecov.io/gh/szymanskir/hackeRnews?branch=master)
+<!-- badges: end -->
 
-Installation
-------------
+The hackeRnews package is an R wrapper for the Hacker News API. Project
+for Advanced R classes at the Warsaw University of Technology.
 
-You can install the development version from [GitHub](https://github.com/) with:
+## Installation
+
+You can install the development version from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("szymanskir/hackeRnews")
 ```
 
-Cheatsheet
-----------
+## Cheatsheet
 
-<a href="./cheatsheet/cheatsheet.pdf"><img src="./cheatsheet/cheatsheet.png" width="356" height="252"/></a>
+<a href="https://github.com/szymanskir/hackeRnews/blob/cheatsheet/cheatsheet/cheatsheet.pdf"><img src="man/figures/cheatsheet.png" width="356" height="252"/></a>
 
-Examples
---------
+## Examples
 
 ### Identify buzzwords in job offers of Hacker News
 
-This example will show how to get recently used words in job story titles. Words will be visualized using word cloud to show which words were used the most.
+This example will show how to get recently used words in job story
+titles. Words will be visualized using word cloud to show which words
+were used the most.
 
 ``` r
 library(hackeRnews)
@@ -67,9 +75,10 @@ word_cloud <- ggplot(df, aes(label=word, size=n, color=color)) +
 
 <img src="man/figures/word_cloud.png"/>
 
-### Check what's trending on Hacker News
+### Check what’s trending on Hacker News
 
-This example will fetch best stories and plot titles of most recently trending stories.
+This example will fetch best stories and plot titles of most recently
+trending stories.
 
 ``` r
 library(hackeRnews)
