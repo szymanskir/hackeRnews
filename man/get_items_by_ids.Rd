@@ -25,4 +25,9 @@ Parallel api requests can be enabled by running
 get_item_by_ids(c(1,2,3))
 }
 
+
+}
+\seealso{
+\link{https://github.com/HenrikBengtsson/future}
+\link{https://github.com/HenrikBengtsson/future.apply}
 }

@@ -61,6 +61,10 @@ get_item_by_id <- function(id) {
 #' get_item_by_ids(c(1,2,3))
 #' }
 #'
+#'
+#' @seealso
+#' \link{https://github.com/HenrikBengtsson/future}
+#' \link{https://github.com/HenrikBengtsson/future.apply}
 get_items_by_ids <- function(ids) {
   assert_ids(ids)
   future.apply::future_lapply(ids, get_item_by_id)
