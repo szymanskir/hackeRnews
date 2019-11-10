@@ -43,7 +43,7 @@
 
 
 <meta property="og:title" content="Hacker News newest stories — get_new_stories" />
-<meta property="og:description" content="Retrieves newest stories ids using Hacker News API" />
+<meta property="og:description" content="Retrieves newest stories using Hacker News API" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -114,7 +114,7 @@
     </div>
 
     <div class="ref-description">
-    <p>Retrieves newest stories ids using Hacker News API</p>
+    <p>Retrieves newest stories using Hacker News API</p>
     </div>
 
     <pre class="usage"><span class='fu'>get_new_stories</span>(<span class='kw'>max_items</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
@@ -124,7 +124,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>max_items</th>
-      <td><p>Maximum number of items to retrive.
+      <td><p>Maximum number of items to retrieve.
 If max_items = NULL, returns all available</p></td>
     </tr>
     </table>
@@ -132,6 +132,10 @@ If max_items = NULL, returns all available</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>list of new stories</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Parallel api requests can be enabled by running
+<code><a href='https://rdrr.io/pkg/future/man/plan.html'>future::plan(future::multiprocess)</a></code></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
@@ -144,6 +148,7 @@ If max_items = NULL, returns all available</p></td>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#details">Details</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 
