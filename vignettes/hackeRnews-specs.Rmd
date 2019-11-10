@@ -45,7 +45,7 @@ All items (stories, comments, ...) have some of the following properties:
 | kids | int[] | The ids of the item's comments, in ranked display order  | 
 | parent | chr | The comment's parent: either another comment or the relevant story |
 | score | int | The story's score |
-| text | chr | The comment, story or poll text. HTML.
+| text | chr | The comment, story or poll text (HTML)
 | time | POSIXct | Creation date of the item | 
 | title | chr | The title of the story |
 | type | chr  | The type of item. One of "job", "story", "comment", "poll", or "pollopt" | 
@@ -69,6 +69,70 @@ Also there is method to fetch just raw ids of best/new/top stories `hackeRnews::
 
 ```{r}
 best_stories_ids <- hackeRnews::get_best_stories_ids()
-best_stories_ids[1:5] # output limited to 5 items for legibility
+best_stories_ids[1:5] # output truncated for legibility
 ```
 
+### ask / job / show stories
+
+Similair to news stories. There are `hackeRnews::get_latest_*_stories` that returns latest * stories and  `hackeRnews::get_latest_*_stories_ids` that returns latest * stories ids.
+
+For example to fetch 3 latest ask stories:
+
+```{r}
+ask_stories <- hackeRnews::get_latest_ask_stories(max_items=3)
+ask_stories[[1]]
+```
+
+
+### comments
+
+Discussion in story thread is represented as system of comments. Each story has top level comments ids stored under `kids` property. Each comment post can have own comments ids under `kids` property (subcomments) and so on.  
+
+For example to fetch top level comments for latest show stories:
+
+```{r}
+top_story <- hackeRnews::get_top_stories(max_items=1)[[1]]
+top_level_comments <- hackeRnews::get_items_by_ids(top_story$kids)
+top_level_comments[[1]]
+```
+
+### user
+
+User object contains following properties:
+
+| Property Name | Type | Description  |
+| :-- | :-: | --------------- |
+| about | chr | The user's optional self-description (HTML)
+| created | POSIXct | Creation date of the user | 
+| delay | int | Delay in minutes between a comment's creation and its visibility to other users | 
+| id  | chr | The user's unique username (case-sensitive) |
+| karma | int | The story's score |
+| submitted | int[] | List of the user's stories, polls and comments | 
+
+For example to fetch data about username 'jl':
+
+```{r}
+user <- hackeRnews::get_user_by_username('jl')
+user
+```
+
+### all items / latest items
+
+It's possible to iterate over latest items by fetching max id using `get_max_item_id` and then walking backwards to discover latest items. Using that method it's possible to fetch all items on Hacker News.
+
+For example to fetch 10 latest items:
+
+```{r}
+max_item_id <- hackeRnews::get_max_item_id()
+latest_items <- hackeRnews::get_items_by_ids(seq(max_item_id, max_item_id - 10))
+```
+
+### updates
+
+Latest item and profile changes can be retrieved using `get_updates`
+
+```{r}
+updates <- hackeRnews::get_updates()
+updates$profiles[1:5] # output truncated for legibility
+updates$items[1:5]    # output truncated for legibility
+```
