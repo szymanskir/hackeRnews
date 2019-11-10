@@ -16,7 +16,7 @@ coverage](https://codecov.io/gh/szymanskir/hackeRnews/branch/master/graph/badge.
 The hackeRnews package is an R wrapper for the Hacker News API. Project
 for Advanced R classes at the Warsaw University of Technology.
 
-## Installation
+## Installation and basic setup
 
 You can install the development version from
 [GitHub](https://github.com/) with:
@@ -24,6 +24,20 @@ You can install the development version from
 ``` r
 # install.packages("devtools")
 devtools::install_github("szymanskir/hackeRnews")
+```
+
+The Hacker News API is constructed in such way that a single item is
+retrieved with a single requestes. This means that the retrieval of 200
+items requires 200 separate API calls. Processing this amount of
+requests sequentially takes a significant amount of time. In order to
+solve the issue the `hackeRnews` package makes use of the `future.apply`
+package (<https://github.com/HenrikBengtsson/future.apply>) which allows
+to fetch all of request items in parallel. This requires additional
+setup:
+
+``` r
+library(hackeRnews)
+future::plan(future::multiprocess) # setup multiprocess futures, read more at https://github.com/HenrikBengtsson/future
 ```
 
 ## Cheatsheet
