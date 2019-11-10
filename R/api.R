@@ -168,7 +168,7 @@ get_new_stories_ids <- function() {
 
 #' @title Hacker News newest stories
 #'
-#' @description Retrieves newest stories ids using Hacker News API
+#' @description Retrieves newest stories using Hacker News API
 #'
 #' @inherit get_items_by_ids details
 #'

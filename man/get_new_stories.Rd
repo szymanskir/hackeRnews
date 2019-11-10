@@ -14,7 +14,7 @@ If max_items = NULL, returns all available}
 list of new stories
 }
 \description{
-Retrieves newest stories ids using Hacker News API
+Retrieves newest stories using Hacker News API
 }
 \details{
 Parallel api requests can be enabled by running
