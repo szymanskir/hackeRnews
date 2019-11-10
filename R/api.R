@@ -27,7 +27,7 @@
 #'
 #' @export
 #'
-#' @return item correspoing to the specified id
+#' @return item corresponding to the specified id
 #'
 #' @examples
 #' \donttest{
@@ -129,7 +129,7 @@ get_top_stories_ids <- function() {
 #'
 #' @inherit get_items_by_ids details
 #'
-#' @param max_items Maximum number of items to retrive.
+#' @param max_items Maximum number of items to retrieve.
 #' If max_items = NULL, returns all available stories
 #'
 #' @export
@@ -172,7 +172,7 @@ get_new_stories_ids <- function() {
 #'
 #' @inherit get_items_by_ids details
 #'
-#' @param max_items Maximum number of items to retrive.
+#' @param max_items Maximum number of items to retrieve.
 #' If max_items = NULL, returns all available
 #'
 #' @export
@@ -215,7 +215,7 @@ get_best_stories_ids <- function() {
 #'
 #' @inherit get_items_by_ids details
 #'
-#' @param max_items Maximum number of items to retrive.
+#' @param max_items Maximum number of items to retrieve.
 #' If max_items = NULL, returns all available
 #'
 #' @export
@@ -258,7 +258,7 @@ get_latest_ask_stories_ids <- function() {
 #'
 #' @inherit get_items_by_ids details
 #'
-#' @param max_items Maximum number of items to retrive.
+#' @param max_items Maximum number of items to retrieve.
 #' If max_items = NULL, returns all available
 #'
 #' @export
@@ -301,7 +301,7 @@ get_latest_show_stories_ids <- function() {
 #'
 #' @inherit get_items_by_ids details
 #'
-#' @param max_items Maximum number of items to retrive.
+#' @param max_items Maximum number of items to retrieve.
 #' If max_items = NULL, returns all available
 #'
 #' @export
@@ -344,7 +344,7 @@ get_latest_job_stories_ids <- function() {
 #'
 #' @inherit get_items_by_ids details
 #'
-#' @param max_items Maximum number of items to retrive.
+#' @param max_items Maximum number of items to retrieve.
 #' If max_items = NULL, returns all available
 #'
 #' @export

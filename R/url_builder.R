@@ -1,5 +1,5 @@
 #' Creates a request url based on the given base url and
-#' passed paths. THe json extensions is added automatically.
+#' passed paths. The json extensions is added automatically.
 #'
 #' @param url base url of the request
 #'

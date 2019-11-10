@@ -7,7 +7,7 @@
 get_latest_show_stories(max_items = NULL)
 }
 \arguments{
-\item{max_items}{Maximum number of items to retrive.
+\item{max_items}{Maximum number of items to retrieve.
 If max_items = NULL, returns all available}
 }
 \value{

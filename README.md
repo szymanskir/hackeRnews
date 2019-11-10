@@ -27,12 +27,12 @@ devtools::install_github("szymanskir/hackeRnews")
 ```
 
 The Hacker News API is constructed in such way that a single item is
-retrieved with a single requestes. This means that the retrieval of 200
+retrieved with a single request. This means that the retrieval of 200
 items requires 200 separate API calls. Processing this amount of
 requests sequentially takes a significant amount of time. In order to
 solve the issue the `hackeRnews` package makes use of the `future.apply`
 package (<https://github.com/HenrikBengtsson/future.apply>) which allows
-to fetch all of request items in parallel. This requires additional
+to fetch all of requested items in parallel. This requires additional
 setup:
 
 ``` r
