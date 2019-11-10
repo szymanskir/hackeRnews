@@ -16,6 +16,10 @@ list of new stories
 \description{
 Retrieves newest stories ids using Hacker News API
 }
+\details{
+Parallel api requests can be enabled by running
+\code{future::plan(future::multiprocess)}
+}
 \examples{
 \donttest{
 new_stories <- get_new_stories()

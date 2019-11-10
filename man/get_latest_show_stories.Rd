@@ -16,6 +16,10 @@ list of latest show HN stories
 \description{
 Retrieves latest show stories using Hacker News API
 }
+\details{
+Parallel api requests can be enabled by running
+\code{future::plan(future::multiprocess)}
+}
 \examples{
 \donttest{
 show_stories <- get_latest_show_stories()
