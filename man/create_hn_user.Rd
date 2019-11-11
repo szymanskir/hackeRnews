@@ -11,7 +11,7 @@ create_hn_user(user)
 via get_user_by_username function}
 }
 \value{
-object represanting a hn_user
+object representing a hn_user
 }
 \description{
 Creates an object representing Hacker News user

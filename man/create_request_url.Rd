@@ -3,7 +3,7 @@
 \name{create_request_url}
 \alias{create_request_url}
 \title{Creates a request url based on the given base url and
-passed paths. THe json extensions is added automatically.}
+passed paths. The json extensions is added automatically.}
 \usage{
 create_request_url(url, paths)
 }
@@ -17,5 +17,5 @@ request url with added paths and the json extension
 }
 \description{
 Creates a request url based on the given base url and
-passed paths. THe json extensions is added automatically.
+passed paths. The json extensions is added automatically.
 }

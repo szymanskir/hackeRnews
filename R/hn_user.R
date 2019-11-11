@@ -18,7 +18,7 @@ print.hn_user <- function(x, ...) {
 #' @param user list returned by Hacker News API
 #' via get_user_by_username function
 #'
-#' @return object represanting a hn_user
+#' @return object representing a hn_user
 #'
 create_hn_user <- function(user) {
   user$created <- to_datetime_origin(user$created)

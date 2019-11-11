@@ -3,7 +3,7 @@
 #'
 #' @param response response object
 #'
-#' @return object represanting a response from the
+#' @return object representing a response from the
 #' Hacker News API
 #'
 create_hn_api_response <- function(response) {
