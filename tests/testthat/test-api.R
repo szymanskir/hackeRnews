@@ -260,3 +260,34 @@ httptest::with_mock_api({
     expect_equal(result, expected)
   })
 })
+
+httptest::with_mock_api({
+  test_that("Conversion of a comment to datarfame is working correctly", {
+    comment <- get_item_by_id(21500829)
+    result <- comment_to_dataframe_row(comment)
+    expected <- data.frame(
+      by = "vanniv",
+      id = 21500829,
+      parent = 21500569,
+      text = "I find it fascinating which instances of governments violently oppressing their own people get the press excited enough to report, and which the press just buries.",
+      time = 1573427819,
+      deleted = FALSE,
+      dead = FALSE,
+      stringsAsFactors = FALSE
+    )
+    dplyr::all_equal(result, expected)
+    })
+})
+
+httptest::with_mock_api({
+  test_that("Retrieve comments function is working correctly", {
+    story <- get_item_by_id(21500569)
+    result <- get_comments(story)
+    expected <- data.table::rbindlist(list(
+      comment_to_dataframe_row(get_item_by_id(21500829)),
+      comment_to_dataframe_row(get_item_by_id(21500985)),
+      comment_to_dataframe_row(get_item_by_id(21501055))
+    ))
+    dplyr::all_equal(result, expected)
+  })
+})

@@ -43,3 +43,22 @@ to_datetime_origin <- function(x) {
 trim_ids_list <- function(ids_list, max_items) {
   ids_list[1:min(max_items, length(ids_list))]
 }
+
+#' Converts comment to a dataframe row
+#'
+#' @param comment comment to be converted to dataframe
+#'
+#' @return a dataframe containing a single entry with data from passed comment
+#'
+comment_to_dataframe_row <- function(comment){
+  data.frame(
+    id = comment[['id']],
+    deleted = ifelse(is.null(comment[['deleted']]), FALSE, comment[['deleted']]),
+    by =  ifelse(is.null(comment[['by']]), '', comment[['by']]),
+    time = comment[['time']],
+    text = ifelse(is.null(comment[['text']]), '', comment[['text']]),
+    dead = ifelse(is.null(comment[['dead']]), FALSE, comment[['dead']]),
+    parent = comment[['parent']],
+    stringsAsFactors = FALSE
+  )
+}
