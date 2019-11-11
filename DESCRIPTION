@@ -20,12 +20,10 @@ LazyData: true
 Suggests: 
     covr,
     testthat (>= 2.1.0),
-    httptest,
-    dplyr
+    httptest
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Imports: 
     utils,
     httr,
-    jsonlite,
-    data.table
+    jsonlite

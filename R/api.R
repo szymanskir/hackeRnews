@@ -387,9 +387,10 @@ get_updates <- function() {
 #' }
 #'
 get_comments <- function(item){
-  if( !is.null(item[['kids']])){
-    kids <- hackeRnews::get_items_by_ids(item[['kids']])
-    data.table::rbindlist(
+  if( !is.null(item$kids)){
+    kids <- hackeRnews::get_items_by_ids(item$kids)
+    do.call(
+      rbind,
       lapply(kids, get_comments_with_root)
     )
   }
@@ -405,13 +406,15 @@ get_comments <- function(item){
 #'
 #' @return dataframe containing specified item and all comments under that item
 #'
+#'
 get_comments_with_root <- function(item){
-  if( is.null(item[['kids']])){
+  if( is.null(item$kids)){
     comment_to_dataframe_row(item)
   } else {
-    kids <- hackeRnews::get_items_by_ids(item[['kids']])
-    kids_df <- data.table::rbindlist(
-      lapply(kids, get_comments_with_root)
+    kids <- hackeRnews::get_items_by_ids(item$kids)
+    kids_df <- do.call(
+      rbind,
+      lapply(kids, get_comments_with_root),
     )
     rbind(comment_to_dataframe_row(item), kids_df)
   }

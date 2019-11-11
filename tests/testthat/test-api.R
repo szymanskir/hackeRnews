@@ -266,28 +266,48 @@ httptest::with_mock_api({
     comment <- get_item_by_id(21500829)
     result <- comment_to_dataframe_row(comment)
     expected <- data.frame(
-      by = "vanniv",
       id = 21500829,
-      parent = 21500569,
-      text = "I find it fascinating which instances of governments violently oppressing their own people get the press excited enough to report, and which the press just buries.",
-      time = 1573427819,
       deleted = FALSE,
+      by = "vanniv",
+        time = as.POSIXct(1573427819, origin="1970-01-01"),
+      text = "I find it fascinating which instances of governments violently oppressing their own people get the press excited enough to report, and which the press just buries.",
       dead = FALSE,
+      parent = 21500569,
       stringsAsFactors = FALSE
     )
-    dplyr::all_equal(result, expected)
+    expect_true(all.equal(result, expected))
     })
+})
+
+httptest::with_mock_api({
+  test_that("Conversion of a deleted comment to datarfame is working correctly", {
+    comment <- get_item_by_id(21501055)
+    result <- comment_to_dataframe_row(comment)
+    expected <- data.frame(
+      id = 21501055,
+      deleted = TRUE,
+      by = c(NA),
+      time = as.POSIXct(1573430397, origin="1970-01-01"),
+      text = c(NA),
+      dead = FALSE,
+      parent = 21500985,
+      stringsAsFactors = FALSE
+    )
+    expect_true(all.equal(result, expected))
+  })
 })
 
 httptest::with_mock_api({
   test_that("Retrieve comments function is working correctly", {
     story <- get_item_by_id(21500569)
     result <- get_comments(story)
-    expected <- data.table::rbindlist(list(
-      comment_to_dataframe_row(get_item_by_id(21500829)),
-      comment_to_dataframe_row(get_item_by_id(21500985)),
-      comment_to_dataframe_row(get_item_by_id(21501055))
-    ))
-    dplyr::all_equal(result, expected)
+    expected <- do.call(
+      rbind,
+      list(
+        comment_to_dataframe_row(get_item_by_id(21500829)),
+        comment_to_dataframe_row(get_item_by_id(21500985)),
+        comment_to_dataframe_row(get_item_by_id(21501055)))
+      )
+    expect_true(all.equal(result, expected))
   })
 })
