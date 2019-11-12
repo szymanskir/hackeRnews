@@ -7,14 +7,18 @@
 get_new_stories(max_items = NULL)
 }
 \arguments{
-\item{max_items}{Maximum number of items to retrive.
+\item{max_items}{Maximum number of items to retrieve.
 If max_items = NULL, returns all available}
 }
 \value{
 list of new stories
 }
 \description{
-Retrieves newest stories ids using Hacker News API
+Retrieves newest stories using Hacker News API
+}
+\details{
+Parallel api requests can be enabled by running
+\code{future::plan(future::multiprocess)}
 }
 \examples{
 \donttest{

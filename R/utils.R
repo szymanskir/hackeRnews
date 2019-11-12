@@ -1,6 +1,6 @@
 #' Parses a json response
 #'
-#' @param response reponse object to parse
+#' @param response response object to parse
 #'
 #' @return parsed content of the given response
 #'
@@ -34,11 +34,11 @@ to_datetime_origin <- function(x) {
 
 #' Selects only limited number of ids
 #'
-#' @param ids_list list of ids to be trimed
+#' @param ids_list list of ids to be trimmed
 #'
 #' @param max_items maximum number of ids to retrieve
 #'
-#' @return list of ids
+#' @return trimmed list of ids
 #'
 trim_ids_list <- function(ids_list, max_items) {
   ids_list[1:min(max_items, length(ids_list))]

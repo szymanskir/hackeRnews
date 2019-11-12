@@ -11,7 +11,7 @@ create_hn_api_response(response)
 \item{response}{response object}
 }
 \value{
-object represanting a response from the
+object representing a response from the
 Hacker News API
 }
 \description{

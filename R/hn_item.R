@@ -15,7 +15,7 @@ print.hn_item <- function(x, ...) {
 #'
 #' @param item list returned by Hacker News API
 #'
-#' @return object represanting a hn_item
+#' @return object representing a hn_item
 #'
 create_hn_item <- function(item) {
   item$time <- to_datetime_origin(item$time)
