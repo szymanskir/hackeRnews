@@ -386,3 +386,59 @@ get_updates <- function() {
   request_url <- create_request_url(.base_url(), c("updates"))
   .send_request(request_url)
 }
+
+
+#' @title Hacker News nested comments
+#'
+#' @description Retrieves all comments under an item
+#' using Hacker News API
+#'
+#' @param item item whose children (comments) will be retrieved
+#'
+#' @export
+#'
+#' @return dataframe of all comments under an item
+#'
+#' @examples
+#' \donttest{
+#' story <- get_item_by_id(21499889)
+#' comments <- get_comments(story)
+#' }
+#'
+get_comments <- function(item){
+  if( !is.null(item$kids)){
+    kids <- hackeRnews::get_items_by_ids(item$kids)
+    df <- do.call(
+      rbind,
+      lapply(kids, get_comments_with_root)
+    )
+
+    tibble::as.tibble(df)
+  }
+}
+
+
+#' @title Hacker News nested comments with root comment
+#'
+#' @description Returns specified item and all comments under it. Comments are retrieved
+#' using Hacker News api
+#'
+#' @param item item whose children (comments) will be retrieved
+#'
+#' @return dataframe containing specified item and all comments under that item
+#'
+#'
+get_comments_with_root <- function(item){
+  if( is.null(item$kids)){
+    comment_to_dataframe_row(item)
+  } else {
+    kids <- hackeRnews::get_items_by_ids(item$kids)
+    kids_df <- do.call(
+      rbind,
+      lapply(kids, get_comments_with_root),
+    )
+    rbind(comment_to_dataframe_row(item), kids_df)
+  }
+}
+
+

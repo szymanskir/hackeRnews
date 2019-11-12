@@ -27,4 +27,5 @@ Imports:
     utils,
     httr,
     jsonlite,
+    tibble,
     future.apply

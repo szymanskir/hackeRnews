@@ -124,26 +124,15 @@ best_stories_plot <- ggplot(df, aes(x = title, y = score, label=score)) +
 
 ``` r
 library(hackeRnews)
-library(tidyverse, tidytext, dplyr)
+library(tidyverse)
+library(tidytext)
+library(dplyr)
 
 best_stories <- hackeRnews::get_best_stories(2)
 
-# get comments
-get_comments_contents <- function(item){
-  if( is.null(item$kids)){
-    c(item$text)
-  } else {
-    kids <- hackeRnews::get_items_by_ids(item$kids)
-    c(
-      item$text,
-      lapply(kids, get_comments_contents)
-    )
-  }
-}
-
 comments_by_story <- lapply(best_stories,
                    function(story){
-                     unlist(get_comments_contents(story))
+                     get_comments(story)$text
                    }
 )
 
@@ -181,7 +170,7 @@ df %>%
     geom_density(alpha=0.5) +
     scale_x_continuous(breaks=c(-5, 0, 5),
                        labels=c("Negative", "Neutral", "Positive"),
-                       limits=c(-5,5)) +
+                       limits=c(-6, 6)) +
     theme_minimal() +
     theme(axis.title.x=element_blank(),
           axis.title.y=element_blank(),
