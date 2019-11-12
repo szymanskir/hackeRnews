@@ -7,7 +7,7 @@
 default_if_null(variable, default)
 }
 \arguments{
-\item{variable}{name of specified element}
+\item{variable}{specified variable}
 
 \item{default}{default return value}
 }
