@@ -413,7 +413,7 @@ get_comments <- function(item){
       lapply(kids, get_comments_with_root)
     )
 
-    tibble::tibble(df)
+    tibble::as.tibble(df)
   }
 }
 

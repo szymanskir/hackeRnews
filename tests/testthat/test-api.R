@@ -301,12 +301,15 @@ httptest::with_mock_api({
   test_that("Retrieve comments function is working correctly", {
     story <- get_item_by_id(21500569)
     result <- get_comments(story)
-    expected <- do.call(
-      rbind,
-      list(
-        comment_to_dataframe_row(get_item_by_id(21500829)),
-        comment_to_dataframe_row(get_item_by_id(21500985)),
-        comment_to_dataframe_row(get_item_by_id(21501055)))
+    expected <- tibble::as.tibble(
+      do.call(
+        rbind,
+        list(
+          comment_to_dataframe_row(get_item_by_id(21500829)),
+          comment_to_dataframe_row(get_item_by_id(21500985)),
+          comment_to_dataframe_row(get_item_by_id(21501055))
+          )
+        )
       )
     expect_true(all.equal(result, expected))
   })
