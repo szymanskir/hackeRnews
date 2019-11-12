@@ -389,10 +389,12 @@ get_updates <- function() {
 get_comments <- function(item){
   if( !is.null(item$kids)){
     kids <- hackeRnews::get_items_by_ids(item$kids)
-    do.call(
+    df <- do.call(
       rbind,
       lapply(kids, get_comments_with_root)
     )
+
+    tibble::tibble(df)
   }
 }
 
