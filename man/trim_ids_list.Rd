@@ -7,12 +7,12 @@
 trim_ids_list(ids_list, max_items)
 }
 \arguments{
-\item{ids_list}{list of ids to be trimed}
+\item{ids_list}{list of ids to be trimmed}
 
 \item{max_items}{maximum number of ids to retrieve}
 }
 \value{
-list of ids
+trimmed list of ids
 }
 \description{
 Selects only limited number of ids

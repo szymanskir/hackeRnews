@@ -7,7 +7,7 @@
 get_top_stories(max_items = NULL)
 }
 \arguments{
-\item{max_items}{Maximum number of items to retrive.
+\item{max_items}{Maximum number of items to retrieve.
 If max_items = NULL, returns all available stories}
 }
 \value{
@@ -15,6 +15,10 @@ List of top stories
 }
 \description{
 Retrieves top stories using Hacker News API
+}
+\details{
+Parallel api requests can be enabled by running
+\code{future::plan(future::multiprocess)}
 }
 \examples{
 \donttest{

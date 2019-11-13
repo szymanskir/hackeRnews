@@ -16,7 +16,7 @@ coverage](https://codecov.io/gh/szymanskir/hackeRnews/branch/master/graph/badge.
 The hackeRnews package is an R wrapper for the Hacker News API. Project
 for Advanced R classes at the Warsaw University of Technology.
 
-## Installation
+## Installation and basic setup
 
 You can install the development version from
 [GitHub](https://github.com/) with:
@@ -24,6 +24,21 @@ You can install the development version from
 ``` r
 # install.packages("devtools")
 devtools::install_github("szymanskir/hackeRnews")
+```
+
+The Hacker News API is constructed in such a way that a single item is
+retrieved with a single request. This means that the retrieval of 200
+items requires 200 separate API calls. Processing this amount of
+requests sequentially takes a significant amount of time. In order to
+solve this issue the `hackeRnews` package makes use of the
+`future.apply` package
+(<https://github.com/HenrikBengtsson/future.apply>) which allows to
+fetch all of the requested items in parallel. However, this requires
+some additional setup:
+
+``` r
+library(hackeRnews)
+future::plan(future::multiprocess) # setup multiprocess futures, read more at https://github.com/HenrikBengtsson/future
 ```
 
 ## Cheatsheet
@@ -109,26 +124,15 @@ best_stories_plot <- ggplot(df, aes(x = title, y = score, label=score)) +
 
 ``` r
 library(hackeRnews)
-library(tidyverse, tidytext, dplyr)
+library(tidyverse)
+library(tidytext)
+library(dplyr)
 
 best_stories <- hackeRnews::get_best_stories(2)
 
-# get comments
-get_comments_contents <- function(item){
-  if( is.null(item$kids)){
-    c(item$text)
-  } else {
-    kids <- hackeRnews::get_items_by_ids(item$kids)
-    c(
-      item$text,
-      lapply(kids, get_comments_contents)
-    )
-  }
-}
-
 comments_by_story <- lapply(best_stories,
                    function(story){
-                     unlist(get_comments_contents(story))
+                     get_comments(story)$text
                    }
 )
 
@@ -166,7 +170,7 @@ df %>%
     geom_density(alpha=0.5) +
     scale_x_continuous(breaks=c(-5, 0, 5),
                        labels=c("Negative", "Neutral", "Positive"),
-                       limits=c(-5,5)) +
+                       limits=c(-6, 6)) +
     theme_minimal() +
     theme(axis.title.x=element_blank(),
           axis.title.y=element_blank(),

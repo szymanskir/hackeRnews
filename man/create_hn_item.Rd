@@ -10,7 +10,7 @@ create_hn_item(item)
 \item{item}{list returned by Hacker News API}
 }
 \value{
-object represanting a hn_item
+object representing a hn_item
 }
 \description{
 Creates an object representing Hacker News item

@@ -28,5 +28,7 @@ RoxygenNote: 6.1.1
 Imports: 
     utils,
     httr,
-    jsonlite
+    jsonlite,
+    tibble,
+    future.apply
 VignetteBuilder: knitr

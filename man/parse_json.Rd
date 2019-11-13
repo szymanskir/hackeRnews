@@ -7,7 +7,7 @@
 parse_json(response)
 }
 \arguments{
-\item{response}{reponse object to parse}
+\item{response}{response object to parse}
 }
 \value{
 parsed content of the given response

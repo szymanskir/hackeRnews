@@ -10,7 +10,7 @@ get_item_by_id(id)
 \item{id}{id of the item that should be retrieved}
 }
 \value{
-item correspoing to the specified id
+item corresponding to the specified id
 }
 \description{
 Retrieves the item
