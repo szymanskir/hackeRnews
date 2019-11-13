@@ -1,5 +1,5 @@
 ---
-title: "HackeRnews - specifiation"
+title: "HackeRnews - specification"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{HackeRnews - specifiation}
@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 ```
 # Hacker News
 
-The `hackeRnews` package was created in order to simplify the process getting data from [Hacker News](https://news.ycombinator.com/news). Hacker News is a user-generated content website that focuses on stories related to computer science. The website is composed of user submitted stories where each one provides a link to original data source. Moverover, users have the ability to upvote a story if they have found it interesting. Each story contains a comment section which allows users to discuss about the presented subject. Besides news stories Hacker News contains the following sections:
+  The `hackeRnews` package was created in order to simplify the process of getting data from [Hacker News](https://news.ycombinator.com/news). Hacker News is a user-generated content website that focuses on stories related to computer science. The website is composed of user submitted stories where each one provides a link to the original data source. Moreover, users have the ability to upvote a story if they have found it interesting. Each story contains a comment section which allows users to discuss about the presented subject. Besides news stories Hacker News contains the following sections:
 
 - 'Ask' section where users can ask questions to the Hacker News community
 - 'Show' section where users can share something that they have created
@@ -23,7 +23,7 @@ The `hackeRnews` package was created in order to simplify the process getting da
 
 # Hacker News API
 
-THe Hacker News API official documentation can be found [here](https://github.com/HackerNews/API). The API serves data in JSON format. The `hackeRnews` package allows the retrieve this data in form of convenient R objects. Each object (story, comment, ...) has a unique id and can be retrieved using this id. The API also provides a way to fetch up to 500 top and new stories, latest best stories, ask stories, show stories and job stories. 
+The Hacker News API official documentation can be found [here](https://github.com/HackerNews/API). The API serves data in JSON format. The `hackeRnews` package allows the retrieve this data in form of convenient R objects. Each object (story, comment, ...) has a unique id and can be retrieved using this id. The API also provides a way to fetch up to 500 top and new stories, latest best stories, ask stories, show stories and job stories. 
 
 Examples of using the `hackeRnews` package to retrieve data from the official Hacker News API are presented below:
 
@@ -65,7 +65,7 @@ ask_stories[[1]]
 
 
 ### comments
-The discussion in story threads is represented as system of comments. Each story has top level comments ids stored under the `kids` property. Each comment post can have it's own set of comments ids under `kids` property (subcomments) and so on. In order to retrieve all of the comments of a specific story, just use the `get_comments` function.
+The discussion in story threads is represented as system of comments. Each story has top level comments ids stored under the `kids` property. Each comment post can have it's own set of comments ids under `kids` property (sub-comments) and so on. In order to retrieve all of the comments of a specific story, just use the `get_comments` function.
 
 ```{r}
 top_story <- get_top_stories(max_items=1)[[1]]
