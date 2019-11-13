@@ -1,0 +1,102 @@
+---
+title: "HackeRnews - specification"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{HackeRnews - specifiation}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+# Hacker News
+
+  The `hackeRnews` package was created in order to simplify the process of getting data from [Hacker News](https://news.ycombinator.com/news). Hacker News is a user-generated content website that focuses on stories related to computer science. The website is composed of user submitted stories where each one provides a link to the original data source. Moreover, users have the ability to upvote a story if they have found it interesting. Each story contains a comment section which allows users to discuss about the presented subject. Besides news stories Hacker News contains the following sections:
+
+- 'Ask' section where users can ask questions to the Hacker News community
+- 'Show' section where users can share something that they have created
+- 'Jobs' section where users can browse job offers
+
+# Hacker News API
+
+The Hacker News API official documentation can be found [here](https://github.com/HackerNews/API). The API serves data in JSON format. The `hackeRnews` package allows the retrieve this data in form of convenient R objects. Each object (story, comment, ...) has a unique id and can be retrieved using this id. The API also provides a way to fetch up to 500 top and new stories, latest best stories, ask stories, show stories and job stories. 
+
+Examples of using the `hackeRnews` package to retrieve data from the official Hacker News API are presented below:
+
+## hackeRnews usage
+
+```{r warn=FALSE}
+library(hackeRnews)
+```
+
+### news stories
+
+To fetch best/new/top stories the user can use the `get_*_stories` function. Each function takes one optional argument `max_items` that limits the number of returned stories. 
+
+For example to fetch the top 5 best stories:
+
+```{r}
+best_stories <- get_best_stories(max_items=5)
+best_stories[[1]]
+```
+
+There is a method that allows to fetch just raw ids of best/new/top stories as well `get_*_stories_ids()`
+
+```{r}
+best_stories_ids <- get_best_stories_ids()
+best_stories_ids[1:5] # output truncated for legibility
+```
+
+### ask / job / show stories
+
+Similar to news stories. There are `get_latest_*_stories` that returns latest * stories and  `get_latest_*_stories_ids` that returns latest * stories ids.
+
+For example to fetch the 3 latest ask stories:
+
+```{r}
+ask_stories <- get_latest_ask_stories(max_items=3)
+ask_stories[[1]]
+```
+
+
+### comments
+The discussion in story threads is represented as system of comments. Each story has top level comments ids stored under the `kids` property. Each comment post can have it's own set of comments ids under `kids` property (sub-comments) and so on. In order to retrieve all of the comments of a specific story, just use the `get_comments` function.
+
+```{r}
+top_story <- get_top_stories(max_items=1)[[1]]
+get_comments(top_story)
+```
+
+### user
+
+To fetch data about user 'jl' just use the `get_user_by_username` function:
+
+```{r}
+user <- get_user_by_username('jl')
+user
+```
+
+### all items / latest items
+
+It's possible to iterate over latest items by fetching the id of the latest item by using the `get_max_item_id` function and then walking backwards to discover latest items. Using that method it's possible to fetch all items on Hacker News.
+
+For example to fetch 10 latest items:
+
+```{r eval=FALSE}
+max_item_id <- get_max_item_id()
+latest_items <- get_items_by_ids(seq(max_item_id, max_item_id - 10))
+```
+
+### updates
+
+Latest items and profile changes can be retrieved using `get_updates`
+
+```{r}
+updates <- get_updates()
+updates$profiles[1:5] # output truncated for legibility
+updates$items[1:5]    # output truncated for legibility
+```

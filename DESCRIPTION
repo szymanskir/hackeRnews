@@ -8,7 +8,7 @@ Authors@R: c(
            email = "ryszard.szymanski@outlook.com"),
     person(given = "Piotr", family = "Janus", role = c("aut")),
     person(given = "Zuzanna", family = "Magierska", role = c("aut")),
-    person(given = "Rafał", family = "Muszyński", role = c("aut")),
+    person(given = "Rafal", family = "Muszynski", role = c("aut")),
     person(given = "Andrzej", family = "Nowikowski", role = c("aut"))
     )
 Maintainer: Ryszard Szymanski <ryszard.szymanski@outlook.com>
@@ -20,7 +20,9 @@ LazyData: true
 Suggests: 
     covr,
     testthat (>= 2.1.0),
-    httptest
+    httptest,
+    knitr,
+    rmarkdown
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Imports: 
@@ -29,3 +31,6 @@ Imports:
     jsonlite,
     tibble,
     future.apply
+VignetteBuilder: knitr
+URL: https://github.com/szymanskir/hackeRnews
+BugReports: https://github.com/szymanskir/hackeRnews/issues
