@@ -51,7 +51,7 @@ trim_ids_list <- function(ids_list, max_items) {
 #' @param default default return value
 #'
 #' @return specified variable or default value
-default_if_null <- function(variable, default){
+default_if_null <- function(variable, default) {
   ifelse(is.null(variable), default, variable)
 }
 
@@ -61,7 +61,7 @@ default_if_null <- function(variable, default){
 #'
 #' @return a dataframe containing a single entry with data from passed comment
 #'
-comment_to_dataframe_row <- function(comment){
+comment_to_dataframe_row <- function(comment) {
   data.frame(
     id = comment$id,
     deleted = default_if_null(comment$deleted, FALSE),

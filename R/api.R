@@ -405,8 +405,8 @@ get_updates <- function() {
 #' comments <- get_comments(story)
 #' }
 #'
-get_comments <- function(item){
-  if( !is.null(item$kids)){
+get_comments <- function(item) {
+  if (!is.null(item$kids)) {
     kids <- hackeRnews::get_items_by_ids(item$kids)
     df <- do.call(
       rbind,
@@ -428,8 +428,8 @@ get_comments <- function(item){
 #' @return dataframe containing specified item and all comments under that item
 #'
 #'
-get_comments_with_root <- function(item){
-  if( is.null(item$kids)){
+get_comments_with_root <- function(item) {
+  if (is.null(item$kids)) {
     comment_to_dataframe_row(item)
   } else {
     kids <- hackeRnews::get_items_by_ids(item$kids)
@@ -440,5 +440,3 @@ get_comments_with_root <- function(item){
     rbind(comment_to_dataframe_row(item), kids_df)
   }
 }
-
-

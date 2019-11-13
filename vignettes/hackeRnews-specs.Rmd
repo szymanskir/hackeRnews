@@ -31,7 +31,6 @@ Examples of using the `hackeRnews` package to retrieve data from the official Ha
 
 ```{r warn=FALSE}
 library(hackeRnews)
-future::plan(future::multiprocess) # turn on asynchronous requests
 ```
 
 ### news stories
@@ -87,7 +86,7 @@ It's possible to iterate over latest items by fetching the id of the latest item
 
 For example to fetch 10 latest items:
 
-```{r}
+```{r eval=FALSE}
 max_item_id <- get_max_item_id()
 latest_items <- get_items_by_ids(seq(max_item_id, max_item_id - 10))
 ```
