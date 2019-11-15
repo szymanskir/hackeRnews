@@ -58,7 +58,7 @@ get_item_by_id <- function(id) {
 #'
 #' @examples
 #' \donttest{
-#' get_item_by_ids(c(1,2,3))
+#' get_items_by_ids(c(1,2,3))
 #' }
 #'
 #'

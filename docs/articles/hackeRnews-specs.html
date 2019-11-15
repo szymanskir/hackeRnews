@@ -124,10 +124,10 @@
 <a class="sourceLine" id="cb2-2" data-line-number="2">best_stories[[<span class="dv">1</span>]]</a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; List of 9</span></a>
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt;  $ by         : chr "coloneltcb"</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt;  $ descendants: int 520</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt;  $ descendants: int 571</span></a>
 <a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt;  $ id         : int 21517722</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt;  $ kids       : int [1:46] 21522845 21518009 21523493 21521873 21517769 21517947 21517783 21519894 21520369 21517904 ...</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt;  $ score      : int 1961</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt;  $ kids       : int [1:46] 21518009 21523493 21521873 21517769 21517947 21517783 21519894 21517904 21517949 21520369 ...</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt;  $ score      : int 2056</span></a>
 <a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt;  $ time       : POSIXct[1:1], format: "2019-11-12 21:21:22"</span></a>
 <a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt;  $ title      : chr "Court: Suspicionless Searches of Travelers’ Phones and Laptops Unconstitutional"</span></a>
 <a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt;  $ type       : chr "story"</span></a>
@@ -136,7 +136,7 @@
 <p>There is a method that allows to fetch just raw ids of best/new/top stories as well <code>get_*_stories_ids()</code></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">best_stories_ids &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_best_stories_ids.html">get_best_stories_ids</a></span>()</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2">best_stories_ids[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>] <span class="co"># output truncated for legibility</span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; [1] 21517722 21523780 21513337 21504672 21521472</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; [1] 21517722 21523780 21530860 21525592 21536789</span></a></code></pre></div>
 </div>
 <div id="ask-job-show-stories" class="section level3">
 <h3 class="hasAnchor">
@@ -145,16 +145,17 @@
 <p>For example to fetch the 3 latest ask stories:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">ask_stories &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_latest_ask_stories.html">get_latest_ask_stories</a></span>(<span class="dt">max_items=</span><span class="dv">3</span>)</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2">ask_stories[[<span class="dv">1</span>]]</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; List of 8</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt;  $ by         : chr "amortize"</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt;  $ descendants: int 0</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt;  $ id         : int 21528715</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt;  $ score      : int 5</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt;  $ text       : chr "As a new senior software engineer to a team, I find it very frustrating to push for newer projects to be priori"| __truncated__</span></a>
-<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt;  $ time       : POSIXct[1:1], format: "2019-11-13 20:55:02"</span></a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt;  $ title      : chr "Ask HN: How do you navigate prioritization in mature software teams?"</span></a>
-<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt;  $ type       : chr "story"</span></a>
-<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt;  - attr(*, "class")= chr "hn_item"</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; List of 9</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt;  $ by         : chr "MichaelMoser123"</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt;  $ descendants: int 16</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt;  $ id         : int 21533376</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt;  $ kids       : int [1:8] 21543368 21543362 21543473 21543360 21533514 21533652 21533549 21533934</span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt;  $ score      : int 14</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt;  $ text       : chr "I mean how many of you stick with this test driven development practice consistently? Can you describe the prac"| __truncated__</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt;  $ time       : POSIXct[1:1], format: "2019-11-14 07:57:15"</span></a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt;  $ title      : chr "Ask HN: Do you write tests before the implementation?"</span></a>
+<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt;  $ type       : chr "story"</span></a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt;  - attr(*, "class")= chr "hn_item"</span></a></code></pre></div>
 </div>
 <div id="comments" class="section level3">
 <h3 class="hasAnchor">
@@ -162,20 +163,20 @@
 <p>The discussion in story threads is represented as system of comments. Each story has top level comments ids stored under the <code>kids</code> property. Each comment post can have it’s own set of comments ids under <code>kids</code> property (sub-comments) and so on. In order to retrieve all of the comments of a specific story, just use the <code>get_comments</code> function.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">top_story &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_top_stories.html">get_top_stories</a></span>(<span class="dt">max_items=</span><span class="dv">1</span>)[[<span class="dv">1</span>]]</a>
 <a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw"><a href="../reference/get_comments.html">get_comments</a></span>(top_story)</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt; # A tibble: 328 x 7</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt; # A tibble: 42 x 7</span></a>
 <a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt;         id deleted by      time                text            dead  parent</span></a>
 <a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt;      &lt;int&gt; &lt;lgl&gt;   &lt;chr&gt;   &lt;dttm&gt;              &lt;chr&gt;           &lt;lgl&gt;  &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt;  1  2.15e7 FALSE   judah   2019-11-13 17:45:18 I&amp;#x27;ve been… FALSE 2.15e7</span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt;  2  2.15e7 FALSE   hinkley 2019-11-13 19:04:18 You had me...&lt;… FALSE 2.15e7</span></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt;  3  2.15e7 FALSE   jonath… 2019-11-13 19:18:52 Brave Ads are … FALSE 2.15e7</span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt;  4  2.15e7 FALSE   Tremen… 2019-11-13 20:16:17 &amp;gt;when you c… FALSE 2.15e7</span></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt;  5  2.15e7 FALSE   justsee 2019-11-13 21:10:40 Recent cross-p… FALSE 2.15e7</span></a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt;  6  2.15e7 FALSE   leftyt… 2019-11-13 20:56:38 &amp;gt; To me the… FALSE 2.15e7</span></a>
-<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt;  7  2.15e7 FALSE   wilkys… 2019-11-13 21:09:27 The only thing… FALSE 2.15e7</span></a>
-<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt;  8  2.15e7 FALSE   k_vi    2019-11-13 20:56:46 It&amp;#x27;d be l… FALSE 2.15e7</span></a>
-<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt;  9  2.15e7 FALSE   cyborg… 2019-11-13 20:26:49 I already deci… FALSE 2.15e7</span></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt; 10  2.15e7 FALSE   asdkha… 2019-11-13 20:44:13 Yea, I&amp;#x27;d … FALSE 2.15e7</span></a>
-<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; # … with 318 more rows</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt;  1  2.15e7 FALSE   bhl     2019-11-15 05:33:42 "There&amp;#x27;s … FALSE 2.15e7</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt;  2  2.15e7 FALSE   james_… 2019-11-15 06:18:21 Wow. This is s… FALSE 2.15e7</span></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt;  3  2.15e7 FALSE   est31   2019-11-15 06:05:46 "See also prio… FALSE 2.15e7</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt;  4  2.15e7 FALSE   banach… 2019-11-15 06:23:25 For those curi… FALSE 2.15e7</span></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt;  5  2.15e7 FALSE   mxcros… 2019-11-15 08:22:02 Can you go int… FALSE 2.15e7</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt;  6  2.15e7 FALSE   banach… 2019-11-15 08:34:08 I obviously ha… FALSE 2.15e7</span></a>
+<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt;  7  2.15e7 FALSE   auggie… 2019-11-15 07:12:44 If the matrix … FALSE 2.15e7</span></a>
+<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt;  8  2.15e7 FALSE   suslik  2019-11-15 08:28:06 But you would … FALSE 2.15e7</span></a>
+<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt;  9  2.15e7 FALSE   yxhuvud 2019-11-15 07:19:22 Won&amp;#x27;t you… FALSE 2.15e7</span></a>
+<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt; 10  2.15e7 FALSE   banach… 2019-11-15 07:23:39 Yes but whethe… FALSE 2.15e7</span></a>
+<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; # … with 32 more rows</span></a></code></pre></div>
 </div>
 <div id="user" class="section level3">
 <h3 class="hasAnchor">
@@ -205,9 +206,9 @@
 <p>Latest items and profile changes can be retrieved using <code>get_updates</code></p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">updates &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_updates.html">get_updates</a></span>()</a>
 <a class="sourceLine" id="cb8-2" data-line-number="2">updates<span class="op">$</span>profiles[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>] <span class="co"># output truncated for legibility</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt; [1] "Barrin92" "ghaff"    "blhack"   "the-dude" "etr71115"</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt; [1] "PostOnce"  "qxga"      "bhl"       "sedeki"    "yarapavan"</span></a>
 <a class="sourceLine" id="cb8-4" data-line-number="4">updates<span class="op">$</span>items[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]    <span class="co"># output truncated for legibility</span></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#&gt; [1] 21528722 21528905 21523872 21524622 21525156</span></a></code></pre></div>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#&gt; [1] 21543501 21541650 21542868 21543265 21535389</span></a></code></pre></div>
 </div>
 </div>
 </div>
