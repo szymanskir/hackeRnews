@@ -22,7 +22,7 @@ Parallel api requests can be enabled by running
 }
 \examples{
 \donttest{
-get_item_by_ids(c(1,2,3))
+get_items_by_ids(c(1,2,3))
 }
 
 
