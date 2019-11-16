@@ -22,7 +22,8 @@ Suggests:
     testthat (>= 2.1.0),
     httptest,
     knitr,
-    rmarkdown
+    rmarkdown,
+    spelling
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Imports: 
@@ -34,3 +35,4 @@ Imports:
 VignetteBuilder: knitr
 URL: https://github.com/szymanskir/hackeRnews
 BugReports: https://github.com/szymanskir/hackeRnews/issues
+Language: en-US
