@@ -16,7 +16,9 @@ user corresponding to the specified username
 Get user corresponding to the specified username
 }
 \examples{
+\donttest{
 # Retrieve information about the jl user
 get_user_by_username("jl")
+}
 
 }

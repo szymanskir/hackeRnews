@@ -13,8 +13,10 @@ list of latest ask Hacker News stories ids
 Retrieves latest ask stories ids using Hacker News API
 }
 \examples{
+\donttest{
 # get ids of latest ask stories
 ask_stories_ids <- get_latest_ask_stories_ids()
 ask_stories_ids
+}
 
 }
