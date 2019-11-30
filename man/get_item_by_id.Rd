@@ -17,7 +17,7 @@ Retrieves the item
 corresponding to specified id using Hacker News API
 }
 \details{
-The API in some cases returns a null reponse.
+The API in some cases returns a null response.
 When this situation occurs it is assumed that the item
 does not exist and NA is returned.
 }

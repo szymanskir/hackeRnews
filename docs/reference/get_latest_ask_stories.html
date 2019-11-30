@@ -158,14 +158,15 @@ If max_items = NULL, returns all available</p></td>
     <pre class="examples"><div class='input'><span class='co'># get the lastest ask story on Hacker News</span>
 <span class='no'>latest_ask_story</span> <span class='kw'>&lt;-</span> <span class='fu'>get_latest_ask_stories</span>(<span class='kw'>max_items</span> <span class='kw'>=</span> <span class='fl'>1</span>)
 <span class='no'>latest_ask_story</span></div><div class='output co'>#&gt; [[1]]
-#&gt; List of 8
-#&gt;  $ by         : chr "ufarooqi"
-#&gt;  $ descendants: int 0
-#&gt;  $ id         : int 21669808
-#&gt;  $ score      : int 2
-#&gt;  $ text       : chr "I was working on a product idea for last couple of weeks and thinking about ways to launch a MVP. After some re"| __truncated__
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 14:12:03"
-#&gt;  $ title      : chr "Ask HN: Buffer/Hootsuite for a Product Launch?"
+#&gt; List of 9
+#&gt;  $ by         : chr "aosaigh"
+#&gt;  $ descendants: int 5
+#&gt;  $ id         : int 21669408
+#&gt;  $ kids       : int [1:4] 21670253 21670316 21669578 21670317
+#&gt;  $ score      : int 12
+#&gt;  $ text       : chr "I&amp;#x27;m the only developer on a small web application that is targetting enterprise customers.&lt;p&gt;After meeting"| __truncated__
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 11:33:25"
+#&gt;  $ title      : chr "Ask HN: Where to start with enterprise-level security and procedures?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; </div><div class='input'>
@@ -173,10 +174,24 @@ If max_items = NULL, returns all available</p></td>
 <span class='co'># get 10 latest ask stories on Hacker News</span>
 <span class='no'>latest_10_ask_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_latest_ask_stories</span>(<span class='kw'>max_items</span> <span class='kw'>=</span> <span class='fl'>10</span>)
 <span class='no'>latest_10_ask_stories</span></div><div class='output co'>#&gt; [[1]]
-#&gt; List of 8
+#&gt; List of 9
+#&gt;  $ by         : chr "aosaigh"
+#&gt;  $ descendants: int 5
+#&gt;  $ id         : int 21669408
+#&gt;  $ kids       : int [1:4] 21670253 21670316 21669578 21670317
+#&gt;  $ score      : int 12
+#&gt;  $ text       : chr "I&amp;#x27;m the only developer on a small web application that is targetting enterprise customers.&lt;p&gt;After meeting"| __truncated__
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 11:33:25"
+#&gt;  $ title      : chr "Ask HN: Where to start with enterprise-level security and procedures?"
+#&gt;  $ type       : chr "story"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[2]]
+#&gt; List of 9
 #&gt;  $ by         : chr "ufarooqi"
-#&gt;  $ descendants: int 0
+#&gt;  $ descendants: int 1
 #&gt;  $ id         : int 21669808
+#&gt;  $ kids       : int 21670082
 #&gt;  $ score      : int 2
 #&gt;  $ text       : chr "I was working on a product idea for last couple of weeks and thinking about ways to launch a MVP. After some re"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 14:12:03"
@@ -184,7 +199,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[2]]
+#&gt; [[3]]
 #&gt; List of 8
 #&gt;  $ by         : chr "slientscope21"
 #&gt;  $ descendants: int 0
@@ -196,20 +211,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[3]]
+#&gt; [[4]]
 #&gt; List of 9
-#&gt;  $ by         : chr "aosaigh"
-#&gt;  $ descendants: int 2
-#&gt;  $ id         : int 21669408
-#&gt;  $ kids       : int 21669578
-#&gt;  $ score      : int 7
-#&gt;  $ text       : chr "I&amp;#x27;m the only developer on a small web application that is targetting enterprise customers.&lt;p&gt;After meeting"| __truncated__
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 11:33:25"
-#&gt;  $ title      : chr "Ask HN: Where to start with enterprise-level security and procedures?"
+#&gt;  $ by         : chr "NiloCK"
+#&gt;  $ descendants: int 230
+#&gt;  $ id         : int 21660754
+#&gt;  $ kids       : int [1:138] 21662896 21670256 21661257 21660857 21664213 21661905 21661148 21661256 21661406 21664614 ...
+#&gt;  $ score      : int 182
+#&gt;  $ text       : chr "I&amp;#x27;m an educator with a CS &amp;#x2F; programming background. There&amp;#x27;s a possibility that I&amp;#x27;ll be movi"| __truncated__
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 00:04:47"
+#&gt;  $ title      : chr "Ask HN: What should be taught in high school?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[4]]
+#&gt; [[5]]
 #&gt; List of 8
 #&gt;  $ by         : chr "federiconitidi"
 #&gt;  $ descendants: int 0
@@ -221,52 +236,37 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[5]]
+#&gt; [[6]]
 #&gt; List of 9
 #&gt;  $ by         : chr "cKQjwLJ6sn20"
-#&gt;  $ descendants: int 7
+#&gt;  $ descendants: int 8
 #&gt;  $ id         : int 21665338
 #&gt;  $ kids       : int [1:8] 21668042 21667997 21668663 21668616 21668543 21668546 21668210 21668004
-#&gt;  $ score      : int 22
+#&gt;  $ score      : int 23
 #&gt;  $ text       : chr "I am a disabled software engineer at a mid stage startup who is planning to get an experimental surgery with th"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 17:47:38"
 #&gt;  $ title      : chr "Ask HN: Should I find new job before telling current job about surgery?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[6]]
-#&gt; List of 9
-#&gt;  $ by         : chr "NiloCK"
-#&gt;  $ descendants: int 228
-#&gt;  $ id         : int 21660754
-#&gt;  $ kids       : int [1:137] 21662896 21661257 21660857 21664213 21661905 21661148 21661256 21661406 21664614 21662032 ...
-#&gt;  $ score      : int 181
-#&gt;  $ text       : chr "I&amp;#x27;m an educator with a CS &amp;#x2F; programming background. There&amp;#x27;s a possibility that I&amp;#x27;ll be movi"| __truncated__
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 00:04:47"
-#&gt;  $ title      : chr "Ask HN: What should be taught in high school?"
-#&gt;  $ type       : chr "story"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
 #&gt; [[7]]
-#&gt; List of 9
-#&gt;  $ by         : chr "brianaluv"
-#&gt;  $ descendants: int 26
-#&gt;  $ id         : int 21667309
-#&gt;  $ kids       : int [1:10] 21668715 21668408 21668665 21668459 21668643 21668234 21668757 21667498 21668472 21667851
-#&gt;  $ score      : int 21
-#&gt;  $ text       : chr "I&amp;#x27;ve been working(as a developer) on a software development project for quite a long time now.\nDuring thi"| __truncated__
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:01:25"
-#&gt;  $ title      : chr "Ask HN: Dealing with newcomers' arrogance?"
+#&gt; List of 7
+#&gt;  $ by         : chr "zefy"
+#&gt;  $ descendants: int 0
+#&gt;  $ id         : int 21669998
+#&gt;  $ score      : int 2
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 15:05:45"
+#&gt;  $ title      : chr "Ask HN: Is Anyone Hiring GCP Engineers?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[8]]
 #&gt; List of 9
 #&gt;  $ by         : chr "japhyr"
-#&gt;  $ descendants: int 279
+#&gt;  $ descendants: int 280
 #&gt;  $ id         : int 21660118
 #&gt;  $ kids       : int [1:146] 21661331 21663210 21661382 21661440 21664325 21661430 21663180 21662581 21661976 21661691 ...
-#&gt;  $ score      : int 401
+#&gt;  $ score      : int 404
 #&gt;  $ text       : chr "I think this gets asked most years, and I always enjoy the threads that come out of it. I am thankful for a fam"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 21:55:06"
 #&gt;  $ title      : chr "Ask HN: What are you thankful for?"
@@ -275,37 +275,51 @@ If max_items = NULL, returns all available</p></td>
 #&gt; 
 #&gt; [[9]]
 #&gt; List of 9
-#&gt;  $ by         : chr "c89X"
-#&gt;  $ descendants: int 39
-#&gt;  $ id         : int 21656891
-#&gt;  $ kids       : int [1:21] 21660200 21661024 21657151 21660545 21660434 21658963 21660687 21665875 21660990 21660911 ...
-#&gt;  $ score      : int 104
-#&gt;  $ text       : chr "We run a small SaaS where users are able to create accounts, submit billing information and upload&amp;#x2F;call ML"| __truncated__
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 13:48:40"
-#&gt;  $ title      : chr "Ask HN: How do you deal with atomicity in microservice environments?"
+#&gt;  $ by         : chr "brianaluv"
+#&gt;  $ descendants: int 28
+#&gt;  $ id         : int 21667309
+#&gt;  $ kids       : int [1:10] 21668715 21668408 21668665 21668459 21668643 21668234 21668757 21667498 21668472 21667851
+#&gt;  $ score      : int 22
+#&gt;  $ text       : chr "I&amp;#x27;ve been working(as a developer) on a software development project for quite a long time now.\nDuring thi"| __truncated__
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:01:25"
+#&gt;  $ title      : chr "Ask HN: Dealing with newcomers' arrogance?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[10]]
 #&gt; List of 9
-#&gt;  $ by         : chr "ufarooqi"
-#&gt;  $ descendants: int 2
-#&gt;  $ id         : int 21667131
-#&gt;  $ kids       : int 21667152
-#&gt;  $ score      : int 8
-#&gt;  $ text       : chr "I have seen founders using product hunt, hacker news, reddit and twitter etc. Are there other platforms like this?"
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 23:10:47"
-#&gt;  $ title      : chr "Ask HN: Which platforms do founders mostly use to launch products?"
+#&gt;  $ by         : chr "c89X"
+#&gt;  $ descendants: int 39
+#&gt;  $ id         : int 21656891
+#&gt;  $ kids       : int [1:21] 21660200 21661024 21657151 21660545 21660434 21658963 21660687 21665875 21660990 21660911 ...
+#&gt;  $ score      : int 105
+#&gt;  $ text       : chr "We run a small SaaS where users are able to create accounts, submit billing information and upload&amp;#x2F;call ML"| __truncated__
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 13:48:40"
+#&gt;  $ title      : chr "Ask HN: How do you deal with atomicity in microservice environments?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; </div><div class='input'>
 <span class='co'># get all latest ask stories on Hacker News</span>
 <span class='no'>latest_ask_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_latest_ask_stories</span>()
 <span class='no'>latest_ask_stories</span></div><div class='output co'>#&gt; [[1]]
-#&gt; List of 8
+#&gt; List of 9
+#&gt;  $ by         : chr "aosaigh"
+#&gt;  $ descendants: int 5
+#&gt;  $ id         : int 21669408
+#&gt;  $ kids       : int [1:4] 21670253 21670316 21669578 21670317
+#&gt;  $ score      : int 12
+#&gt;  $ text       : chr "I&amp;#x27;m the only developer on a small web application that is targetting enterprise customers.&lt;p&gt;After meeting"| __truncated__
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 11:33:25"
+#&gt;  $ title      : chr "Ask HN: Where to start with enterprise-level security and procedures?"
+#&gt;  $ type       : chr "story"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[2]]
+#&gt; List of 9
 #&gt;  $ by         : chr "ufarooqi"
-#&gt;  $ descendants: int 0
+#&gt;  $ descendants: int 1
 #&gt;  $ id         : int 21669808
+#&gt;  $ kids       : int 21670082
 #&gt;  $ score      : int 2
 #&gt;  $ text       : chr "I was working on a product idea for last couple of weeks and thinking about ways to launch a MVP. After some re"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 14:12:03"
@@ -313,7 +327,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[2]]
+#&gt; [[3]]
 #&gt; List of 8
 #&gt;  $ by         : chr "slientscope21"
 #&gt;  $ descendants: int 0
@@ -325,20 +339,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[3]]
+#&gt; [[4]]
 #&gt; List of 9
-#&gt;  $ by         : chr "aosaigh"
-#&gt;  $ descendants: int 2
-#&gt;  $ id         : int 21669408
-#&gt;  $ kids       : int 21669578
-#&gt;  $ score      : int 7
-#&gt;  $ text       : chr "I&amp;#x27;m the only developer on a small web application that is targetting enterprise customers.&lt;p&gt;After meeting"| __truncated__
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 11:33:25"
-#&gt;  $ title      : chr "Ask HN: Where to start with enterprise-level security and procedures?"
+#&gt;  $ by         : chr "NiloCK"
+#&gt;  $ descendants: int 230
+#&gt;  $ id         : int 21660754
+#&gt;  $ kids       : int [1:138] 21662896 21670256 21661257 21660857 21664213 21661905 21661148 21661256 21661406 21664614 ...
+#&gt;  $ score      : int 182
+#&gt;  $ text       : chr "I&amp;#x27;m an educator with a CS &amp;#x2F; programming background. There&amp;#x27;s a possibility that I&amp;#x27;ll be movi"| __truncated__
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 00:04:47"
+#&gt;  $ title      : chr "Ask HN: What should be taught in high school?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[4]]
+#&gt; [[5]]
 #&gt; List of 8
 #&gt;  $ by         : chr "federiconitidi"
 #&gt;  $ descendants: int 0
@@ -350,52 +364,37 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[5]]
+#&gt; [[6]]
 #&gt; List of 9
 #&gt;  $ by         : chr "cKQjwLJ6sn20"
-#&gt;  $ descendants: int 7
+#&gt;  $ descendants: int 8
 #&gt;  $ id         : int 21665338
 #&gt;  $ kids       : int [1:8] 21668042 21667997 21668663 21668616 21668543 21668546 21668210 21668004
-#&gt;  $ score      : int 22
+#&gt;  $ score      : int 23
 #&gt;  $ text       : chr "I am a disabled software engineer at a mid stage startup who is planning to get an experimental surgery with th"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 17:47:38"
 #&gt;  $ title      : chr "Ask HN: Should I find new job before telling current job about surgery?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[6]]
-#&gt; List of 9
-#&gt;  $ by         : chr "NiloCK"
-#&gt;  $ descendants: int 228
-#&gt;  $ id         : int 21660754
-#&gt;  $ kids       : int [1:137] 21662896 21661257 21660857 21664213 21661905 21661148 21661256 21661406 21664614 21662032 ...
-#&gt;  $ score      : int 181
-#&gt;  $ text       : chr "I&amp;#x27;m an educator with a CS &amp;#x2F; programming background. There&amp;#x27;s a possibility that I&amp;#x27;ll be movi"| __truncated__
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 00:04:47"
-#&gt;  $ title      : chr "Ask HN: What should be taught in high school?"
-#&gt;  $ type       : chr "story"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
 #&gt; [[7]]
-#&gt; List of 9
-#&gt;  $ by         : chr "brianaluv"
-#&gt;  $ descendants: int 26
-#&gt;  $ id         : int 21667309
-#&gt;  $ kids       : int [1:10] 21668715 21668408 21668665 21668459 21668643 21668234 21668757 21667498 21668472 21667851
-#&gt;  $ score      : int 21
-#&gt;  $ text       : chr "I&amp;#x27;ve been working(as a developer) on a software development project for quite a long time now.\nDuring thi"| __truncated__
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:01:25"
-#&gt;  $ title      : chr "Ask HN: Dealing with newcomers' arrogance?"
+#&gt; List of 7
+#&gt;  $ by         : chr "zefy"
+#&gt;  $ descendants: int 0
+#&gt;  $ id         : int 21669998
+#&gt;  $ score      : int 2
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 15:05:45"
+#&gt;  $ title      : chr "Ask HN: Is Anyone Hiring GCP Engineers?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[8]]
 #&gt; List of 9
 #&gt;  $ by         : chr "japhyr"
-#&gt;  $ descendants: int 279
+#&gt;  $ descendants: int 280
 #&gt;  $ id         : int 21660118
 #&gt;  $ kids       : int [1:146] 21661331 21663210 21661382 21661440 21664325 21661430 21663180 21662581 21661976 21661691 ...
-#&gt;  $ score      : int 401
+#&gt;  $ score      : int 404
 #&gt;  $ text       : chr "I think this gets asked most years, and I always enjoy the threads that come out of it. I am thankful for a fam"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 21:55:06"
 #&gt;  $ title      : chr "Ask HN: What are you thankful for?"
@@ -404,27 +403,27 @@ If max_items = NULL, returns all available</p></td>
 #&gt; 
 #&gt; [[9]]
 #&gt; List of 9
-#&gt;  $ by         : chr "c89X"
-#&gt;  $ descendants: int 39
-#&gt;  $ id         : int 21656891
-#&gt;  $ kids       : int [1:21] 21660200 21661024 21657151 21660545 21660434 21658963 21660687 21665875 21660990 21660911 ...
-#&gt;  $ score      : int 104
-#&gt;  $ text       : chr "We run a small SaaS where users are able to create accounts, submit billing information and upload&amp;#x2F;call ML"| __truncated__
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 13:48:40"
-#&gt;  $ title      : chr "Ask HN: How do you deal with atomicity in microservice environments?"
+#&gt;  $ by         : chr "brianaluv"
+#&gt;  $ descendants: int 28
+#&gt;  $ id         : int 21667309
+#&gt;  $ kids       : int [1:10] 21668715 21668408 21668665 21668459 21668643 21668234 21668757 21667498 21668472 21667851
+#&gt;  $ score      : int 22
+#&gt;  $ text       : chr "I&amp;#x27;ve been working(as a developer) on a software development project for quite a long time now.\nDuring thi"| __truncated__
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:01:25"
+#&gt;  $ title      : chr "Ask HN: Dealing with newcomers' arrogance?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[10]]
 #&gt; List of 9
-#&gt;  $ by         : chr "ufarooqi"
-#&gt;  $ descendants: int 2
-#&gt;  $ id         : int 21667131
-#&gt;  $ kids       : int 21667152
-#&gt;  $ score      : int 8
-#&gt;  $ text       : chr "I have seen founders using product hunt, hacker news, reddit and twitter etc. Are there other platforms like this?"
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 23:10:47"
-#&gt;  $ title      : chr "Ask HN: Which platforms do founders mostly use to launch products?"
+#&gt;  $ by         : chr "c89X"
+#&gt;  $ descendants: int 39
+#&gt;  $ id         : int 21656891
+#&gt;  $ kids       : int [1:21] 21660200 21661024 21657151 21660545 21660434 21658963 21660687 21665875 21660990 21660911 ...
+#&gt;  $ score      : int 105
+#&gt;  $ text       : chr "We run a small SaaS where users are able to create accounts, submit billing information and upload&amp;#x2F;call ML"| __truncated__
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 13:48:40"
+#&gt;  $ title      : chr "Ask HN: How do you deal with atomicity in microservice environments?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
@@ -433,8 +432,8 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ by         : chr "burning_out_101"
 #&gt;  $ descendants: int 147
 #&gt;  $ id         : int 21661054
-#&gt;  $ kids       : int [1:90] 21663125 21662706 21663018 21662981 21662847 21662519 21661729 21663260 21663887 21662917 ...
-#&gt;  $ score      : int 259
+#&gt;  $ kids       : int [1:90] 21663125 21662706 21663018 21662981 21662847 21662519 21661729 21664540 21663260 21663887 ...
+#&gt;  $ score      : int 263
 #&gt;  $ text       : chr "Burning out as an early stage start-up employee. I’ve been employed there a few years, worked miracles, but get"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 01:23:38"
 #&gt;  $ title      : chr "Ask HN: Burning Out"
@@ -443,18 +442,31 @@ If max_items = NULL, returns all available</p></td>
 #&gt; 
 #&gt; [[12]]
 #&gt; List of 9
+#&gt;  $ by         : chr "ufarooqi"
+#&gt;  $ descendants: int 2
+#&gt;  $ id         : int 21667131
+#&gt;  $ kids       : int 21667152
+#&gt;  $ score      : int 10
+#&gt;  $ text       : chr "I have seen founders using product hunt, hacker news, reddit and twitter etc. Are there other platforms like this?"
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 23:10:47"
+#&gt;  $ title      : chr "Ask HN: Which platforms do founders mostly use to launch products?"
+#&gt;  $ type       : chr "story"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[13]]
+#&gt; List of 9
 #&gt;  $ by         : chr "abahlo"
 #&gt;  $ descendants: int 11
 #&gt;  $ id         : int 21665285
 #&gt;  $ kids       : int [1:8] 21666455 21667101 21666144 21667887 21665735 21665546 21667803 21665523
-#&gt;  $ score      : int 16
+#&gt;  $ score      : int 17
 #&gt;  $ text       : chr "Using a single page application like React has become the defacto standard for most web applications.\nI realiz"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 17:36:30"
 #&gt;  $ title      : chr "Ask HN: Why use an SPA?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[13]]
+#&gt; [[14]]
 #&gt; List of 9
 #&gt;  $ by         : chr "trango"
 #&gt;  $ descendants: int 4
@@ -467,26 +479,13 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[14]]
-#&gt; List of 9
-#&gt;  $ by         : chr "sellingwebsite"
-#&gt;  $ descendants: int 10
-#&gt;  $ id         : int 21663651
-#&gt;  $ kids       : int [1:7] 21667553 21665272 21668388 21664854 21666932 21666049 21668217
-#&gt;  $ score      : int 12
-#&gt;  $ text       : chr "The title says it all"
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 12:13:13"
-#&gt;  $ title      : chr "Ask HN: What is the biggest bullshit you have encountered at your workplace?"
-#&gt;  $ type       : chr "story"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
 #&gt; [[15]]
 #&gt; List of 9
 #&gt;  $ by         : chr "rwol"
 #&gt;  $ descendants: int 18
 #&gt;  $ id         : int 21660859
-#&gt;  $ kids       : int [1:13] 21661472 21663464 21665916 21666868 21664732 21662274 21663381 21662872 21661179 21663581 ...
-#&gt;  $ score      : int 39
+#&gt;  $ kids       : int [1:13] 21661472 21663464 21665916 21664732 21666868 21662274 21663381 21662872 21661179 21663581 ...
+#&gt;  $ score      : int 41
 #&gt;  $ text       : chr "Doing post-thanksgiving shopping and thought the HN folk might have some cool gift ideas and deal-hunting strat"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 00:31:36"
 #&gt;  $ title      : chr "Ask HN: Any (tech) black friday deals you'd recommend?"
@@ -494,6 +493,19 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[16]]
+#&gt; List of 9
+#&gt;  $ by         : chr "sellingwebsite"
+#&gt;  $ descendants: int 10
+#&gt;  $ id         : int 21663651
+#&gt;  $ kids       : int [1:7] 21667553 21665272 21664854 21668388 21666932 21666049 21668217
+#&gt;  $ score      : int 13
+#&gt;  $ text       : chr "The title says it all"
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 12:13:13"
+#&gt;  $ title      : chr "Ask HN: What is the biggest bullshit you have encountered at your workplace?"
+#&gt;  $ type       : chr "story"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[17]]
 #&gt; List of 7
 #&gt;  $ by         : chr "pro_sine"
 #&gt;  $ descendants: int 0
@@ -504,33 +516,46 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[17]]
+#&gt; [[18]]
+#&gt; List of 9
+#&gt;  $ by         : chr "throwaway1m"
+#&gt;  $ descendants: int 397
+#&gt;  $ id         : int 21645117
+#&gt;  $ kids       : int [1:107] 21645516 21646369 21645205 21645233 21645882 21646213 21645284 21645321 21647310 21645596 ...
+#&gt;  $ score      : int 656
+#&gt;  $ text       : chr "I&amp;#x27;ve spent the last decade in two FANG companies, and I&amp;#x27;ve got to a high level where my total compens"| __truncated__
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 04:56:51"
+#&gt;  $ title      : chr "Ask HN: Quitting Big Tech, what is it like?"
+#&gt;  $ type       : chr "story"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[19]]
 #&gt; List of 9
 #&gt;  $ by         : chr "Fazel94"
 #&gt;  $ descendants: int 3
 #&gt;  $ id         : int 21666949
 #&gt;  $ kids       : int [1:2] 21667659 21668819
-#&gt;  $ score      : int 3
+#&gt;  $ score      : int 4
 #&gt;  $ text       : chr "I was studying the Embrace, Extend and Extinguish strategy(https:&amp;#x2F;&amp;#x2F;en.wikipedia.org&amp;#x2F;wiki&amp;#x2F;Em"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 22:40:52"
 #&gt;  $ title      : chr "Ask HN: Is ActiveDirectory an Embrace, Extend, Extinguish of LDAP?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[18]]
+#&gt; [[20]]
 #&gt; List of 9
 #&gt;  $ by         : chr "hegemeister"
 #&gt;  $ descendants: int 1
 #&gt;  $ id         : int 21666920
 #&gt;  $ kids       : int 21667102
-#&gt;  $ score      : int 3
+#&gt;  $ score      : int 4
 #&gt;  $ text       : chr "How do you handle international customers, when it comes to billing and taxes?&lt;p&gt;How can I setup a payment syst"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 22:34:56"
 #&gt;  $ title      : chr "Ask HN: SaaS in Germany – How do you handle international customers?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[19]]
+#&gt; [[21]]
 #&gt; List of 9
 #&gt;  $ by         : chr "Coxa"
 #&gt;  $ descendants: int 1
@@ -543,33 +568,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[20]]
-#&gt; List of 9
-#&gt;  $ by         : chr "throwaway1m"
-#&gt;  $ descendants: int 397
-#&gt;  $ id         : int 21645117
-#&gt;  $ kids       : int [1:107] 21645516 21646369 21645205 21645233 21645882 21646213 21645284 21645321 21647310 21645596 ...
-#&gt;  $ score      : int 655
-#&gt;  $ text       : chr "I&amp;#x27;ve spent the last decade in two FANG companies, and I&amp;#x27;ve got to a high level where my total compens"| __truncated__
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 04:56:51"
-#&gt;  $ title      : chr "Ask HN: Quitting Big Tech, what is it like?"
-#&gt;  $ type       : chr "story"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[21]]
+#&gt; [[22]]
 #&gt; List of 9
 #&gt;  $ by         : chr "varrock"
 #&gt;  $ descendants: int 62
 #&gt;  $ id         : int 21659537
 #&gt;  $ kids       : int [1:39] 21660316 21659673 21659815 21659848 21659585 21659840 21659578 21659630 21659765 21659886 ...
-#&gt;  $ score      : int 80
+#&gt;  $ score      : int 82
 #&gt;  $ text       : chr "Are there any resources you recommend? Or do personal projects give you enough problems? And how do you map sol"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 20:09:52"
 #&gt;  $ title      : chr "Ask HN: What has made you a better problem solver in software engineering?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[22]]
+#&gt; [[23]]
 #&gt; List of 9
 #&gt;  $ by         : chr "wil421"
 #&gt;  $ descendants: int 38
@@ -582,29 +594,16 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[23]]
+#&gt; [[24]]
 #&gt; List of 9
 #&gt;  $ by         : chr "dmortin"
 #&gt;  $ descendants: int 7
 #&gt;  $ id         : int 21664023
 #&gt;  $ kids       : int [1:2] 21664554 21664177
-#&gt;  $ score      : int 3
+#&gt;  $ score      : int 4
 #&gt;  $ text       : chr "Editors like Emacs, VI, etc. are great, but IDEs can do much for you if they know the language more intimately "| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 13:50:24"
 #&gt;  $ title      : chr "Ask HN: Why are there no powerful free refactoring libraries for text editors?"
-#&gt;  $ type       : chr "story"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[24]]
-#&gt; List of 9
-#&gt;  $ by         : chr "monkeydust"
-#&gt;  $ descendants: int 2
-#&gt;  $ id         : int 21663218
-#&gt;  $ kids       : int [1:2] 21664825 21664011
-#&gt;  $ score      : int 6
-#&gt;  $ text       : chr "We are exploring how to aggregate significant amount of data from different clients to use in a machine learnin"| __truncated__
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 10:29:34"
-#&gt;  $ title      : chr "Ask HN: De-identifying data without destroying quality"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
@@ -614,7 +613,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ descendants: int 20
 #&gt;  $ id         : int 21653679
 #&gt;  $ kids       : int [1:8] 21658694 21660559 21656463 21660325 21656320 21658118 21657465 21656171
-#&gt;  $ score      : int 11
+#&gt;  $ score      : int 12
 #&gt;  $ text       : chr "I&amp;#x27;m creating a series of articles that reverse engineer your favorite websites. With a focus on fundamenta"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 01:36:01"
 #&gt;  $ title      : chr "Which website can I reverse engineer for you?"
@@ -622,6 +621,19 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[26]]
+#&gt; List of 9
+#&gt;  $ by         : chr "monkeydust"
+#&gt;  $ descendants: int 2
+#&gt;  $ id         : int 21663218
+#&gt;  $ kids       : int [1:2] 21664825 21664011
+#&gt;  $ score      : int 7
+#&gt;  $ text       : chr "We are exploring how to aggregate significant amount of data from different clients to use in a machine learnin"| __truncated__
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 10:29:34"
+#&gt;  $ title      : chr "Ask HN: De-identifying data without destroying quality"
+#&gt;  $ type       : chr "story"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[27]]
 #&gt; List of 8
 #&gt;  $ by         : chr "iameuropean"
 #&gt;  $ descendants: int 0
@@ -633,7 +645,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[27]]
+#&gt; [[28]]
 #&gt; List of 9
 #&gt;  $ by         : chr "dhruvkar"
 #&gt;  $ descendants: int 1
@@ -646,71 +658,71 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[28]]
+#&gt; [[29]]
 #&gt; List of 9
 #&gt;  $ by         : chr "gamesbrainiac"
 #&gt;  $ descendants: int 5
 #&gt;  $ id         : int 21658199
 #&gt;  $ kids       : int [1:4] 21665640 21661307 21660367 21658556
-#&gt;  $ score      : int 6
+#&gt;  $ score      : int 7
 #&gt;  $ text       : chr "Hi there!&lt;p&gt;I am thinking of transitioning from Mac OS to Windows, because I have seen good things about WSL2. "| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 17:00:27"
 #&gt;  $ title      : chr "Ask HN: Anyone Switch from Mac OS to WSL2? How Has the Experience Been?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[29]]
+#&gt; [[30]]
 #&gt; List of 9
 #&gt;  $ by         : chr "alexcnwy"
 #&gt;  $ descendants: int 4
 #&gt;  $ id         : int 21656719
 #&gt;  $ kids       : int [1:4] 21658152 21658462 21659281 21658131
-#&gt;  $ score      : int 6
+#&gt;  $ score      : int 7
 #&gt;  $ text       : chr "I&amp;#x27;ve been a digital nomad for over 3 years and I check out NomadList every now and then but never joined a"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 13:22:54"
 #&gt;  $ title      : chr "Ask HN: Any paying NomadList users here?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[30]]
+#&gt; [[31]]
 #&gt; List of 9
 #&gt;  $ by         : chr "alphagrep12345"
 #&gt;  $ descendants: int 22
 #&gt;  $ id         : int 21653723
-#&gt;  $ kids       : int [1:14] 21654406 21653937 21655224 21656715 21654027 21669326 21655322 21660034 21655067 21657240 ...
-#&gt;  $ score      : int 16
+#&gt;  $ kids       : int [1:14] 21654406 21653937 21655224 21656715 21654027 21655322 21669326 21660034 21655067 21657240 ...
+#&gt;  $ score      : int 17
 #&gt;  $ text       : chr "Most great companies attract people because they have a great mission which is marketed well. Say you have a gr"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 01:45:53"
 #&gt;  $ title      : chr "Ask HN: How do you convince people to work for you as a non-exciting startup?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[31]]
+#&gt; [[32]]
 #&gt; List of 9
 #&gt;  $ by         : chr "jacquesm"
 #&gt;  $ descendants: int 1
 #&gt;  $ id         : int 21653498
 #&gt;  $ kids       : int 21658652
-#&gt;  $ score      : int 11
+#&gt;  $ score      : int 12
 #&gt;  $ text       : chr "Hi there HN, you&amp;#x27;re my &amp;#x27;means of last resort&amp;#x27;, or so I hope. I&amp;#x27;m working on a music project"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 01:09:39"
 #&gt;  $ title      : chr "Ask HN: Does anybody have this annotated music dataset?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[32]]
+#&gt; [[33]]
 #&gt; List of 8
 #&gt;  $ by         : chr "ent101"
 #&gt;  $ descendants: int 1
 #&gt;  $ id         : int 21661581
 #&gt;  $ kids       : int 21664602
-#&gt;  $ score      : int 8
+#&gt;  $ score      : int 9
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 03:37:54"
 #&gt;  $ title      : chr "Ask HN: What are some of the best startup landing pages?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[33]]
+#&gt; [[34]]
 #&gt; List of 8
 #&gt;  $ by         : chr "jason_slack"
 #&gt;  $ descendants: int 0
@@ -722,7 +734,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[34]]
+#&gt; [[35]]
 #&gt; List of 9
 #&gt;  $ by         : chr "UrbanPiper"
 #&gt;  $ descendants: int 2
@@ -732,18 +744,6 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ text       : chr "Looking for recommendations for developer related things from HN crowd here."
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 17:29:46"
 #&gt;  $ title      : chr "Ask HN: Black Friday/Cyber Monday Recommendations for Developers"
-#&gt;  $ type       : chr "story"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[35]]
-#&gt; List of 8
-#&gt;  $ by         : chr "eshlomo"
-#&gt;  $ descendants: int 2
-#&gt;  $ id         : int 21665678
-#&gt;  $ kids       : int 21665861
-#&gt;  $ score      : int 3
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 18:33:41"
-#&gt;  $ title      : chr "Ask HN: Git merge vs. rebase, when and how?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
@@ -761,19 +761,6 @@ If max_items = NULL, returns all available</p></td>
 #&gt; 
 #&gt; [[37]]
 #&gt; List of 9
-#&gt;  $ by         : chr "afpx"
-#&gt;  $ descendants: int 24
-#&gt;  $ id         : int 21658012
-#&gt;  $ kids       : int [1:15] 21658063 21658062 21658848 21659961 21658238 21662085 21658230 21660226 21664274 21660683 ...
-#&gt;  $ score      : int 9
-#&gt;  $ text       : chr "My skills are current. I’ve been a practicing full stack developer &amp;#x2F; data engineer for many years. I’ll ad"| __truncated__
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 16:37:32"
-#&gt;  $ title      : chr "Late 40s, no job offers. Could a PhD help?"
-#&gt;  $ type       : chr "story"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[38]]
-#&gt; List of 9
 #&gt;  $ by         : chr "hotz"
 #&gt;  $ descendants: int 2
 #&gt;  $ id         : int 21646208
@@ -785,7 +772,32 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
+#&gt; [[38]]
+#&gt; List of 9
+#&gt;  $ by         : chr "afpx"
+#&gt;  $ descendants: int 24
+#&gt;  $ id         : int 21658012
+#&gt;  $ kids       : int [1:15] 21658063 21658062 21658848 21659961 21658238 21662085 21658230 21660226 21664274 21660683 ...
+#&gt;  $ score      : int 10
+#&gt;  $ text       : chr "My skills are current. I’ve been a practicing full stack developer &amp;#x2F; data engineer for many years. I’ll ad"| __truncated__
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 16:37:32"
+#&gt;  $ title      : chr "Late 40s, no job offers. Could a PhD help?"
+#&gt;  $ type       : chr "story"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
 #&gt; [[39]]
+#&gt; List of 8
+#&gt;  $ by         : chr "eshlomo"
+#&gt;  $ descendants: int 2
+#&gt;  $ id         : int 21665678
+#&gt;  $ kids       : int 21665861
+#&gt;  $ score      : int 3
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 18:33:41"
+#&gt;  $ title      : chr "Ask HN: Git merge vs. rebase, when and how?"
+#&gt;  $ type       : chr "story"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[40]]
 #&gt; List of 9
 #&gt;  $ by         : chr "non-entity"
 #&gt;  $ descendants: int 17
@@ -798,7 +810,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[40]]
+#&gt; [[41]]
 #&gt; List of 9
 #&gt;  $ by         : chr "HerrmannM"
 #&gt;  $ descendants: int 8
@@ -811,7 +823,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[41]]
+#&gt; [[42]]
 #&gt; List of 9
 #&gt;  $ by         : chr "crazygringo"
 #&gt;  $ descendants: int 4
@@ -824,12 +836,12 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[42]]
+#&gt; [[43]]
 #&gt; List of 9
 #&gt;  $ by         : chr "novice1234"
 #&gt;  $ descendants: int 6
 #&gt;  $ id         : int 21649562
-#&gt;  $ kids       : int [1:5] 21659818 21649668 21654045 21651384 21654882
+#&gt;  $ kids       : int [1:5] 21659818 21649668 21651384 21654045 21654882
 #&gt;  $ score      : int 9
 #&gt;  $ text       : chr "I was going through job listings on stackoverflow. I saw a lot of job listing for remote positions.&lt;p&gt;I find it"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 17:56:57"
@@ -837,7 +849,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[43]]
+#&gt; [[44]]
 #&gt; List of 9
 #&gt;  $ by         : chr "juan4thewin"
 #&gt;  $ descendants: int 4
@@ -850,7 +862,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[44]]
+#&gt; [[45]]
 #&gt; List of 9
 #&gt;  $ by         : chr "cfv"
 #&gt;  $ descendants: int 2
@@ -863,7 +875,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[45]]
+#&gt; [[46]]
 #&gt; List of 9
 #&gt;  $ by         : chr "ASlave2Gravity"
 #&gt;  $ descendants: int 5
@@ -873,19 +885,6 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ text       : chr "I often find threads with a few interesting and promising comments, which I&amp;#x27;m assuming will have many repl"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 10:51:58"
 #&gt;  $ title      : chr "Ask HN: Email updates on comment replies for non-OP?"
-#&gt;  $ type       : chr "story"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[46]]
-#&gt; List of 9
-#&gt;  $ by         : chr "brundolf"
-#&gt;  $ descendants: int 10
-#&gt;  $ id         : int 21665846
-#&gt;  $ kids       : int [1:4] 21666380 21666199 21666347 21665988
-#&gt;  $ score      : int 5
-#&gt;  $ text       : chr "My father is a climate denier, but one that&amp;#x27;s willing to hear out an argument. He thinks observed climate "| __truncated__
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 19:06:21"
-#&gt;  $ title      : chr "Ask HN: Concise sources of evidence making the case for climate change?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
@@ -903,18 +902,31 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[48]]
+#&gt; List of 9
+#&gt;  $ by         : chr "brundolf"
+#&gt;  $ descendants: int 10
+#&gt;  $ id         : int 21665846
+#&gt;  $ kids       : int [1:4] 21666380 21666199 21666347 21665988
+#&gt;  $ score      : int 6
+#&gt;  $ text       : chr "My father is a climate denier, but one that&amp;#x27;s willing to hear out an argument. He thinks observed climate "| __truncated__
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 19:06:21"
+#&gt;  $ title      : chr "Ask HN: Concise sources of evidence making the case for climate change?"
+#&gt;  $ type       : chr "story"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[49]]
 #&gt; List of 8
 #&gt;  $ by         : chr "vishnu_ks"
 #&gt;  $ descendants: int 1
 #&gt;  $ id         : int 21650655
 #&gt;  $ kids       : int 21653746
-#&gt;  $ score      : int 7
+#&gt;  $ score      : int 8
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 19:42:12"
 #&gt;  $ title      : chr "Ask HN: What are some profitable businesses that came out of Show HN?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[49]]
+#&gt; [[50]]
 #&gt; List of 8
 #&gt;  $ by         : chr "stbullard"
 #&gt;  $ descendants: int 7
@@ -926,7 +938,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[50]]
+#&gt; [[51]]
 #&gt; List of 8
 #&gt;  $ by         : chr "lackita"
 #&gt;  $ descendants: int 11
@@ -938,7 +950,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[51]]
+#&gt; [[52]]
 #&gt; List of 8
 #&gt;  $ by         : chr "stirrat"
 #&gt;  $ descendants: int 4
@@ -950,7 +962,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[52]]
+#&gt; [[53]]
 #&gt; List of 8
 #&gt;  $ by         : chr "andrewstuart"
 #&gt;  $ descendants: int 1
@@ -962,7 +974,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[53]]
+#&gt; [[54]]
 #&gt; List of 9
 #&gt;  $ by         : chr "haysstanford"
 #&gt;  $ descendants: int 1
@@ -975,7 +987,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[54]]
+#&gt; [[55]]
 #&gt; List of 9
 #&gt;  $ by         : chr "throwaway40324"
 #&gt;  $ descendants: int 10
@@ -988,7 +1000,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[55]]
+#&gt; [[56]]
 #&gt; List of 8
 #&gt;  $ by         : chr "reilly3000"
 #&gt;  $ descendants: int 0
@@ -1000,7 +1012,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[56]]
+#&gt; [[57]]
 #&gt; List of 8
 #&gt;  $ by         : chr "vuxel"
 #&gt;  $ descendants: int 0
@@ -1012,7 +1024,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[57]]
+#&gt; [[58]]
 #&gt; List of 9
 #&gt;  $ by         : chr "mehtest"
 #&gt;  $ descendants: int 1
@@ -1025,7 +1037,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[58]]
+#&gt; [[59]]
 #&gt; List of 9
 #&gt;  $ by         : chr "miketat"
 #&gt;  $ descendants: int 0
@@ -1038,7 +1050,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[59]]
+#&gt; [[60]]
 #&gt; List of 9
 #&gt;  $ by         : chr "kylebenzle"
 #&gt;  $ descendants: int 1
@@ -1051,7 +1063,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[60]]
+#&gt; [[61]]
 #&gt; List of 8
 #&gt;  $ by         : chr "meagher"
 #&gt;  $ descendants: int 0
@@ -1063,7 +1075,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[61]]
+#&gt; [[62]]
 #&gt; List of 8
 #&gt;  $ by         : chr "unearthed"
 #&gt;  $ descendants: int 0
@@ -1075,7 +1087,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[62]]
+#&gt; [[63]]
 #&gt; List of 8
 #&gt;  $ by         : chr "throwawayt856"
 #&gt;  $ descendants: int 1
@@ -1087,7 +1099,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[63]]
+#&gt; [[64]]
 #&gt; List of 8
 #&gt;  $ by         : chr "throwaway_cfo"
 #&gt;  $ descendants: int 0
@@ -1099,7 +1111,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[64]]
+#&gt; [[65]]
 #&gt; List of 8
 #&gt;  $ by         : chr "throwawayt856"
 #&gt;  $ descendants: int 1
@@ -1111,7 +1123,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[65]]
+#&gt; [[66]]
 #&gt; List of 8
 #&gt;  $ by         : chr "liamg"
 #&gt;  $ descendants: int 0
@@ -1123,7 +1135,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[66]]
+#&gt; [[67]]
 #&gt; List of 8
 #&gt;  $ by         : chr "666lumberjack"
 #&gt;  $ descendants: int 0
@@ -1135,7 +1147,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[67]]
+#&gt; [[68]]
 #&gt; List of 7
 #&gt;  $ by         : chr "mlejva"
 #&gt;  $ descendants: int 0
@@ -1146,7 +1158,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[68]]
+#&gt; [[69]]
 #&gt; List of 9
 #&gt;  $ by         : chr "tictoc"
 #&gt;  $ descendants: int 1
@@ -1156,18 +1168,6 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ text       : chr "Say I am a mid to senior developer. I&amp;#x27;ve heard people making ridiculous amounts of money. Where do I get t"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 15:05:33"
 #&gt;  $ title      : chr "Ask HN: What can I reasonably expect to make at a FAANG?"
-#&gt;  $ type       : chr "story"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[69]]
-#&gt; List of 8
-#&gt;  $ by         : chr "b-a-a-s"
-#&gt;  $ descendants: int 0
-#&gt;  $ id         : int 21664252
-#&gt;  $ score      : int 1
-#&gt;  $ text       : chr "Stories of successful YC companies &amp;amp; founders are well-known. But it is only a tiny part of all amazing &amp;am"| __truncated__
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 14:35:28"
-#&gt;  $ title      : chr "Ask HN: Inspiring stories of failed YC founders. What did happen with them next?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; </div><div class='input'># }

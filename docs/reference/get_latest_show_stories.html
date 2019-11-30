@@ -159,15 +159,15 @@ If max_items = NULL, returns all available</p></td>
 <span class='no'>latest_show_story</span> <span class='kw'>&lt;-</span> <span class='fu'>get_latest_show_stories</span>(<span class='kw'>max_items</span> <span class='kw'>=</span> <span class='fl'>1</span>)
 <span class='no'>latest_show_story</span></div><div class='output co'>#&gt; [[1]]
 #&gt; List of 9
-#&gt;  $ by         : chr "acasajus"
-#&gt;  $ descendants: int 21
-#&gt;  $ id         : int 21666983
-#&gt;  $ kids       : int [1:8] 21668874 21669710 21668317 21668142 21668178 21668399 21667806 21669033
-#&gt;  $ score      : int 71
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 22:46:12"
-#&gt;  $ title      : chr "Show HN: Keycat – A self-hosted end-to-end encrypted password manager"
+#&gt;  $ by         : chr "ggerganov"
+#&gt;  $ descendants: int 1
+#&gt;  $ id         : int 21670239
+#&gt;  $ kids       : int 21670247
+#&gt;  $ score      : int 2
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 16:02:14"
+#&gt;  $ title      : chr "Show HN: Dot-to-ASCII – Graphviz to ASCII Converter"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://key.cat/"
+#&gt;  $ url        : chr "https://dot-to-ascii.ggerganov.com"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; </div><div class='input'>
 <span class='co'># \donttest{</span>
@@ -175,30 +175,43 @@ If max_items = NULL, returns all available</p></td>
 <span class='no'>latest_10_show_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_latest_show_stories</span>(<span class='kw'>max_items</span> <span class='kw'>=</span> <span class='fl'>10</span>)
 <span class='no'>latest_10_show_stories</span></div><div class='output co'>#&gt; [[1]]
 #&gt; List of 9
+#&gt;  $ by         : chr "ggerganov"
+#&gt;  $ descendants: int 1
+#&gt;  $ id         : int 21670239
+#&gt;  $ kids       : int 21670247
+#&gt;  $ score      : int 2
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 16:02:14"
+#&gt;  $ title      : chr "Show HN: Dot-to-ASCII – Graphviz to ASCII Converter"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://dot-to-ascii.ggerganov.com"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[2]]
+#&gt; List of 9
 #&gt;  $ by         : chr "acasajus"
 #&gt;  $ descendants: int 21
 #&gt;  $ id         : int 21666983
 #&gt;  $ kids       : int [1:8] 21668874 21669710 21668317 21668142 21668178 21668399 21667806 21669033
-#&gt;  $ score      : int 71
+#&gt;  $ score      : int 75
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 22:46:12"
 #&gt;  $ title      : chr "Show HN: Keycat – A self-hosted end-to-end encrypted password manager"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://key.cat/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[2]]
+#&gt; [[3]]
 #&gt; List of 8
 #&gt;  $ by         : chr "ekoutanov"
 #&gt;  $ descendants: int 0
 #&gt;  $ id         : int 21669382
-#&gt;  $ score      : int 2
+#&gt;  $ score      : int 4
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 11:21:46"
 #&gt;  $ title      : chr "Show HN: Broker-less simulation and mocking for Kafka"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://github.com/obsidiandynamics/jackdaw"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[3]]
+#&gt; [[4]]
 #&gt; List of 8
 #&gt;  $ by         : chr "alexellisuk"
 #&gt;  $ descendants: int 0
@@ -210,7 +223,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://github.com/inlets/inletsctl/pull/11"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[4]]
+#&gt; [[5]]
 #&gt; List of 9
 #&gt;  $ by         : chr "sloev"
 #&gt;  $ descendants: int 8
@@ -223,20 +236,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://vrangen.net/fuzzy"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[5]]
+#&gt; [[6]]
 #&gt; List of 9
 #&gt;  $ by         : chr "steven_pack"
 #&gt;  $ descendants: int 76
 #&gt;  $ id         : int 21654705
-#&gt;  $ kids       : int [1:32] 21656548 21658361 21656763 21657376 21656963 21655165 21667372 21657042 21656852 21667485 ...
-#&gt;  $ score      : int 104
+#&gt;  $ kids       : int [1:32] 21656548 21658361 21656763 21657376 21656963 21655165 21657042 21667372 21656852 21667485 ...
+#&gt;  $ score      : int 105
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 06:00:50"
 #&gt;  $ title      : chr "Show HN: Notimeforbooks.com – Read a book, one page at a time, in your inbox"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://notimeforbooks.com"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[6]]
+#&gt; [[7]]
 #&gt; List of 9
 #&gt;  $ by         : chr "modnine"
 #&gt;  $ descendants: int 1
@@ -249,12 +262,12 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://github.com/zpratt/local-openfaas-workbench"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[7]]
+#&gt; [[8]]
 #&gt; List of 9
 #&gt;  $ by         : chr "mardix"
 #&gt;  $ descendants: int 40
 #&gt;  $ id         : int 21660996
-#&gt;  $ kids       : int [1:14] 21663287 21664637 21664727 21663441 21662879 21664458 21666391 21664790 21664033 21665887 ...
+#&gt;  $ kids       : int [1:14] 21663287 21664637 21664458 21664727 21663441 21662879 21666391 21664790 21664033 21665887 ...
 #&gt;  $ score      : int 63
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 01:06:21"
 #&gt;  $ title      : chr "Show HN: Assembly: A Pythonic Object-Oriented Web Framework Built on Flask"
@@ -262,26 +275,13 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://mardix.github.io/assembly/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[8]]
-#&gt; List of 9
-#&gt;  $ by         : chr "nymphmechanic"
-#&gt;  $ descendants: int 1
-#&gt;  $ id         : int 21668152
-#&gt;  $ kids       : int 21668902
-#&gt;  $ score      : int 5
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 03:31:41"
-#&gt;  $ title      : chr "Show HN: Nymph, a C like programming language"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://gitHub.com/maelswarm/nymph"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
 #&gt; [[9]]
 #&gt; List of 9
 #&gt;  $ by         : chr "johndamaia"
-#&gt;  $ descendants: int 66
+#&gt;  $ descendants: int 67
 #&gt;  $ id         : int 21656864
 #&gt;  $ kids       : int [1:20] 21656872 21658414 21660050 21657952 21660794 21658581 21660830 21659179 21658640 21660953 ...
-#&gt;  $ score      : int 137
+#&gt;  $ score      : int 138
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 13:45:13"
 #&gt;  $ title      : chr "Show HN: Building websites from Sketch using deep learning – public launch"
 #&gt;  $ type       : chr "story"
@@ -305,30 +305,43 @@ If max_items = NULL, returns all available</p></td>
 <span class='no'>latest_show_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_latest_show_stories</span>()
 <span class='no'>latest_show_stories</span></div><div class='output co'>#&gt; [[1]]
 #&gt; List of 9
+#&gt;  $ by         : chr "ggerganov"
+#&gt;  $ descendants: int 1
+#&gt;  $ id         : int 21670239
+#&gt;  $ kids       : int 21670247
+#&gt;  $ score      : int 2
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 16:02:14"
+#&gt;  $ title      : chr "Show HN: Dot-to-ASCII – Graphviz to ASCII Converter"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://dot-to-ascii.ggerganov.com"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[2]]
+#&gt; List of 9
 #&gt;  $ by         : chr "acasajus"
 #&gt;  $ descendants: int 21
 #&gt;  $ id         : int 21666983
 #&gt;  $ kids       : int [1:8] 21668874 21669710 21668317 21668142 21668178 21668399 21667806 21669033
-#&gt;  $ score      : int 71
+#&gt;  $ score      : int 75
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 22:46:12"
 #&gt;  $ title      : chr "Show HN: Keycat – A self-hosted end-to-end encrypted password manager"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://key.cat/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[2]]
+#&gt; [[3]]
 #&gt; List of 8
 #&gt;  $ by         : chr "ekoutanov"
 #&gt;  $ descendants: int 0
 #&gt;  $ id         : int 21669382
-#&gt;  $ score      : int 2
+#&gt;  $ score      : int 4
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 11:21:46"
 #&gt;  $ title      : chr "Show HN: Broker-less simulation and mocking for Kafka"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://github.com/obsidiandynamics/jackdaw"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[3]]
+#&gt; [[4]]
 #&gt; List of 8
 #&gt;  $ by         : chr "alexellisuk"
 #&gt;  $ descendants: int 0
@@ -340,7 +353,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://github.com/inlets/inletsctl/pull/11"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[4]]
+#&gt; [[5]]
 #&gt; List of 9
 #&gt;  $ by         : chr "sloev"
 #&gt;  $ descendants: int 8
@@ -353,20 +366,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://vrangen.net/fuzzy"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[5]]
+#&gt; [[6]]
 #&gt; List of 9
 #&gt;  $ by         : chr "steven_pack"
 #&gt;  $ descendants: int 76
 #&gt;  $ id         : int 21654705
-#&gt;  $ kids       : int [1:32] 21656548 21658361 21656763 21657376 21656963 21655165 21667372 21657042 21656852 21667485 ...
-#&gt;  $ score      : int 104
+#&gt;  $ kids       : int [1:32] 21656548 21658361 21656763 21657376 21656963 21655165 21657042 21667372 21656852 21667485 ...
+#&gt;  $ score      : int 105
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 06:00:50"
 #&gt;  $ title      : chr "Show HN: Notimeforbooks.com – Read a book, one page at a time, in your inbox"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://notimeforbooks.com"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[6]]
+#&gt; [[7]]
 #&gt; List of 9
 #&gt;  $ by         : chr "modnine"
 #&gt;  $ descendants: int 1
@@ -379,12 +392,12 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://github.com/zpratt/local-openfaas-workbench"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[7]]
+#&gt; [[8]]
 #&gt; List of 9
 #&gt;  $ by         : chr "mardix"
 #&gt;  $ descendants: int 40
 #&gt;  $ id         : int 21660996
-#&gt;  $ kids       : int [1:14] 21663287 21664637 21664727 21663441 21662879 21664458 21666391 21664790 21664033 21665887 ...
+#&gt;  $ kids       : int [1:14] 21663287 21664637 21664458 21664727 21663441 21662879 21666391 21664790 21664033 21665887 ...
 #&gt;  $ score      : int 63
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 01:06:21"
 #&gt;  $ title      : chr "Show HN: Assembly: A Pythonic Object-Oriented Web Framework Built on Flask"
@@ -392,26 +405,13 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://mardix.github.io/assembly/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[8]]
-#&gt; List of 9
-#&gt;  $ by         : chr "nymphmechanic"
-#&gt;  $ descendants: int 1
-#&gt;  $ id         : int 21668152
-#&gt;  $ kids       : int 21668902
-#&gt;  $ score      : int 5
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 03:31:41"
-#&gt;  $ title      : chr "Show HN: Nymph, a C like programming language"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://gitHub.com/maelswarm/nymph"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
 #&gt; [[9]]
 #&gt; List of 9
 #&gt;  $ by         : chr "johndamaia"
-#&gt;  $ descendants: int 66
+#&gt;  $ descendants: int 67
 #&gt;  $ id         : int 21656864
 #&gt;  $ kids       : int [1:20] 21656872 21658414 21660050 21657952 21660794 21658581 21660830 21659179 21658640 21660953 ...
-#&gt;  $ score      : int 137
+#&gt;  $ score      : int 138
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 13:45:13"
 #&gt;  $ title      : chr "Show HN: Building websites from Sketch using deep learning – public launch"
 #&gt;  $ type       : chr "story"
@@ -433,6 +433,19 @@ If max_items = NULL, returns all available</p></td>
 #&gt; 
 #&gt; [[11]]
 #&gt; List of 9
+#&gt;  $ by         : chr "nymphmechanic"
+#&gt;  $ descendants: int 2
+#&gt;  $ id         : int 21668152
+#&gt;  $ kids       : int [1:2] 21670309 21668902
+#&gt;  $ score      : int 6
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 03:31:41"
+#&gt;  $ title      : chr "Show HN: Nymph, a C like programming language"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://gitHub.com/maelswarm/nymph"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[12]]
+#&gt; List of 9
 #&gt;  $ by         : chr "vforissi"
 #&gt;  $ descendants: int 1
 #&gt;  $ id         : int 21667532
@@ -444,7 +457,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[12]]
+#&gt; [[13]]
+#&gt; List of 9
+#&gt;  $ by         : chr "dsteinman"
+#&gt;  $ descendants: int 35
+#&gt;  $ id         : int 21651310
+#&gt;  $ kids       : int [1:9] 21651674 21652006 21651657 21651925 21655068 21653080 21652970 21652201 21651654
+#&gt;  $ score      : int 70
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 20:47:20"
+#&gt;  $ title      : chr "Show HN: Borg Voice Generator"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://jaxcore.github.io/jaxcore-say/borg-example/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[14]]
 #&gt; List of 9
 #&gt;  $ by         : chr "joshi4"
 #&gt;  $ descendants: int 17
@@ -457,33 +483,46 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[13]]
+#&gt; [[15]]
 #&gt; List of 9
-#&gt;  $ by         : chr "dsteinman"
-#&gt;  $ descendants: int 35
-#&gt;  $ id         : int 21651310
-#&gt;  $ kids       : int [1:9] 21651674 21652006 21651657 21651925 21655068 21653080 21652970 21652201 21651654
-#&gt;  $ score      : int 69
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 20:47:20"
-#&gt;  $ title      : chr "Show HN: Borg Voice Generator"
+#&gt;  $ by         : chr "makaronich"
+#&gt;  $ descendants: int 2
+#&gt;  $ id         : int 21647243
+#&gt;  $ kids       : int [1:2] 21647639 21648769
+#&gt;  $ score      : int 50
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 13:19:34"
+#&gt;  $ title      : chr "Show HN: SQL Habit – learn SQL with Real Examples from Product and Marketing"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://jaxcore.github.io/jaxcore-say/borg-example/"
+#&gt;  $ url        : chr "https://www.sqlhabit.com/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[14]]
+#&gt; [[16]]
 #&gt; List of 9
 #&gt;  $ by         : chr "bluestreak"
 #&gt;  $ descendants: int 5
 #&gt;  $ id         : int 21666790
-#&gt;  $ kids       : int [1:4] 21669920 21666800 21669831 21666883
-#&gt;  $ score      : int 15
+#&gt;  $ kids       : int [1:4] 21666800 21669920 21669831 21666883
+#&gt;  $ score      : int 16
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 22:03:32"
 #&gt;  $ title      : chr "Show HN: QuestDB – fast time series database, zero-GC Java"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://www.questdb.io/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[15]]
+#&gt; [[17]]
+#&gt; List of 9
+#&gt;  $ by         : chr "rcarmo"
+#&gt;  $ descendants: int 3
+#&gt;  $ id         : int 21657316
+#&gt;  $ kids       : int 21657409
+#&gt;  $ score      : int 17
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 14:52:12"
+#&gt;  $ title      : chr "Show HN: Piku, a Micro-PaaS for ARM and x86"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://github.com/piku/piku"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[18]]
 #&gt; List of 9
 #&gt;  $ by         : chr "whitezebra"
 #&gt;  $ descendants: int 1
@@ -496,67 +535,29 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://evertrove.co"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[16]]
-#&gt; List of 9
-#&gt;  $ by         : chr "makaronich"
-#&gt;  $ descendants: int 2
-#&gt;  $ id         : int 21647243
-#&gt;  $ kids       : int [1:2] 21647639 21648769
-#&gt;  $ score      : int 48
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 13:19:34"
-#&gt;  $ title      : chr "Show HN: SQL Habit – learn SQL with Real Examples from Product and Marketing"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://www.sqlhabit.com/"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[17]]
-#&gt; List of 9
-#&gt;  $ by         : chr "rcarmo"
-#&gt;  $ descendants: int 3
-#&gt;  $ id         : int 21657316
-#&gt;  $ kids       : int 21657409
-#&gt;  $ score      : int 16
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 14:52:12"
-#&gt;  $ title      : chr "Show HN: Piku, a Micro-PaaS for ARM and x86"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://github.com/piku/piku"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[18]]
+#&gt; [[19]]
 #&gt; List of 9
 #&gt;  $ by         : chr "nextdns"
 #&gt;  $ descendants: int 43
 #&gt;  $ id         : int 21648662
 #&gt;  $ kids       : int [1:10] 21652611 21651758 21649862 21650919 21653468 21649681 21652704 21652694 21654552 21650592
-#&gt;  $ score      : int 122
+#&gt;  $ score      : int 123
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 16:31:26"
 #&gt;  $ title      : chr "Show HN: TrackingTheTrackers – Is a website disguising its 3rd-party trackers?"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://trackingthetrackers.com/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[19]]
+#&gt; [[20]]
 #&gt; List of 8
 #&gt;  $ by         : chr "alexellisuk"
 #&gt;  $ descendants: int 0
 #&gt;  $ id         : int 21657711
-#&gt;  $ score      : int 25
+#&gt;  $ score      : int 26
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 15:51:41"
 #&gt;  $ title      : chr "Show HN: Openfaas-Cloud: Managed OpenFaaS for Teams"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://github.com/openfaas/openfaas-cloud"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[20]]
-#&gt; List of 8
-#&gt;  $ by         : chr "ImpressiveWebs"
-#&gt;  $ descendants: int 0
-#&gt;  $ id         : int 21666995
-#&gt;  $ score      : int 7
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 22:47:59"
-#&gt;  $ title      : chr "Show HN: I've compiled all my JavaScript/DOM tips/articles into 3 E-Books"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://leanpub.com/b/javascriptdombundle"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[21]]
@@ -572,6 +573,19 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[22]]
+#&gt; List of 9
+#&gt;  $ by         : chr "lutun"
+#&gt;  $ descendants: int 17
+#&gt;  $ id         : int 21644570
+#&gt;  $ kids       : int [1:6] 21652905 21652602 21665185 21645474 21651852 21645264
+#&gt;  $ score      : int 75
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 02:40:14"
+#&gt;  $ title      : chr "Show HN: Gorse – A recommender system back end based on collaborative filtering"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://gorse.io/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[23]]
 #&gt; List of 8
 #&gt;  $ by         : chr "olegnn"
 #&gt;  $ descendants: int 0
@@ -583,20 +597,19 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://github.com/olegnn/join"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[23]]
-#&gt; List of 9
-#&gt;  $ by         : chr "lutun"
-#&gt;  $ descendants: int 17
-#&gt;  $ id         : int 21644570
-#&gt;  $ kids       : int [1:6] 21652905 21652602 21665185 21645474 21651852 21645264
-#&gt;  $ score      : int 74
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 02:40:14"
-#&gt;  $ title      : chr "Show HN: Gorse – A recommender system back end based on collaborative filtering"
+#&gt; [[24]]
+#&gt; List of 8
+#&gt;  $ by         : chr "ImpressiveWebs"
+#&gt;  $ descendants: int 0
+#&gt;  $ id         : int 21666995
+#&gt;  $ score      : int 7
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 22:47:59"
+#&gt;  $ title      : chr "Show HN: I've compiled all my JavaScript/DOM tips/articles into 3 E-Books"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://gorse.io/"
+#&gt;  $ url        : chr "https://leanpub.com/b/javascriptdombundle"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[24]]
+#&gt; [[25]]
 #&gt; List of 9
 #&gt;  $ by         : chr "alyssaxuu"
 #&gt;  $ descendants: int 6
@@ -609,7 +622,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://github.com/alyssaxuu/flowy"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[25]]
+#&gt; [[26]]
 #&gt; List of 9
 #&gt;  $ by         : chr "janesconference"
 #&gt;  $ descendants: int 2
@@ -622,7 +635,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://dsp.audio/dovetail/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[26]]
+#&gt; [[27]]
 #&gt; List of 9
 #&gt;  $ by         : chr "sukeesh"
 #&gt;  $ descendants: int 1
@@ -633,18 +646,6 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ title      : chr "Show HN: Kubernetes Cronjob/Job Notifier to Slack"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://github.com/sukeesh/k8s-job-notify"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[27]]
-#&gt; List of 8
-#&gt;  $ by         : chr "lukaszmtw"
-#&gt;  $ descendants: int 0
-#&gt;  $ id         : int 21658741
-#&gt;  $ score      : int 6
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 18:00:56"
-#&gt;  $ title      : chr "Show HN: Epic Black Friday – Best Black Friday Deals for Webdevs, No Bullshit"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://epicblackfriday.co"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[28]]
@@ -661,16 +662,15 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[29]]
-#&gt; List of 9
-#&gt;  $ by         : chr "yelabbassi"
-#&gt;  $ descendants: int 2
-#&gt;  $ id         : int 21652173
-#&gt;  $ kids       : int 21653279
-#&gt;  $ score      : int 9
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 22:10:26"
-#&gt;  $ title      : chr "Show HN: A modern app to watch public domain movies"
+#&gt; List of 8
+#&gt;  $ by         : chr "lukaszmtw"
+#&gt;  $ descendants: int 0
+#&gt;  $ id         : int 21658741
+#&gt;  $ score      : int 6
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 18:00:56"
+#&gt;  $ title      : chr "Show HN: Epic Black Friday – Best Black Friday Deals for Webdevs, No Bullshit"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://cinedantan.com"
+#&gt;  $ url        : chr "https://epicblackfriday.co"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[30]]
@@ -678,7 +678,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ by         : chr "verumnoslib"
 #&gt;  $ descendants: int 0
 #&gt;  $ id         : int 21646910
-#&gt;  $ score      : int 7
+#&gt;  $ score      : int 8
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 12:02:26"
 #&gt;  $ title      : chr "Show HN: Wreeto – a fast, cluttered-free knowledge organisation toolset"
 #&gt;  $ type       : chr "story"
@@ -686,6 +686,32 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[31]]
+#&gt; List of 9
+#&gt;  $ by         : chr "bramk"
+#&gt;  $ descendants: int 1
+#&gt;  $ id         : int 21647207
+#&gt;  $ kids       : int 21647219
+#&gt;  $ score      : int 10
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 13:12:37"
+#&gt;  $ title      : chr "Show HN: Road to Scale – 300+ content items for every stage of your startup"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://roadtoscale.com/showhn"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[32]]
+#&gt; List of 9
+#&gt;  $ by         : chr "yelabbassi"
+#&gt;  $ descendants: int 3
+#&gt;  $ id         : int 21652173
+#&gt;  $ kids       : int [1:2] 21670221 21653279
+#&gt;  $ score      : int 9
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 22:10:26"
+#&gt;  $ title      : chr "Show HN: A modern app to watch public domain movies"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://cinedantan.com"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[33]]
 #&gt; List of 9
 #&gt;  $ by         : chr "kehers"
 #&gt;  $ descendants: int 2
@@ -698,20 +724,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://mailintel.io"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[32]]
-#&gt; List of 9
-#&gt;  $ by         : chr "bramk"
-#&gt;  $ descendants: int 1
-#&gt;  $ id         : int 21647207
-#&gt;  $ kids       : int 21647219
-#&gt;  $ score      : int 9
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 13:12:37"
-#&gt;  $ title      : chr "Show HN: Road to Scale – 300+ content items for every stage of your startup"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://roadtoscale.com/showhn"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[33]]
+#&gt; [[34]]
 #&gt; List of 9
 #&gt;  $ by         : chr "yaj54"
 #&gt;  $ descendants: int 1
@@ -724,7 +737,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://yahnd.com/theater/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[34]]
+#&gt; [[35]]
 #&gt; List of 8
 #&gt;  $ by         : chr "alexellisuk"
 #&gt;  $ descendants: int 0
@@ -736,7 +749,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://github.com/inlets/inlets/releases/tag/2.6.3"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[35]]
+#&gt; [[36]]
 #&gt; List of 8
 #&gt;  $ by         : chr "naikas82"
 #&gt;  $ descendants: int 0
@@ -748,7 +761,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://github.com/amolnaik/dupre"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[36]]
+#&gt; [[37]]
 #&gt; List of 8
 #&gt;  $ by         : chr "alexellisuk"
 #&gt;  $ descendants: int 0
@@ -760,7 +773,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://github.com/inlets/inletsctl"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[37]]
+#&gt; [[38]]
 #&gt; List of 8
 #&gt;  $ by         : chr "jakon89"
 #&gt;  $ descendants: int 0
@@ -772,7 +785,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://github.com/jakon89/golang-jmvti"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[38]]
+#&gt; [[39]]
 #&gt; List of 8
 #&gt;  $ by         : chr "alexellisuk"
 #&gt;  $ descendants: int 0
@@ -784,7 +797,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://github.com/alexellis/helm3-expressjs-tutorial"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[39]]
+#&gt; [[40]]
 #&gt; List of 9
 #&gt;  $ by         : chr "nrjames"
 #&gt;  $ descendants: int 5
@@ -797,7 +810,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://clay.itch.io/the-jumping-jouster"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[40]]
+#&gt; [[41]]
 #&gt; List of 8
 #&gt;  $ by         : chr "pheelicks"
 #&gt;  $ descendants: int 0
@@ -809,7 +822,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "http://www.procedural.eu"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[41]]
+#&gt; [[42]]
 #&gt; List of 8
 #&gt;  $ by         : chr "podcatr"
 #&gt;  $ descendants: int 0
@@ -821,7 +834,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://podcatr.com"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[42]]
+#&gt; [[43]]
 #&gt; List of 9
 #&gt;  $ by         : chr "csdvrx"
 #&gt;  $ descendants: int 6
@@ -834,7 +847,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://github.com/csdvrx/sixel-tmux"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[43]]
+#&gt; [[44]]
 #&gt; List of 9
 #&gt;  $ by         : chr "amozoss"
 #&gt;  $ descendants: int 2
@@ -845,18 +858,6 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ title      : chr "Show HN: Pushback.io – Interactive push notifications with curl"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://pushback.io/"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[44]]
-#&gt; List of 8
-#&gt;  $ by         : chr "mohammedri"
-#&gt;  $ descendants: int 0
-#&gt;  $ id         : int 21659487
-#&gt;  $ score      : int 5
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 20:00:14"
-#&gt;  $ title      : chr "Show HN: Building Systems to Monitor Data and Model Health in Production Systems"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://youtu.be/WZNEsc7ynxI"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[45]]
@@ -886,6 +887,18 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[47]]
+#&gt; List of 8
+#&gt;  $ by         : chr "mohammedri"
+#&gt;  $ descendants: int 0
+#&gt;  $ id         : int 21659487
+#&gt;  $ score      : int 5
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 20:00:14"
+#&gt;  $ title      : chr "Show HN: Building Systems to Monitor Data and Model Health in Production Systems"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://youtu.be/WZNEsc7ynxI"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[48]]
 #&gt; List of 9
 #&gt;  $ by         : chr "minimaxir"
 #&gt;  $ descendants: int 1
@@ -898,7 +911,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://github.com/minimaxir/twcloud"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[48]]
+#&gt; [[49]]
 #&gt; List of 8
 #&gt;  $ by         : chr "soygul"
 #&gt;  $ descendants: int 0
@@ -910,7 +923,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[49]]
+#&gt; [[50]]
 #&gt; List of 8
 #&gt;  $ by         : chr "lostintangent"
 #&gt;  $ descendants: int 0
@@ -922,7 +935,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://marketplace.visualstudio.com/items?itemName=vsls-contrib.spaces"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[50]]
+#&gt; [[51]]
 #&gt; List of 8
 #&gt;  $ by         : chr "akanshgulati"
 #&gt;  $ descendants: int 0
@@ -934,7 +947,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://blog.akansh.com/integrate-lighthouse-ci-with-static-site-generators/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[51]]
+#&gt; [[52]]
 #&gt; List of 9
 #&gt;  $ by         : chr "mlsarecmg"
 #&gt;  $ descendants: int 1
@@ -947,7 +960,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://twitter.com/0xca0a/status/1199997552466288641"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[52]]
+#&gt; [[53]]
 #&gt; List of 8
 #&gt;  $ by         : chr "theknight"
 #&gt;  $ descendants: int 0
@@ -959,7 +972,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.apolloyard.com/data-story/us-county-level-uv-exposure-wh-m2"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[53]]
+#&gt; [[54]]
 #&gt; List of 9
 #&gt;  $ by         : chr "nandreev"
 #&gt;  $ descendants: int 1
@@ -972,7 +985,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://joboutlook.netlify.com/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[54]]
+#&gt; [[55]]
 #&gt; List of 9
 #&gt;  $ by         : chr "bithavoc"
 #&gt;  $ descendants: int 4
@@ -985,7 +998,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://apps.apple.com/us/app/top-now/id1486916333?ls=1"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[55]]
+#&gt; [[56]]
 #&gt; List of 8
 #&gt;  $ by         : chr "freekman"
 #&gt;  $ descendants: int 0
@@ -997,7 +1010,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://freekinapp.com/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[56]]
+#&gt; [[57]]
 #&gt; List of 8
 #&gt;  $ by         : chr "jranand"
 #&gt;  $ descendants: int 0
@@ -1009,7 +1022,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.gridbox.io"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[57]]
+#&gt; [[58]]
 #&gt; List of 8
 #&gt;  $ by         : chr "wsieroci"
 #&gt;  $ descendants: int 0
@@ -1021,20 +1034,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.plummapp.com"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[58]]
+#&gt; [[59]]
 #&gt; List of 9
 #&gt;  $ by         : chr "justicz"
 #&gt;  $ descendants: int 1
 #&gt;  $ id         : int 21665462
 #&gt;  $ kids       : int 21665465
-#&gt;  $ score      : int 5
+#&gt;  $ score      : int 6
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 18:05:07"
 #&gt;  $ title      : chr "Show HN: A site I built to donate 10k mosquito nets to charity"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://giveanet.org/?r=M4GWBOWLMIHY4"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[59]]
+#&gt; [[60]]
 #&gt; List of 9
 #&gt;  $ by         : chr "trkulja"
 #&gt;  $ descendants: int 1
@@ -1047,7 +1060,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "http://www.eclidus.com/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[60]]
+#&gt; [[61]]
 #&gt; List of 9
 #&gt;  $ by         : chr "adamcharnock"
 #&gt;  $ descendants: int 3
