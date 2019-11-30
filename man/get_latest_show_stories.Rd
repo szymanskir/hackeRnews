@@ -21,7 +21,17 @@ Parallel api requests can be enabled by running
 \code{future::plan(future::multiprocess)}
 }
 \examples{
+# get the latest show story on Hacker News
+latest_show_story <- get_latest_show_stories(max_items = 1)
+latest_show_story
+
 \donttest{
-show_stories <- get_latest_show_stories()
+# get 10 latest show stories on Hacker News
+latest_10_show_stories <- get_latest_show_stories(max_items = 10)
+latest_10_show_stories
+
+# get all latest show stories on Hacker News
+latest_show_stories <- get_latest_show_stories()
+latest_show_stories
 }
 }

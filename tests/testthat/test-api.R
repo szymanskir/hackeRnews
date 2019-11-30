@@ -314,3 +314,35 @@ httptest::with_mock_api({
     expect_true(all.equal(result, expected))
   })
 })
+
+httptest::with_mock_api({
+  test_that("Empty responses are handled correctly when retrieving items", {
+    expect_warning(
+      object = items <- get_items_by_ids(c(8863, 9000, 21278790)),
+      regexp = "The content of the response is empty!.*9000.json"
+    )
+
+    expect_length(items, 3)
+    expect_equal(items[[2]], NA)
+  })
+})
+
+
+httptest::with_mock_api({
+  test_that("Empty responses are handled correctly when retrieving comments", {
+    expect_warning(
+      object = result <- get_comments(get_item_by_id(1000)),
+      regexp = "The content of the response is empty!.*3000.json"
+    )
+
+    expected <- tibble::as.tibble(
+      do.call(
+        rbind,
+        list(
+          comment_to_dataframe_row(get_item_by_id(2000))
+        )
+      )
+    )
+    expect_true(all.equal(result, expected))
+  })
+})

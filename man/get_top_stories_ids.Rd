@@ -13,8 +13,9 @@ list of top stories ids
 Retrieves top stories ids using Hacker News API
 }
 \examples{
-\donttest{
+
+# retrieve the ids of current top stories on Hacker News
 top_stories_ids <- get_top_stories_ids()
-}
+top_stories_ids
 
 }

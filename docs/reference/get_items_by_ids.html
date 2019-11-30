@@ -160,8 +160,9 @@ corresponding to specified list of ids using Hacker News API</p>
 https://github.com/HenrikBengtsson/future.apply</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'>get_items_by_ids</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>2</span>,<span class='fl'>3</span>))</div><div class='output co'>#&gt; [[1]]
+    <pre class="examples"><div class='input'><span class='co'># retrieve the first two items on Hacker News</span>
+<span class='no'>items</span> <span class='kw'>&lt;-</span> <span class='fu'>get_items_by_ids</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>2</span>))
+<span class='no'>items</span></div><div class='output co'>#&gt; [[1]]
 #&gt; List of 9
 #&gt;  $ by         : chr "pg"
 #&gt;  $ descendants: int 15
@@ -186,21 +187,7 @@ https://github.com/HenrikBengtsson/future.apply</p></div>
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "http://www.paulgraham.com/mit.html"
 #&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[3]]
-#&gt; List of 9
-#&gt;  $ by         : chr "phyllis"
-#&gt;  $ descendants: int 0
-#&gt;  $ id         : int 3
-#&gt;  $ kids       : int [1:2] 454412 531602
-#&gt;  $ score      : int 7
-#&gt;  $ time       : POSIXct[1:1], format: "2006-10-09 20:40:33"
-#&gt;  $ title      : chr "Woz Interview: the early days of Apple"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "http://www.foundersatwork.com/stevewozniak.html"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; </div><div class='input'># }
-
+#&gt; </div><div class='input'>
 
 </div></pre>
   </div>

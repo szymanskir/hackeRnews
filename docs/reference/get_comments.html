@@ -155,7 +155,22 @@ using Hacker News API</p>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
 <span class='no'>story</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='get_item_by_id.html'>get_item_by_id</a></span>(<span class='fl'>21499889</span>)
 <span class='no'>comments</span> <span class='kw'>&lt;-</span> <span class='fu'>get_comments</span>(<span class='no'>story</span>)
-<span class='co'># }</span></div></pre>
+<span class='no'>comments</span></div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 23 x 7</span><span>
+#&gt;         id deleted by      time                text                 dead  parent
+#&gt;      </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;dttm&gt;</span><span>              </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span>  2.15</span><span style='color: #949494;'>e</span><span>7 FALSE   macint… 2019-11-10 </span><span style='color: #949494;'>22:18:40</span><span> Can anyone with com… FALSE 2.15</span><span style='color: #949494;'>e</span><span>7
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span>  2.15</span><span style='color: #949494;'>e</span><span>7 FALSE   Gaelan  2019-11-10 </span><span style='color: #949494;'>23:03:17</span><span> Disclaimer: I&amp;#x27;… FALSE 2.15</span><span style='color: #949494;'>e</span><span>7
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span>  2.15</span><span style='color: #949494;'>e</span><span>7 FALSE   thomer… 2019-11-11 </span><span style='color: #949494;'>00:16:30</span><span> OSM is more like a … FALSE 2.15</span><span style='color: #949494;'>e</span><span>7
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span>  2.15</span><span style='color: #949494;'>e</span><span>7 FALSE   brmgb   2019-11-11 </span><span style='color: #949494;'>03:04:07</span><span> &amp;gt; Can anyone wit… FALSE 2.15</span><span style='color: #949494;'>e</span><span>7
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span>  2.15</span><span style='color: #949494;'>e</span><span>7 FALSE   maxeri… 2019-11-11 </span><span style='color: #949494;'>12:50:52</span><span> I mean, this blog p… FALSE 2.15</span><span style='color: #949494;'>e</span><span>7
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span>  2.15</span><span style='color: #949494;'>e</span><span>7 FALSE   thomer… 2019-11-11 </span><span style='color: #949494;'>11:18:45</span><span> Minor correction: o… FALSE 2.15</span><span style='color: #949494;'>e</span><span>7
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span>  2.15</span><span style='color: #949494;'>e</span><span>7 FALSE   sp8962  2019-11-11 </span><span style='color: #949494;'>11:49:54</span><span> OK, this is going t… FALSE 2.15</span><span style='color: #949494;'>e</span><span>7
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span>  2.15</span><span style='color: #949494;'>e</span><span>7 FALSE   tmcw    2019-11-11 </span><span style='color: #949494;'>16:47:09</span><span> Fairly accurate! A … FALSE 2.15</span><span style='color: #949494;'>e</span><span>7
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span>  2.15</span><span style='color: #949494;'>e</span><span>7 FALSE   sp8962  2019-11-12 </span><span style='color: #949494;'>00:12:23</span><span> &amp;gt; iD&amp;#x27;s posi… FALSE 2.15</span><span style='color: #949494;'>e</span><span>7
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span>  2.15</span><span style='color: #949494;'>e</span><span>7 FALSE   canada… 2019-11-11 </span><span style='color: #949494;'>16:22:33</span><span> Excellent recap.&lt;p&gt;… FALSE 2.15</span><span style='color: #949494;'>e</span><span>7
+#&gt; </span><span style='color: #949494;'># … with 13 more rows</span><span></div><div class='input'># }
+
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

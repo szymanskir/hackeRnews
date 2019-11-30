@@ -150,18 +150,34 @@ corresponding to specified id using Hacker News API</p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>item corresponding to the specified id</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The API in some cases returns a null response.
+When this situation occurs it is assumed that the item
+does not exist and NA is returned.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='no'>h_id</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='get_max_item_id.html'>get_max_item_id</a></span>()
-<span class='no'>hacker_article</span> <span class='kw'>&lt;-</span> <span class='fu'>get_item_by_id</span>(<span class='no'>h_id</span>)
-<span class='co'># }</span></div></pre>
+    <pre class="examples"><div class='input'><span class='co'># retrieve the id of the latest Hacker News item</span>
+<span class='no'>last_item_id</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='get_max_item_id.html'>get_max_item_id</a></span>()
+<span class='no'>last_item_id</span></div><div class='output co'>#&gt; [1] 21670340</div><div class='input'>
+<span class='co'># retrieve the latest Hacker News item</span>
+<span class='no'>last_hn_item</span> <span class='kw'>&lt;-</span> <span class='fu'>get_item_by_id</span>(<span class='no'>last_item_id</span>)
+<span class='no'>last_hn_item</span></div><div class='output co'>#&gt; List of 6
+#&gt;  $ by    : chr "svara"
+#&gt;  $ id    : int 21670340
+#&gt;  $ parent: int 21667336
+#&gt;  $ text  : chr "Odd to see Moniz&amp;#x27; 1949 lobotomy prize omitted here.&lt;p&gt;See &lt;a href=\"https:&amp;#x2F;&amp;#x2F;www.nobelprize.org&amp;#"| __truncated__
+#&gt;  $ time  : POSIXct[1:1], format: "2019-11-30 16:26:28"
+#&gt;  $ type  : chr "comment"
+#&gt;  - attr(*, "class")= chr "hn_item"</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#details">Details</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 
