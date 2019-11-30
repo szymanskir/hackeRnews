@@ -155,7 +155,9 @@ If max_items = NULL, returns all available</p></td>
 <code><a href='https://rdrr.io/pkg/future/man/plan.html'>future::plan(future::multiprocess)</a></code></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># get the best story on Hacker News</span>
+    <pre class="examples"><div class='input'>
+<span class='co'># \donttest{</span>
+<span class='co'># get the best story on Hacker News</span>
 <span class='no'>best_story</span> <span class='kw'>&lt;-</span> <span class='fu'>get_best_stories</span>(<span class='kw'>max_items</span> <span class='kw'>=</span> <span class='fl'>1</span>)
 <span class='no'>best_story</span></div><div class='output co'>#&gt; [[1]]
 #&gt; List of 9
@@ -163,14 +165,13 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ descendants: int 279
 #&gt;  $ id         : int 21655958
 #&gt;  $ kids       : int [1:49] 21659972 21656187 21656020 21656376 21656726 21656022 21659484 21659549 21656045 21656717 ...
-#&gt;  $ score      : int 1556
+#&gt;  $ score      : int 1569
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 10:59:47"
 #&gt;  $ title      : chr "Firefox Replay"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://firefox-replay.com/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; </div><div class='input'>
-<span class='co'># \donttest{</span>
 <span class='co'># get top 20 best stories on Hacker News</span>
 <span class='no'>best_20_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_best_stories</span>(<span class='kw'>max_items</span> <span class='kw'>=</span> <span class='fl'>20</span>)
 <span class='no'>best_20_stories</span></div><div class='output co'>#&gt; [[1]]
@@ -179,7 +180,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ descendants: int 279
 #&gt;  $ id         : int 21655958
 #&gt;  $ kids       : int [1:49] 21659972 21656187 21656020 21656376 21656726 21656022 21659484 21659549 21656045 21656717 ...
-#&gt;  $ score      : int 1556
+#&gt;  $ score      : int 1569
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 10:59:47"
 #&gt;  $ title      : chr "Firefox Replay"
 #&gt;  $ type       : chr "story"
@@ -189,10 +190,10 @@ If max_items = NULL, returns all available</p></td>
 #&gt; [[2]]
 #&gt; List of 9
 #&gt;  $ by         : chr "dano"
-#&gt;  $ descendants: int 186
+#&gt;  $ descendants: int 217
 #&gt;  $ id         : int 21667355
-#&gt;  $ kids       : int [1:37] 21668003 21668424 21668307 21668298 21668167 21667977 21668302 21668367 21668259 21667839 ...
-#&gt;  $ score      : int 771
+#&gt;  $ kids       : int [1:39] 21668003 21668424 21668307 21668298 21668167 21671249 21667977 21668302 21668367 21668259 ...
+#&gt;  $ score      : int 859
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:13:49"
 #&gt;  $ title      : chr "ISOC sold the .org registry to Ethos Capital for $1.1B"
 #&gt;  $ type       : chr "story"
@@ -201,28 +202,28 @@ If max_items = NULL, returns all available</p></td>
 #&gt; 
 #&gt; [[3]]
 #&gt; List of 9
-#&gt;  $ by         : chr "partingshots"
-#&gt;  $ descendants: int 534
-#&gt;  $ id         : int 21649495
-#&gt;  $ kids       : int [1:67] 21652747 21650556 21650205 21650901 21650150 21650085 21649858 21649806 21650199 21651974 ...
-#&gt;  $ score      : int 636
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 17:50:39"
-#&gt;  $ title      : chr "Go master Lee Se-dol says he quits, unable to win over AI Go players"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://en.yna.co.kr/view/AEN20191127004800315"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[4]]
-#&gt; List of 9
 #&gt;  $ by         : chr "neya"
-#&gt;  $ descendants: int 198
+#&gt;  $ descendants: int 209
 #&gt;  $ id         : int 21665125
 #&gt;  $ kids       : int [1:31] 21666909 21666142 21666072 21666322 21667437 21665736 21666077 21667319 21666590 21665912 ...
-#&gt;  $ score      : int 735
+#&gt;  $ score      : int 769
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 17:06:31"
 #&gt;  $ title      : chr "Open-Source Home Automation"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://www.home-assistant.io/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[4]]
+#&gt; List of 9
+#&gt;  $ by         : chr "partingshots"
+#&gt;  $ descendants: int 534
+#&gt;  $ id         : int 21649495
+#&gt;  $ kids       : int [1:67] 21652747 21650556 21650205 21650901 21650150 21650085 21649858 21649806 21650199 21651974 ...
+#&gt;  $ score      : int 638
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 17:50:39"
+#&gt;  $ title      : chr "Go master Lee Se-dol says he quits, unable to win over AI Go players"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://en.yna.co.kr/view/AEN20191127004800315"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[5]]
@@ -231,7 +232,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ descendants: int 149
 #&gt;  $ id         : int 21647038
 #&gt;  $ kids       : int [1:23] 21650171 21653451 21653157 21649364 21649852 21650069 21654284 21656126 21650020 21652973 ...
-#&gt;  $ score      : int 891
+#&gt;  $ score      : int 894
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 12:34:21"
 #&gt;  $ title      : chr "Lessons learned building an ML trading system"
 #&gt;  $ type       : chr "story"
@@ -241,10 +242,10 @@ If max_items = NULL, returns all available</p></td>
 #&gt; [[6]]
 #&gt; List of 9
 #&gt;  $ by         : chr "luu"
-#&gt;  $ descendants: int 287
+#&gt;  $ descendants: int 289
 #&gt;  $ id         : int 21660718
 #&gt;  $ kids       : int [1:60] 21661852 21661164 21661136 21661133 21660955 21663166 21661215 21662159 21660873 21662857 ...
-#&gt;  $ score      : int 691
+#&gt;  $ score      : int 701
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 23:57:08"
 #&gt;  $ title      : chr "Rooms can be as bright as the outdoors"
 #&gt;  $ type       : chr "story"
@@ -257,7 +258,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ descendants: int 142
 #&gt;  $ id         : int 21647398
 #&gt;  $ kids       : int [1:30] 21647846 21651831 21648071 21648681 21649000 21647716 21648217 21653049 21651463 21647970 ...
-#&gt;  $ score      : int 645
+#&gt;  $ score      : int 647
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 13:50:39"
 #&gt;  $ title      : chr "Off-Grid Cyberdeck: Raspberry Pi Recovery Kit"
 #&gt;  $ type       : chr "story"
@@ -269,7 +270,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ by         : chr "OJFord"
 #&gt;  $ descendants: int 114
 #&gt;  $ id         : int 21652888
-#&gt;  $ kids       : int [1:40] 21653413 21653896 21653402 21653344 21655130 21657999 21653162 21653140 21668798 21656072 ...
+#&gt;  $ kids       : int [1:40] 21653413 21653896 21653402 21653344 21655130 21657999 21653162 21653140 21656072 21653056 ...
 #&gt;  $ score      : int 626
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 23:40:48"
 #&gt;  $ title      : chr "Sweet Home 3D is a free interior design application"
@@ -280,10 +281,10 @@ If max_items = NULL, returns all available</p></td>
 #&gt; [[9]]
 #&gt; List of 9
 #&gt;  $ by         : chr "stopads"
-#&gt;  $ descendants: int 225
+#&gt;  $ descendants: int 226
 #&gt;  $ id         : int 21651610
 #&gt;  $ kids       : int [1:38] 21654621 21653476 21653872 21653757 21653616 21654867 21653144 21654404 21653075 21654366 ...
-#&gt;  $ score      : int 522
+#&gt;  $ score      : int 523
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 21:13:42"
 #&gt;  $ title      : chr "Twitter CEO Endorses DuckDuckGo"
 #&gt;  $ type       : chr "story"
@@ -293,10 +294,10 @@ If max_items = NULL, returns all available</p></td>
 #&gt; [[10]]
 #&gt; List of 9
 #&gt;  $ by         : chr "lsh"
-#&gt;  $ descendants: int 292
+#&gt;  $ descendants: int 294
 #&gt;  $ id         : int 21657930
-#&gt;  $ kids       : int [1:51] 21660304 21658691 21659319 21661979 21660805 21659950 21658745 21662405 21659969 21660991 ...
-#&gt;  $ score      : int 454
+#&gt;  $ kids       : int [1:52] 21660304 21658691 21659319 21671150 21661979 21660805 21659950 21658745 21662405 21659969 ...
+#&gt;  $ score      : int 459
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 16:27:24"
 #&gt;  $ title      : chr "Smart TVs like Samsung, LG and Roku are tracking everything"
 #&gt;  $ type       : chr "story"
@@ -347,7 +348,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ by         : chr "alexellisuk"
 #&gt;  $ descendants: int 77
 #&gt;  $ id         : int 21646762
-#&gt;  $ kids       : int [1:18] 21647943 21647799 21648391 21651419 21647835 21647872 21648081 21651719 21648966 21653934 ...
+#&gt;  $ kids       : int [1:18] 21647943 21647799 21648391 21651419 21647835 21647872 21648081 21648966 21651719 21653934 ...
 #&gt;  $ score      : int 465
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 11:30:25"
 #&gt;  $ title      : chr "Everything I know about Kubernetes I learned from a cluster of Raspberry Pis"
@@ -360,8 +361,8 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ by         : chr "theothermkn"
 #&gt;  $ descendants: int 325
 #&gt;  $ id         : int 21653437
-#&gt;  $ kids       : int [1:53] 21654154 21653856 21654333 21655396 21657667 21654278 21657755 21655242 21657204 21656247 ...
-#&gt;  $ score      : int 357
+#&gt;  $ kids       : int [1:53] 21654154 21653856 21654333 21655396 21657667 21654278 21657755 21655242 21657204 21653961 ...
+#&gt;  $ score      : int 358
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 01:01:32"
 #&gt;  $ title      : chr "The Great American Eye Exam Scam"
 #&gt;  $ type       : chr "story"
@@ -374,7 +375,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ descendants: int 60
 #&gt;  $ id         : int 21648968
 #&gt;  $ kids       : int [1:19] 21649517 21650868 21649592 21650053 21652805 21649410 21653919 21649585 21651724 21653862 ...
-#&gt;  $ score      : int 463
+#&gt;  $ score      : int 464
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 17:02:56"
 #&gt;  $ title      : chr "RoughViz: JS library for creating sketchy/hand-drawn style charts in the browser"
 #&gt;  $ type       : chr "story"
@@ -387,7 +388,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ descendants: int 397
 #&gt;  $ id         : int 21645117
 #&gt;  $ kids       : int [1:107] 21645516 21646369 21645205 21645233 21645882 21646213 21645284 21645321 21647310 21645596 ...
-#&gt;  $ score      : int 656
+#&gt;  $ score      : int 658
 #&gt;  $ text       : chr "I&amp;#x27;ve spent the last decade in two FANG companies, and I&amp;#x27;ve got to a high level where my total compens"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 04:56:51"
 #&gt;  $ title      : chr "Ask HN: Quitting Big Tech, what is it like?"
@@ -397,10 +398,10 @@ If max_items = NULL, returns all available</p></td>
 #&gt; [[18]]
 #&gt; List of 9
 #&gt;  $ by         : chr "_Microft"
-#&gt;  $ descendants: int 150
+#&gt;  $ descendants: int 152
 #&gt;  $ id         : int 21663852
 #&gt;  $ kids       : int [1:16] 21664848 21665857 21665144 21664389 21664422 21666781 21665160 21667081 21666291 21665111 ...
-#&gt;  $ score      : int 377
+#&gt;  $ score      : int 383
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 13:09:08"
 #&gt;  $ title      : chr "The Siege of Gondor, Part I: Professionals Talk Logistics"
 #&gt;  $ type       : chr "story"
@@ -409,28 +410,28 @@ If max_items = NULL, returns all available</p></td>
 #&gt; 
 #&gt; [[19]]
 #&gt; List of 9
-#&gt;  $ by         : chr "pabs3"
-#&gt;  $ descendants: int 177
-#&gt;  $ id         : int 21654654
-#&gt;  $ kids       : int [1:27] 21655048 21654898 21655258 21657351 21654689 21654755 21654752 21654905 21654733 21654701 ...
-#&gt;  $ score      : int 294
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 05:51:09"
-#&gt;  $ title      : chr "Raspberry Pi 4 WiFi stops working at 2560 x 1440 screen resolution"
+#&gt;  $ by         : chr "siggi"
+#&gt;  $ descendants: int 153
+#&gt;  $ id         : int 21667484
+#&gt;  $ kids       : int [1:30] 21669274 21667824 21668153 21667731 21669543 21670800 21669203 21668179 21668159 21667899 ...
+#&gt;  $ score      : int 370
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:48:12"
+#&gt;  $ title      : chr "Google AdWords charged me for clicks in Istanbul while location-targeting the US"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "http://www.enricozini.org/blog/2019/himblick/raspberry-pi-4-loses-wifi-at-2560x1440-screen-resolution"
+#&gt;  $ url        : chr "https://medium.com/@siggi/google-adwords-charged-me-for-clicks-in-istanbul-while-location-targeting-the-u-s-e705b3bdc8a5"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[20]]
 #&gt; List of 9
-#&gt;  $ by         : chr "danyork"
-#&gt;  $ descendants: int 297
-#&gt;  $ id         : int 21656960
-#&gt;  $ kids       : int [1:107] 21658308 21657473 21658135 21657428 21657447 21658324 21658164 21658799 21657506 21658242 ...
-#&gt;  $ score      : int 419
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 14:00:22"
-#&gt;  $ title      : chr "Why I Voted to Sell .ORG"
+#&gt;  $ by         : chr "pabs3"
+#&gt;  $ descendants: int 177
+#&gt;  $ id         : int 21654654
+#&gt;  $ kids       : int [1:27] 21655048 21654898 21655258 21657351 21654689 21654755 21654752 21654905 21654733 21654701 ...
+#&gt;  $ score      : int 295
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 05:51:09"
+#&gt;  $ title      : chr "Raspberry Pi 4 WiFi stops working at 2560 x 1440 screen resolution"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "http://www.circleid.com/posts/20191127_why_i_voted_to_sell_org/"
+#&gt;  $ url        : chr "http://www.enricozini.org/blog/2019/himblick/raspberry-pi-4-loses-wifi-at-2560x1440-screen-resolution"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; </div><div class='input'>
 <span class='co'># get all best stories on Hacker News</span>
@@ -441,7 +442,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ descendants: int 279
 #&gt;  $ id         : int 21655958
 #&gt;  $ kids       : int [1:49] 21659972 21656187 21656020 21656376 21656726 21656022 21659484 21659549 21656045 21656717 ...
-#&gt;  $ score      : int 1556
+#&gt;  $ score      : int 1569
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 10:59:47"
 #&gt;  $ title      : chr "Firefox Replay"
 #&gt;  $ type       : chr "story"
@@ -451,10 +452,10 @@ If max_items = NULL, returns all available</p></td>
 #&gt; [[2]]
 #&gt; List of 9
 #&gt;  $ by         : chr "dano"
-#&gt;  $ descendants: int 186
+#&gt;  $ descendants: int 217
 #&gt;  $ id         : int 21667355
-#&gt;  $ kids       : int [1:37] 21668003 21668424 21668307 21668298 21668167 21667977 21668302 21668367 21668259 21667839 ...
-#&gt;  $ score      : int 771
+#&gt;  $ kids       : int [1:39] 21668003 21668424 21668307 21668298 21668167 21671249 21667977 21668302 21668367 21668259 ...
+#&gt;  $ score      : int 859
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:13:49"
 #&gt;  $ title      : chr "ISOC sold the .org registry to Ethos Capital for $1.1B"
 #&gt;  $ type       : chr "story"
@@ -463,28 +464,28 @@ If max_items = NULL, returns all available</p></td>
 #&gt; 
 #&gt; [[3]]
 #&gt; List of 9
-#&gt;  $ by         : chr "partingshots"
-#&gt;  $ descendants: int 534
-#&gt;  $ id         : int 21649495
-#&gt;  $ kids       : int [1:67] 21652747 21650556 21650205 21650901 21650150 21650085 21649858 21649806 21650199 21651974 ...
-#&gt;  $ score      : int 636
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 17:50:39"
-#&gt;  $ title      : chr "Go master Lee Se-dol says he quits, unable to win over AI Go players"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://en.yna.co.kr/view/AEN20191127004800315"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[4]]
-#&gt; List of 9
 #&gt;  $ by         : chr "neya"
-#&gt;  $ descendants: int 198
+#&gt;  $ descendants: int 209
 #&gt;  $ id         : int 21665125
 #&gt;  $ kids       : int [1:31] 21666909 21666142 21666072 21666322 21667437 21665736 21666077 21667319 21666590 21665912 ...
-#&gt;  $ score      : int 735
+#&gt;  $ score      : int 769
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 17:06:31"
 #&gt;  $ title      : chr "Open-Source Home Automation"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://www.home-assistant.io/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[4]]
+#&gt; List of 9
+#&gt;  $ by         : chr "partingshots"
+#&gt;  $ descendants: int 534
+#&gt;  $ id         : int 21649495
+#&gt;  $ kids       : int [1:67] 21652747 21650556 21650205 21650901 21650150 21650085 21649858 21649806 21650199 21651974 ...
+#&gt;  $ score      : int 638
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 17:50:39"
+#&gt;  $ title      : chr "Go master Lee Se-dol says he quits, unable to win over AI Go players"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://en.yna.co.kr/view/AEN20191127004800315"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[5]]
@@ -493,7 +494,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ descendants: int 149
 #&gt;  $ id         : int 21647038
 #&gt;  $ kids       : int [1:23] 21650171 21653451 21653157 21649364 21649852 21650069 21654284 21656126 21650020 21652973 ...
-#&gt;  $ score      : int 891
+#&gt;  $ score      : int 894
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 12:34:21"
 #&gt;  $ title      : chr "Lessons learned building an ML trading system"
 #&gt;  $ type       : chr "story"
@@ -503,10 +504,10 @@ If max_items = NULL, returns all available</p></td>
 #&gt; [[6]]
 #&gt; List of 9
 #&gt;  $ by         : chr "luu"
-#&gt;  $ descendants: int 287
+#&gt;  $ descendants: int 289
 #&gt;  $ id         : int 21660718
 #&gt;  $ kids       : int [1:60] 21661852 21661164 21661136 21661133 21660955 21663166 21661215 21662159 21660873 21662857 ...
-#&gt;  $ score      : int 691
+#&gt;  $ score      : int 701
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 23:57:08"
 #&gt;  $ title      : chr "Rooms can be as bright as the outdoors"
 #&gt;  $ type       : chr "story"
@@ -519,7 +520,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ descendants: int 142
 #&gt;  $ id         : int 21647398
 #&gt;  $ kids       : int [1:30] 21647846 21651831 21648071 21648681 21649000 21647716 21648217 21653049 21651463 21647970 ...
-#&gt;  $ score      : int 645
+#&gt;  $ score      : int 647
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 13:50:39"
 #&gt;  $ title      : chr "Off-Grid Cyberdeck: Raspberry Pi Recovery Kit"
 #&gt;  $ type       : chr "story"
@@ -531,7 +532,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ by         : chr "OJFord"
 #&gt;  $ descendants: int 114
 #&gt;  $ id         : int 21652888
-#&gt;  $ kids       : int [1:40] 21653413 21653896 21653402 21653344 21655130 21657999 21653162 21653140 21668798 21656072 ...
+#&gt;  $ kids       : int [1:40] 21653413 21653896 21653402 21653344 21655130 21657999 21653162 21653140 21656072 21653056 ...
 #&gt;  $ score      : int 626
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 23:40:48"
 #&gt;  $ title      : chr "Sweet Home 3D is a free interior design application"
@@ -542,10 +543,10 @@ If max_items = NULL, returns all available</p></td>
 #&gt; [[9]]
 #&gt; List of 9
 #&gt;  $ by         : chr "stopads"
-#&gt;  $ descendants: int 225
+#&gt;  $ descendants: int 226
 #&gt;  $ id         : int 21651610
 #&gt;  $ kids       : int [1:38] 21654621 21653476 21653872 21653757 21653616 21654867 21653144 21654404 21653075 21654366 ...
-#&gt;  $ score      : int 522
+#&gt;  $ score      : int 523
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 21:13:42"
 #&gt;  $ title      : chr "Twitter CEO Endorses DuckDuckGo"
 #&gt;  $ type       : chr "story"
@@ -555,10 +556,10 @@ If max_items = NULL, returns all available</p></td>
 #&gt; [[10]]
 #&gt; List of 9
 #&gt;  $ by         : chr "lsh"
-#&gt;  $ descendants: int 292
+#&gt;  $ descendants: int 294
 #&gt;  $ id         : int 21657930
-#&gt;  $ kids       : int [1:51] 21660304 21658691 21659319 21661979 21660805 21659950 21658745 21662405 21659969 21660991 ...
-#&gt;  $ score      : int 454
+#&gt;  $ kids       : int [1:52] 21660304 21658691 21659319 21671150 21661979 21660805 21659950 21658745 21662405 21659969 ...
+#&gt;  $ score      : int 459
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 16:27:24"
 #&gt;  $ title      : chr "Smart TVs like Samsung, LG and Roku are tracking everything"
 #&gt;  $ type       : chr "story"
@@ -609,7 +610,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ by         : chr "alexellisuk"
 #&gt;  $ descendants: int 77
 #&gt;  $ id         : int 21646762
-#&gt;  $ kids       : int [1:18] 21647943 21647799 21648391 21651419 21647835 21647872 21648081 21651719 21648966 21653934 ...
+#&gt;  $ kids       : int [1:18] 21647943 21647799 21648391 21651419 21647835 21647872 21648081 21648966 21651719 21653934 ...
 #&gt;  $ score      : int 465
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 11:30:25"
 #&gt;  $ title      : chr "Everything I know about Kubernetes I learned from a cluster of Raspberry Pis"
@@ -622,8 +623,8 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ by         : chr "theothermkn"
 #&gt;  $ descendants: int 325
 #&gt;  $ id         : int 21653437
-#&gt;  $ kids       : int [1:53] 21654154 21653856 21654333 21655396 21657667 21654278 21657755 21655242 21657204 21656247 ...
-#&gt;  $ score      : int 357
+#&gt;  $ kids       : int [1:53] 21654154 21653856 21654333 21655396 21657667 21654278 21657755 21655242 21657204 21653961 ...
+#&gt;  $ score      : int 358
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 01:01:32"
 #&gt;  $ title      : chr "The Great American Eye Exam Scam"
 #&gt;  $ type       : chr "story"
@@ -636,7 +637,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ descendants: int 60
 #&gt;  $ id         : int 21648968
 #&gt;  $ kids       : int [1:19] 21649517 21650868 21649592 21650053 21652805 21649410 21653919 21649585 21651724 21653862 ...
-#&gt;  $ score      : int 463
+#&gt;  $ score      : int 464
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 17:02:56"
 #&gt;  $ title      : chr "RoughViz: JS library for creating sketchy/hand-drawn style charts in the browser"
 #&gt;  $ type       : chr "story"
@@ -649,7 +650,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ descendants: int 397
 #&gt;  $ id         : int 21645117
 #&gt;  $ kids       : int [1:107] 21645516 21646369 21645205 21645233 21645882 21646213 21645284 21645321 21647310 21645596 ...
-#&gt;  $ score      : int 656
+#&gt;  $ score      : int 658
 #&gt;  $ text       : chr "I&amp;#x27;ve spent the last decade in two FANG companies, and I&amp;#x27;ve got to a high level where my total compens"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 04:56:51"
 #&gt;  $ title      : chr "Ask HN: Quitting Big Tech, what is it like?"
@@ -659,10 +660,10 @@ If max_items = NULL, returns all available</p></td>
 #&gt; [[18]]
 #&gt; List of 9
 #&gt;  $ by         : chr "_Microft"
-#&gt;  $ descendants: int 150
+#&gt;  $ descendants: int 152
 #&gt;  $ id         : int 21663852
 #&gt;  $ kids       : int [1:16] 21664848 21665857 21665144 21664389 21664422 21666781 21665160 21667081 21666291 21665111 ...
-#&gt;  $ score      : int 377
+#&gt;  $ score      : int 383
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 13:09:08"
 #&gt;  $ title      : chr "The Siege of Gondor, Part I: Professionals Talk Logistics"
 #&gt;  $ type       : chr "story"
@@ -671,41 +672,41 @@ If max_items = NULL, returns all available</p></td>
 #&gt; 
 #&gt; [[19]]
 #&gt; List of 9
+#&gt;  $ by         : chr "siggi"
+#&gt;  $ descendants: int 153
+#&gt;  $ id         : int 21667484
+#&gt;  $ kids       : int [1:30] 21669274 21667824 21668153 21667731 21669543 21670800 21669203 21668179 21668159 21667899 ...
+#&gt;  $ score      : int 370
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:48:12"
+#&gt;  $ title      : chr "Google AdWords charged me for clicks in Istanbul while location-targeting the US"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://medium.com/@siggi/google-adwords-charged-me-for-clicks-in-istanbul-while-location-targeting-the-u-s-e705b3bdc8a5"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[20]]
+#&gt; List of 9
 #&gt;  $ by         : chr "pabs3"
 #&gt;  $ descendants: int 177
 #&gt;  $ id         : int 21654654
 #&gt;  $ kids       : int [1:27] 21655048 21654898 21655258 21657351 21654689 21654755 21654752 21654905 21654733 21654701 ...
-#&gt;  $ score      : int 294
+#&gt;  $ score      : int 295
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 05:51:09"
 #&gt;  $ title      : chr "Raspberry Pi 4 WiFi stops working at 2560 x 1440 screen resolution"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "http://www.enricozini.org/blog/2019/himblick/raspberry-pi-4-loses-wifi-at-2560x1440-screen-resolution"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[20]]
+#&gt; [[21]]
 #&gt; List of 9
 #&gt;  $ by         : chr "danyork"
 #&gt;  $ descendants: int 297
 #&gt;  $ id         : int 21656960
 #&gt;  $ kids       : int [1:107] 21658308 21657473 21658135 21657428 21657447 21658324 21658164 21658799 21657506 21658242 ...
-#&gt;  $ score      : int 419
+#&gt;  $ score      : int 421
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 14:00:22"
 #&gt;  $ title      : chr "Why I Voted to Sell .ORG"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "http://www.circleid.com/posts/20191127_why_i_voted_to_sell_org/"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[21]]
-#&gt; List of 9
-#&gt;  $ by         : chr "siggi"
-#&gt;  $ descendants: int 142
-#&gt;  $ id         : int 21667484
-#&gt;  $ kids       : int [1:28] 21669274 21667824 21668153 21669543 21667731 21669203 21668179 21668159 21667899 21668309 ...
-#&gt;  $ score      : int 339
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:48:12"
-#&gt;  $ title      : chr "Google AdWords charged me for clicks in Istanbul while location-targeting the US"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://medium.com/@siggi/google-adwords-charged-me-for-clicks-in-istanbul-while-location-targeting-the-u-s-e705b3bdc8a5"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
 #&gt; [[22]]
@@ -714,7 +715,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ descendants: int 171
 #&gt;  $ id         : int 21648096
 #&gt;  $ kids       : int [1:45] 21650347 21649092 21653118 21648961 21649028 21649969 21649355 21654407 21648618 21649860 ...
-#&gt;  $ score      : int 383
+#&gt;  $ score      : int 384
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 15:33:20"
 #&gt;  $ title      : chr "Show HN: I made an open-source anonymous email forwarding service"
 #&gt;  $ type       : chr "story"
@@ -723,50 +724,50 @@ If max_items = NULL, returns all available</p></td>
 #&gt; 
 #&gt; [[23]]
 #&gt; List of 9
-#&gt;  $ by         : chr "japhyr"
-#&gt;  $ descendants: int 280
-#&gt;  $ id         : int 21660118
-#&gt;  $ kids       : int [1:146] 21661331 21663210 21661382 21661440 21664325 21661430 21663180 21662581 21661976 21661691 ...
-#&gt;  $ score      : int 404
-#&gt;  $ text       : chr "I think this gets asked most years, and I always enjoy the threads that come out of it. I am thankful for a fam"| __truncated__
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 21:55:06"
-#&gt;  $ title      : chr "Ask HN: What are you thankful for?"
-#&gt;  $ type       : chr "story"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[24]]
-#&gt; List of 9
 #&gt;  $ by         : chr "jmsflknr"
-#&gt;  $ descendants: int 257
+#&gt;  $ descendants: int 265
 #&gt;  $ id         : int 21665984
-#&gt;  $ kids       : int [1:41] 21666653 21666273 21666233 21667767 21666337 21666225 21666287 21666243 21666240 21666267 ...
-#&gt;  $ score      : int 299
+#&gt;  $ kids       : int [1:41] 21666653 21666273 21666233 21667767 21666337 21666225 21666287 21666243 21666267 21666240 ...
+#&gt;  $ score      : int 303
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 19:34:58"
 #&gt;  $ title      : chr "Arrest Of U.S. Citizen For Assisting North Korea In Evading Sanctions"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://www.justice.gov/usao-sdny/pr/manhattan-us-attorney-announces-arrest-united-states-citizen-assisting-north-korea"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[25]]
+#&gt; [[24]]
 #&gt; List of 9
 #&gt;  $ by         : chr "zwischenzug"
-#&gt;  $ descendants: int 131
+#&gt;  $ descendants: int 133
 #&gt;  $ id         : int 21662941
-#&gt;  $ kids       : int [1:25] 21665555 21663842 21665258 21663466 21664140 21664792 21666058 21663706 21666717 21663889 ...
-#&gt;  $ score      : int 318
+#&gt;  $ kids       : int [1:26] 21665555 21663842 21665258 21663466 21664140 21664792 21666717 21666058 21663706 21663889 ...
+#&gt;  $ score      : int 325
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 09:25:04"
 #&gt;  $ title      : chr "The first non-bullshit book about culture I've read"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://zwischenzugs.com/2019/11/27/the-first-non-bullshit-book-about-culture-ive-read/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
+#&gt; [[25]]
+#&gt; List of 9
+#&gt;  $ by         : chr "japhyr"
+#&gt;  $ descendants: int 281
+#&gt;  $ id         : int 21660118
+#&gt;  $ kids       : int [1:146] 21661331 21663210 21661382 21661440 21664325 21661430 21663180 21662581 21661976 21661691 ...
+#&gt;  $ score      : int 405
+#&gt;  $ text       : chr "I think this gets asked most years, and I always enjoy the threads that come out of it. I am thankful for a fam"| __truncated__
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 21:55:06"
+#&gt;  $ title      : chr "Ask HN: What are you thankful for?"
+#&gt;  $ type       : chr "story"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
 #&gt; [[26]]
 #&gt; List of 9
 #&gt;  $ by         : chr "feross"
-#&gt;  $ descendants: int 175
+#&gt;  $ descendants: int 176
 #&gt;  $ id         : int 21649397
 #&gt;  $ kids       : int [1:31] 21649816 21650201 21650398 21650392 21650046 21651344 21650618 21650439 21650749 21650419 ...
-#&gt;  $ score      : int 283
+#&gt;  $ score      : int 284
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 17:41:48"
 #&gt;  $ title      : chr "Ubuntu 19.10: It’s fast"
 #&gt;  $ type       : chr "story"
@@ -779,7 +780,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ descendants: int 45
 #&gt;  $ id         : int 21661545
 #&gt;  $ kids       : int [1:4] 21661770 21662155 21662698 21662979
-#&gt;  $ score      : int 281
+#&gt;  $ score      : int 284
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 03:29:56"
 #&gt;  $ title      : chr "Matrix Calculus for Deep Learning"
 #&gt;  $ type       : chr "story"
@@ -792,7 +793,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ descendants: int 78
 #&gt;  $ id         : int 21656190
 #&gt;  $ kids       : int [1:12] 21657173 21656985 21657280 21658396 21660954 21657107 21658998 21663650 21656626 21657629 ...
-#&gt;  $ score      : int 290
+#&gt;  $ score      : int 291
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 11:51:39"
 #&gt;  $ title      : chr "Tensorflow 2.0 AMD Support"
 #&gt;  $ type       : chr "story"
@@ -804,7 +805,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ by         : chr "gorpovitch"
 #&gt;  $ descendants: int 260
 #&gt;  $ id         : int 21663798
-#&gt;  $ kids       : int [1:34] 21663964 21663922 21664243 21663986 21664275 21668832 21664778 21664131 21666156 21664304 ...
+#&gt;  $ kids       : int [1:34] 21663964 21663922 21664243 21663986 21664275 21664778 21668832 21664131 21666156 21664304 ...
 #&gt;  $ score      : int 247
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 12:55:09"
 #&gt;  $ title      : chr "What is energy, actually? (2011)"
@@ -817,7 +818,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ by         : chr "krn"
 #&gt;  $ descendants: int 87
 #&gt;  $ id         : int 21646591
-#&gt;  $ kids       : int [1:10] 21647090 21656745 21647286 21647533 21647638 21647445 21647632 21647769 21647338 21648156
+#&gt;  $ kids       : int [1:10] 21647090 21656745 21647286 21647533 21647638 21647445 21647632 21647769 21648156 21647338
 #&gt;  $ score      : int 244
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 10:56:06"
 #&gt;  $ title      : chr "Russian whistleblower was assassinated after uncovering $200B scandal (2018)"
@@ -828,10 +829,10 @@ If max_items = NULL, returns all available</p></td>
 #&gt; [[31]]
 #&gt; List of 9
 #&gt;  $ by         : chr "fghtr"
-#&gt;  $ descendants: int 244
+#&gt;  $ descendants: int 245
 #&gt;  $ id         : int 21656355
 #&gt;  $ kids       : int [1:27] 21658096 21658964 21656931 21656634 21658472 21656602 21659216 21660287 21656534 21657310 ...
-#&gt;  $ score      : int 304
+#&gt;  $ score      : int 305
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 12:24:16"
 #&gt;  $ title      : chr "Why does the Librem 5 phone cost that much?"
 #&gt;  $ type       : chr "story"
@@ -841,7 +842,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt; [[32]]
 #&gt; List of 9
 #&gt;  $ by         : chr "hsnewman"
-#&gt;  $ descendants: int 334
+#&gt;  $ descendants: int 335
 #&gt;  $ id         : int 21648582
 #&gt;  $ kids       : int [1:55] 21648715 21648977 21648918 21648990 21649728 21650084 21649219 21648764 21649159 21648902 ...
 #&gt;  $ score      : int 293
@@ -856,7 +857,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ by         : chr "JumpCrisscross"
 #&gt;  $ descendants: int 143
 #&gt;  $ id         : int 21657573
-#&gt;  $ kids       : int [1:18] 21657970 21659605 21657765 21659601 21658615 21658713 21659839 21658418 21657610 21658002 ...
+#&gt;  $ kids       : int [1:18] 21657970 21659605 21657765 21659601 21658615 21658713 21659839 21658418 21657610 21658777 ...
 #&gt;  $ score      : int 232
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 15:28:29"
 #&gt;  $ title      : chr "After WeWork, SoftBank’s Startup Bookkeeping Draws Scrutiny"
@@ -869,7 +870,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ by         : chr "pseudolus"
 #&gt;  $ descendants: int 124
 #&gt;  $ id         : int 21656380
-#&gt;  $ kids       : int [1:31] 21658383 21658109 21659283 21658554 21667527 21658765 21658087 21659643 21658369 21659786 ...
+#&gt;  $ kids       : int [1:31] 21658383 21658109 21659283 21658554 21658765 21667527 21658087 21659643 21658369 21659786 ...
 #&gt;  $ score      : int 232
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 12:28:56"
 #&gt;  $ title      : chr "McMindfulness: How mindfulness became the new capitalist spirituality"
@@ -905,10 +906,23 @@ If max_items = NULL, returns all available</p></td>
 #&gt; 
 #&gt; [[37]]
 #&gt; List of 9
+#&gt;  $ by         : chr "miles"
+#&gt;  $ descendants: int 32
+#&gt;  $ id         : int 21660203
+#&gt;  $ kids       : int [1:13] 21664578 21670803 21665206 21667202 21669069 21665561 21667199 21665023 21664151 21664293 ...
+#&gt;  $ score      : int 308
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 22:10:29"
+#&gt;  $ title      : chr "An Overview of Cryptography"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://www.garykessler.net/library/crypto.html"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[38]]
+#&gt; List of 9
 #&gt;  $ by         : chr "flockaroo"
 #&gt;  $ descendants: int 70
 #&gt;  $ id         : int 21658301
-#&gt;  $ kids       : int [1:19] 21659256 21659054 21659892 21659030 21660023 21658959 21662860 21659404 21660615 21660375 ...
+#&gt;  $ kids       : int [1:19] 21659256 21659054 21659892 21659030 21660023 21658959 21662860 21659046 21659404 21660615 ...
 #&gt;  $ score      : int 250
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 17:11:46"
 #&gt;  $ title      : chr "Molten Bismuth Shader"
@@ -916,20 +930,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.shadertoy.com/view/WdVXWy"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[38]]
+#&gt; [[39]]
 #&gt; List of 9
-#&gt;  $ by         : chr "miles"
-#&gt;  $ descendants: int 31
-#&gt;  $ id         : int 21660203
-#&gt;  $ kids       : int [1:12] 21664578 21665206 21667202 21669069 21665561 21667199 21665023 21664151 21664293 21660465 ...
-#&gt;  $ score      : int 301
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 22:10:29"
-#&gt;  $ title      : chr "An Overview of Cryptography"
+#&gt;  $ by         : chr "jger15"
+#&gt;  $ descendants: int 83
+#&gt;  $ id         : int 21669726
+#&gt;  $ kids       : int [1:24] 21671289 21671542 21670445 21671370 21670627 21669925 21670348 21670464 21670362 21669971 ...
+#&gt;  $ score      : int 257
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 13:47:19"
+#&gt;  $ title      : chr "Yes, And – How to be effective in the theatre of work"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://www.garykessler.net/library/crypto.html"
+#&gt;  $ url        : chr "https://tomcritchlow.com/2019/11/18/yes-and/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[39]]
+#&gt; [[40]]
 #&gt; List of 9
 #&gt;  $ by         : chr "samth"
 #&gt;  $ descendants: int 256
@@ -942,7 +956,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://robert.ocallahan.org/2019/11/your-debugger-sucks.html"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[40]]
+#&gt; [[41]]
 #&gt; List of 9
 #&gt;  $ by         : chr "neom"
 #&gt;  $ descendants: int 86
@@ -955,20 +969,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.bbc.com/news/world-europe-50586508"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[41]]
+#&gt; [[42]]
 #&gt; List of 9
 #&gt;  $ by         : chr "pcr910303"
 #&gt;  $ descendants: int 130
 #&gt;  $ id         : int 21665105
 #&gt;  $ kids       : int [1:58] 21665383 21665808 21665365 21665366 21666991 21665339 21665560 21665344 21665707 21665440 ...
-#&gt;  $ score      : int 260
+#&gt;  $ score      : int 261
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 17:04:15"
 #&gt;  $ title      : chr "Syntax Highlighting Is Backwards (2018)"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://www.benkuhn.net/syntax"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[42]]
+#&gt; [[43]]
 #&gt; List of 9
 #&gt;  $ by         : chr "est31"
 #&gt;  $ descendants: int 49
@@ -981,12 +995,25 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.redox-os.org/news/focusing-on-rustc/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[43]]
+#&gt; [[44]]
+#&gt; List of 9
+#&gt;  $ by         : chr "ekoutanov"
+#&gt;  $ descendants: int 81
+#&gt;  $ id         : int 21667366
+#&gt;  $ kids       : int [1:19] 21667667 21671712 21668924 21667778 21669087 21667638 21671504 21667938 21667630 21667583 ...
+#&gt;  $ score      : int 179
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:18:46"
+#&gt;  $ title      : chr "AMD is dominating Intel in Amazon's best-selling CPUs list"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://www.techspot.com/news/82962-amd-dominating-intel-amazon-best-selling-cpu-list.html"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[45]]
 #&gt; List of 9
 #&gt;  $ by         : chr "yarapavan"
 #&gt;  $ descendants: int 33
 #&gt;  $ id         : int 21656551
-#&gt;  $ kids       : int [1:12] 21657440 21656683 21657508 21656741 21658918 21659152 21664308 21659666 21658778 21659626 ...
+#&gt;  $ kids       : int [1:12] 21657440 21656683 21657508 21656741 21658918 21659152 21659626 21659666 21664308 21658778 ...
 #&gt;  $ score      : int 222
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 12:57:00"
 #&gt;  $ title      : chr "How Y Combinator Started (2012)"
@@ -994,49 +1021,36 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "http://paulgraham.com/ycstart.html"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[44]]
+#&gt; [[46]]
 #&gt; List of 9
 #&gt;  $ by         : chr "mana99"
-#&gt;  $ descendants: int 70
+#&gt;  $ descendants: int 71
 #&gt;  $ id         : int 21665931
-#&gt;  $ kids       : int [1:15] 21667175 21669245 21666135 21666802 21667857 21669125 21667334 21666369 21667137 21668515 ...
-#&gt;  $ score      : int 212
+#&gt;  $ kids       : int [1:15] 21667175 21666135 21669245 21666802 21667857 21669125 21666369 21667334 21667137 21668515 ...
+#&gt;  $ score      : int 217
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 19:23:04"
 #&gt;  $ title      : chr "Information Is Physics"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://cacm.acm.org/magazines/2019/11/240356-information-is-physics/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[45]]
-#&gt; List of 9
-#&gt;  $ by         : chr "ekoutanov"
-#&gt;  $ descendants: int 70
-#&gt;  $ id         : int 21667366
-#&gt;  $ kids       : int [1:16] 21667667 21668924 21667778 21667638 21667630 21667938 21667507 21667583 21669087 21667807 ...
-#&gt;  $ score      : int 166
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:18:46"
-#&gt;  $ title      : chr "AMD is dominating Intel in Amazon's best-selling CPUs list"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://www.techspot.com/news/82962-amd-dominating-intel-amazon-best-selling-cpu-list.html"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[46]]
+#&gt; [[47]]
 #&gt; List of 9
 #&gt;  $ by         : chr "dagurp"
-#&gt;  $ descendants: int 217
+#&gt;  $ descendants: int 220
 #&gt;  $ id         : int 21664692
-#&gt;  $ kids       : int [1:33] 21664948 21665742 21665001 21665088 21667706 21665492 21668251 21665069 21665121 21665124 ...
-#&gt;  $ score      : int 332
+#&gt;  $ kids       : int [1:33] 21664948 21665742 21665001 21665088 21667706 21665492 21665069 21668251 21665121 21665124 ...
+#&gt;  $ score      : int 336
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 15:51:56"
 #&gt;  $ title      : chr "How Is NordVPN Unblocking Disney+?"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://medium.com/@derek./how-is-nordvpn-unblocking-disney-6c51045dbc30"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[47]]
+#&gt; [[48]]
 #&gt; List of 9
 #&gt;  $ by         : chr "feross"
-#&gt;  $ descendants: int 40
+#&gt;  $ descendants: int 43
 #&gt;  $ id         : int 21662484
 #&gt;  $ kids       : int [1:4] 21663143 21664400 21663263 21663824
 #&gt;  $ score      : int 193
@@ -1046,7 +1060,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://blog.acolyer.org/2019/11/29/tla-model-checking-made-symbolic/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[48]]
+#&gt; [[49]]
 #&gt; List of 9
 #&gt;  $ by         : chr "velmu"
 #&gt;  $ descendants: int 175
@@ -1059,7 +1073,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.php.net/archive/2019.php#2019-11-28-1"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[49]]
+#&gt; [[50]]
 #&gt; List of 9
 #&gt;  $ by         : chr "mdip"
 #&gt;  $ descendants: int 14
@@ -1072,7 +1086,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://github.com/jagenjo/webglstudio.js"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[50]]
+#&gt; [[51]]
 #&gt; List of 9
 #&gt;  $ by         : chr "ilamont"
 #&gt;  $ descendants: int 55
@@ -1085,10 +1099,10 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.japantimes.co.jp/opinion/2019/11/25/commentary/japan-commentary/chinas-growing-threat-academic-free"| __truncated__
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[51]]
+#&gt; [[52]]
 #&gt; List of 9
 #&gt;  $ by         : chr "vidyesh"
-#&gt;  $ descendants: int 78
+#&gt;  $ descendants: int 79
 #&gt;  $ id         : int 21654472
 #&gt;  $ kids       : int [1:22] 21655637 21655808 21657452 21657462 21655543 21656530 21655886 21656414 21656330 21657994 ...
 #&gt;  $ score      : int 242
@@ -1098,33 +1112,33 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://support.mozilla.org/en-US/kb/whats-new-firefox-preview-30"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[52]]
+#&gt; [[53]]
 #&gt; List of 9
 #&gt;  $ by         : chr "DyslexicAtheist"
 #&gt;  $ descendants: int 120
 #&gt;  $ id         : int 21648181
 #&gt;  $ kids       : int [1:9] 21648271 21648677 21648268 21650939 21648656 21649779 21649001 21650090 21648952
-#&gt;  $ score      : int 172
+#&gt;  $ score      : int 173
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 15:42:05"
 #&gt;  $ title      : chr "The Color of Surveillance: Monitoring of Poor and Working People – Reading List"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://drive.google.com/file/d/106LQoUzt-41OMt4ssyizwIMNUjn893f4/view"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[53]]
+#&gt; [[54]]
 #&gt; List of 9
 #&gt;  $ by         : chr "pseudolus"
 #&gt;  $ descendants: int 53
 #&gt;  $ id         : int 21663782
 #&gt;  $ kids       : int [1:17] 21664100 21664250 21668091 21663856 21664621 21668285 21664934 21667936 21665830 21665843 ...
-#&gt;  $ score      : int 225
+#&gt;  $ score      : int 227
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 12:51:52"
 #&gt;  $ title      : chr "Michael Apted's “Seven Up” series is reaching its conclusion"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://www.nytimes.com/2019/11/27/magazine/63-up-michael-apted.html"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[54]]
+#&gt; [[55]]
 #&gt; List of 9
 #&gt;  $ by         : chr "tosh"
 #&gt;  $ descendants: int 147
@@ -1137,7 +1151,46 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://newsroom.tiktok.com/en-us/an-update-on-recent-content-and-account-questions"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[55]]
+#&gt; [[56]]
+#&gt; List of 9
+#&gt;  $ by         : chr "Reedx"
+#&gt;  $ descendants: int 197
+#&gt;  $ id         : int 21670517
+#&gt;  $ kids       : int [1:22] 21670729 21671170 21670694 21670895 21670859 21671098 21670639 21670590 21670594 21671286 ...
+#&gt;  $ score      : int 166
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 17:08:31"
+#&gt;  $ title      : chr "Schwab Leaves San Francisco for Texas"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://www.wsj.com/articles/schwab-leaves-san-francisco-for-texas-11574900348?mod=rsswn"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[57]]
+#&gt; List of 9
+#&gt;  $ by         : chr "denzil_correa"
+#&gt;  $ descendants: int 303
+#&gt;  $ id         : int 21666314
+#&gt;  $ kids       : int [1:33] 21669569 21668519 21670689 21671554 21668820 21669419 21668594 21671268 21668528 21668711 ...
+#&gt;  $ score      : int 167
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 20:36:47"
+#&gt;  $ title      : chr "Many elementary teachers don’t understand math, and it makes them anxious"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://www.latimes.com/opinion/story/2019-11-21/math-anxiety-elementary-teacher"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[58]]
+#&gt; List of 9
+#&gt;  $ by         : chr "jborichevskiy"
+#&gt;  $ descendants: int 63
+#&gt;  $ id         : int 21659876
+#&gt;  $ kids       : int [1:22] 21661858 21664049 21662409 21662689 21665255 21663258 21662994 21662204 21667291 21664297 ...
+#&gt;  $ score      : int 189
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 21:10:08"
+#&gt;  $ title      : chr "Digital Tools I Wish Existed"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://jborichevskiy.com/posts/digital-tools/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[59]]
 #&gt; List of 9
 #&gt;  $ by         : chr "conse_lad"
 #&gt;  $ descendants: int 87
@@ -1150,23 +1203,10 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.birmingham.ac.uk/news/latest/2019/11/link-between-inflammation-and-mental-sluggishness-shown-in-new-study.aspx"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[56]]
-#&gt; List of 9
-#&gt;  $ by         : chr "jborichevskiy"
-#&gt;  $ descendants: int 63
-#&gt;  $ id         : int 21659876
-#&gt;  $ kids       : int [1:22] 21661858 21664049 21662689 21662409 21665255 21663258 21662994 21667291 21662204 21664297 ...
-#&gt;  $ score      : int 187
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 21:10:08"
-#&gt;  $ title      : chr "Digital Tools I Wish Existed"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://jborichevskiy.com/posts/digital-tools/"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[57]]
+#&gt; [[60]]
 #&gt; List of 9
 #&gt;  $ by         : chr "Amorymeltzer"
-#&gt;  $ descendants: int 161
+#&gt;  $ descendants: int 162
 #&gt;  $ id         : int 21656267
 #&gt;  $ kids       : int [1:36] 21660107 21657015 21657054 21656629 21659680 21659443 21656718 21658268 21658112 21657759 ...
 #&gt;  $ score      : int 225
@@ -1176,7 +1216,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://caseyhandmer.wordpress.com/2019/11/28/domes-are-very-over-rated/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[58]]
+#&gt; [[61]]
 #&gt; List of 9
 #&gt;  $ by         : chr "MrsPeaches"
 #&gt;  $ descendants: int 107
@@ -1189,12 +1229,12 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://foundation.mozilla.org/en/privacynotincluded/products/facebook-portal/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[59]]
+#&gt; [[62]]
 #&gt; List of 9
 #&gt;  $ by         : chr "burning_out_101"
-#&gt;  $ descendants: int 147
+#&gt;  $ descendants: int 149
 #&gt;  $ id         : int 21661054
-#&gt;  $ kids       : int [1:90] 21663125 21662706 21663018 21662981 21662847 21662519 21661729 21664540 21663260 21663887 ...
+#&gt;  $ kids       : int [1:90] 21663125 21662706 21663018 21662981 21662847 21662519 21661729 21663260 21664540 21663887 ...
 #&gt;  $ score      : int 263
 #&gt;  $ text       : chr "Burning out as an early stage start-up employee. I’ve been employed there a few years, worked miracles, but get"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 01:23:38"
@@ -1202,7 +1242,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[60]]
+#&gt; [[63]]
 #&gt; List of 9
 #&gt;  $ by         : chr "spatters"
 #&gt;  $ descendants: int 35
@@ -1215,12 +1255,25 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://arxiv.org/abs/1911.11423"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[61]]
+#&gt; [[64]]
+#&gt; List of 9
+#&gt;  $ by         : chr "tiagom87"
+#&gt;  $ descendants: int 27
+#&gt;  $ id         : int 21669416
+#&gt;  $ kids       : int [1:7] 21669879 21671602 21670216 21670081 21670518 21670538 21669633
+#&gt;  $ score      : int 144
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 11:37:15"
+#&gt;  $ title      : chr "Longevity Linked to Proteins That Calm Overexcited Neurons"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://www.quantamagazine.org/longevity-linked-to-proteins-that-calm-overexcited-neurons-20191126/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[65]]
 #&gt; List of 9
 #&gt;  $ by         : chr "herendin2"
 #&gt;  $ descendants: int 149
 #&gt;  $ id         : int 21654682
-#&gt;  $ kids       : int [1:19] 21655144 21654972 21658586 21656880 21654946 21655001 21656675 21669591 21655171 21659197 ...
+#&gt;  $ kids       : int [1:19] 21655144 21654972 21658586 21656880 21654946 21655001 21656675 21655171 21669591 21659197 ...
 #&gt;  $ score      : int 174
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 05:56:20"
 #&gt;  $ title      : chr "Twitter account deletions on 'pause' after outcry"
@@ -1228,10 +1281,23 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://bbc.com/news/technology-50581287"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[62]]
+#&gt; [[66]]
+#&gt; List of 9
+#&gt;  $ by         : chr "skovorodkin"
+#&gt;  $ descendants: int 14
+#&gt;  $ id         : int 21666250
+#&gt;  $ kids       : int [1:5] 21669657 21670866 21669247 21670248 21669732
+#&gt;  $ score      : int 177
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 20:27:49"
+#&gt;  $ title      : chr "CMU 15-721: In-Memory Databases / Advanced Database Systems [video]"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://www.youtube.com/playlist?list=PLSE8ODhjZXja7K1hjZ01UTVDnGQdx5v5U"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[67]]
 #&gt; List of 9
 #&gt;  $ by         : chr "djsumdog"
-#&gt;  $ descendants: int 226
+#&gt;  $ descendants: int 230
 #&gt;  $ id         : int 21661958
 #&gt;  $ kids       : int [1:15] 21662699 21662452 21662249 21662682 21662163 21662327 21662324 21662164 21662420 21663616 ...
 #&gt;  $ score      : int 171
@@ -1241,7 +1307,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.reuters.com/article/us-singapore-fakenews-idUSKBN1Y3093"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[63]]
+#&gt; [[68]]
 #&gt; List of 9
 #&gt;  $ by         : chr "hckr_nj"
 #&gt;  $ descendants: int 174
@@ -1254,12 +1320,12 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.cbc.ca/news/canada/montreal/drunk-driving-twice-quebec-breathalyzer-for-life-1.5369145"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[64]]
+#&gt; [[69]]
 #&gt; List of 9
 #&gt;  $ by         : chr "exar0815"
 #&gt;  $ descendants: int 76
 #&gt;  $ id         : int 21659128
-#&gt;  $ kids       : int [1:15] 21659295 21659625 21659276 21660446 21659333 21660121 21660328 21660160 21659964 21660747 ...
+#&gt;  $ kids       : int [1:15] 21659295 21659625 21659276 21660446 21659333 21659209 21660121 21660328 21660160 21659652 ...
 #&gt;  $ score      : int 161
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 19:01:25"
 #&gt;  $ title      : chr "Boeing 777X’s fuselage split dramatically during September stress test"
@@ -1267,20 +1333,46 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.seattletimes.com/business/boeing-aerospace/boeing-777xs-fuselage-split-dramatically-during-september-stress-test/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[65]]
+#&gt; [[70]]
 #&gt; List of 9
 #&gt;  $ by         : chr "simonebrunozzi"
 #&gt;  $ descendants: int 174
 #&gt;  $ id         : int 21659978
 #&gt;  $ kids       : int [1:30] 21662057 21661596 21661730 21662122 21662150 21660098 21662514 21662089 21662576 21663866 ...
-#&gt;  $ score      : int 146
+#&gt;  $ score      : int 148
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 21:27:38"
 #&gt;  $ title      : chr "Some scientists are serious about resurrecting zeppelins for cargo"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://onezero.medium.com/planes-are-ruining-the-planet-new-mighty-airships-wont-d8eb39418acc"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[66]]
+#&gt; [[71]]
+#&gt; List of 9
+#&gt;  $ by         : chr "macando"
+#&gt;  $ descendants: int 99
+#&gt;  $ id         : int 21667403
+#&gt;  $ kids       : int [1:13] 21668269 21668146 21667826 21667875 21670374 21667930 21667856 21669533 21667980 21668465 ...
+#&gt;  $ score      : int 182
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:26:51"
+#&gt;  $ title      : chr "React in concurrent mode: 2000 state-connected comps re-rendered at 60FPS"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://twitter.com/0xca0a/status/1199997552466288641"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[72]]
+#&gt; List of 9
+#&gt;  $ by         : chr "tlrobinson"
+#&gt;  $ descendants: int 35
+#&gt;  $ id         : int 21662566
+#&gt;  $ kids       : int [1:8] 21664761 21662584 21664087 21664145 21665288 21666574 21664199 21665643
+#&gt;  $ score      : int 167
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 07:43:56"
+#&gt;  $ title      : chr "Almond: An Open, Privacy-Preserving Virtual Assistant"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://almond.stanford.edu/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[73]]
 #&gt; List of 9
 #&gt;  $ by         : chr "brycehalley"
 #&gt;  $ descendants: int 83
@@ -1293,33 +1385,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://slate.com/technology/2019/10/consequential-computer-code-software-history.html"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[67]]
-#&gt; List of 9
-#&gt;  $ by         : chr "macando"
-#&gt;  $ descendants: int 87
-#&gt;  $ id         : int 21667403
-#&gt;  $ kids       : int [1:12] 21668269 21668146 21667826 21667875 21667930 21667856 21669533 21667980 21668465 21668045 ...
-#&gt;  $ score      : int 166
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:26:51"
-#&gt;  $ title      : chr "React in concurrent mode: 2000 state-connected comps re-rendered at 60FPS"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://twitter.com/0xca0a/status/1199997552466288641"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[68]]
-#&gt; List of 9
-#&gt;  $ by         : chr "tlrobinson"
-#&gt;  $ descendants: int 35
-#&gt;  $ id         : int 21662566
-#&gt;  $ kids       : int [1:8] 21664761 21662584 21664087 21664145 21665288 21666574 21664199 21665643
-#&gt;  $ score      : int 166
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 07:43:56"
-#&gt;  $ title      : chr "Almond: An Open, Privacy-Preserving Virtual Assistant"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://almond.stanford.edu/"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[69]]
+#&gt; [[74]]
 #&gt; List of 9
 #&gt;  $ by         : chr "JumpCrisscross"
 #&gt;  $ descendants: int 220
@@ -1332,20 +1398,46 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.axios.com/life-expectancy-young-americans-dying-ccf19571-4a7d-4022-bfba-f4707086a7f1.html"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[70]]
+#&gt; [[75]]
+#&gt; List of 9
+#&gt;  $ by         : chr "networked"
+#&gt;  $ descendants: int 46
+#&gt;  $ id         : int 21668975
+#&gt;  $ kids       : int [1:10] 21669354 21670556 21669341 21669527 21669331 21669225 21671218 21669520 21669330 21670941
+#&gt;  $ score      : int 182
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 08:20:56"
+#&gt;  $ title      : chr "GitHub Trip Report"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://fossil-scm.org/forum/forumpost/536ce98d85"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[76]]
+#&gt; List of 9
+#&gt;  $ by         : chr "pcr910303"
+#&gt;  $ descendants: int 34
+#&gt;  $ id         : int 21668685
+#&gt;  $ kids       : int [1:9] 21669697 21670532 21669217 21669092 21669130 21669084 21669743 21669133 21669515
+#&gt;  $ score      : int 154
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 06:18:41"
+#&gt;  $ title      : chr "The Infamous SCSH Scheme Shell “Acknowledgements” (1994)"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "http://www.scsh.net/docu/html/man.html#node_index_start"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[77]]
 #&gt; List of 9
 #&gt;  $ by         : chr "NiloCK"
-#&gt;  $ descendants: int 230
+#&gt;  $ descendants: int 231
 #&gt;  $ id         : int 21660754
-#&gt;  $ kids       : int [1:138] 21662896 21670256 21661257 21660857 21664213 21661905 21661148 21661256 21661406 21664614 ...
-#&gt;  $ score      : int 182
+#&gt;  $ kids       : int [1:138] 21662896 21661257 21660857 21664213 21661905 21661148 21661256 21661406 21664614 21662032 ...
+#&gt;  $ score      : int 183
 #&gt;  $ text       : chr "I&amp;#x27;m an educator with a CS &amp;#x2F; programming background. There&amp;#x27;s a possibility that I&amp;#x27;ll be movi"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 00:04:47"
 #&gt;  $ title      : chr "Ask HN: What should be taught in high school?"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[71]]
+#&gt; [[78]]
 #&gt; List of 9
 #&gt;  $ by         : chr "mana99"
 #&gt;  $ descendants: int 31
@@ -1358,7 +1450,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "http://timstaley.co.uk/posts/making-git-and-jupyter-notebooks-play-nice/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[72]]
+#&gt; [[79]]
 #&gt; List of 9
 #&gt;  $ by         : chr "computerlab"
 #&gt;  $ descendants: int 42
@@ -1371,23 +1463,23 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://github.com/paaatrick/playball"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[73]]
+#&gt; [[80]]
 #&gt; List of 9
 #&gt;  $ by         : chr "nneonneo"
 #&gt;  $ descendants: int 66
 #&gt;  $ id         : int 21660423
-#&gt;  $ kids       : int [1:17] 21663197 21663832 21661432 21663623 21664773 21662285 21662061 21662600 21662075 21664392 ...
-#&gt;  $ score      : int 173
+#&gt;  $ kids       : int [1:17] 21663197 21661432 21663832 21663623 21664773 21662285 21662061 21662600 21662075 21664392 ...
+#&gt;  $ score      : int 175
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 22:52:06"
 #&gt;  $ title      : chr "Advent of Code 2019"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://adventofcode.com/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[74]]
+#&gt; [[81]]
 #&gt; List of 9
 #&gt;  $ by         : chr "bookofjoe"
-#&gt;  $ descendants: int 75
+#&gt;  $ descendants: int 78
 #&gt;  $ id         : int 21665227
 #&gt;  $ kids       : int [1:17] 21665772 21665410 21665458 21665692 21666146 21665505 21665876 21665867 21665797 21666295 ...
 #&gt;  $ score      : int 135
@@ -1397,7 +1489,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://psycnet.apa.org/record/2019-70149-001?doi=1"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[75]]
+#&gt; [[82]]
 #&gt; List of 9
 #&gt;  $ by         : chr "conse_lad"
 #&gt;  $ descendants: int 63
@@ -1410,12 +1502,12 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://news.yale.edu/2019/11/15/ketogenic-diet-helps-tame-flu-virus"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[76]]
+#&gt; [[83]]
 #&gt; List of 9
 #&gt;  $ by         : chr "johndamaia"
 #&gt;  $ descendants: int 67
 #&gt;  $ id         : int 21656864
-#&gt;  $ kids       : int [1:20] 21656872 21658414 21660050 21657952 21660794 21658581 21660830 21659179 21658640 21660953 ...
+#&gt;  $ kids       : int [1:20] 21656872 21658414 21660050 21657952 21658581 21660794 21660830 21659179 21658640 21660953 ...
 #&gt;  $ score      : int 138
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 13:45:13"
 #&gt;  $ title      : chr "Show HN: Building websites from Sketch using deep learning – public launch"
@@ -1423,7 +1515,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://zecoda.com/product"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[77]]
+#&gt; [[84]]
 #&gt; List of 9
 #&gt;  $ by         : chr "beagle3"
 #&gt;  $ descendants: int 57
@@ -1436,7 +1528,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://blog.trailofbits.com/2019/11/27/64-bits-ought-to-be-enough-for-anybody/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[78]]
+#&gt; [[85]]
+#&gt; List of 9
+#&gt;  $ by         : chr "mathattack"
+#&gt;  $ descendants: int 61
+#&gt;  $ id         : int 21667055
+#&gt;  $ kids       : int [1:19] 21667408 21667594 21667715 21667848 21670001 21669028 21667620 21669816 21670029 21668988 ...
+#&gt;  $ score      : int 145
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 22:56:30"
+#&gt;  $ title      : chr "Who eats who in open source"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "http://www.platformonomics.com/2019/11/dining-preferences-of-the-cloud-and-open-source-who-eats-who/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[86]]
 #&gt; List of 9
 #&gt;  $ by         : chr "francescoc"
 #&gt;  $ descendants: int 44
@@ -1449,20 +1554,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.youtube.com/watch?time_continue=5&amp;v=X-AIbtus9gs&amp;feature=emb_logo"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[79]]
+#&gt; [[87]]
 #&gt; List of 9
 #&gt;  $ by         : chr "gyang"
-#&gt;  $ descendants: int 32
+#&gt;  $ descendants: int 33
 #&gt;  $ id         : int 21651113
 #&gt;  $ kids       : int [1:9] 21653216 21666674 21656828 21654051 21654942 21656824 21656239 21654484 21653444
-#&gt;  $ score      : int 140
+#&gt;  $ score      : int 141
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 20:28:55"
 #&gt;  $ title      : chr "Wide Neural Networks of Any Architecture Are Gaussian Processes"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://arxiv.org/abs/1910.12478"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[80]]
+#&gt; [[88]]
 #&gt; List of 9
 #&gt;  $ by         : chr "CaptainZapp"
 #&gt;  $ descendants: int 74
@@ -1475,7 +1580,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.theguardian.com/technology/2019/nov/27/facebook-only-dutch-factchecker-quits-over-political-ad-exemption"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[81]]
+#&gt; [[89]]
 #&gt; List of 9
 #&gt;  $ by         : chr "JoachimS"
 #&gt;  $ descendants: int 174
@@ -1488,46 +1593,72 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.eetimes.com/document.asp?doc_id=1335331"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[82]]
+#&gt; [[90]]
 #&gt; List of 9
-#&gt;  $ by         : chr "mathattack"
-#&gt;  $ descendants: int 52
-#&gt;  $ id         : int 21667055
-#&gt;  $ kids       : int [1:18] 21667408 21667594 21667715 21667848 21670001 21670029 21667620 21669028 21669816 21668988 ...
-#&gt;  $ score      : int 138
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 22:56:30"
-#&gt;  $ title      : chr "Who eats who in open source"
+#&gt;  $ by         : chr "vo2maxer"
+#&gt;  $ descendants: int 58
+#&gt;  $ id         : int 21670680
+#&gt;  $ kids       : int [1:10] 21671369 21671365 21671523 21671695 21671294 21671359 21671213 21670952 21670957 21670819
+#&gt;  $ score      : int 120
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 17:39:14"
+#&gt;  $ title      : chr "South Carolina judges often lack formal training in the law"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "http://www.platformonomics.com/2019/11/dining-preferences-of-the-cloud-and-open-source-who-eats-who/"
+#&gt;  $ url        : chr "https://www.propublica.org/article/these-judges-can-have-less-training-than-barbers-but-still-decide-thousands-"| __truncated__
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[83]]
+#&gt; [[91]]
+#&gt; List of 9
+#&gt;  $ by         : chr "rcarmo"
+#&gt;  $ descendants: int 17
+#&gt;  $ id         : int 21662893
+#&gt;  $ kids       : int [1:5] 21667671 21670549 21670250 21668684 21668387
+#&gt;  $ score      : int 141
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 09:11:18"
+#&gt;  $ title      : chr "Fleck: A Lisp that runs wherever Bash is"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://github.com/chr15m/flk/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[92]]
 #&gt; List of 9
 #&gt;  $ by         : chr "hu3"
-#&gt;  $ descendants: int 85
+#&gt;  $ descendants: int 86
 #&gt;  $ id         : int 21663765
 #&gt;  $ kids       : int [1:9] 21665809 21664746 21664728 21665090 21665787 21665300 21665039 21665373 21665048
-#&gt;  $ score      : int 155
+#&gt;  $ score      : int 156
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 12:47:26"
 #&gt;  $ title      : chr "Unsoundness in Pin"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://internals.rust-lang.org/t/unsoundness-in-pin/11311"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[84]]
+#&gt; [[93]]
 #&gt; List of 9
-#&gt;  $ by         : chr "denzil_correa"
-#&gt;  $ descendants: int 226
-#&gt;  $ id         : int 21666314
-#&gt;  $ kids       : int [1:23] 21669569 21668519 21668594 21669419 21669930 21668528 21668711 21668820 21668866 21669968 ...
-#&gt;  $ score      : int 116
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 20:36:47"
-#&gt;  $ title      : chr "Many elementary teachers don’t understand math, and it makes them anxious"
+#&gt;  $ by         : chr "nabla9"
+#&gt;  $ descendants: int 141
+#&gt;  $ id         : int 21670462
+#&gt;  $ kids       : int [1:21] 21670659 21670917 21670988 21670577 21670541 21670562 21671255 21670770 21670628 21670734 ...
+#&gt;  $ score      : int 114
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 16:56:32"
+#&gt;  $ title      : chr "Never mind the 1 percent Let's talk about the 0.01 percent"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://www.latimes.com/opinion/story/2019-11-21/math-anxiety-elementary-teacher"
+#&gt;  $ url        : chr "https://review.chicagobooth.edu/economics/2017/article/never-mind-1-percent-lets-talk-about-001-percent"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[85]]
+#&gt; [[94]]
+#&gt; List of 9
+#&gt;  $ by         : chr "anonymfus"
+#&gt;  $ descendants: int 78
+#&gt;  $ id         : int 21668184
+#&gt;  $ kids       : int [1:15] 21668629 21668242 21668475 21671323 21669682 21669113 21668275 21669310 21668422 21668516 ...
+#&gt;  $ score      : int 124
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 03:39:53"
+#&gt;  $ title      : chr "Disc rot is a challenge for both archivists and collectors (2017)"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://www.vice.com/en_us/article/mg9pdv/the-hidden-phenomenon-that-could-ruin-your-old-discs"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[95]]
 #&gt; List of 9
 #&gt;  $ by         : chr "ivank"
 #&gt;  $ descendants: int 22
@@ -1540,33 +1671,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.systemverilog.io/ddr4-initialization-and-calibration"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[86]]
-#&gt; List of 9
-#&gt;  $ by         : chr "networked"
-#&gt;  $ descendants: int 29
-#&gt;  $ id         : int 21668975
-#&gt;  $ kids       : int [1:7] 21669354 21669341 21669331 21669225 21669527 21669330 21669520
-#&gt;  $ score      : int 146
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 08:20:56"
-#&gt;  $ title      : chr "GitHub Trip Report"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://fossil-scm.org/forum/forumpost/536ce98d85"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[87]]
-#&gt; List of 9
-#&gt;  $ by         : chr "rcarmo"
-#&gt;  $ descendants: int 16
-#&gt;  $ id         : int 21662893
-#&gt;  $ kids       : int [1:4] 21670250 21667671 21668684 21668387
-#&gt;  $ score      : int 135
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 09:11:18"
-#&gt;  $ title      : chr "Fleck: A Lisp that runs wherever Bash is"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://github.com/chr15m/flk/"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[88]]
+#&gt; [[96]]
 #&gt; List of 9
 #&gt;  $ by         : chr "vickyonit"
 #&gt;  $ descendants: int 135
@@ -1579,7 +1684,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://status.gitlab.com/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[89]]
+#&gt; [[97]]
 #&gt; List of 9
 #&gt;  $ by         : chr "nclzz"
 #&gt;  $ descendants: int 74
@@ -1592,7 +1697,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.vox.com/science-and-health/2019/11/19/20970252/climate-change-solar-heat-heliogen-csp"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[90]]
+#&gt; [[98]]
 #&gt; List of 9
 #&gt;  $ by         : chr "JayXon"
 #&gt;  $ descendants: int 72
@@ -1605,85 +1710,85 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://ai.googleblog.com/2019/11/astrophotography-with-night-sight-on.html"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[91]]
-#&gt; List of 9
-#&gt;  $ by         : chr "chakerb"
-#&gt;  $ descendants: int 39
-#&gt;  $ id         : int 21660365
-#&gt;  $ kids       : int [1:9] 21661878 21661576 21661372 21662680 21661239 21662303 21663763 21661736 21664220
-#&gt;  $ score      : int 113
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 22:41:56"
-#&gt;  $ title      : chr "DeepPCB: Pure AI-Powered, Cloud-Native Printed Circuit Board Routing"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://deeppcb.ai/"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[92]]
-#&gt; List of 9
-#&gt;  $ by         : chr "skovorodkin"
-#&gt;  $ descendants: int 11
-#&gt;  $ id         : int 21666250
-#&gt;  $ kids       : int [1:4] 21669657 21669247 21670248 21669732
-#&gt;  $ score      : int 122
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 20:27:49"
-#&gt;  $ title      : chr "CMU 15-721: In-Memory Databases / Advanced Database Systems [video]"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://www.youtube.com/playlist?list=PLSE8ODhjZXja7K1hjZ01UTVDnGQdx5v5U"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[93]]
+#&gt; [[99]]
 #&gt; List of 9
 #&gt;  $ by         : chr "5107h"
 #&gt;  $ descendants: int 19
 #&gt;  $ id         : int 21660839
 #&gt;  $ kids       : int [1:7] 21661391 21661966 21662537 21665576 21661513 21661690 21661563
-#&gt;  $ score      : int 137
+#&gt;  $ score      : int 139
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 00:26:03"
 #&gt;  $ title      : chr "Mental Mountains"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://slatestarcodex.com/2019/11/26/mental-mountains/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[94]]
+#&gt; [[100]]
 #&gt; List of 9
-#&gt;  $ by         : chr "tiagom87"
-#&gt;  $ descendants: int 16
-#&gt;  $ id         : int 21669416
-#&gt;  $ kids       : int [1:4] 21670216 21670081 21669879 21669633
-#&gt;  $ score      : int 89
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 11:37:15"
-#&gt;  $ title      : chr "Longevity Linked to Proteins That Calm Overexcited Neurons"
+#&gt;  $ by         : chr "chakerb"
+#&gt;  $ descendants: int 41
+#&gt;  $ id         : int 21660365
+#&gt;  $ kids       : int [1:10] 21661878 21661576 21661372 21662680 21661239 21662303 21663763 21670415 21661736 21664220
+#&gt;  $ score      : int 115
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 22:41:56"
+#&gt;  $ title      : chr "DeepPCB: Pure AI-Powered, Cloud-Native Printed Circuit Board Routing"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://www.quantamagazine.org/longevity-linked-to-proteins-that-calm-overexcited-neurons-20191126/"
+#&gt;  $ url        : chr "https://deeppcb.ai/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[95]]
+#&gt; [[101]]
+#&gt; List of 9
+#&gt;  $ by         : chr "bigpumpkin"
+#&gt;  $ descendants: int 19
+#&gt;  $ id         : int 21666943
+#&gt;  $ kids       : int [1:6] 21667053 21667496 21667483 21667267 21667517 21667098
+#&gt;  $ score      : int 105
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 22:40:10"
+#&gt;  $ title      : chr "The plot thickens for a hypothetical “X17” particle"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://home.cern/news/news/physics/plot-thickens-hypothetical-x17-particle"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[102]]
 #&gt; List of 9
 #&gt;  $ by         : chr "gsempe"
 #&gt;  $ descendants: int 39
 #&gt;  $ id         : int 21660925
 #&gt;  $ kids       : int [1:9] 21662829 21663034 21662632 21662282 21664668 21662988 21663289 21664358 21663837
-#&gt;  $ score      : int 123
+#&gt;  $ score      : int 124
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 00:48:40"
 #&gt;  $ title      : chr "Apache Guacamole – Clientless remote desktop gateway"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://guacamole.apache.org/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[96]]
+#&gt; [[103]]
+#&gt; List of 9
+#&gt;  $ by         : chr "gremlinsinc"
+#&gt;  $ descendants: int 39
+#&gt;  $ id         : int 21660373
+#&gt;  $ kids       : int [1:18] 21664610 21666247 21665910 21665009 21666592 21664762 21666359 21668756 21665967 21664597 ...
+#&gt;  $ score      : int 166
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 22:42:56"
+#&gt;  $ title      : chr "Matestack: Rapidly create interactive UIs in Ruby"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://www.matestack.org/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[104]]
 #&gt; List of 9
 #&gt;  $ by         : chr "steven_pack"
 #&gt;  $ descendants: int 76
 #&gt;  $ id         : int 21654705
-#&gt;  $ kids       : int [1:32] 21656548 21658361 21656763 21657376 21656963 21655165 21657042 21667372 21656852 21667485 ...
-#&gt;  $ score      : int 105
+#&gt;  $ kids       : int [1:32] 21656548 21658361 21656763 21657376 21656963 21655165 21657042 21656852 21667372 21654847 ...
+#&gt;  $ score      : int 106
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 06:00:50"
 #&gt;  $ title      : chr "Show HN: Notimeforbooks.com – Read a book, one page at a time, in your inbox"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://notimeforbooks.com"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[97]]
+#&gt; [[105]]
 #&gt; List of 9
 #&gt;  $ by         : chr "Fice"
 #&gt;  $ descendants: int 46
@@ -1696,23 +1801,10 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://tinyletter.com/mbutterick/letters/please-go-away-tim-berners-lee"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[98]]
-#&gt; List of 9
-#&gt;  $ by         : chr "bigpumpkin"
-#&gt;  $ descendants: int 19
-#&gt;  $ id         : int 21666943
-#&gt;  $ kids       : int [1:6] 21667053 21667496 21667483 21667267 21667517 21667098
-#&gt;  $ score      : int 102
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 22:40:10"
-#&gt;  $ title      : chr "The plot thickens for a hypothetical “X17” particle"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://home.cern/news/news/physics/plot-thickens-hypothetical-x17-particle"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[99]]
+#&gt; [[106]]
 #&gt; List of 9
 #&gt;  $ by         : chr "BurningFrog"
-#&gt;  $ descendants: int 43
+#&gt;  $ descendants: int 44
 #&gt;  $ id         : int 21660574
 #&gt;  $ kids       : int [1:9] 21661458 21661235 21661278 21664296 21661146 21661177 21661158 21663726 21661710
 #&gt;  $ score      : int 118
@@ -1722,7 +1814,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://phys.org/news/2019-11-evidence-anisotropy-cosmic.html"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[100]]
+#&gt; [[107]]
 #&gt; List of 9
 #&gt;  $ by         : chr "lisper"
 #&gt;  $ descendants: int 61
@@ -1735,7 +1827,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://en.wikipedia.org/wiki/Man_or_boy_test"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[101]]
+#&gt; [[108]]
 #&gt; List of 9
 #&gt;  $ by         : chr "nextdns"
 #&gt;  $ descendants: int 43
@@ -1748,20 +1840,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://trackingthetrackers.com/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[102]]
+#&gt; [[109]]
 #&gt; List of 9
-#&gt;  $ by         : chr "pcr910303"
-#&gt;  $ descendants: int 19
-#&gt;  $ id         : int 21668685
-#&gt;  $ kids       : int [1:8] 21669697 21669217 21669092 21669130 21669743 21669084 21669133 21669515
-#&gt;  $ score      : int 116
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 06:18:41"
-#&gt;  $ title      : chr "The Infamous SCSH Scheme Shell “Acknowledgements” (1994)"
+#&gt;  $ by         : chr "onetimemanytime"
+#&gt;  $ descendants: int 45
+#&gt;  $ id         : int 21666705
+#&gt;  $ kids       : int [1:8] 21669458 21669227 21670257 21669891 21670802 21669474 21670041 21669348
+#&gt;  $ score      : int 98
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 21:42:56"
+#&gt;  $ title      : chr "In Amish village, a rural doctor sees the rarest diseases on Earth"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "http://www.scsh.net/docu/html/man.html#node_index_start"
+#&gt;  $ url        : chr "https://www.usatoday.com/in-depth/news/nation/2019/11/29/wisconsin-rural-doctor-treats-amish-studies-rare-genet"| __truncated__
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[103]]
+#&gt; [[110]]
 #&gt; List of 9
 #&gt;  $ by         : chr "kochihabaya"
 #&gt;  $ descendants: int 51
@@ -1774,62 +1866,49 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://diracdeltas.github.io/blog/information-apocalypse/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[104]]
-#&gt; List of 9
-#&gt;  $ by         : chr "gremlinsinc"
-#&gt;  $ descendants: int 37
-#&gt;  $ id         : int 21660373
-#&gt;  $ kids       : int [1:18] 21664610 21666247 21665910 21665009 21666592 21664762 21666359 21668756 21665967 21664597 ...
-#&gt;  $ score      : int 162
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 22:42:56"
-#&gt;  $ title      : chr "Matestack: Rapidly create interactive UIs in Ruby"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://www.matestack.org/"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[105]]
+#&gt; [[111]]
 #&gt; List of 9
 #&gt;  $ by         : chr "HipGeeks"
-#&gt;  $ descendants: int 70
+#&gt;  $ descendants: int 71
 #&gt;  $ id         : int 21663831
 #&gt;  $ kids       : int [1:9] 21664326 21664060 21664101 21664195 21665017 21664272 21664159 21664489 21664139
-#&gt;  $ score      : int 113
+#&gt;  $ score      : int 115
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 13:02:05"
 #&gt;  $ title      : chr "German parliament passes bill allowing banks to sell and store cryptocurrencies"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://decrypt.co/12603/new-law-makes-germany-crypto-heaven"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[106]]
+#&gt; [[112]]
 #&gt; List of 9
 #&gt;  $ by         : chr "vezycash"
-#&gt;  $ descendants: int 52
+#&gt;  $ descendants: int 53
 #&gt;  $ id         : int 21659979
-#&gt;  $ kids       : int [1:13] 21661220 21664803 21663937 21662951 21666203 21664377 21663253 21662677 21662958 21665574 ...
-#&gt;  $ score      : int 103
+#&gt;  $ kids       : int [1:13] 21661220 21663937 21664803 21662951 21666203 21664377 21663253 21662677 21662958 21665574 ...
+#&gt;  $ score      : int 104
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 21:28:02"
 #&gt;  $ title      : chr "Illusory Truth Effect"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://en.wikipedia.org/wiki/Illusory_truth_effect"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[107]]
+#&gt; [[113]]
 #&gt; List of 9
 #&gt;  $ by         : chr "ColinWright"
 #&gt;  $ descendants: int 62
 #&gt;  $ id         : int 21659389
 #&gt;  $ kids       : int [1:11] 21660102 21660854 21660356 21660278 21660664 21660256 21661049 21660345 21662475 21660907 ...
-#&gt;  $ score      : int 130
+#&gt;  $ score      : int 131
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 19:44:30"
 #&gt;  $ title      : chr "Inventing an Operation to Solve x^x = y (2000)"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "http://mathforum.org/library/drmath/view/54586.html"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[108]]
+#&gt; [[114]]
 #&gt; List of 9
 #&gt;  $ by         : chr "robin_reala"
-#&gt;  $ descendants: int 43
+#&gt;  $ descendants: int 44
 #&gt;  $ id         : int 21658935
 #&gt;  $ kids       : int [1:15] 21661285 21661711 21658943 21661367 21661243 21661669 21669656 21660240 21662442 21662574 ...
 #&gt;  $ score      : int 121
@@ -1839,7 +1918,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.ekioh.com/flow-browser/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[109]]
+#&gt; [[115]]
 #&gt; List of 9
 #&gt;  $ by         : chr "wenbin"
 #&gt;  $ descendants: int 80
@@ -1852,20 +1931,33 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://lnns.co/GotE_OcuK8w"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[110]]
+#&gt; [[116]]
 #&gt; List of 9
 #&gt;  $ by         : chr "Lammy"
-#&gt;  $ descendants: int 13
+#&gt;  $ descendants: int 14
 #&gt;  $ id         : int 21667238
-#&gt;  $ kids       : int [1:8] 21668911 21668177 21668065 21669641 21669678 21668509 21668428 21667773
-#&gt;  $ score      : int 119
+#&gt;  $ kids       : int [1:8] 21668911 21668177 21668065 21669641 21668509 21669678 21668428 21667773
+#&gt;  $ score      : int 123
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 23:40:43"
 #&gt;  $ title      : chr "Tracking down the true origin of a font used in many games and shareware titles"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://twitter.com/codeman38/status/1200243842521415681"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[111]]
+#&gt; [[117]]
+#&gt; List of 9
+#&gt;  $ by         : chr "indigodaddy"
+#&gt;  $ descendants: int 6
+#&gt;  $ id         : int 21660789
+#&gt;  $ kids       : int [1:4] 21667170 21666815 21666971 21668374
+#&gt;  $ score      : int 97
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 00:12:38"
+#&gt;  $ title      : chr "The Sega SC-3000 Personal Computer (2018)"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://dev.to/buntine/the-historical-obscurity-of-the-sega-sc-3000-personal-computer-1hac"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[118]]
 #&gt; List of 9
 #&gt;  $ by         : chr "jaytaylor"
 #&gt;  $ descendants: int 162
@@ -1878,7 +1970,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://jalopnik.com/something-changed-at-tesla-1840068128/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[112]]
+#&gt; [[119]]
 #&gt; List of 9
 #&gt;  $ by         : chr "rmason"
 #&gt;  $ descendants: int 51
@@ -1891,46 +1983,33 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.senate.gov/artandhistory/history/minute/Senate_Considers_Banning_Dial_Phones.htm"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[113]]
+#&gt; [[120]]
 #&gt; List of 9
-#&gt;  $ by         : chr "anonymfus"
-#&gt;  $ descendants: int 64
-#&gt;  $ id         : int 21668184
-#&gt;  $ kids       : int [1:13] 21668629 21668242 21668475 21669113 21669682 21669310 21668275 21668422 21668516 21669049 ...
-#&gt;  $ score      : int 104
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 03:39:53"
-#&gt;  $ title      : chr "Disc rot is a challenge for both archivists and collectors (2017)"
+#&gt;  $ by         : chr "hourislate"
+#&gt;  $ descendants: int 60
+#&gt;  $ id         : int 21666742
+#&gt;  $ kids       : int [1:13] 21667028 21667436 21667054 21666963 21668913 21668455 21669296 21667078 21667124 21668923 ...
+#&gt;  $ score      : int 91
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 21:53:16"
+#&gt;  $ title      : chr "The Role of Luck in Life Success"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://www.vice.com/en_us/article/mg9pdv/the-hidden-phenomenon-that-could-ruin-your-old-discs"
+#&gt;  $ url        : chr "https://blogs.scientificamerican.com/beautiful-minds/the-role-of-luck-in-life-success-is-far-greater-than-we-realized/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[114]]
+#&gt; [[121]]
 #&gt; List of 9
 #&gt;  $ by         : chr "kqr2"
-#&gt;  $ descendants: int 27
+#&gt;  $ descendants: int 28
 #&gt;  $ id         : int 21666195
-#&gt;  $ kids       : int [1:10] 21666342 21667413 21666575 21666998 21667208 21666414 21668398 21666563 21667428 21666377
-#&gt;  $ score      : int 115
+#&gt;  $ kids       : int [1:10] 21666342 21667413 21666575 21666998 21667208 21666414 21667428 21666563 21668398 21666377
+#&gt;  $ score      : int 116
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 20:16:00"
 #&gt;  $ title      : chr "Zephyr: A scalable Real-Time operating system for IoT embedded devices"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://www.zephyrproject.org/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[115]]
-#&gt; List of 9
-#&gt;  $ by         : chr "indigodaddy"
-#&gt;  $ descendants: int 5
-#&gt;  $ id         : int 21660789
-#&gt;  $ kids       : int [1:4] 21667170 21666815 21666971 21668374
-#&gt;  $ score      : int 96
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 00:12:38"
-#&gt;  $ title      : chr "The Sega SC-3000 Personal Computer (2018)"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://dev.to/buntine/the-historical-obscurity-of-the-sega-sc-3000-personal-computer-1hac"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[116]]
+#&gt; [[122]]
 #&gt; List of 9
 #&gt;  $ by         : chr "wglb"
 #&gt;  $ descendants: int 31
@@ -1943,33 +2022,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.npr.org/2019/11/26/782890646/2-months-after-failed-moon-landing-india-admits-its-craft-crashed"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[117]]
+#&gt; [[123]]
 #&gt; List of 9
-#&gt;  $ by         : chr "jger15"
+#&gt;  $ by         : chr "bobbiechen"
 #&gt;  $ descendants: int 24
-#&gt;  $ id         : int 21669726
-#&gt;  $ kids       : int [1:12] 21669925 21670259 21669971 21670215 21669973 21670161 21670222 21670207 21669899 21669910 ...
-#&gt;  $ score      : int 97
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 13:47:19"
-#&gt;  $ title      : chr "Yes, And – How to be effective in the theatre of work"
+#&gt;  $ id         : int 21668534
+#&gt;  $ kids       : int [1:8] 21668962 21668854 21668812 21670979 21669495 21670886 21669181 21668883
+#&gt;  $ score      : int 107
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 05:36:21"
+#&gt;  $ title      : chr "Jacob Collier’s four magical chords"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://tomcritchlow.com/2019/11/18/yes-and/"
+#&gt;  $ url        : chr "https://www.ethanhein.com/wp/2019/jacob-colliers-four-magical-chords/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[118]]
-#&gt; List of 9
-#&gt;  $ by         : chr "hourislate"
-#&gt;  $ descendants: int 60
-#&gt;  $ id         : int 21666742
-#&gt;  $ kids       : int [1:13] 21667028 21667436 21667054 21668913 21666963 21669296 21668455 21668923 21667078 21667124 ...
-#&gt;  $ score      : int 89
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 21:53:16"
-#&gt;  $ title      : chr "The Role of Luck in Life Success"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://blogs.scientificamerican.com/beautiful-minds/the-role-of-luck-in-life-success-is-far-greater-than-we-realized/"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[119]]
+#&gt; [[124]]
 #&gt; List of 9
 #&gt;  $ by         : chr "smacktoward"
 #&gt;  $ descendants: int 53
@@ -1982,7 +2048,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://foreignpolicy.com/2019/11/28/mikhail-gorbachev-pizza-hut-ad-thanksgiving-miracle/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[120]]
+#&gt; [[125]]
 #&gt; List of 9
 #&gt;  $ by         : chr "furcyd"
 #&gt;  $ descendants: int 23
@@ -1995,46 +2061,98 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "http://nautil.us/blog/hologram-within-a-hologram-hints-at-fate-of-black-holes"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[121]]
+#&gt; [[126]]
+#&gt; List of 9
+#&gt;  $ by         : chr "unilynx"
+#&gt;  $ descendants: int 29
+#&gt;  $ id         : int 21669570
+#&gt;  $ kids       : int [1:17] 21670537 21669969 21670073 21669773 21669964 21670897 21671128 21671397 21670827 21670916 ...
+#&gt;  $ score      : int 92
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 12:47:25"
+#&gt;  $ title      : chr "History of Fidonet"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "http://www.olografix.org/gubi/estate/archivio/fido/fido.htm"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[127]]
+#&gt; List of 9
+#&gt;  $ by         : chr "wwarner"
+#&gt;  $ descendants: int 51
+#&gt;  $ id         : int 21667336
+#&gt;  $ kids       : int [1:6] 21669618 21670340 21668868 21668986 21669528 21669580
+#&gt;  $ score      : int 96
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:08:38"
+#&gt;  $ title      : chr "Disproved Discoveries That Won Nobel Prizes (2015)"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://www.realclearscience.com/blog/2015/10/nobel_prizes_awarded_for_disproved_discoveries.html"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[128]]
 #&gt; List of 9
 #&gt;  $ by         : chr "known"
-#&gt;  $ descendants: int 39
+#&gt;  $ descendants: int 41
 #&gt;  $ id         : int 21664050
-#&gt;  $ kids       : int [1:7] 21664932 21665265 21664971 21665629 21664994 21664785 21665493
-#&gt;  $ score      : int 93
+#&gt;  $ kids       : int [1:8] 21664932 21665265 21664971 21671508 21665629 21664994 21664785 21665493
+#&gt;  $ score      : int 94
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 13:54:59"
 #&gt;  $ title      : chr "Migrants who made China an industrial giant face a grim retirement"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://www.economist.com/china/2019/11/30/the-migrants-who-made-china-an-industrial-giant-face-a-grim-retirement"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[122]]
+#&gt; [[129]]
 #&gt; List of 9
 #&gt;  $ by         : chr "Classicaldj34"
 #&gt;  $ descendants: int 9
 #&gt;  $ id         : int 21648644
 #&gt;  $ kids       : int [1:4] 21650117 21650270 21650092 21652847
-#&gt;  $ score      : int 101
+#&gt;  $ score      : int 102
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 16:29:38"
 #&gt;  $ title      : chr "Bose headphones are basically a spyware on your head"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://www.reddit.com/r/privacy/comments/e2boh8/bose_headphones_are_basically_a_spyware_on_your/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[123]]
+#&gt; [[130]]
+#&gt; List of 9
+#&gt;  $ by         : chr "tony-allan"
+#&gt;  $ descendants: int 3
+#&gt;  $ id         : int 21670442
+#&gt;  $ kids       : int [1:2] 21671745 21671450
+#&gt;  $ score      : int 89
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 16:52:16"
+#&gt;  $ title      : chr "Mal is a Clojure inspired Lisp interpreter implemented in 79 languages"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://github.com/kanaka/mal/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[131]]
+#&gt; List of 9
+#&gt;  $ by         : chr "dangirsh"
+#&gt;  $ descendants: int 34
+#&gt;  $ id         : int 21667353
+#&gt;  $ kids       : int [1:7] 21669055 21668580 21669164 21668840 21668134 21668545 21668813
+#&gt;  $ score      : int 83
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:13:43"
+#&gt;  $ title      : chr "Neural Annealing: Toward a Neural Theory of Everything"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://opentheory.net/2019/11/neural-annealing-toward-a-neural-theory-of-everything/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[132]]
 #&gt; List of 9
 #&gt;  $ by         : chr "vo2maxer"
 #&gt;  $ descendants: int 5
 #&gt;  $ id         : int 21667060
 #&gt;  $ kids       : int [1:5] 21667624 21668393 21668135 21667480 21669031
-#&gt;  $ score      : int 79
+#&gt;  $ score      : int 82
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 22:56:49"
 #&gt;  $ title      : chr "3D-printed microscope enables computational super-resolution imaging at $1200"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://f1000researchdata.s3.amazonaws.com/manuscripts/23450/6576bc13-4d38-494d-a56a-92ef864de3c3_21294_-_brian"| __truncated__
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[124]]
+#&gt; [[133]]
 #&gt; List of 9
 #&gt;  $ by         : chr "xdze2"
 #&gt;  $ descendants: int 91
@@ -2047,12 +2165,12 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://phys.org/news/2019-11-climate-scientists.html"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[125]]
+#&gt; [[134]]
 #&gt; List of 9
 #&gt;  $ by         : chr "dragandj"
 #&gt;  $ descendants: int 9
 #&gt;  $ id         : int 21659724
-#&gt;  $ kids       : int [1:4] 21664356 21666535 21663861 21663827
+#&gt;  $ kids       : int [1:4] 21664356 21663861 21666535 21663827
 #&gt;  $ score      : int 105
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 20:43:23"
 #&gt;  $ title      : chr "Interactive Programming for Artificial Intelligence [video]"
@@ -2060,7 +2178,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.youtube.com/watch?v=m0rSJ9xdsdk"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[126]]
+#&gt; [[135]]
 #&gt; List of 9
 #&gt;  $ by         : chr "DSpinellis"
 #&gt;  $ descendants: int 15
@@ -2073,12 +2191,12 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.spinellis.gr/blog/20191103/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[127]]
+#&gt; [[136]]
 #&gt; List of 9
 #&gt;  $ by         : chr "allthings"
 #&gt;  $ descendants: int 54
 #&gt;  $ id         : int 21645168
-#&gt;  $ kids       : int [1:20] 21657849 21658781 21657805 21658407 21659744 21663688 21659204 21660166 21657858 21657658 ...
+#&gt;  $ kids       : int [1:20] 21657849 21658781 21657805 21658407 21659744 21659204 21663688 21660166 21657858 21657658 ...
 #&gt;  $ score      : int 82
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 05:11:31"
 #&gt;  $ title      : chr "Paradoxical Geniuses: “Let us burn the ships” (2017)"
@@ -2086,20 +2204,33 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://notesonliberty.com/2017/06/16/paradoxical-geniuses-let-us-burn-the-ships/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[128]]
+#&gt; [[137]]
 #&gt; List of 9
-#&gt;  $ by         : chr "dangirsh"
-#&gt;  $ descendants: int 29
-#&gt;  $ id         : int 21667353
-#&gt;  $ kids       : int [1:7] 21669055 21668580 21669164 21668840 21668134 21668545 21668813
-#&gt;  $ score      : int 76
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:13:43"
-#&gt;  $ title      : chr "Neural Annealing: Toward a Neural Theory of Everything"
+#&gt;  $ by         : chr "skovorodkin"
+#&gt;  $ descendants: int 16
+#&gt;  $ id         : int 21667045
+#&gt;  $ kids       : int [1:9] 21670008 21668222 21669359 21668329 21668838 21668456 21668130 21668033 21669146
+#&gt;  $ score      : int 88
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 22:55:42"
+#&gt;  $ title      : chr "Find stuff in org-mode anywhere (2017)"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://opentheory.net/2019/11/neural-annealing-toward-a-neural-theory-of-everything/"
+#&gt;  $ url        : chr "https://kitchingroup.cheme.cmu.edu/blog/2017/01/03/Find-stuff-in-org-mode-anywhere/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[129]]
+#&gt; [[138]]
+#&gt; List of 9
+#&gt;  $ by         : chr "EndXA"
+#&gt;  $ descendants: int 43
+#&gt;  $ id         : int 21666715
+#&gt;  $ kids       : int [1:6] 21670137 21670179 21669649 21671467 21670193 21670809
+#&gt;  $ score      : int 80
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 21:46:18"
+#&gt;  $ title      : chr "Giant tortoises show surprising cognitive powers"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://www.nature.com/articles/d41586-019-03655-5"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[139]]
 #&gt; List of 9
 #&gt;  $ by         : chr "rkraaijenhagen"
 #&gt;  $ descendants: int 36
@@ -2112,33 +2243,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://newsroom.inter.ikea.com/news/all/ikea-invests-200-million-euros-to-speed-up-action-to-become-climate-po"| __truncated__
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[130]]
-#&gt; List of 9
-#&gt;  $ by         : chr "skovorodkin"
-#&gt;  $ descendants: int 16
-#&gt;  $ id         : int 21667045
-#&gt;  $ kids       : int [1:9] 21670008 21668222 21668329 21668838 21669359 21668456 21668130 21668033 21669146
-#&gt;  $ score      : int 85
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 22:55:42"
-#&gt;  $ title      : chr "Find stuff in org-mode anywhere (2017)"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://kitchingroup.cheme.cmu.edu/blog/2017/01/03/Find-stuff-in-org-mode-anywhere/"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[131]]
+#&gt; [[140]]
 #&gt; List of 9
 #&gt;  $ by         : chr "skovorodkin"
 #&gt;  $ descendants: int 1
 #&gt;  $ id         : int 21667332
 #&gt;  $ kids       : int [1:2] 21668821 21669913
-#&gt;  $ score      : int 79
+#&gt;  $ score      : int 83
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:07:44"
 #&gt;  $ title      : chr "Introduction to Data Compression (2013) [pdf]"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://www.cs.cmu.edu/~guyb/realworld/compression.pdf"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[132]]
+#&gt; [[141]]
 #&gt; List of 9
 #&gt;  $ by         : chr "mtsx"
 #&gt;  $ descendants: int 41
@@ -2151,7 +2269,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://twitter.com/hashtag/facebookdown"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[133]]
+#&gt; [[142]]
 #&gt; List of 9
 #&gt;  $ by         : chr "ollieparanoid"
 #&gt;  $ descendants: int 8
@@ -2164,7 +2282,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://osmocom.org/news/120"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[134]]
+#&gt; [[143]]
 #&gt; List of 9
 #&gt;  $ by         : chr "takinola"
 #&gt;  $ descendants: int 56
@@ -2177,7 +2295,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://medium.com/@mwichary/the-ghost-tech-in-todays-language-c3becc9ae30b"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[135]]
+#&gt; [[144]]
 #&gt; List of 9
 #&gt;  $ by         : chr "hhs"
 #&gt;  $ descendants: int 81
@@ -2190,7 +2308,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.reuters.com/article/us-india-transportation/india-plans-to-cap-commissions-for-uber-ola-economic-ti"| __truncated__
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[136]]
+#&gt; [[145]]
+#&gt; List of 9
+#&gt;  $ by         : chr "ggerganov"
+#&gt;  $ descendants: int 18
+#&gt;  $ id         : int 21670239
+#&gt;  $ kids       : int [1:9] 21671075 21670247 21670398 21671005 21670975 21671013 21670430 21670643 21670429
+#&gt;  $ score      : int 81
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 16:02:14"
+#&gt;  $ title      : chr "Show HN: Dot-to-ASCII – Graphviz to ASCII Converter"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://dot-to-ascii.ggerganov.com"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[146]]
 #&gt; List of 9
 #&gt;  $ by         : chr "bookofjoe"
 #&gt;  $ descendants: int 31
@@ -2203,7 +2334,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://press.rsna.org/pressrelease/2019_resources/2121/abstract.pdf"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[137]]
+#&gt; [[147]]
 #&gt; List of 9
 #&gt;  $ by         : chr "lutun"
 #&gt;  $ descendants: int 17
@@ -2216,23 +2347,49 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://gorse.io/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[138]]
+#&gt; [[148]]
 #&gt; List of 9
-#&gt;  $ by         : chr "bobbiechen"
-#&gt;  $ descendants: int 19
-#&gt;  $ id         : int 21668534
-#&gt;  $ kids       : int [1:6] 21668962 21668854 21668812 21669495 21669181 21668883
-#&gt;  $ score      : int 92
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 05:36:21"
-#&gt;  $ title      : chr "Jacob Collier’s four magical chords"
+#&gt;  $ by         : chr "jez"
+#&gt;  $ descendants: int 26
+#&gt;  $ id         : int 21667316
+#&gt;  $ kids       : int [1:8] 21670492 21667878 21670666 21668836 21668865 21668609 21669273 21669152
+#&gt;  $ score      : int 78
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:03:06"
+#&gt;  $ title      : chr "Improving CLIs with isatty"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://www.ethanhein.com/wp/2019/jacob-colliers-four-magical-chords/"
+#&gt;  $ url        : chr "https://blog.jez.io/cli-tty/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[139]]
+#&gt; [[149]]
+#&gt; List of 9
+#&gt;  $ by         : chr "acasajus"
+#&gt;  $ descendants: int 22
+#&gt;  $ id         : int 21666983
+#&gt;  $ kids       : int [1:9] 21671716 21668874 21668317 21668178 21669710 21668142 21668399 21667806 21669033
+#&gt;  $ score      : int 78
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 22:46:12"
+#&gt;  $ title      : chr "Show HN: Keycat – A self-hosted end-to-end encrypted password manager"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://key.cat/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[150]]
+#&gt; List of 9
+#&gt;  $ by         : chr "SirLJ"
+#&gt;  $ descendants: int 28
+#&gt;  $ id         : int 21666153
+#&gt;  $ kids       : int [1:7] 21667663 21666670 21666482 21668079 21666974 21666992 21667149
+#&gt;  $ score      : int 74
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 20:07:05"
+#&gt;  $ title      : chr "Ponzi Schemes, Private Yachts, and a Missing $250M in Crypto: Quadriga"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://www.vanityfair.com/news/2019/11/the-strange-tale-of-quadriga-gerald-cotten"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[151]]
 #&gt; List of 9
 #&gt;  $ by         : chr "sahin-boydas"
-#&gt;  $ descendants: int 42
+#&gt;  $ descendants: int 43
 #&gt;  $ id         : int 21664601
 #&gt;  $ kids       : int [1:7] 21664787 21665320 21664751 21665633 21664871 21665683 21666204
 #&gt;  $ score      : int 63
@@ -2242,7 +2399,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://venturebeat.com/2019/11/28/hsbc-to-shift-20-billion-worth-of-assets-to-blockchain-based-digital-vault/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[140]]
+#&gt; [[152]]
+#&gt; List of 9
+#&gt;  $ by         : chr "c89X"
+#&gt;  $ descendants: int 39
+#&gt;  $ id         : int 21656891
+#&gt;  $ kids       : int [1:21] 21660200 21661024 21657151 21660545 21660434 21658963 21660687 21660990 21665875 21660911 ...
+#&gt;  $ score      : int 107
+#&gt;  $ text       : chr "We run a small SaaS where users are able to create accounts, submit billing information and upload&amp;#x2F;call ML"| __truncated__
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 13:48:40"
+#&gt;  $ title      : chr "Ask HN: How do you deal with atomicity in microservice environments?"
+#&gt;  $ type       : chr "story"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[153]]
 #&gt; List of 9
 #&gt;  $ by         : chr "lawrenceyan"
 #&gt;  $ descendants: int 31
@@ -2255,46 +2425,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.youtube.com/watch?v=vuaiqcjf0bs"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[141]]
+#&gt; [[154]]
 #&gt; List of 9
-#&gt;  $ by         : chr "jez"
-#&gt;  $ descendants: int 24
-#&gt;  $ id         : int 21667316
-#&gt;  $ kids       : int [1:6] 21667878 21668836 21668865 21669273 21668609 21669152
-#&gt;  $ score      : int 77
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:03:06"
-#&gt;  $ title      : chr "Improving CLIs with isatty"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://blog.jez.io/cli-tty/"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[142]]
-#&gt; List of 9
-#&gt;  $ by         : chr "acasajus"
-#&gt;  $ descendants: int 21
-#&gt;  $ id         : int 21666983
-#&gt;  $ kids       : int [1:8] 21668874 21669710 21668317 21668142 21668178 21668399 21667806 21669033
+#&gt;  $ by         : chr "clouddrover"
+#&gt;  $ descendants: int 192
+#&gt;  $ id         : int 21667360
+#&gt;  $ kids       : int [1:20] 21668174 21667529 21667519 21667478 21667511 21667580 21669112 21667573 21667554 21669684 ...
 #&gt;  $ score      : int 75
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 22:46:12"
-#&gt;  $ title      : chr "Show HN: Keycat – A self-hosted end-to-end encrypted password manager"
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:14:30"
+#&gt;  $ title      : chr "Tesla Cybertruck may be unsafe for other road users: Australian safety chief"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://key.cat/"
+#&gt;  $ url        : chr "https://thedriven.io/2019/11/27/tesla-cybertruck-may-be-unsafe-for-other-road-users-says-australian-safety-chief/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[143]]
-#&gt; List of 9
-#&gt;  $ by         : chr "SirLJ"
-#&gt;  $ descendants: int 28
-#&gt;  $ id         : int 21666153
-#&gt;  $ kids       : int [1:7] 21667663 21666670 21666482 21668079 21666974 21666992 21667149
-#&gt;  $ score      : int 71
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 20:07:05"
-#&gt;  $ title      : chr "Ponzi Schemes, Private Yachts, and a Missing $250M in Crypto: Quadriga"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://www.vanityfair.com/news/2019/11/the-strange-tale-of-quadriga-gerald-cotten"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[144]]
+#&gt; [[155]]
 #&gt; List of 9
 #&gt;  $ by         : chr "elorant"
 #&gt;  $ descendants: int 90
@@ -2307,33 +2451,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.latimes.com/business/story/2019-11-01/federal-safety-agency-launches-investigation-of-tesla-battery-fires"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[145]]
+#&gt; [[156]]
 #&gt; List of 9
-#&gt;  $ by         : chr "clouddrover"
-#&gt;  $ descendants: int 187
-#&gt;  $ id         : int 21667360
-#&gt;  $ kids       : int [1:20] 21668174 21667529 21667519 21667478 21667511 21667580 21669684 21669112 21667573 21668191 ...
-#&gt;  $ score      : int 71
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:14:30"
-#&gt;  $ title      : chr "Tesla Cybertruck may be unsafe for other road users: Australian safety chief"
+#&gt;  $ by         : chr "archibaldJ"
+#&gt;  $ descendants: int 5
+#&gt;  $ id         : int 21671112
+#&gt;  $ kids       : int [1:4] 21671618 21671442 21671430 21671670
+#&gt;  $ score      : int 95
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 18:41:36"
+#&gt;  $ title      : chr "Calculus Explained with GIFs and Pics"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://thedriven.io/2019/11/27/tesla-cybertruck-may-be-unsafe-for-other-road-users-says-australian-safety-chief/"
+#&gt;  $ url        : chr "https://0a.io/chapter1/calculus-explained.html"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[146]]
-#&gt; List of 9
-#&gt;  $ by         : chr "c89X"
-#&gt;  $ descendants: int 39
-#&gt;  $ id         : int 21656891
-#&gt;  $ kids       : int [1:21] 21660200 21661024 21657151 21660545 21660434 21658963 21660687 21665875 21660990 21660911 ...
-#&gt;  $ score      : int 105
-#&gt;  $ text       : chr "We run a small SaaS where users are able to create accounts, submit billing information and upload&amp;#x2F;call ML"| __truncated__
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 13:48:40"
-#&gt;  $ title      : chr "Ask HN: How do you deal with atomicity in microservice environments?"
-#&gt;  $ type       : chr "story"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[147]]
+#&gt; [[157]]
 #&gt; List of 9
 #&gt;  $ by         : chr "CaliforniaKarl"
 #&gt;  $ descendants: int 16
@@ -2346,7 +2477,33 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.nytimes.com/2019/11/27/health/swimming-Parkinsons-brain-implants.html"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[148]]
+#&gt; [[158]]
+#&gt; List of 9
+#&gt;  $ by         : chr "eaguyhn"
+#&gt;  $ descendants: int 32
+#&gt;  $ id         : int 21669776
+#&gt;  $ kids       : int [1:10] 21670553 21670721 21670303 21670268 21670467 21669997 21670103 21671214 21670724 21669987
+#&gt;  $ score      : int 65
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 14:01:58"
+#&gt;  $ title      : chr "Half an operating system: The triumph and tragedy of OS/2"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://arstechnica.com/information-technology/2019/11/half-an-operating-system-the-triumph-and-tragedy-of-os2/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[159]]
+#&gt; List of 9
+#&gt;  $ by         : chr "macmac"
+#&gt;  $ descendants: int 11
+#&gt;  $ id         : int 21662494
+#&gt;  $ kids       : int [1:5] 21666658 21666930 21666679 21666698 21666478
+#&gt;  $ score      : int 61
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 07:26:36"
+#&gt;  $ title      : chr "LogicBlox – Datalog REPL Tutorial"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://developer.logicblox.com/content/docs4/tutorial/repl/section/split.html"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[160]]
 #&gt; List of 9
 #&gt;  $ by         : chr "mikemcquaid"
 #&gt;  $ descendants: int 50
@@ -2359,7 +2516,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://brew.sh/2019/11/27/homebrew-2.2.0/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[149]]
+#&gt; [[161]]
 #&gt; List of 9
 #&gt;  $ by         : chr "LaSombra"
 #&gt;  $ descendants: int 68
@@ -2372,36 +2529,23 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "http://meta.ath0.com/2012/02/05/apples-great-gpl-purge/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[150]]
+#&gt; [[162]]
 #&gt; List of 9
-#&gt;  $ by         : chr "wwarner"
-#&gt;  $ descendants: int 24
-#&gt;  $ id         : int 21667336
-#&gt;  $ kids       : int [1:6] 21670340 21669618 21668986 21668868 21669528 21669580
-#&gt;  $ score      : int 70
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:08:38"
-#&gt;  $ title      : chr "Disproved Discoveries That Won Nobel Prizes (2015)"
+#&gt;  $ by         : chr "varrock"
+#&gt;  $ descendants: int 62
+#&gt;  $ id         : int 21659537
+#&gt;  $ kids       : int [1:39] 21660316 21659673 21659815 21659848 21659585 21659840 21659578 21659630 21659765 21659886 ...
+#&gt;  $ score      : int 85
+#&gt;  $ text       : chr "Are there any resources you recommend? Or do personal projects give you enough problems? And how do you map sol"| __truncated__
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 20:09:52"
+#&gt;  $ title      : chr "Ask HN: What has made you a better problem solver in software engineering?"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://www.realclearscience.com/blog/2015/10/nobel_prizes_awarded_for_disproved_discoveries.html"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[151]]
-#&gt; List of 9
-#&gt;  $ by         : chr "macmac"
-#&gt;  $ descendants: int 11
-#&gt;  $ id         : int 21662494
-#&gt;  $ kids       : int [1:5] 21666658 21666930 21666679 21666698 21666478
-#&gt;  $ score      : int 60
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 07:26:36"
-#&gt;  $ title      : chr "LogicBlox – Datalog REPL Tutorial"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://developer.logicblox.com/content/docs4/tutorial/repl/section/split.html"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[152]]
+#&gt; [[163]]
 #&gt; List of 9
 #&gt;  $ by         : chr "catoc"
-#&gt;  $ descendants: int 13
+#&gt;  $ descendants: int 14
 #&gt;  $ id         : int 21656520
 #&gt;  $ kids       : int [1:7] 21658571 21660438 21661100 21657429 21659364 21660818 21660948
 #&gt;  $ score      : int 52
@@ -2411,7 +2555,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.nytimes.com/2019/11/27/health/dense-breasts-MRI-cancer.html"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[153]]
+#&gt; [[164]]
 #&gt; List of 9
 #&gt;  $ by         : chr "LinuxBender"
 #&gt;  $ descendants: int 81
@@ -2424,20 +2568,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://lite.cnn.io/en/article/h_9454f4ed6f218afc194d33afddbab430"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[154]]
+#&gt; [[165]]
 #&gt; List of 9
-#&gt;  $ by         : chr "varrock"
-#&gt;  $ descendants: int 62
-#&gt;  $ id         : int 21659537
-#&gt;  $ kids       : int [1:39] 21660316 21659673 21659815 21659848 21659585 21659840 21659578 21659630 21659765 21659886 ...
-#&gt;  $ score      : int 82
-#&gt;  $ text       : chr "Are there any resources you recommend? Or do personal projects give you enough problems? And how do you map sol"| __truncated__
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 20:09:52"
-#&gt;  $ title      : chr "Ask HN: What has made you a better problem solver in software engineering?"
+#&gt;  $ by         : chr "breck"
+#&gt;  $ descendants: int 12
+#&gt;  $ id         : int 21667590
+#&gt;  $ kids       : int [1:5] 21667908 21668037 21669522 21669531 21668784
+#&gt;  $ score      : int 80
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 01:11:25"
+#&gt;  $ title      : chr "Hack-a-Mol"
 #&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://chemapps.stolaf.edu/jmol/jsmol/hackamol.htm"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[155]]
+#&gt; [[166]]
 #&gt; List of 9
 #&gt;  $ by         : chr "jeffreygoesto"
 #&gt;  $ descendants: int 57
@@ -2450,20 +2594,33 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://logicmag.io/nature/oil-is-the-new-data/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[156]]
+#&gt; [[167]]
+#&gt; List of 9
+#&gt;  $ by         : chr "Tomte"
+#&gt;  $ descendants: int 12
+#&gt;  $ id         : int 21669195
+#&gt;  $ kids       : int [1:8] 21670214 21669958 21670815 21670838 21671273 21669500 21670278 21669668
+#&gt;  $ score      : int 69
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 10:02:30"
+#&gt;  $ title      : chr "Frink"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://futureboy.us/frinkdocs/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[168]]
 #&gt; List of 9
 #&gt;  $ by         : chr "And1"
 #&gt;  $ descendants: int 14
 #&gt;  $ id         : int 21661431
-#&gt;  $ kids       : int [1:11] 21667641 21667200 21669431 21667117 21667412 21668484 21668775 21667198 21661532 21668006 ...
-#&gt;  $ score      : int 117
+#&gt;  $ kids       : int [1:11] 21667641 21667200 21667117 21669431 21667412 21668484 21667198 21668775 21661532 21668006 ...
+#&gt;  $ score      : int 118
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 03:00:13"
 #&gt;  $ title      : chr "Black Friday and Cyber Monday Live Map"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://datastories.shopify.com/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[157]]
+#&gt; [[169]]
 #&gt; List of 9
 #&gt;  $ by         : chr "yarapavan"
 #&gt;  $ descendants: int 13
@@ -2476,7 +2633,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://knowledge.wharton.upenn.edu/article/want-better-forecasting-silence-the-noise/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[158]]
+#&gt; [[170]]
 #&gt; List of 9
 #&gt;  $ by         : chr "flywithdolp"
 #&gt;  $ descendants: int 124
@@ -2489,7 +2646,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://blocktvs.com/5dde73a94f1d3-how-can-you-know-what-news-is-real-"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[159]]
+#&gt; [[171]]
 #&gt; List of 9
 #&gt;  $ by         : chr "mardix"
 #&gt;  $ descendants: int 40
@@ -2502,7 +2659,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://mardix.github.io/assembly/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[160]]
+#&gt; [[172]]
 #&gt; List of 9
 #&gt;  $ by         : chr "lawrenceyan"
 #&gt;  $ descendants: int 20
@@ -2515,7 +2672,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://hackernoon.com/how-google-collapsed-b6ffa82198ee"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[161]]
+#&gt; [[173]]
 #&gt; List of 9
 #&gt;  $ by         : chr "juniusfree"
 #&gt;  $ descendants: int 20
@@ -2528,7 +2685,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.scientificamerican.com/article/failure-found-to-be-an-essential-prerequisite-for-success/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[162]]
+#&gt; [[174]]
+#&gt; List of 9
+#&gt;  $ by         : chr "matt_d"
+#&gt;  $ descendants: int 6
+#&gt;  $ id         : int 21664104
+#&gt;  $ kids       : int [1:2] 21668306 21669302
+#&gt;  $ score      : int 63
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 14:06:20"
+#&gt;  $ title      : chr "ELF Binaries and Relocation Entries"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "http://stffrdhrn.github.io/hardware/embedded/openrisc/2019/11/29/relocs.html"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[175]]
 #&gt; List of 9
 #&gt;  $ by         : chr "DoreenMichele"
 #&gt;  $ descendants: int 6
@@ -2541,20 +2711,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://techcrunch.com/2019/11/28/scientists-turn-undersea-fiber-optic-cables-into-seismographs/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[163]]
+#&gt; [[176]]
 #&gt; List of 9
 #&gt;  $ by         : chr "joshi4"
-#&gt;  $ descendants: int 17
+#&gt;  $ descendants: int 19
 #&gt;  $ id         : int 21658878
 #&gt;  $ kids       : int [1:10] 21660372 21660179 21660850 21659715 21660110 21665667 21660039 21660587 21666999 21660444
-#&gt;  $ score      : int 67
+#&gt;  $ score      : int 68
 #&gt;  $ text       : chr "Hi HN,&lt;p&gt;I created Flowshare (&lt;a href=\"https:&amp;#x2F;&amp;#x2F;flowshare.io&amp;#x2F;\" rel=\"nofollow\"&gt;https:&amp;#x2F;&amp;#x"| __truncated__
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 18:23:55"
 #&gt;  $ title      : chr "Show HN: Flowshare: Create and discover how-to guides for everyday software"
 #&gt;  $ type       : chr "story"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[164]]
+#&gt; [[177]]
 #&gt; List of 9
 #&gt;  $ by         : chr "Petiver"
 #&gt;  $ descendants: int 14
@@ -2567,33 +2737,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://aeon.co/essays/why-working-class-britons-loved-reading-and-debating-the-classics"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[165]]
+#&gt; [[178]]
 #&gt; List of 9
-#&gt;  $ by         : chr "breck"
-#&gt;  $ descendants: int 11
-#&gt;  $ id         : int 21667590
-#&gt;  $ kids       : int [1:5] 21667908 21668037 21669522 21669531 21668784
-#&gt;  $ score      : int 72
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 01:11:25"
-#&gt;  $ title      : chr "Hack-a-Mol"
+#&gt;  $ by         : chr "cnst"
+#&gt;  $ descendants: int 23
+#&gt;  $ id         : int 21653119
+#&gt;  $ kids       : int [1:6] 21654964 21655230 21654975 21655427 21654861 21656062
+#&gt;  $ score      : int 69
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 00:12:52"
+#&gt;  $ title      : chr "Syscall Call-From Verification"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://chemapps.stolaf.edu/jmol/jsmol/hackamol.htm"
+#&gt;  $ url        : chr "https://marc.info/?l=openbsd-tech&amp;m=157488907117170&amp;w=2"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[166]]
-#&gt; List of 9
-#&gt;  $ by         : chr "onetimemanytime"
-#&gt;  $ descendants: int 26
-#&gt;  $ id         : int 21666705
-#&gt;  $ kids       : int [1:7] 21669458 21669227 21670257 21669891 21669474 21670041 21669348
-#&gt;  $ score      : int 60
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 21:42:56"
-#&gt;  $ title      : chr "In Amish village, a rural doctor sees the rarest diseases on Earth"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://www.usatoday.com/in-depth/news/nation/2019/11/29/wisconsin-rural-doctor-treats-amish-studies-rare-genet"| __truncated__
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[167]]
+#&gt; [[179]]
 #&gt; List of 9
 #&gt;  $ by         : chr "dsteinman"
 #&gt;  $ descendants: int 35
@@ -2606,20 +2763,33 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://jaxcore.github.io/jaxcore-say/borg-example/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[168]]
+#&gt; [[180]]
 #&gt; List of 9
-#&gt;  $ by         : chr "matt_d"
-#&gt;  $ descendants: int 5
-#&gt;  $ id         : int 21664104
-#&gt;  $ kids       : int [1:2] 21668306 21669302
-#&gt;  $ score      : int 58
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 14:06:20"
-#&gt;  $ title      : chr "ELF Binaries and Relocation Entries"
+#&gt;  $ by         : chr "jedroos"
+#&gt;  $ descendants: int 27
+#&gt;  $ id         : int 21669388
+#&gt;  $ kids       : int [1:6] 21670764 21670540 21670615 21669859 21670274 21670690
+#&gt;  $ score      : int 57
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 11:25:30"
+#&gt;  $ title      : chr "New class of painkiller found in the mud"
 #&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "http://stffrdhrn.github.io/hardware/embedded/openrisc/2019/11/29/relocs.html"
+#&gt;  $ url        : chr "https://imb.uq.edu.au/article/2019/10/new-class-painkiller-found-mud"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[169]]
+#&gt; [[181]]
+#&gt; List of 9
+#&gt;  $ by         : chr "rmason"
+#&gt;  $ descendants: int 14
+#&gt;  $ id         : int 21666401
+#&gt;  $ kids       : int [1:10] 21671265 21671046 21671274 21671171 21670871 21671085 21671476 21668960 21670849 21670775
+#&gt;  $ score      : int 44
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 20:49:05"
+#&gt;  $ title      : chr "Project X – Like Tailwind for JavaScript"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://github.com/calebporzio/project-x"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[182]]
 #&gt; List of 9
 #&gt;  $ by         : chr "tobltobs"
 #&gt;  $ descendants: int 2
@@ -2632,33 +2802,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "http://www.circleid.com/posts/20191128_dot_org_sale_is_a_radical_departure_that_puts_internet_at_risk/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[170]]
-#&gt; List of 9
-#&gt;  $ by         : chr "cnst"
-#&gt;  $ descendants: int 23
-#&gt;  $ id         : int 21653119
-#&gt;  $ kids       : int [1:6] 21654964 21655230 21654975 21655427 21654861 21656062
-#&gt;  $ score      : int 68
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 00:12:52"
-#&gt;  $ title      : chr "Syscall Call-From Verification"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://marc.info/?l=openbsd-tech&amp;m=157488907117170&amp;w=2"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[171]]
+#&gt; [[183]]
 #&gt; List of 9
 #&gt;  $ by         : chr "alyssaxuu"
 #&gt;  $ descendants: int 6
 #&gt;  $ id         : int 21649066
 #&gt;  $ kids       : int [1:4] 21649096 21653256 21655461 21652784
-#&gt;  $ score      : int 45
+#&gt;  $ score      : int 46
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 17:10:30"
 #&gt;  $ title      : chr "Show HN: Flowy – A minimal JavaScript library to create flowcharts"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://github.com/alyssaxuu/flowy"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[172]]
+#&gt; [[184]]
 #&gt; List of 9
 #&gt;  $ by         : chr "rdfi"
 #&gt;  $ descendants: int 83
@@ -2671,7 +2828,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.blinkingcaret.com/2019/11/27/electroncgi-a-solution-to-cross-platform-guis-for-net-core/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[173]]
+#&gt; [[185]]
 #&gt; List of 9
 #&gt;  $ by         : chr "gruseom"
 #&gt;  $ descendants: int 5
@@ -2684,7 +2841,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://mtyka.github.io/make/2015/09/12/the-conquest-of-ubiquity.html"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[174]]
+#&gt; [[186]]
 #&gt; List of 9
 #&gt;  $ by         : chr "misss"
 #&gt;  $ descendants: int 2
@@ -2697,7 +2854,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.npr.org/2011/01/30/133333682/lolita-author-nabokov-was-right-about-butterflies?t=1574826390118"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[175]]
+#&gt; [[187]]
 #&gt; List of 9
 #&gt;  $ by         : chr "ssijak"
 #&gt;  $ descendants: int 24
@@ -2710,20 +2867,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.nature.com/articles/s41560-019-0509-9"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[176]]
-#&gt; List of 9
-#&gt;  $ by         : chr "Tomte"
-#&gt;  $ descendants: int 7
-#&gt;  $ id         : int 21669195
-#&gt;  $ kids       : int [1:5] 21670214 21669958 21670278 21669500 21669668
-#&gt;  $ score      : int 45
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 10:02:30"
-#&gt;  $ title      : chr "Frink"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://futureboy.us/frinkdocs/"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[177]]
+#&gt; [[188]]
 #&gt; List of 9
 #&gt;  $ by         : chr "joveian"
 #&gt;  $ descendants: int 2
@@ -2736,7 +2880,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://eprint.iacr.org/2019/1336"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[178]]
+#&gt; [[189]]
 #&gt; List of 9
 #&gt;  $ by         : chr "bikkkkk"
 #&gt;  $ descendants: int 70
@@ -2749,7 +2893,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://guseyn.com/posts/frontend-development-can-and-must-be-simple"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[179]]
+#&gt; [[190]]
 #&gt; List of 9
 #&gt;  $ by         : chr "svenfaw"
 #&gt;  $ descendants: int 17
@@ -2762,7 +2906,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://hackernoon.com/how-facebook-tracks-you-on-android-even-if-you-dont-have-a-facebook-account-pv2u3zt4"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[180]]
+#&gt; [[191]]
 #&gt; List of 9
 #&gt;  $ by         : chr "troydavis"
 #&gt;  $ descendants: int 44
@@ -2775,10 +2919,10 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://arstechnica.com/tech-policy/2019/11/senate-takes-another-stab-at-privacy-law-with-proposed-copra-bill/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[181]]
+#&gt; [[192]]
 #&gt; List of 9
 #&gt;  $ by         : chr "ZhuanXia"
-#&gt;  $ descendants: int 14
+#&gt;  $ descendants: int 15
 #&gt;  $ id         : int 21668734
 #&gt;  $ kids       : int [1:6] 21668880 21668906 21668825 21668888 21668870 21668828
 #&gt;  $ score      : int 43
@@ -2788,7 +2932,20 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://scottlocklin.wordpress.com/2010/08/24/nano-nonsense-25-years-of-charlatanry/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[182]]
+#&gt; [[193]]
+#&gt; List of 9
+#&gt;  $ by         : chr "elorant"
+#&gt;  $ descendants: int 47
+#&gt;  $ id         : int 21666570
+#&gt;  $ kids       : int [1:5] 21668460 21669780 21670508 21669063 21667963
+#&gt;  $ score      : int 43
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 21:15:12"
+#&gt;  $ title      : chr "Twitter begins testing Reddit-style nested conversations"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://www.engadget.com/2019/11/28/twitter-testing-nested-conversations/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[194]]
 #&gt; List of 9
 #&gt;  $ by         : chr "rbanffy"
 #&gt;  $ descendants: int 24
@@ -2801,7 +2958,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.engadget.com/2019/11/28/amd-beating-intel-threadripper-ryzen/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[183]]
+#&gt; [[195]]
 #&gt; List of 9
 #&gt;  $ by         : chr "tdurden"
 #&gt;  $ descendants: int 13
@@ -2814,7 +2971,7 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://www.theverge.com/2019/11/28/20986838/jony-ive-last-day-apple"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[184]]
+#&gt; [[196]]
 #&gt; List of 9
 #&gt;  $ by         : chr "ekoutanov"
 #&gt;  $ descendants: int 5
@@ -2827,33 +2984,46 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ url        : chr "https://hothardware.com/news/intel-ryzen-sales-domination-amazon-intel-zen"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[185]]
-#&gt; List of 9
-#&gt;  $ by         : chr "unilynx"
-#&gt;  $ descendants: int 11
-#&gt;  $ id         : int 21669570
-#&gt;  $ kids       : int [1:9] 21670327 21670073 21669969 21669773 21669964 21670171 21670035 21670059 21669923
-#&gt;  $ score      : int 41
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 12:47:25"
-#&gt;  $ title      : chr "History of Fidonet"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "http://www.olografix.org/gubi/estate/archivio/fido/fido.htm"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[186]]
+#&gt; [[197]]
 #&gt; List of 9
 #&gt;  $ by         : chr "sova"
-#&gt;  $ descendants: int 5
+#&gt;  $ descendants: int 7
 #&gt;  $ id         : int 21652455
 #&gt;  $ kids       : int [1:3] 21668330 21668154 21668265
-#&gt;  $ score      : int 40
+#&gt;  $ score      : int 41
 #&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 22:47:11"
 #&gt;  $ title      : chr "Visualizing Hip-Hop Melodies (2016)"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "https://www.ethanhein.com/wp/2016/visualizing-hip-hop-melodies/"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[187]]
+#&gt; [[198]]
+#&gt; List of 9
+#&gt;  $ by         : chr "hhs"
+#&gt;  $ descendants: int 21
+#&gt;  $ id         : int 21666569
+#&gt;  $ kids       : int [1:12] 21670201 21670830 21670392 21669976 21670148 21669979 21667842 21670174 21670163 21670160 ...
+#&gt;  $ score      : int 41
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 21:15:08"
+#&gt;  $ title      : chr "Authenticity promotes well-being in life and at work"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://www.forbes.com/sites/traversmark/2019/11/29/authenticity-promotes-well-being-in-life-and-at-work/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[199]]
+#&gt; List of 9
+#&gt;  $ by         : chr "Tomte"
+#&gt;  $ descendants: int 23
+#&gt;  $ id         : int 21666264
+#&gt;  $ kids       : int [1:13] 21671675 21670152 21671423 21671603 21669695 21670129 21670440 21671155 21669955 21670134 ...
+#&gt;  $ score      : int 37
+#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 20:29:39"
+#&gt;  $ title      : chr "Out of bounds: Why basketball players believe they weren’t last to touch ball"
+#&gt;  $ type       : chr "story"
+#&gt;  $ url        : chr "https://arstechnica.com/science/2019/04/out-of-bounds-why-basketball-players-believe-they-werent-last-to-touch-ball/"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[200]]
 #&gt; List of 9
 #&gt;  $ by         : chr "anilshanbhag"
 #&gt;  $ descendants: int 68
@@ -2864,174 +3034,6 @@ If max_items = NULL, returns all available</p></td>
 #&gt;  $ title      : chr "Please Buy Less"
 #&gt;  $ type       : chr "story"
 #&gt;  $ url        : chr "http://pleasebuyless.com/"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[188]]
-#&gt; List of 9
-#&gt;  $ by         : chr "makaronich"
-#&gt;  $ descendants: int 2
-#&gt;  $ id         : int 21647243
-#&gt;  $ kids       : int [1:2] 21647639 21648769
-#&gt;  $ score      : int 50
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 13:19:34"
-#&gt;  $ title      : chr "Show HN: SQL Habit – learn SQL with Real Examples from Product and Marketing"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://www.sqlhabit.com/"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[189]]
-#&gt; List of 9
-#&gt;  $ by         : chr "laurex"
-#&gt;  $ descendants: int 4
-#&gt;  $ id         : int 21667320
-#&gt;  $ kids       : int [1:2] 21667723 21667800
-#&gt;  $ score      : int 36
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-30 00:03:51"
-#&gt;  $ title      : chr "Watching pornography rewires the brain to a more juvenile state"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://theconversation.com/watching-pornography-rewires-the-brain-to-a-more-juvenile-state-127306"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[190]]
-#&gt; List of 9
-#&gt;  $ by         : chr "berkay-dincer"
-#&gt;  $ descendants: int 3
-#&gt;  $ id         : int 21662910
-#&gt;  $ kids       : int [1:2] 21665379 21666905
-#&gt;  $ score      : int 37
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 09:15:31"
-#&gt;  $ title      : chr "Kubethanos a tool to kill half of your pods randomly to test your system"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://github.com/berkay-dincer/kubethanos"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[191]]
-#&gt; List of 9
-#&gt;  $ by         : chr "abhas9"
-#&gt;  $ descendants: int 5
-#&gt;  $ id         : int 21657363
-#&gt;  $ kids       : int [1:3] 21657885 21657975 21658386
-#&gt;  $ score      : int 57
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 14:57:46"
-#&gt;  $ title      : chr "A list of papers on deep learning with anime style images"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://github.com/deeppomf/DeepLearningAnimePapers"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[192]]
-#&gt; List of 8
-#&gt;  $ by         : chr "CalRobert"
-#&gt;  $ descendants: int 0
-#&gt;  $ id         : int 21653320
-#&gt;  $ score      : int 35
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 00:45:21"
-#&gt;  $ title      : chr "World may have crossed climate tipping points"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://www.theguardian.com/environment/2019/nov/27/climate-emergency-world-may-have-crossed-tipping-points"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[193]]
-#&gt; List of 9
-#&gt;  $ by         : chr "luu"
-#&gt;  $ descendants: int 3
-#&gt;  $ id         : int 21645936
-#&gt;  $ kids       : int [1:3] 21667473 21667460 21667222
-#&gt;  $ score      : int 40
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 08:14:45"
-#&gt;  $ title      : chr "Another use for strace (isatty) (2015)"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://blog.plover.com/Unix/strace-isatty.html"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[194]]
-#&gt; List of 9
-#&gt;  $ by         : chr "pierreneter"
-#&gt;  $ descendants: int 11
-#&gt;  $ id         : int 21645307
-#&gt;  $ kids       : int [1:5] 21645483 21645481 21645590 21646612 21645581
-#&gt;  $ score      : int 37
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 05:43:41"
-#&gt;  $ title      : chr "Bootstrap v4.4"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://github.com/twbs/bootstrap/releases/tag/v4.4.0"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[195]]
-#&gt; List of 9
-#&gt;  $ by         : chr "tzhenghao"
-#&gt;  $ descendants: int 23
-#&gt;  $ id         : int 21660337
-#&gt;  $ kids       : int [1:4] 21665999 21667140 21665796 21667213
-#&gt;  $ score      : int 38
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 22:36:05"
-#&gt;  $ title      : chr "Does malloc lazily create the backing pages for an allocation on Linux? (2009)"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://stackoverflow.com/questions/911860/does-malloc-lazily-create-the-backing-pages-for-an-allocation-on-linux-and-othe"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[196]]
-#&gt; List of 9
-#&gt;  $ by         : chr "pseudolus"
-#&gt;  $ descendants: int 63
-#&gt;  $ id         : int 21656260
-#&gt;  $ kids       : int [1:6] 21656509 21656525 21656459 21657640 21657011 21656546
-#&gt;  $ score      : int 42
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-28 12:07:54"
-#&gt;  $ title      : chr "Former White House climate adviser calls methane ‘irrelevant’ to climate"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://www.sciencemag.org/news/2019/11/unpublished-paper-former-white-house-climate-adviser-calls-methane-irrelevant-climate"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[197]]
-#&gt; List of 9
-#&gt;  $ by         : chr "devicetray0"
-#&gt;  $ descendants: int 9
-#&gt;  $ id         : int 21652786
-#&gt;  $ kids       : int [1:3] 21656838 21656246 21656582
-#&gt;  $ score      : int 30
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 23:27:28"
-#&gt;  $ title      : chr "Netflix bets on Japanese anime to battle Disney and Apple in streaming wars"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://www.japantimes.co.jp/news/2019/11/07/business/corporate-business/netflix-bets-on-anime-to-battle-disney-apple/"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[198]]
-#&gt; List of 9
-#&gt;  $ by         : chr "baal80spam"
-#&gt;  $ descendants: int 89
-#&gt;  $ id         : int 21652019
-#&gt;  $ kids       : int [1:17] 21652362 21652654 21652456 21652770 21652656 21652699 21652469 21652477 21653917 21652470 ...
-#&gt;  $ score      : int 46
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 21:54:06"
-#&gt;  $ title      : chr "Replace Windows 7 with Linux"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://vivaldi.com/pl/blog/replace-windows-7-with-linux/"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[199]]
-#&gt; List of 9
-#&gt;  $ by         : chr "kozmonaut"
-#&gt;  $ descendants: int 9
-#&gt;  $ id         : int 21650662
-#&gt;  $ kids       : int [1:5] 21651878 21651213 21654289 21651921 21651619
-#&gt;  $ score      : int 42
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-27 19:42:48"
-#&gt;  $ title      : chr "E Ink just unveiled a new type of color e-paper"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://goodereader.com/blog/electronic-readers/e-ink-and-wacom-have-just-unveiled-a-new-type-of-color-e-paper"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[200]]
-#&gt; List of 9
-#&gt;  $ by         : chr "EndXA"
-#&gt;  $ descendants: int 8
-#&gt;  $ id         : int 21666715
-#&gt;  $ kids       : int [1:4] 21670137 21669649 21670179 21670193
-#&gt;  $ score      : int 37
-#&gt;  $ time       : POSIXct[1:1], format: "2019-11-29 21:46:18"
-#&gt;  $ title      : chr "Giant tortoises show surprising cognitive powers"
-#&gt;  $ type       : chr "story"
-#&gt;  $ url        : chr "https://www.nature.com/articles/d41586-019-03655-5"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; </div><div class='input'># }
 </div></pre>

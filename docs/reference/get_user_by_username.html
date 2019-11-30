@@ -150,14 +150,16 @@
     <p>user corresponding to the specified username</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Retrieve information about the jl user</span>
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='co'># Retrieve information about the jl user</span>
 <span class='fu'>get_user_by_username</span>(<span class='st'>"jl"</span>)</div><div class='output co'>#&gt; List of 5
 #&gt;  $ about    : chr "This is a test"
 #&gt;  $ created  : POSIXct[1:1], format: "2007-03-15 02:50:46"
 #&gt;  $ id       : chr "jl"
 #&gt;  $ karma    : int 4226
 #&gt;  $ submitted: int [1:846] 19464269 18498213 16659709 16659632 16659556 14237416 11871616 11483492 11435082 10985073 ...
-#&gt;  - attr(*, "class")= chr "hn_user"</div><div class='input'>
+#&gt;  - attr(*, "class")= chr "hn_user"</div><div class='input'># }
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

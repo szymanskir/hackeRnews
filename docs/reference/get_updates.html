@@ -144,19 +144,23 @@ using Hacker News API</p>
     <p>list of changed item ids and list of changed profile usernames</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># get ids/usernames of updated items/profiles</span>
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='co'># get ids/usernames of updated items/profiles</span>
 <span class='no'>hn_updates</span> <span class='kw'>&lt;-</span> <span class='fu'>get_updates</span>()
 <span class='no'>hn_updates</span></div><div class='output co'>#&gt; $items
-#&gt;  [1] 21650951 21669803 21670156 21667277 21670340 21670109 21670326 21670072
-#&gt;  [9] 21667824 21670181 21650602 21670119 21657812 21669458 21666314 21666705
-#&gt; [17] 21669726 21669195 21662941 21668207 21667336 21649397 21669416 21665125
-#&gt; [25] 21655889 21660718 21667810 21666715 21667484
+#&gt;  [1] 21671786 21671778 21668076 21671761 21667952 21671787 21670810 21671380
+#&gt;  [9] 21671459 21670369 21671788 21668743 21667824 21668460 21670955 21671618
+#&gt; [17] 21668320 21670939 21671780 21671507 21670966 21671136 21668975 21671682
+#&gt; [25] 21671358 21665931 21670680 21667484 21671579 21669709 21671112 21654682
+#&gt; [33] 21670517 21670462 21667590 21666570 21671568 21666715 21667366 21667355
+#&gt; [41] 21666314 21611677
 #&gt; 
 #&gt; $profiles
-#&gt; [1] "Tomte"          "neya"           "dmaldona"       "tehwebguy"     
-#&gt; [5] "gormo2"         "cstross"        "gatherhunterer" "Jasper_"       
-#&gt; [9] "debt"          
-#&gt; </div><div class='input'>
+#&gt;  [1] "lucaspm98"    "blululu"      "banachtarski" "ekoutanov"    "Tomte"       
+#&gt;  [6] "zenexer"      "bbody"        "snapit"       "sojmq"        "pjscott"     
+#&gt; [11] "Reedx"       
+#&gt; </div><div class='input'># }
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

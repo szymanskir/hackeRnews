@@ -22,6 +22,7 @@ When this situation occurs it is assumed that the item
 does not exist and NA is returned.
 }
 \examples{
+\donttest{
 # retrieve the id of the latest Hacker News item
 last_item_id <- get_max_item_id()
 last_item_id
@@ -29,5 +30,6 @@ last_item_id
 # retrieve the latest Hacker News item
 last_hn_item <- get_item_by_id(last_item_id)
 last_hn_item
+}
 
 }

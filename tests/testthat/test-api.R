@@ -301,7 +301,7 @@ httptest::with_mock_api({
   test_that("Retrieve comments function is working correctly", {
     story <- get_item_by_id(21500569)
     result <- get_comments(story)
-    expected <- tibble::as.tibble(
+    expected <- tibble::as_tibble(
       do.call(
         rbind,
         list(

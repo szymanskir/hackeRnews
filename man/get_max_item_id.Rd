@@ -13,7 +13,9 @@ current largest item id
 Retrieves largest item id available via Hacker News API
 }
 \examples{
+\donttest{
 # retrieve the id of the latest item
 get_max_item_id()
+}
 
 }

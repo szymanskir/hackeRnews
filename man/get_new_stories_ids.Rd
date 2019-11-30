@@ -13,8 +13,10 @@ list of new stories ids
 Retrieves newest stories ids using Hacker News API
 }
 \examples{
+\donttest{
 # get ids of new stories on Hacker News
 new_stories_ids <- get_new_stories_ids()
 new_stories_ids
+}
 
 }

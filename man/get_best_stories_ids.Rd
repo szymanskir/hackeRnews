@@ -13,8 +13,10 @@ list of best stories ids
 Retrieves best stories ids using Hacker News API
 }
 \examples{
+\donttest{
 # get the ids of best stories on Hacker News
 best_stories_ids <- get_best_stories_ids()
 best_stories_ids
+}
 
 }
