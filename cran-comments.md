@@ -3,11 +3,11 @@ This is a resubmission. In this version I have:
 * Added a web reference for the used API in the Description
 * Fixed the title and description of the package, so all package names,
   software names and API names are written in single quotes.
-* Unwrapped \donttest for examples that perform a small amount of
-  API calls. In some cases e.g. the `get_comments` function there are
-  multiple API calls performed. Those are still wrapped in \donttest
-  in order to not exceed 5 sec and to not create artificial traffic
-  which could impact the used API.
+* Kept examples wrapped in \donttest. All of the exported package
+  functions make calls to an external web API. The servers hosting
+  this API might have network errors which would result in failures
+  on CRAN machines. The idea was also to avoid creating artificial
+  traffic which might impact the API.
 
 ## Test environments
 * local ubuntu 18.04 install, R 3.6.1

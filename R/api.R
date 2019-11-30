@@ -34,6 +34,7 @@
 #' @return item corresponding to the specified id
 #'
 #' @examples
+#' \donttest{
 #' # retrieve the id of the latest Hacker News item
 #' last_item_id <- get_max_item_id()
 #' last_item_id
@@ -41,6 +42,7 @@
 #' # retrieve the latest Hacker News item
 #' last_hn_item <- get_item_by_id(last_item_id)
 #' last_hn_item
+#' }
 #'
 get_item_by_id <- function(id) {
   assert_ids(id)
@@ -69,9 +71,11 @@ get_item_by_id <- function(id) {
 #' @return list of hn_item objects
 #'
 #' @examples
+#' \donttest{
 #' # retrieve the first two items on Hacker News
 #' items <- get_items_by_ids(c(1,2))
 #' items
+#' }
 #'
 #'
 #' @seealso
@@ -93,8 +97,10 @@ get_items_by_ids <- function(ids) {
 #' @return user corresponding to the specified username
 #'
 #' @examples
+#' \donttest{
 #' # Retrieve information about the jl user
 #' get_user_by_username("jl")
+#' }
 #'
 get_user_by_username <- function(username) {
   assert(is.character(username), "username must be a character type object")
@@ -112,8 +118,10 @@ get_user_by_username <- function(username) {
 #' @return current largest item id
 #'
 #' @examples
+#' \donttest{
 #' # retrieve the id of the latest item
 #' get_max_item_id()
+#' }
 #'
 get_max_item_id <- function() {
   request_url <- create_request_url(.base_url(), c("maxitem"))
@@ -130,9 +138,11 @@ get_max_item_id <- function() {
 #'
 #' @examples
 #'
+#' \donttest{
 #' # retrieve the ids of current top stories on Hacker News
 #' top_stories_ids <- get_top_stories_ids()
 #' top_stories_ids
+#' }
 #'
 get_top_stories_ids <- function() {
   request_url <- create_request_url(.base_url(), c("topstories"))
@@ -153,11 +163,12 @@ get_top_stories_ids <- function() {
 #' @return List of top stories
 #'
 #' @examples
+#'
+#' \donttest{
 #' # get the top story on Hacker News
 #' top_story <- get_top_stories(max_items = 1)
 #' top_story
 #'
-#' \donttest{
 #' # get all top stories on Hacker News
 #' top_stories <- get_top_stories()
 #' top_stories
@@ -179,9 +190,11 @@ get_top_stories <- function(max_items = NULL) {
 #' @return list of new stories ids
 #'
 #' @examples
+#' \donttest{
 #' # get ids of new stories on Hacker News
 #' new_stories_ids <- get_new_stories_ids()
 #' new_stories_ids
+#' }
 #'
 get_new_stories_ids <- function() {
   request_url <- create_request_url(.base_url(), c("newstories"))
@@ -202,11 +215,12 @@ get_new_stories_ids <- function() {
 #' @return list of new stories
 #'
 #' @examples
+#'
+#' \donttest{
 #' # get the newest story on Hacker News
 #' newest_story <- get_new_stories(max_items = 1)
 #' newest_story
 #'
-#' \donttest{
 #' # get all new stories on Hacker News
 #' new_stories <- get_new_stories()
 #' new_stories
@@ -228,9 +242,11 @@ get_new_stories <- function(max_items = NULL) {
 #' @return list of best stories ids
 #'
 #' @examples
+#' \donttest{
 #' # get the ids of best stories on Hacker News
 #' best_stories_ids <- get_best_stories_ids()
 #' best_stories_ids
+#' }
 #'
 get_best_stories_ids <- function() {
   request_url <- create_request_url(.base_url(), c("beststories"))
@@ -251,11 +267,12 @@ get_best_stories_ids <- function() {
 #' @return list of best stories
 #'
 #' @examples
+#'
+#' \donttest{
 #' # get the best story on Hacker News
 #' best_story <- get_best_stories(max_items = 1)
 #' best_story
 #'
-#' \donttest{
 #' # get top 20 best stories on Hacker News
 #' best_20_stories <- get_best_stories(max_items = 20)
 #' best_20_stories
@@ -280,9 +297,11 @@ get_best_stories <- function(max_items = NULL) {
 #' @return list of latest ask Hacker News stories ids
 #'
 #' @examples
+#' \donttest{
 #' # get ids of latest ask stories
 #' ask_stories_ids <- get_latest_ask_stories_ids()
 #' ask_stories_ids
+#' }
 #'
 get_latest_ask_stories_ids <- function() {
   request_url <- create_request_url(.base_url(), c("askstories"))
@@ -303,11 +322,12 @@ get_latest_ask_stories_ids <- function() {
 #' @return list of latest ask HN stories ids
 #'
 #' @examples
+#'
+#' \donttest{
 #' # get the lastest ask story on Hacker News
 #' latest_ask_story <- get_latest_ask_stories(max_items = 1)
 #' latest_ask_story
 #'
-#' \donttest{
 #' # get 10 latest ask stories on Hacker News
 #' latest_10_ask_stories <- get_latest_ask_stories(max_items = 10)
 #' latest_10_ask_stories
@@ -333,9 +353,11 @@ get_latest_ask_stories <- function(max_items = NULL) {
 #' @return list of latest show Hacker News stories ids
 #'
 #' @examples
+#' \donttest{
 #' # get ids of latest show stories on Hacker News
 #' show_stories_ids <- get_latest_show_stories_ids()
 #' show_stories_ids
+#' }
 #'
 
 get_latest_show_stories_ids <- function() {
@@ -357,11 +379,12 @@ get_latest_show_stories_ids <- function() {
 #' @return list of latest show HN stories
 #'
 #' @examples
+#'
+#' \donttest{
 #' # get the latest show story on Hacker News
 #' latest_show_story <- get_latest_show_stories(max_items = 1)
 #' latest_show_story
 #'
-#' \donttest{
 #' # get 10 latest show stories on Hacker News
 #' latest_10_show_stories <- get_latest_show_stories(max_items = 10)
 #' latest_10_show_stories
@@ -387,9 +410,11 @@ get_latest_show_stories <- function(max_items = NULL) {
 #' @return list of latest job stories ids
 #'
 #' @examples
+#' \donttest{
 #' # get ids of latest job stories
 #' latest_job_stories_ids <- get_latest_job_stories_ids()
 #' latest_job_stories_ids
+#' }
 #'
 get_latest_job_stories_ids <- function() {
   request_url <- create_request_url(.base_url(), c("jobstories"))
@@ -410,11 +435,12 @@ get_latest_job_stories_ids <- function() {
 #' @return list of latest job stories
 #'
 #' @examples
+#'
+#' \donttest{
 #' # get the latest job story on Hacker News
 #' latest_job_story <- get_latest_job_stories(max_items = 1)
 #' latest_job_story
 #'
-#' \donttest{
 #' # get 10 latest job stories on Hacker News
 #' latest_10_job_stories <- get_latest_job_stories(max_items = 10)
 #' latest_10_job_stories
@@ -442,9 +468,11 @@ get_latest_job_stories <- function(max_items = NULL) {
 #' @return list of changed item ids and list of changed profile usernames
 #'
 #' @examples
+#' \donttest{
 #' # get ids/usernames of updated items/profiles
 #' hn_updates <- get_updates()
 #' hn_updates
+#' }
 #'
 get_updates <- function() {
   request_url <- create_request_url(.base_url(), c("updates"))
