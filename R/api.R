@@ -23,6 +23,10 @@
 #' @description Retrieves the item
 #' corresponding to specified id using Hacker News API
 #'
+#' @details The API in some cases returns a null reponse.
+#' When this situation occurs it is assumed that the item
+#' does not exist and NA is returned.
+#'
 #' @param id id of the item that should be retrieved
 #'
 #' @export
@@ -39,7 +43,12 @@ get_item_by_id <- function(id) {
   assert_ids(id)
   request_url <- create_request_url(.base_url(), c("item", id))
   item <- .send_request(request_url)
-  create_hn_item(item)
+
+  if (is.null(item)) {
+    NA
+  } else {
+    create_hn_item(item)
+  }
 }
 
 #' @title Get Hacker News by ids
@@ -408,6 +417,7 @@ get_updates <- function() {
 get_comments <- function(item) {
   if (!is.null(item$kids)) {
     kids <- hackeRnews::get_items_by_ids(item$kids)
+    kids <- kids[!is.na(kids)]
     df <- do.call(
       rbind,
       lapply(kids, get_comments_with_root)
@@ -421,7 +431,7 @@ get_comments <- function(item) {
 #' @title Hacker News nested comments with root comment
 #'
 #' @description Returns specified item and all comments under it. Comments are retrieved
-#' using Hacker News api
+#' using the Hacker News API
 #'
 #' @param item item whose children (comments) will be retrieved
 #'
@@ -433,6 +443,7 @@ get_comments_with_root <- function(item) {
     comment_to_dataframe_row(item)
   } else {
     kids <- hackeRnews::get_items_by_ids(item$kids)
+    kids <- kids[!is.na(kids)]
     kids_df <- do.call(
       rbind,
       lapply(kids, get_comments_with_root),
