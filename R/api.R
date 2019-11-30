@@ -499,6 +499,7 @@ get_updates <- function() {
 #' }
 #'
 get_comments <- function(item) {
+  assert(is_hn_item(item), "item must be an object of class hn_item")
   if (!is.null(item$kids)) {
     kids <- hackeRnews::get_items_by_ids(item$kids)
     kids <- kids[!is.na(kids)]
