@@ -155,9 +155,158 @@ If max_items = NULL, returns all available</p></td>
 <code><a href='https://rdrr.io/pkg/future/man/plan.html'>future::plan(future::multiprocess)</a></code></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='no'>job_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_latest_job_stories</span>()
-<span class='co'># }</span></div></pre>
+    <pre class="examples"><div class='input'><span class='co'># get the latest job story on Hacker News</span>
+<span class='no'>latest_job_story</span> <span class='kw'>&lt;-</span> <span class='fu'>get_latest_job_stories</span>(<span class='kw'>max_items</span> <span class='kw'>=</span> <span class='fl'>1</span>)
+<span class='no'>latest_job_story</span></div><div class='output co'>#&gt; [[1]]
+#&gt; List of 7
+#&gt;  $ by   : chr "the_economist"
+#&gt;  $ id   : int 21665437
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-11-29 18:00:46"
+#&gt;  $ title: chr "BuildZoom (a better way to remodel) is hiring salespeople in Scottsdale"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://jobs.lever.co/buildzoom"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; </div><div class='input'>
+<span class='co'># \donttest{</span>
+<span class='co'># get 10 latest job stories on Hacker News</span>
+<span class='no'>latest_10_job_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_latest_job_stories</span>(<span class='kw'>max_items</span> <span class='kw'>=</span> <span class='fl'>10</span>)
+<span class='no'>latest_10_job_stories</span></div><div class='output co'>#&gt; [[1]]
+#&gt; List of 7
+#&gt;  $ by   : chr "the_economist"
+#&gt;  $ id   : int 21665437
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-11-29 18:00:46"
+#&gt;  $ title: chr "BuildZoom (a better way to remodel) is hiring salespeople in Scottsdale"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://jobs.lever.co/buildzoom"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[2]]
+#&gt; List of 7
+#&gt;  $ by   : chr "gkoberger"
+#&gt;  $ id   : int 21655200
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-11-28 08:04:03"
+#&gt;  $ title: chr "ReadMe (YC W15) is hiring. Help us make APIs easy to use"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "http://readme.io/careers"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[3]]
+#&gt; List of 7
+#&gt;  $ by   : chr "jonlerner"
+#&gt;  $ id   : int 21654286
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-11-28 03:59:22"
+#&gt;  $ title: chr "CoinTracker (YC W18) Is Hiring Senior Software Engineers in SF"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://www.cointracker.io/careers"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[4]]
+#&gt; List of 7
+#&gt;  $ by   : chr "alxppp"
+#&gt;  $ id   : int 21653089
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-11-28 00:08:32"
+#&gt;  $ title: chr "Demodesk (YC W19) Is Hiring Software Engineers in Munich"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://demodesk.com/careers"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[5]]
+#&gt; List of 7
+#&gt;  $ by   : chr "troyastorino"
+#&gt;  $ id   : int 21651340
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-11-27 20:50:00"
+#&gt;  $ title: chr "PicnicHealth (YC S14) hiring in SF to help patients manage their medical records"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://www.keyvalues.com/picnichealth"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[6]]
+#&gt; List of 7
+#&gt;  $ by   : chr "sangwen"
+#&gt;  $ id   : int 21649202
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-11-27 17:23:59"
+#&gt;  $ title: chr "Smarking (YC W15) is hiring a Tech Lead Back end to scale terabytes infra"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://jobs.lever.co/smarking/d5238ad7-559f-4d93-9f4d-f4b4e26dbdbb"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; </div><div class='input'>
+<span class='co'># get all latest job stories on Hacker News</span>
+<span class='no'>latest_job_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_latest_job_stories</span>()
+<span class='no'>latest_job_stories</span></div><div class='output co'>#&gt; [[1]]
+#&gt; List of 7
+#&gt;  $ by   : chr "the_economist"
+#&gt;  $ id   : int 21665437
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-11-29 18:00:46"
+#&gt;  $ title: chr "BuildZoom (a better way to remodel) is hiring salespeople in Scottsdale"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://jobs.lever.co/buildzoom"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[2]]
+#&gt; List of 7
+#&gt;  $ by   : chr "gkoberger"
+#&gt;  $ id   : int 21655200
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-11-28 08:04:03"
+#&gt;  $ title: chr "ReadMe (YC W15) is hiring. Help us make APIs easy to use"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "http://readme.io/careers"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[3]]
+#&gt; List of 7
+#&gt;  $ by   : chr "jonlerner"
+#&gt;  $ id   : int 21654286
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-11-28 03:59:22"
+#&gt;  $ title: chr "CoinTracker (YC W18) Is Hiring Senior Software Engineers in SF"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://www.cointracker.io/careers"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[4]]
+#&gt; List of 7
+#&gt;  $ by   : chr "alxppp"
+#&gt;  $ id   : int 21653089
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-11-28 00:08:32"
+#&gt;  $ title: chr "Demodesk (YC W19) Is Hiring Software Engineers in Munich"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://demodesk.com/careers"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[5]]
+#&gt; List of 7
+#&gt;  $ by   : chr "troyastorino"
+#&gt;  $ id   : int 21651340
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-11-27 20:50:00"
+#&gt;  $ title: chr "PicnicHealth (YC S14) hiring in SF to help patients manage their medical records"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://www.keyvalues.com/picnichealth"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[6]]
+#&gt; List of 7
+#&gt;  $ by   : chr "sangwen"
+#&gt;  $ id   : int 21649202
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-11-27 17:23:59"
+#&gt;  $ title: chr "Smarking (YC W15) is hiring a Tech Lead Back end to scale terabytes infra"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://jobs.lever.co/smarking/d5238ad7-559f-4d93-9f4d-f4b4e26dbdbb"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; </div><div class='input'># }
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

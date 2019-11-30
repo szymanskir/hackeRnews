@@ -20,6 +20,7 @@ using Hacker News API
 \donttest{
 story <- get_item_by_id(21499889)
 comments <- get_comments(story)
+comments
 }
 
 }

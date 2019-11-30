@@ -144,9 +144,17 @@ using Hacker News API</p>
     <p>list of changed item ids and list of changed profile usernames</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='no'>hacker_updates</span> <span class='kw'>&lt;-</span> <span class='fu'>get_updates</span>()
-<span class='co'># }</span></div></pre>
+    <pre class="examples"><div class='input'><span class='co'># get ids/usernames of updated items/profiles</span>
+<span class='no'>hn_updates</span> <span class='kw'>&lt;-</span> <span class='fu'>get_updates</span>()
+<span class='no'>hn_updates</span></div><div class='output co'>#&gt; $items
+#&gt;  [1] 21669701 21669658 21669958 21669960 21667728 21668696 21669423 21668626
+#&gt;  [9] 21667403 21669959 21669195 21662941 21669570 21669726 21667355 21667353
+#&gt; 
+#&gt; $profiles
+#&gt; [1] "unilynx"    "macando"    "teddyh"     "Noumenon72" "Tomte"     
+#&gt; [6] "TeMPOraL"   "taneq"     
+#&gt; </div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

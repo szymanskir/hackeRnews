@@ -14,5 +14,5 @@ dataframe containing specified item and all comments under that item
 }
 \description{
 Returns specified item and all comments under it. Comments are retrieved
-using Hacker News api
+using the Hacker News API
 }

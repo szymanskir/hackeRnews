@@ -14,8 +14,8 @@ Retrieves changed item ids and changed profile usernames
 using Hacker News API
 }
 \examples{
-\donttest{
-hacker_updates <- get_updates()
-}
+# get ids/usernames of updated items/profiles
+hn_updates <- get_updates()
+hn_updates
 
 }
