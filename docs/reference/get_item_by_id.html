@@ -160,15 +160,16 @@ does not exist and NA is returned.</p>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
 <span class='co'># retrieve the id of the latest Hacker News item</span>
 <span class='no'>last_item_id</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='get_max_item_id.html'>get_max_item_id</a></span>()
-<span class='no'>last_item_id</span></div><div class='output co'>#&gt; [1] 21671763</div><div class='input'>
+<span class='no'>last_item_id</span></div><div class='output co'>#&gt; [1] 21789374</div><div class='input'>
 <span class='co'># retrieve the latest Hacker News item</span>
 <span class='no'>last_hn_item</span> <span class='kw'>&lt;-</span> <span class='fu'>get_item_by_id</span>(<span class='no'>last_item_id</span>)
-<span class='no'>last_hn_item</span></div><div class='output co'>#&gt; List of 6
-#&gt;  $ by    : chr "ufo"
-#&gt;  $ id    : int 21671763
-#&gt;  $ parent: int 21671568
-#&gt;  $ text  : chr "An interesting story on generational garbage collectors: a couple of versions ago, Lua experimented with a gene"| __truncated__
-#&gt;  $ time  : POSIXct[1:1], format: "2019-11-30 20:37:24"
+<span class='no'>last_hn_item</span></div><div class='output co'>#&gt; List of 7
+#&gt;  $ by    : chr "shreyamathur651"
+#&gt;  $ dead  : logi TRUE
+#&gt;  $ id    : int 21789374
+#&gt;  $ parent: int 21782101
+#&gt;  $ text  : chr "Use Google Maps In Google Chrome Browser! You will defined able to find the Nukemap"
+#&gt;  $ time  : POSIXct[1:1], format: "2019-12-14 14:20:00"
 #&gt;  $ type  : chr "comment"
 #&gt;  - attr(*, "class")= chr "hn_item"</div><div class='input'># }
 

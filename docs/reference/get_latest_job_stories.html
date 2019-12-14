@@ -161,149 +161,215 @@ If max_items = NULL, returns all available</p></td>
 <span class='no'>latest_job_story</span> <span class='kw'>&lt;-</span> <span class='fu'>get_latest_job_stories</span>(<span class='kw'>max_items</span> <span class='kw'>=</span> <span class='fl'>1</span>)
 <span class='no'>latest_job_story</span></div><div class='output co'>#&gt; [[1]]
 #&gt; List of 7
-#&gt;  $ by   : chr "the_economist"
-#&gt;  $ id   : int 21665437
+#&gt;  $ by   : chr "thedogeye"
+#&gt;  $ id   : int 21788078
 #&gt;  $ score: int 1
-#&gt;  $ time : POSIXct[1:1], format: "2019-11-29 18:00:46"
-#&gt;  $ title: chr "BuildZoom (a better way to remodel) is hiring salespeople in Scottsdale"
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-14 06:59:50"
+#&gt;  $ title: chr "Flexport is hiring a senior product manager to lead our ocean freight team"
 #&gt;  $ type : chr "job"
-#&gt;  $ url  : chr "https://jobs.lever.co/buildzoom"
+#&gt;  $ url  : chr "https://www.flexport.com/careers/job/1786936"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; </div><div class='input'>
 <span class='co'># get 10 latest job stories on Hacker News</span>
 <span class='no'>latest_10_job_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_latest_job_stories</span>(<span class='kw'>max_items</span> <span class='kw'>=</span> <span class='fl'>10</span>)
 <span class='no'>latest_10_job_stories</span></div><div class='output co'>#&gt; [[1]]
 #&gt; List of 7
-#&gt;  $ by   : chr "the_economist"
-#&gt;  $ id   : int 21665437
+#&gt;  $ by   : chr "thedogeye"
+#&gt;  $ id   : int 21788078
 #&gt;  $ score: int 1
-#&gt;  $ time : POSIXct[1:1], format: "2019-11-29 18:00:46"
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-14 06:59:50"
+#&gt;  $ title: chr "Flexport is hiring a senior product manager to lead our ocean freight team"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://www.flexport.com/careers/job/1786936"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[2]]
+#&gt; List of 7
+#&gt;  $ by   : chr "mmcclure"
+#&gt;  $ id   : int 21786527
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-14 00:18:06"
+#&gt;  $ title: chr "Mux Is Looking for a Generalist to Work on Elixir APIs and TypeScript/React"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://mux.com/jobs?hnj=9"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[3]]
+#&gt; List of 7
+#&gt;  $ by   : chr "the_economist"
+#&gt;  $ id   : int 21783274
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-13 18:01:34"
 #&gt;  $ title: chr "BuildZoom (a better way to remodel) is hiring salespeople in Scottsdale"
 #&gt;  $ type : chr "job"
 #&gt;  $ url  : chr "https://jobs.lever.co/buildzoom"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[2]]
+#&gt; [[4]]
+#&gt; List of 7
+#&gt;  $ by   : chr "gdeglin"
+#&gt;  $ id   : int 21778133
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-13 01:42:55"
+#&gt;  $ title: chr "OneSignal is hiring full stack and back end devs who like APIs and developer tools"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://onesignal.com/careers"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[5]]
+#&gt; List of 7
+#&gt;  $ by   : chr "aboris26"
+#&gt;  $ id   : int 21776576
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-12 22:16:52"
+#&gt;  $ title: chr "Taplytics (YC W14) Is Hiring to Expand Our Cx Platform"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://jobs.lever.co/taplytics"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[6]]
+#&gt; List of 7
+#&gt;  $ by   : chr "kcorbitt"
+#&gt;  $ id   : int 21774358
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-12 18:58:21"
+#&gt;  $ title: chr "Y Combinator is hiring an engineer to help us scale Startup School"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://jobs.lever.co/ycombinator/ef091f3d-df02-433c-a6c0-7ba4a0c70fa7"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[7]]
 #&gt; List of 7
 #&gt;  $ by   : chr "gkoberger"
-#&gt;  $ id   : int 21655200
+#&gt;  $ id   : int 21767994
 #&gt;  $ score: int 1
-#&gt;  $ time : POSIXct[1:1], format: "2019-11-28 08:04:03"
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-12 00:43:58"
 #&gt;  $ title: chr "ReadMe (YC W15) is hiring. Help us make APIs easy to use"
 #&gt;  $ type : chr "job"
 #&gt;  $ url  : chr "http://readme.io/careers"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[3]]
+#&gt; [[8]]
 #&gt; List of 7
-#&gt;  $ by   : chr "jonlerner"
-#&gt;  $ id   : int 21654286
+#&gt;  $ by   : chr "tlemberg"
+#&gt;  $ id   : int 21766411
 #&gt;  $ score: int 1
-#&gt;  $ time : POSIXct[1:1], format: "2019-11-28 03:59:22"
-#&gt;  $ title: chr "CoinTracker (YC W18) Is Hiring Senior Software Engineers in SF"
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-11 21:23:56"
+#&gt;  $ title: chr "Curebase (YC S18) hiring for engineering and sales to reinvent clinical research"
 #&gt;  $ type : chr "job"
-#&gt;  $ url  : chr "https://www.cointracker.io/careers"
+#&gt;  $ url  : chr "https://angel.co/company/curebase/jobs"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[4]]
+#&gt; [[9]]
 #&gt; List of 7
-#&gt;  $ by   : chr "alxppp"
-#&gt;  $ id   : int 21653089
+#&gt;  $ by   : chr "mkong1"
+#&gt;  $ id   : int 21764405
 #&gt;  $ score: int 1
-#&gt;  $ time : POSIXct[1:1], format: "2019-11-28 00:08:32"
-#&gt;  $ title: chr "Demodesk (YC W19) Is Hiring Software Engineers in Munich"
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-11 18:05:24"
+#&gt;  $ title: chr "GiveCampus (YC S15) Is Hiring Engineers and Product in DC and SF"
 #&gt;  $ type : chr "job"
-#&gt;  $ url  : chr "https://demodesk.com/careers"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[5]]
-#&gt; List of 7
-#&gt;  $ by   : chr "troyastorino"
-#&gt;  $ id   : int 21651340
-#&gt;  $ score: int 1
-#&gt;  $ time : POSIXct[1:1], format: "2019-11-27 20:50:00"
-#&gt;  $ title: chr "PicnicHealth (YC S14) hiring in SF to help patients manage their medical records"
-#&gt;  $ type : chr "job"
-#&gt;  $ url  : chr "https://www.keyvalues.com/picnichealth"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[6]]
-#&gt; List of 7
-#&gt;  $ by   : chr "sangwen"
-#&gt;  $ id   : int 21649202
-#&gt;  $ score: int 1
-#&gt;  $ time : POSIXct[1:1], format: "2019-11-27 17:23:59"
-#&gt;  $ title: chr "Smarking (YC W15) is hiring a Tech Lead Back end to scale terabytes infra"
-#&gt;  $ type : chr "job"
-#&gt;  $ url  : chr "https://jobs.lever.co/smarking/d5238ad7-559f-4d93-9f4d-f4b4e26dbdbb"
+#&gt;  $ url  : chr "https://jobs.lever.co/givecampus?team=Engineering"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; </div><div class='input'>
 <span class='co'># get all latest job stories on Hacker News</span>
 <span class='no'>latest_job_stories</span> <span class='kw'>&lt;-</span> <span class='fu'>get_latest_job_stories</span>()
 <span class='no'>latest_job_stories</span></div><div class='output co'>#&gt; [[1]]
 #&gt; List of 7
-#&gt;  $ by   : chr "the_economist"
-#&gt;  $ id   : int 21665437
+#&gt;  $ by   : chr "thedogeye"
+#&gt;  $ id   : int 21788078
 #&gt;  $ score: int 1
-#&gt;  $ time : POSIXct[1:1], format: "2019-11-29 18:00:46"
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-14 06:59:50"
+#&gt;  $ title: chr "Flexport is hiring a senior product manager to lead our ocean freight team"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://www.flexport.com/careers/job/1786936"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[2]]
+#&gt; List of 7
+#&gt;  $ by   : chr "mmcclure"
+#&gt;  $ id   : int 21786527
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-14 00:18:06"
+#&gt;  $ title: chr "Mux Is Looking for a Generalist to Work on Elixir APIs and TypeScript/React"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://mux.com/jobs?hnj=9"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[3]]
+#&gt; List of 7
+#&gt;  $ by   : chr "the_economist"
+#&gt;  $ id   : int 21783274
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-13 18:01:34"
 #&gt;  $ title: chr "BuildZoom (a better way to remodel) is hiring salespeople in Scottsdale"
 #&gt;  $ type : chr "job"
 #&gt;  $ url  : chr "https://jobs.lever.co/buildzoom"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[2]]
+#&gt; [[4]]
+#&gt; List of 7
+#&gt;  $ by   : chr "gdeglin"
+#&gt;  $ id   : int 21778133
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-13 01:42:55"
+#&gt;  $ title: chr "OneSignal is hiring full stack and back end devs who like APIs and developer tools"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://onesignal.com/careers"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[5]]
+#&gt; List of 7
+#&gt;  $ by   : chr "aboris26"
+#&gt;  $ id   : int 21776576
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-12 22:16:52"
+#&gt;  $ title: chr "Taplytics (YC W14) Is Hiring to Expand Our Cx Platform"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://jobs.lever.co/taplytics"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[6]]
+#&gt; List of 7
+#&gt;  $ by   : chr "kcorbitt"
+#&gt;  $ id   : int 21774358
+#&gt;  $ score: int 1
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-12 18:58:21"
+#&gt;  $ title: chr "Y Combinator is hiring an engineer to help us scale Startup School"
+#&gt;  $ type : chr "job"
+#&gt;  $ url  : chr "https://jobs.lever.co/ycombinator/ef091f3d-df02-433c-a6c0-7ba4a0c70fa7"
+#&gt;  - attr(*, "class")= chr "hn_item"
+#&gt; 
+#&gt; [[7]]
 #&gt; List of 7
 #&gt;  $ by   : chr "gkoberger"
-#&gt;  $ id   : int 21655200
+#&gt;  $ id   : int 21767994
 #&gt;  $ score: int 1
-#&gt;  $ time : POSIXct[1:1], format: "2019-11-28 08:04:03"
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-12 00:43:58"
 #&gt;  $ title: chr "ReadMe (YC W15) is hiring. Help us make APIs easy to use"
 #&gt;  $ type : chr "job"
 #&gt;  $ url  : chr "http://readme.io/careers"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[3]]
+#&gt; [[8]]
 #&gt; List of 7
-#&gt;  $ by   : chr "jonlerner"
-#&gt;  $ id   : int 21654286
+#&gt;  $ by   : chr "tlemberg"
+#&gt;  $ id   : int 21766411
 #&gt;  $ score: int 1
-#&gt;  $ time : POSIXct[1:1], format: "2019-11-28 03:59:22"
-#&gt;  $ title: chr "CoinTracker (YC W18) Is Hiring Senior Software Engineers in SF"
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-11 21:23:56"
+#&gt;  $ title: chr "Curebase (YC S18) hiring for engineering and sales to reinvent clinical research"
 #&gt;  $ type : chr "job"
-#&gt;  $ url  : chr "https://www.cointracker.io/careers"
+#&gt;  $ url  : chr "https://angel.co/company/curebase/jobs"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; 
-#&gt; [[4]]
+#&gt; [[9]]
 #&gt; List of 7
-#&gt;  $ by   : chr "alxppp"
-#&gt;  $ id   : int 21653089
+#&gt;  $ by   : chr "mkong1"
+#&gt;  $ id   : int 21764405
 #&gt;  $ score: int 1
-#&gt;  $ time : POSIXct[1:1], format: "2019-11-28 00:08:32"
-#&gt;  $ title: chr "Demodesk (YC W19) Is Hiring Software Engineers in Munich"
+#&gt;  $ time : POSIXct[1:1], format: "2019-12-11 18:05:24"
+#&gt;  $ title: chr "GiveCampus (YC S15) Is Hiring Engineers and Product in DC and SF"
 #&gt;  $ type : chr "job"
-#&gt;  $ url  : chr "https://demodesk.com/careers"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[5]]
-#&gt; List of 7
-#&gt;  $ by   : chr "troyastorino"
-#&gt;  $ id   : int 21651340
-#&gt;  $ score: int 1
-#&gt;  $ time : POSIXct[1:1], format: "2019-11-27 20:50:00"
-#&gt;  $ title: chr "PicnicHealth (YC S14) hiring in SF to help patients manage their medical records"
-#&gt;  $ type : chr "job"
-#&gt;  $ url  : chr "https://www.keyvalues.com/picnichealth"
-#&gt;  - attr(*, "class")= chr "hn_item"
-#&gt; 
-#&gt; [[6]]
-#&gt; List of 7
-#&gt;  $ by   : chr "sangwen"
-#&gt;  $ id   : int 21649202
-#&gt;  $ score: int 1
-#&gt;  $ time : POSIXct[1:1], format: "2019-11-27 17:23:59"
-#&gt;  $ title: chr "Smarking (YC W15) is hiring a Tech Lead Back end to scale terabytes infra"
-#&gt;  $ type : chr "job"
-#&gt;  $ url  : chr "https://jobs.lever.co/smarking/d5238ad7-559f-4d93-9f4d-f4b4e26dbdbb"
+#&gt;  $ url  : chr "https://jobs.lever.co/givecampus?team=Engineering"
 #&gt;  - attr(*, "class")= chr "hn_item"
 #&gt; </div><div class='input'># }
 

@@ -11,12 +11,22 @@ status](https://travis-ci.com/szymanskir/hackeRnews.svg?branch=master)](https://
 status](https://ci.appveyor.com/api/projects/status/github/szymanskir/hackeRnews?branch=master&svg=true)](https://ci.appveyor.com/project/szymanskir/hackeRnews)
 [![Codecov test
 coverage](https://codecov.io/gh/szymanskir/hackeRnews/branch/master/graph/badge.svg)](https://codecov.io/gh/szymanskir/hackeRnews?branch=master)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/hackeRnews)](https://CRAN.R-project.org/package=hackeRnews)
+[![CRAN
+status](https://cranlogs.r-pkg.org/badges/grand-total/hackeRnews)](https://CRAN.R-project.org/package=hackeRnews)
 <!-- badges: end -->
 
 The hackeRnews package is an R wrapper for the Hacker News API. Project
 for Advanced R classes at the Warsaw University of Technology.
 
 ## Installation and basic setup
+
+The `hackeRnews` package is vailable on CRAN and can be installed with:
+
+``` r
+install.packages("hackeRnews")
+```
 
 You can install the development version from
 [GitHub](https://github.com/) with:
