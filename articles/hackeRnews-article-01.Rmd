@@ -1,0 +1,166 @@
+---
+title: 'hackeRnews: retrieve data from Hacker News'
+author: "Ryszard Szymański"
+date: "12/27/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+The `hackeRnews` package was created in order to simplify the process of getting data from [Hacker News](https://news.ycombinator.com/news). Hacker News is a social news website focusing on computer science. It is composed of user submitted stories where each one provides a link to the original data source. Moreover, users have the ability to upvote a story if they have found it interesting and discuss the topic in the comment section with others. Besides news stories Hacker News contains the following sections:
+
+- 'Ask' section where users can ask questions to the Hacker News community
+- 'Show' section where users can share something that they have created
+- 'Jobs' section where users can browse job offers
+
+In this document basic usage of the `hackeRnews` package will be presented along with some example use cases.
+
+## Endpoint wrappers
+
+The `hackeRnews` package provides user friendly wrappers around the [Official Hacker News API](https://github.com/HackerNews/API). Specific endpoints along with corresponding functions and their descriptions are presented in the table below:
+
+| Endpoint            	| `hackeRnews` function                       	| Description                                                    	|
+|---------------------	|---------------------------------------------	|----------------------------------------------------------------	|
+| /v0/item/<id>       	| `get_item_by_id(id=<id>)`                   	| Retrieves the item corresponding to specified id               	|
+| /v0/user/<username> 	| `get_user_by_username(username=<username>)` 	| Retrieves the user corresponding to the specified username     	|
+| /v0/maxitem         	| `get_max_item_id()`                         	| Retrieves to the id of the latest published item               	|
+| /v0/topstories      	| `get_top_stories_ids()`                     	| Retrieves the ids of the current top stories                   	|
+| /v0/newstories      	| `get_new_stories_ids()`                     	| Retrieves the ids of current new stories                       	|
+| /v0/beststories     	| `get_best_stories_ids()`                    	| Retrieves the ids of best new stories                          	|
+| /v0/askstories      	| `get_latest_ask_stories_ids()`              	| Retrieves the ids of latest *ask* stories                      	|
+| /v0/showstories     	| `get_latest_show_stories_ids()`             	| Retrieves the ids of latest *show* stories                     	|
+| /v0/jobstories      	| `get_latest_job_stories_ids()`              	| Retrieves the ids of latest *job* stories                      	|
+| /v0/updates         	| `get_updates()`                             	| Retrieves the ids of the items and usernames that were updated 	|
+
+The package does not only contain wrappers for the API endpoints but it also provides some additional functions that simplify some operations. For example instead of retrieving the ids of top stories with the `get_top_stories_ids()` and then looping over the vector retrieving each item one by one using the `get_item_by_id(id=<id>)` function, the user can just use the `get_top_stories()` function. Moreover, `hackeRnews` makes use of the [`future.apply`](https://github.com/HenrikBengtsson/future.apply) package to speed up collecting multiple items by fetching them in parallel as collecting 500 stories sequentially might take a long time.
+
+## Use cases
+Before proceeding to the use cases, the installation and setup of the package will be described. `hackeRnews` is available on CRAN and can be installed using the following function call:
+```r
+install.package("hackeRnews")
+```
+
+Next, in order to configure `hackeRnews` to fetch data in parallel, we will setup *multiprocess* futures:
+```{r warning=FALSE}
+library(hackeRnews)
+future::plan(future::multiprocess) # setup multiprocess futures, read more at https://github.com/HenrikBengtsson/future
+```
+
+### Identify buzzwords in job offers posted on Hacker News
+```{r fig.align='center', message=FALSE}
+library(dplyr)
+library(ggplot2)
+library(ggwordcloud)
+library(stringr)
+library(tidytext)
+
+job_stories <- get_latest_job_stories()
+
+# get titles, normalize used words, remove non alphabet characters
+title_words <- unlist(
+  lapply(job_stories, function(job_story) job_story$title) %>% 
+  str_replace_all('[^A-Z|a-z]', ' ') %>% 
+  str_replace_all('\\s\\s*', ' ') %>% 
+  str_to_upper() %>% 
+  str_split(' ')
+)
+
+# remove stop words
+data('stop_words')
+df <- data.frame(word = title_words, stringsAsFactors = FALSE) %>% 
+  filter(str_length(word) > 0 & !str_to_lower(word) %in% stop_words$word) %>% 
+  count(word)
+
+# add colors to beautify visualization
+df <- df %>% 
+  mutate(color=factor(sample(10, nrow(df), replace=TRUE)))
+
+word_cloud <- ggplot(df, aes(label = word, size = n, color = color)) + 
+  geom_text_wordcloud() + 
+  scale_size_area(max_size = 15)
+
+word_cloud
+```
+
+### Check what's trending on Hacker News
+```{r}
+library(stringr)
+library(ggplot2)
+
+best_stories <- get_best_stories(max_items=10)
+
+df <- data.frame(
+  title = sapply(best_stories, function(best_story) str_wrap(best_story$title, 42)),
+  score = sapply(best_stories, function(best_story) best_story$score),
+  stringsAsFactors = FALSE
+)
+
+df$title <- factor(df$title, levels=df$title[order(df$score)])
+
+best_stories_plot <- ggplot(df, aes(x = title, y = score, label=score)) +
+  geom_col() +
+  geom_label() +
+  coord_flip() +
+  ggtitle('Best stories') +
+  xlab('Story title') +
+  ylab('Score')
+
+best_stories_plot
+```
+
+### Analyze the sentiment of the two best stories from Hacker News
+```{r}
+library(dplyr)
+library(ggplot2)
+library(stringr)
+library(textdata)
+library(tidytext)
+data('stop_words')
+
+best_stories <- get_best_stories(max_items = 2)
+
+words_by_story <- lapply(best_stories, function(story) {
+  words <- get_comments(story) %>% 
+    pull(text) %>% 
+    str_replace_all('[^A-Z|a-z]', ' ') %>%
+    str_to_lower() %>%
+    str_replace_all('\\s\\s*', ' ') %>% 
+    str_split(' ', simplify = TRUE)
+  
+  filtered_words <- words[words != ""] %>% 
+    setdiff(stop_words$word)
+
+  data.frame(
+    story_title = rep(story$title, length(filtered_words)),
+    word = filtered_words,
+    stringsAsFactors = FALSE
+  )
+}) %>% bind_rows()
+
+sentiment <- get_sentiments("afinn")
+
+sentiment_plot <- words_by_story %>% 
+  inner_join(sentiment, by = "word") %>% 
+  ggplot(aes(x = value, fill = story_title)) +
+  geom_density(alpha = 0.5) +
+  scale_x_continuous(breaks=c(-5, 0, 5),
+                   labels=c("Negative", "Neutral", "Positive"),
+                   limits=c(-6, 6)) +
+  theme_minimal() +
+  theme(axis.title.x=element_blank(),
+      axis.title.y=element_blank(),
+      axis.text.y=element_blank(),
+      axis.ticks.y=element_blank(),
+      plot.title=element_text(hjust=0.5),
+      legend.position = 'top') +
+  labs(fill='Story') +
+  ggtitle('Sentiment for 2 chosen stories')
+
+sentiment_plot
+```
+
+## Summary
+`hackeRnews` provides a convenient way of accessing content published on Hacker News. As it returns data in form of convenient R objects such as data frames or lists, users can immediatly start focusing on their analysis. Check out the package on GitHub: https://github.com/szymanskir/hackeRnews and in case of any bugs feel free to create an issue: https://github.com/szymanskir/hackeRnews/issues. 
