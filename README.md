@@ -57,75 +57,70 @@ future::plan(future::multiprocess) # setup multiprocess futures, read more at ht
 
 ## Examples
 
-### Identify buzzwords in job offers of Hacker News
-
-This example will show how to get recently used words in job story
-titles. Words will be visualized using word cloud to show which words
-were used the most.
+### Identify buzzwords in job offers posted on Hacker News
 
 ``` r
-library(hackeRnews)
-library(tidyverse)
-library(tidytext)
-library(stringr)
 library(dplyr)
+library(ggplot2)
 library(ggwordcloud)
+library(stringr)
+library(tidytext)
 
-job_stories <- hackeRnews::get_latest_job_stories()
+job_stories <- get_latest_job_stories()
 
 # get titles, normalize used words, remove non alphabet characters
 title_words <- unlist(
-  lapply(job_stories, FUN=function(job_story) { job_story$title }) %>% 
+  lapply(job_stories, function(job_story) job_story$title) %>% 
   str_replace_all('[^A-Z|a-z]', ' ') %>% 
-  str_to_upper() %>% 
   str_replace_all('\\s\\s*', ' ') %>% 
+  str_to_upper() %>% 
   str_split(' ')
 )
 
 # remove stop words
 data('stop_words')
-df <- data.frame(word=title_words, stringsAsFactors=FALSE) %>% 
+df <- data.frame(word = title_words, stringsAsFactors = FALSE) %>% 
   filter(str_length(word) > 0 & !str_to_lower(word) %in% stop_words$word) %>% 
   count(word)
 
-# add some random colors to beautify visualization
-df <- as.data.frame(df) %>% 
-  mutate(color=factor(sample(10,nrow(df), replace=TRUE)))
+# add colors to beautify visualization
+df <- df %>% 
+  mutate(color=factor(sample(10, nrow(df), replace=TRUE)))
 
-
-word_cloud <- ggplot(df, aes(label=word, size=n, color=color)) + 
+word_cloud <- ggplot(df, aes(label = word, size = n, color = color)) + 
   geom_text_wordcloud() + 
   scale_size_area(max_size = 15)
+
+word_cloud
 ```
 
 <img src="man/figures/word_cloud.png"/>
 
 ### Check what’s trending on Hacker News
 
-This example will fetch best stories and plot titles of most recently
-trending stories.
-
 ``` r
-library(hackeRnews)
 library(stringr)
 library(ggplot2)
 
-best_stories <- hackeRnews::get_best_stories(max_items=10)
+best_stories <- get_best_stories(max_items=10)
+
 df <- data.frame(
-  title=unlist(lapply(best_stories, FUN=function(best_story) { str_wrap(best_story$title, 42) })),
-  score=unlist(lapply(best_stories, FUN=function(best_story) { best_story$score })),
-  stringsAsFactors=FALSE
+  title = sapply(best_stories, function(best_story) str_wrap(best_story$title, 42)),
+  score = sapply(best_stories, function(best_story) best_story$score),
+  stringsAsFactors = FALSE
 )
 
-df$title = factor(df$title, levels=df$title[order(df$score)])
+df$title <- factor(df$title, levels=df$title[order(df$score)])
 
 best_stories_plot <- ggplot(df, aes(x = title, y = score, label=score)) +
   geom_col() +
   geom_label() +
   coord_flip() +
+  ggtitle('Best stories') +
   xlab('Story title') +
-  ylab('Score') +
-  ggtitle('Best stories')
+  ylab('Score')
+
+best_stories_plot
 ```
 
 <img src="man/figures/best_stories.png"/>
@@ -133,63 +128,53 @@ best_stories_plot <- ggplot(df, aes(x = title, y = score, label=score)) +
 ### Sentiment analysis on two best stories from Hacker News
 
 ``` r
-library(hackeRnews)
-library(tidyverse)
-library(tidytext)
 library(dplyr)
-
-best_stories <- hackeRnews::get_best_stories(2)
-
-comments_by_story <- lapply(best_stories,
-                   function(story){
-                     get_comments(story)$text
-                   }
-)
-
-# normalize used words, remove non alphabet characters
-words_by_story <- lapply(comments_by_story,
-                        function(comments){
-                            unlist(
-                            comments %>%
-                              str_replace_all('[^A-Z|a-z]', ' ') %>%
-                              str_to_lower() %>%
-                              str_replace_all('\\s\\s*', ' ') %>%
-                              str_split(' ')
-                          )
-                        }
-)
-
-# remove stop words and empty strings
-data('stop_words')
-dataframes <- lapply(1:length(words_by_story), function(story_id){
-  data.frame(word=words_by_story[[story_id]], stringsAsFactors=FALSE, story_id=story_id) %>%
-    filter(!word %in% stop_words$word & word != "")
-  }
-)
-
-df <- bind_rows(dataframes)
-
-# get sentiment for every story
+library(ggplot2)
+library(stringr)
 library(textdata)
+library(tidytext)
+data('stop_words')
+
+best_stories <- get_best_stories(max_items = 2)
+
+words_by_story <- lapply(best_stories, function(story) {
+  words <- get_comments(story) %>% 
+    pull(text) %>% 
+    str_replace_all('[^A-Z|a-z]', ' ') %>%
+    str_to_lower() %>%
+    str_replace_all('\\s\\s*', ' ') %>% 
+    str_split(' ', simplify = TRUE)
+  
+  filtered_words <- words[words != ""] %>% 
+    setdiff(stop_words$word)
+
+  data.frame(
+    story_title = rep(story$title, length(filtered_words)),
+    word = filtered_words,
+    stringsAsFactors = FALSE
+  )
+}) %>% bind_rows()
+
 sentiment <- get_sentiments("afinn")
 
-df %>%
-  inner_join(sentiment, by='word') %>%
-  mutate(story_title=sapply(story_id, function(id){best_stories[[id]]$title}) ) %>% 
-  ggplot(aes(x=value, fill=as.factor(story_title))) +
-    geom_density(alpha=0.5) +
-    scale_x_continuous(breaks=c(-5, 0, 5),
-                       labels=c("Negative", "Neutral", "Positive"),
-                       limits=c(-6, 6)) +
-    theme_minimal() +
-    theme(axis.title.x=element_blank(),
-          axis.title.y=element_blank(),
-          axis.text.y=element_blank(),
-          axis.ticks.y=element_blank(),
-          plot.title=element_text(hjust=0.5),
-          legend.position = 'top') +
-    labs(fill='Story') +
-    ggtitle('Sentiment for 2 chosen stories')
+sentiment_plot <- words_by_story %>% 
+  inner_join(sentiment, by = "word") %>% 
+  ggplot(aes(x = value, fill = story_title)) +
+  geom_density(alpha = 0.5) +
+  scale_x_continuous(breaks=c(-5, 0, 5),
+                   labels=c("Negative", "Neutral", "Positive"),
+                   limits=c(-6, 6)) +
+  theme_minimal() +
+  theme(axis.title.x=element_blank(),
+      axis.title.y=element_blank(),
+      axis.text.y=element_blank(),
+      axis.ticks.y=element_blank(),
+      plot.title=element_text(hjust=0.5),
+      legend.position = 'top') +
+  labs(fill='Story') +
+  ggtitle('Sentiment for 2 chosen stories')
+
+sentiment_plot
 ```
 
 <img src="man/figures/sentiment.png"/>

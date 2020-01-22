@@ -1,59 +1,42 @@
 ---
-output: github_document
+title: 'hackeRnews: retrieve data from Hacker News'
+author: "Ryszard Szymański"
+date: "12/27/2019"
+output: html_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-"
-  # out.width = "100%"
-)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# hackeRnews <img src="man/figures/logo.png" align="right" width="120" />
 
-<!-- badges: start -->
-[![Travis build status](https://travis-ci.com/szymanskir/hackeRnews.svg?branch=master)](https://travis-ci.com/szymanskir/hackeRnews)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/szymanskir/hackeRnews?branch=master&svg=true)](https://ci.appveyor.com/project/szymanskir/hackeRnews)
-[![Codecov test coverage](https://codecov.io/gh/szymanskir/hackeRnews/branch/master/graph/badge.svg)](https://codecov.io/gh/szymanskir/hackeRnews?branch=master)
-[![CRAN status](https://www.r-pkg.org/badges/version/hackeRnews)](https://CRAN.R-project.org/package=hackeRnews)
-[![CRAN status](https://cranlogs.r-pkg.org/badges/grand-total/hackeRnews)](https://CRAN.R-project.org/package=hackeRnews)
-<!-- badges: end -->
+The `hackeRnews` package was created in order to simplify the process of getting data from [Hacker News](https://news.ycombinator.com/news). Hacker News is a social news website focusing on computer science. It is composed of user submitted stories where each one provides a link to the original data source. Moreover, users have the ability to upvote a story if they have found it interesting and discuss the topic in the comment section with others. Besides news stories Hacker News contains the following sections:
 
-The hackeRnews package is an R wrapper for the Hacker News API. Project for Advanced R classes at the Warsaw University of Technology.
+- 'Ask' section where users can ask questions to the Hacker News community
+- 'Show' section where users can share something that they have created
+- 'Jobs' section where users can browse job offers
 
-## Installation and basic setup
+In this document basic usage of the `hackeRnews` package will be presented along with some example use cases.
 
-The `hackeRnews` package is vailable on CRAN and can be installed with:
+## Endpoint wrappers
+
+The `hackeRnews` package provides user friendly wrappers around the [Official Hacker News API](https://github.com/HackerNews/API). To each specific endpoint there is a corresponding function e.g. `get_top_stories_ids()` corresponds to the `/v0/jobstories` endpoint. However, the package does not only contain wrappers for the API endpoints but it also provides additional functions that simplify common operations. For example instead of retrieving the ids of top stories with the `get_top_stories_ids()` and then looping over the vector retrieving each item one by one using the `get_item_by_id()` function, the user can just use the `get_top_stories()` function. Those helpers use of the [`future.apply`](https://github.com/HenrikBengtsson/future.apply) package to speed up collecting multiple items by fetching them in parallel as collecting 500 stories sequentially might take a long time. Moreover, the package exports the `get_comments()` function which allows to retrieve all comments of the given story in the convenient form of a data frame.
+
+## Installation and setup
+`hackeRnews` is available on CRAN and can be installed using the following function call:
 ```r
-install.packages("hackeRnews")
+install.package("hackeRnews")
 ```
 
-You can install the development version from [GitHub](https://github.com/) with:
-
-``` r
-# install.packages("devtools")
-devtools::install_github("szymanskir/hackeRnews")
-```
-
-The Hacker News API is constructed in such a way that a single item is retrieved with a single request. This means that the retrieval of 200 items requires 200 separate API calls. Processing this amount of requests sequentially takes a significant amount of time. In order to solve this issue the `hackeRnews` package makes use of the `future.apply` package (https://github.com/HenrikBengtsson/future.apply) which allows to fetch all of the requested items in parallel. However, this requires some additional setup:
-
-```r
+Next, in order to configure `hackeRnews` to fetch data in parallel, we will setup *multiprocess* futures:
+```{r warning=FALSE}
 library(hackeRnews)
 future::plan(future::multiprocess) # setup multiprocess futures, read more at https://github.com/HenrikBengtsson/future
 ```
 
-## Cheatsheet
-
-<a href="https://github.com/szymanskir/hackeRnews/blob/master/cheatsheet/cheatsheet.pdf"><img src="man/figures/cheatsheet.png" width="356" height="252"/></a>  
-
-## Examples
-
+## Use cases
 ### Identify buzzwords in job offers posted on Hacker News
-```{r, warning=FALSE, message=FALSE, eval=FALSE}
+```{r fig.align='center', message=FALSE}
 library(dplyr)
 library(ggplot2)
 library(ggwordcloud)
@@ -88,10 +71,8 @@ word_cloud <- ggplot(df, aes(label = word, size = n, color = color)) +
 word_cloud
 ```
 
-<img src="man/figures/word_cloud.png"/>
-
 ### Check what's trending on Hacker News
-```{r, warning=FALSE, message=FALSE, eval=FALSE}
+```{r}
 library(stringr)
 library(ggplot2)
 
@@ -116,11 +97,8 @@ best_stories_plot <- ggplot(df, aes(x = title, y = score, label=score)) +
 best_stories_plot
 ```
 
-<img src="man/figures/best_stories.png"/>
-
-### Sentiment analysis on two best stories from Hacker News
-
-```{r, warning=FALSE, message=FALSE, eval=FALSE}
+### Analyze the sentiment of the two best stories from Hacker News
+```{r}
 library(dplyr)
 library(ggplot2)
 library(stringr)
@@ -170,4 +148,5 @@ sentiment_plot <- words_by_story %>%
 sentiment_plot
 ```
 
-<img src="man/figures/sentiment.png"/>
+## Summary
+`hackeRnews` provides a convenient way of accessing content published on Hacker News. As it returns data in form of convenient R objects such as data frames or lists, users can immediatly start focusing on their analysis. Check out the package on GitHub: https://github.com/szymanskir/hackeRnews and in case of any bugs feel free to create an issue: https://github.com/szymanskir/hackeRnews/issues. 

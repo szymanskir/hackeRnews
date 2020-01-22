@@ -500,38 +500,20 @@ get_updates <- function() {
 #'
 get_comments <- function(item) {
   assert(is_hn_item(item), "item must be an object of class hn_item")
-  if (!is.null(item$kids)) {
-    kids <- hackeRnews::get_items_by_ids(item$kids)
+  comments <- list()
+  kids <- item$kids
+  while (length(kids) != 0) {
     kids <- kids[!is.na(kids)]
-    df <- do.call(
-      rbind,
-      lapply(kids, get_comments_with_root)
-    )
+    kids_items <- hackeRnews::get_items_by_ids(kids)
+    kids_items <- kids_items[!is.na(kids_items)]
 
-    tibble::as.tibble(df)
+    comments <- c(comments, kids_items)
+    sub_kids <- unlist(lapply(kids_items, function(item) item$kids))
+
+    kids <- sub_kids
   }
-}
 
-
-#' @title Hacker News nested comments with root comment
-#'
-#' @description Returns specified item and all comments under it. Comments are retrieved
-#' using the Hacker News API
-#'
-#' @param item item whose children (comments) will be retrieved
-#'
-#' @return dataframe containing specified item and all comments under that item
-#'
-get_comments_with_root <- function(item) {
-  if (is.null(item$kids)) {
-    comment_to_dataframe_row(item)
-  } else {
-    kids <- hackeRnews::get_items_by_ids(item$kids)
-    kids <- kids[!is.na(kids)]
-    kids_df <- do.call(
-      rbind,
-      lapply(kids, get_comments_with_root),
-    )
-    rbind(comment_to_dataframe_row(item), kids_df)
-  }
+  rows <- lapply(comments, comment_to_dataframe_row)
+  df <- do.call(rbind, rows)
+  tibble::as_tibble(df)
 }
