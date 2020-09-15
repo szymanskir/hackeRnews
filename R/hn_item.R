@@ -5,6 +5,7 @@
 #' @param ... further arguments passed to or from other methods
 #'
 #' @export
+#' @importFrom utils str
 #'
 
 print.hn_item <- function(x, ...) {

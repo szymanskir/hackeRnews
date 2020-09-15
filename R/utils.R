@@ -4,6 +4,9 @@
 #'
 #' @return parsed content of the given response
 #'
+#' @importFrom httr http_type content
+#' @importFrom jsonlite fromJSON
+#'
 parse_json <- function(response) {
   assert(httr::http_type(response) == "application/json",
          "The given response is not of type json")

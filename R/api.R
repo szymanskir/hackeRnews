@@ -10,6 +10,8 @@
 #'
 #' @return parsed content of the response object
 #'
+#' @importFrom httr GET
+#'
 .send_request <- function(request_url) {
   response <- httr::GET(url = request_url)
   hn_api_response <- create_hn_api_response(response)
@@ -77,6 +79,7 @@ get_item_by_id <- function(id) {
 #' items
 #' }
 #'
+#' @importFrom future.apply future_lapply
 #'
 #' @seealso
 #' https://github.com/HenrikBengtsson/future
@@ -497,6 +500,8 @@ get_updates <- function() {
 #' comments <- get_comments(story)
 #' comments
 #' }
+#'
+#' @importFrom tibble as_tibble
 #'
 get_comments <- function(item) {
   assert(is_hn_item(item), "item must be an object of class hn_item")
