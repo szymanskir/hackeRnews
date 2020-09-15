@@ -47,6 +47,8 @@ get_content <- function(x) {
 #'
 #' @param hn_api_response hn_api_response object to be checked
 #'
+#' @importFrom httr http_error
+#'
 #'
 validate_hn_api_response <- function(hn_api_response) {
   assert(!httr::http_error(hn_api_response$response),
@@ -63,6 +65,7 @@ validate_hn_api_response <- function(hn_api_response) {
 
 
 #' @export
+#' @importFrom utils str
 print.hn_api_response <- function(x, ...) {
   cat(sprintf("---HN API RESPONSE [%s][%s]---", x$path, x$response$status_code))
   utils::str(x$content)

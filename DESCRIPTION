@@ -1,6 +1,6 @@
 Package: hackeRnews
 Title: Wrapper for the 'Official Hacker News' API
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: c(
     person(given = "Ryszard",
            family = "Szymanski",
@@ -25,7 +25,7 @@ Suggests:
     rmarkdown,
     spelling
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 Imports: 
     utils,
     httr,

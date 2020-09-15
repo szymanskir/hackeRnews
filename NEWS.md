@@ -1,3 +1,7 @@
+# hackeRnews 0.2.1
+
+* Provided direct imports in NAMESPACE.
+
 # hackeRnews 0.2.0
 
 * Added validation to the `get_comments` function 
