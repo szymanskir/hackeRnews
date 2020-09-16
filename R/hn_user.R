@@ -21,6 +21,8 @@ print.hn_user <- function(x, ...) {
 #'
 #' @return object representing a hn_user
 #'
+#' @noRd
+#'
 create_hn_user <- function(user) {
   user$created <- to_datetime_origin(user$created)
 
@@ -39,6 +41,8 @@ create_hn_user <- function(user) {
 #'
 #' @return TRUE if the object is of the class hn_user
 #'
+#' @noRd
+#'
 is_hn_user <- function(x) {
   inherits(x, "hn_user")
 }
@@ -48,6 +52,8 @@ is_hn_user <- function(x) {
 #' hn_user class
 #'
 #' @param hn_user object of the class hn_user
+#'
+#' @noRd
 #'
 validate_hn_user <- function(hn_user) {
   assert(is_hn_user(hn_user), "Object must be of the class hn_user")

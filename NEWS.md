@@ -1,6 +1,7 @@
 # hackeRnews 0.2.1
 
 * Provided direct imports in NAMESPACE.
+* Deleted documentation for unexported functions.
 
 # hackeRnews 0.2.0
 

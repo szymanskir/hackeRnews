@@ -7,6 +7,8 @@
 #'
 #' @return request url with added paths and the json extension
 #'
+#' @noRd
+#'
 create_request_url <- function(url, paths) {
   for (path in paths) {
     url <- add_path(url, path)
@@ -22,6 +24,8 @@ create_request_url <- function(url, paths) {
 #'
 #' @return url with the given path added
 #'
+#' @noRd
+#'
 add_path <- function(url, path) {
   paste0(url, "/", path)
 }
@@ -32,6 +36,8 @@ add_path <- function(url, path) {
 #' @param url base url to which the json extension should be added
 #'
 #' @return url with the json extension added
+#'
+#' @noRd
 #'
 add_json_extension <- function(url) {
   paste0(url, ".json")
