@@ -1,5 +1,7 @@
 #' Returns the base url of the Hacker News API
 #'
+#' @noRd
+#'
 .base_url <- function() {
   "https://hacker-news.firebaseio.com/v0"
 }
@@ -11,6 +13,8 @@
 #' @return parsed content of the response object
 #'
 #' @importFrom httr GET
+#'
+#' @noRd
 #'
 .send_request <- function(request_url) {
   response <- httr::GET(url = request_url)

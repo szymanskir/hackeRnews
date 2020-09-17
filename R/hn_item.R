@@ -18,6 +18,8 @@ print.hn_item <- function(x, ...) {
 #'
 #' @return object representing a hn_item
 #'
+#' @noRd
+#'
 create_hn_item <- function(item) {
   item$time <- to_datetime_origin(item$time)
   hn_item <- structure(
@@ -35,6 +37,8 @@ create_hn_item <- function(item) {
 #'
 #' @return TRUE if the object is of the class hn_item
 #'
+#' @noRd
+#'
 is_hn_item <- function(x) {
   inherits(x, "hn_item")
 }
@@ -43,6 +47,8 @@ is_hn_item <- function(x) {
 #' hn_item class
 #'
 #' @param hn_item object of the class hn_item
+#'
+#' @noRd
 #'
 validate_hn_item <- function(hn_item) {
   assert(exists("id", where = hn_item), "Object's id is required")
