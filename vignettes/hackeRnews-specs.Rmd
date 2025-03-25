@@ -40,7 +40,7 @@ To fetch best/new/top stories the user can use the `get_*_stories` function. Eac
 For example to fetch the top 5 best stories:
 
 ```{r}
-best_stories <- get_best_stories(max_items=5)
+best_stories <- get_best_stories(max_items = 5)
 best_stories[[1]]
 ```
 
@@ -58,7 +58,7 @@ Similar to news stories. There are `get_latest_*_stories` that returns latest * 
 For example to fetch the 3 latest ask stories:
 
 ```{r}
-ask_stories <- get_latest_ask_stories(max_items=3)
+ask_stories <- get_latest_ask_stories(max_items = 3)
 ask_stories[[1]]
 ```
 
@@ -67,7 +67,7 @@ ask_stories[[1]]
 The discussion in story threads is represented as system of comments. Each story has top level comments ids stored under the `kids` property. Each comment post can have it's own set of comments ids under `kids` property (sub-comments) and so on. In order to retrieve all of the comments of a specific story, just use the `get_comments` function.
 
 ```{r}
-top_story <- get_top_stories(max_items=1)[[1]]
+top_story <- get_top_stories(max_items = 1)[[1]]
 get_comments(top_story)
 ```
 
@@ -76,7 +76,7 @@ get_comments(top_story)
 To fetch data about user 'jl' just use the `get_user_by_username` function:
 
 ```{r}
-user <- get_user_by_username('jl')
+user <- get_user_by_username("jl")
 user
 ```
 
