@@ -50,7 +50,7 @@ to_datetime_origin <- function(x) {
 #' @noRd
 #'
 trim_ids_list <- function(ids_list, max_items) {
-  ids_list[1:min(max_items, length(ids_list))]
+  ids_list[seq_len(min(max_items, length(ids_list)))]
 }
 
 #' return specified variable or default value if specified variable is null

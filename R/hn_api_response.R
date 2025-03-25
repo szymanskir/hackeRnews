@@ -66,7 +66,7 @@ validate_hn_api_response <- function(hn_api_response) {
                  hn_api_response$path))
   if (is.null(hn_api_response$content)) {
     warning(
-       sprintf("The content of the response is empty!\n<%s>", hn_api_response$path)
+      sprintf("The content of the response is empty!\n<%s>", hn_api_response$path)
     )
   }
 }

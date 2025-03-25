@@ -56,28 +56,28 @@ httptest::with_mock_api({
     result <- get_top_stories(2)
     expected <- list()
     item1 <- list(
-        by = "susam",
-        descendants = 142,
-        id = 21299546,
-        kids = c(21300147, 21302020),
-        score = 661,
-        time = as.POSIXct(1571505668, origin = "1970-01-01"),
-        title = "Structure and Interpretation of Computer Programs (1996) [pdf]",
-        type = "story",
-        url = "https://opendocs.github.io/sicp/sicp.pdf"
+      by = "susam",
+      descendants = 142,
+      id = 21299546,
+      kids = c(21300147, 21302020),
+      score = 661,
+      time = as.POSIXct(1571505668, origin = "1970-01-01"),
+      title = "Structure and Interpretation of Computer Programs (1996) [pdf]",
+      type = "story",
+      url = "https://opendocs.github.io/sicp/sicp.pdf"
     )
     class(item1) <- "hn_item"
 
     item2 <- list(
-        by = "codesections",
-        descendants = 122,
-        id = 21278790,
-        kids = c(21301138, 21300939),
-        score = 199,
-        time = as.POSIXct(1571284726, origin = "1970-01-01"),
-        title = "Loopless Programming",
-        type = "story",
-        url = "https://code.jsoftware.com/wiki/Vocabulary/Loopless"
+      by = "codesections",
+      descendants = 122,
+      id = 21278790,
+      kids = c(21301138, 21300939),
+      score = 199,
+      time = as.POSIXct(1571284726, origin = "1970-01-01"),
+      title = "Loopless Programming",
+      type = "story",
+      url = "https://code.jsoftware.com/wiki/Vocabulary/Loopless"
     )
     class(item2) <- "hn_item"
     expected <- list(item1, item2)
@@ -99,15 +99,15 @@ httptest::with_mock_api({
     result <- get_new_stories(2)
     expected <- list()
     item1 <- list(
-        by = "sgallant",
-        descendants = 53,
-        id = 21301388,
-        kids = c(21302857, 21305354),
-        score = 179,
-        time = as.POSIXct(1571528419, origin = "1970-01-01"),
-        title = "Tina is not a CMS",
-        type = "story",
-        url = "https://tinacms.org/blog/announcing-tinacms/"
+      by = "sgallant",
+      descendants = 53,
+      id = 21301388,
+      kids = c(21302857, 21305354),
+      score = 179,
+      time = as.POSIXct(1571528419, origin = "1970-01-01"),
+      title = "Tina is not a CMS",
+      type = "story",
+      url = "https://tinacms.org/blog/announcing-tinacms/"
     )
     class(item1) <- "hn_item"
 
@@ -269,14 +269,14 @@ httptest::with_mock_api({
       id = 21500829,
       deleted = FALSE,
       by = "vanniv",
-        time = as.POSIXct(1573427819, origin = "1970-01-01"),
+      time = as.POSIXct(1573427819, origin = "1970-01-01"),
       text = "I find it fascinating which instances of governments violently oppressing their own people get the press excited enough to report, and which the press just buries.",
       dead = FALSE,
       parent = 21500569,
       stringsAsFactors = FALSE
     )
     expect_true(all.equal(result, expected))
-    })
+  })
 })
 
 httptest::with_mock_api({
@@ -308,9 +308,9 @@ httptest::with_mock_api({
           comment_to_dataframe_row(get_item_by_id(21500829)),
           comment_to_dataframe_row(get_item_by_id(21500985)),
           comment_to_dataframe_row(get_item_by_id(21501055))
-          )
         )
       )
+    )
     expect_true(all.equal(result, expected))
   })
 })
