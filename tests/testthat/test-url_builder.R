@@ -1,5 +1,3 @@
-context("Checking if url builder functions are working correctly")
-
 test_that("Path is added properly to the url", {
   result <- add_path("www.baseurl.com", "mypath")
   expected <- "www.baseurl.com/mypath"

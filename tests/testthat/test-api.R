@@ -1,5 +1,3 @@
-context("Check if api functions are working correctly")
-
 httptest::with_mock_api({
   test_that("Retrieve by id function is working correctly", {
     result <- get_item_by_id(8863)
