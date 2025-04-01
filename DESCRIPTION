@@ -16,7 +16,6 @@ Description: Use the <https://hacker-news.firebaseio.com/v0/> API through R. Ret
     posts, articles and other items in form of convenient R objects.
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
 Suggests: 
     covr,
     testthat (>= 2.1.0),
@@ -25,7 +24,7 @@ Suggests:
     rmarkdown,
     spelling
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.3.2
 Imports: 
     utils,
     httr,
@@ -36,3 +35,4 @@ VignetteBuilder: knitr
 URL: https://github.com/szymanskir/hackeRnews
 BugReports: https://github.com/szymanskir/hackeRnews/issues
 Language: en-US
+Config/testthat/edition: 3
