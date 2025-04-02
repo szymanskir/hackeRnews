@@ -4,17 +4,10 @@
 #'
 #' @return parsed content of the given response
 #'
-#' @importFrom httr http_type content
-#' @importFrom jsonlite fromJSON
-#'
 #' @noRd
 #'
 parse_json <- function(response) {
-  assert(httr::http_type(response) == "application/json",
-         "The given response is not of type json")
-
-  content <- httr::content(response, "text", encoding = "utf-8")
-  jsonlite::fromJSON(content)
+  httr2::resp_body_json(response, simplifyVector = TRUE)
 }
 
 #' Converts numeric value into POSIXct datetime type
