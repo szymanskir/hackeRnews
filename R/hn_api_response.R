@@ -53,13 +53,11 @@ get_content <- function(x) {
 #'
 #' @param hn_api_response hn_api_response object to be checked
 #'
-#' @importFrom httr http_error
-#'
 #' @noRd
 #'
 #'
 validate_hn_api_response <- function(hn_api_response) {
-  assert(!httr::http_error(hn_api_response$response),
+  assert(!httr2::resp_is_error(hn_api_response$response),
          sprintf("The request resulted with an error [%s]\n%s\n<%s>",
                  hn_api_response$response$status_code,
                  hn_api_response$content,

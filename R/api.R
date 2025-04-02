@@ -12,12 +12,10 @@
 #'
 #' @return parsed content of the response object
 #'
-#' @importFrom httr GET
-#'
 #' @noRd
 #'
 .send_request <- function(request_url) {
-  response <- httr::GET(url = request_url)
+  response <- httr2::request(request_url) |> httr2::req_perform()
   hn_api_response <- create_hn_api_response(response)
   validate_hn_api_response(hn_api_response)
   get_content(hn_api_response)
