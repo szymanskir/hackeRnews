@@ -29,7 +29,6 @@ Imports:
     utils,
     httr2,
     tibble,
-    future.apply
 VignetteBuilder: knitr
 URL: https://github.com/szymanskir/hackeRnews
 BugReports: https://github.com/szymanskir/hackeRnews/issues

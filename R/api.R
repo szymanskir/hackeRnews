@@ -69,9 +69,6 @@ get_item_by_id <- function(id) {
 #' @description Retrieves items
 #' corresponding to specified list of ids using Hacker News API
 #'
-#' @details Parallel api requests can be enabled by running
-#' \code{future::plan(future::multiprocess)}
-#'
 #' @param ids list of ids
 #'
 #' @export
@@ -85,11 +82,6 @@ get_item_by_id <- function(id) {
 #' items
 #' }
 #'
-#' @importFrom future.apply future_lapply
-#'
-#' @seealso
-#' https://github.com/HenrikBengtsson/future
-#' https://github.com/HenrikBengtsson/future.apply
 get_items_by_ids <- function(ids) {
   assert_ids(ids)
   requests <- lapply(ids, function(id) {

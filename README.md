@@ -35,15 +35,11 @@ The Hacker News API is constructed in such a way that a single item is
 retrieved with a single request. This means that the retrieval of 200
 items requires 200 separate API calls. Processing this amount of
 requests sequentially takes a significant amount of time. In order to
-solve this issue the `hackeRnews` package makes use of the
-`future.apply` package
-(<https://github.com/HenrikBengtsson/future.apply>) which allows to
-fetch all of the requested items in parallel. However, this requires
-some additional setup:
+solve this issue the `hackeRnews` package makes use of the built-in
+support for parallel requests in httr2 (`httr2::req_perform_parallel`).
 
 ``` r
 library(hackeRnews)
-future::plan(future::multiprocess) # setup multiprocess futures, read more at https://github.com/HenrikBengtsson/future
 ```
 
 ## Cheatsheet
