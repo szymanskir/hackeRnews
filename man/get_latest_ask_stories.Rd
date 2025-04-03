@@ -16,10 +16,6 @@ list of latest ask HN stories ids
 \description{
 Retrieves latest ask stories using Hacker News API
 }
-\details{
-Parallel api requests can be enabled by running
-\code{future::plan(future::multiprocess)}
-}
 \examples{
 
 \donttest{
