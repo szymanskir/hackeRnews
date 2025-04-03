@@ -21,6 +21,10 @@
   get_content(hn_api_response)
 }
 
+.send_parallel_requests <- function(requests) {
+  httr2::req_perform_parallel(requests)
+}
+
 
 #' @title Get Hacker News by Id
 #'
@@ -88,7 +92,22 @@ get_item_by_id <- function(id) {
 #' https://github.com/HenrikBengtsson/future.apply
 get_items_by_ids <- function(ids) {
   assert_ids(ids)
-  future.apply::future_lapply(ids, get_item_by_id)
+  requests <- lapply(ids, function(id) {
+    request_url <- create_request_url(.base_url(), c("item", id))
+    httr2::request(request_url)
+  })
+
+  lapply(.send_parallel_requests(requests), function(response) {
+    hn_api_response <- create_hn_api_response(response)
+    validate_hn_api_response(hn_api_response)
+    item <- get_content(hn_api_response)
+
+    if (is.null(item)) {
+      NA
+    } else {
+      create_hn_item(item)
+    }
+  })
 }
 
 #' @title Get Hacker News user
