@@ -1,3 +1,7 @@
+local_mocked_bindings(.send_parallel_requests = function(requests) {
+  lapply(requests, httr2::req_perform)
+})
+
 httptest2::with_mock_api({
   test_that("Retrieve by id function is working correctly", {
     result <- get_item_by_id(8863)
