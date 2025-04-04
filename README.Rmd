@@ -45,7 +45,7 @@ library(hackeRnews)
 
 ## Cheatsheet
 
-<a href="https://github.com/szymanskir/hackeRnews/blob/master/cheatsheet/cheatsheet.pdf"><img src="man/figures/cheatsheet.png" width="356" height="252"/></a>  
+<a href="https://github.com/szymanskir/hackeRnews/blob/main/cheatsheet/cheatsheet.pdf"><img src="man/figures/cheatsheet.png" width="356" height="252" alt="Cheatsheet of the package"/></a>  
 
 ## Examples
 
@@ -85,7 +85,7 @@ word_cloud <- ggplot(df, aes(label = word, size = n, color = color)) +
 word_cloud
 ```
 
-<img src="man/figures/word_cloud.png"/>
+<img src="man/figures/word_cloud.png" alt="Word cloud of latest job stories"/>
 
 ### Check what's trending on Hacker News
 ```{r, warning=FALSE, message=FALSE, eval=FALSE}
@@ -113,7 +113,7 @@ best_stories_plot <- ggplot(df, aes(x = title, y = score, label=score)) +
 best_stories_plot
 ```
 
-<img src="man/figures/best_stories.png"/>
+<img src="man/figures/best_stories.png" alt="Bar Chart of best stories with their scores"/>
 
 ### Sentiment analysis on two best stories from Hacker News
 
@@ -167,4 +167,4 @@ sentiment_plot <- words_by_story %>%
 sentiment_plot
 ```
 
-<img src="man/figures/sentiment.png"/>
+<img src="man/figures/sentiment.png" alt="Sentiment plot for 2 chosen stories"/>
