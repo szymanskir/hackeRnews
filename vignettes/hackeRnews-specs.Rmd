@@ -2,7 +2,7 @@
 title: "HackeRnews - specification"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{HackeRnews - specifiation}
+  %\VignetteIndexEntry{HackeRnews - specification}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
