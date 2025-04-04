@@ -1,1 +1,4 @@
-destination: docs
+url: https://github.com/szymanskir/hackeRnews
+template:
+  bootstrap: 5
+
