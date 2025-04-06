@@ -20,7 +20,10 @@ using Hacker News API
 \donttest{
 story <- get_item_by_id(21499889)
 comments <- get_comments(story)
-comments
+
+# Convert to a tibble to improve formatting
+# as comment content might long
+tibble::as_tibble(comments)
 }
 
 }

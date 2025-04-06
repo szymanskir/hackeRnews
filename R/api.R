@@ -511,10 +511,11 @@ get_updates <- function() {
 #' \donttest{
 #' story <- get_item_by_id(21499889)
 #' comments <- get_comments(story)
-#' comments
-#' }
 #'
-#' @importFrom tibble as_tibble
+#' # Convert to a tibble to improve formatting
+#' # as comment content might long
+#' tibble::as_tibble(comments)
+#' }
 #'
 get_comments <- function(item) {
   assert(is_hn_item(item), "item must be an object of class hn_item")
@@ -533,5 +534,10 @@ get_comments <- function(item) {
 
   rows <- lapply(comments, comment_to_dataframe_row)
   df <- do.call(rbind, rows)
-  tibble::as_tibble(df)
+
+  if (requireNamespace("tibble", quietly = TRUE)) {
+    tibble::as_tibble(df)
+  } else {
+    df
+  }
 }

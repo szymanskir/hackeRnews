@@ -22,13 +22,13 @@ Suggests:
     httptest2,
     knitr,
     rmarkdown,
-    spelling
+    spelling,
+    tibble
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports: 
     utils,
-    httr2,
-    tibble,
+    httr2
 VignetteBuilder: knitr
 URL: https://github.com/szymanskir/hackeRnews
 BugReports: https://github.com/szymanskir/hackeRnews/issues
