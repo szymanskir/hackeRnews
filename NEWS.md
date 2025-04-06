@@ -2,6 +2,7 @@
 
 * Provided direct imports in NAMESPACE.
 * Deleted documentation for unexported functions.
+* `get_comments` now returns a `data.frame` when `tibble` is not installed. At the same time `tibble` is now in Suggests instead of Imports (#29)
 
 # hackeRnews 0.2.0
 
