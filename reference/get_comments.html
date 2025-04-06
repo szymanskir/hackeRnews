@@ -66,7 +66,10 @@ using Hacker News API</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="va">story</span> <span class="op">&lt;-</span> <span class="fu"><a href="get_item_by_id.html">get_item_by_id</a></span><span class="op">(</span><span class="fl">21499889</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">comments</span> <span class="op">&lt;-</span> <span class="fu">get_comments</span><span class="op">(</span><span class="va">story</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">comments</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Convert to a tibble to improve formatting</span></span></span>
+<span class="r-in"><span><span class="co"># as comment content might long</span></span></span>
+<span class="r-in"><span><span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html" class="external-link">as_tibble</a></span><span class="op">(</span><span class="va">comments</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 23 × 7</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>          id deleted by         time                text             dead  parent</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>

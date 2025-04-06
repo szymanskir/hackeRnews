@@ -3,7 +3,7 @@ pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   hackeRnews-specs: hackeRnews-specs.html
-last_built: 2025-04-04T21:46Z
+last_built: 2025-04-06T19:59Z
 urls:
   reference: https://github.com/szymanskir/hackeRnews/reference
   article: https://github.com/szymanskir/hackeRnews/articles

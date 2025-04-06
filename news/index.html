@@ -39,6 +39,10 @@
 <h2 class="pkg-version" data-toc-text="0.2.1" id="hackernews-021">hackeRnews 0.2.1<a class="anchor" aria-label="anchor" href="#hackernews-021"></a></h2>
 <ul><li>Provided direct imports in NAMESPACE.</li>
 <li>Deleted documentation for unexported functions.</li>
+<li>
+<code>get_comments</code> now returns a <code>data.frame</code> when <code>tibble</code> is not installed. At the same time <code>tibble</code> is now in Suggests instead of Imports (<a href="https://github.com/szymanskir/hackeRnews/issues/29">#29</a>)</li>
+<li>
+<code>get_items_by_ids</code> now uses <code><a href="https://httr2.r-lib.org/reference/req_perform_parallel.html" class="external-link">httr2::req_perform_parallel</a></code> instead of <code>future.apply</code> to perform multiple asynchronous requests, so now there is no need to use <code>future::plan</code> before running functions that perform multiple requests such as <code><a href="../reference/get_best_stories.html">get_best_stories()</a></code>, <code>get_comments</code>, <code>get_latest_ask_stories</code>, <code>get_latest_job_stories</code>, <code>get_latest_show_stories</code>, <code>get_top_stories</code>, <code>get_new_stories</code>,</li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.2.0" id="hackernews-020">hackeRnews 0.2.0<a class="anchor" aria-label="anchor" href="#hackernews-020"></a></h2>
