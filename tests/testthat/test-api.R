@@ -160,6 +160,7 @@ httptest2::with_mock_api({
       regexp = "The content of the response is empty!.*3000.json"
     )
 
+    result <- tibble::as_tibble(result)
     expected <- tibble::as_tibble(
       do.call(
         rbind,
