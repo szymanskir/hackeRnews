@@ -25,7 +25,7 @@ The hackeRnews package is an R wrapper for the Hacker News API. Project for Adva
 
 ## Installation and basic setup
 
-The `hackeRnews` package is vailable on CRAN and can be installed with:
+The `hackeRnews` package is available on CRAN and can be installed with:
 ```r
 install.packages("hackeRnews")
 ```

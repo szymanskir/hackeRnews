@@ -17,7 +17,7 @@ for Advanced R classes at the Warsaw University of Technology.
 
 ## Installation and basic setup
 
-The `hackeRnews` package is vailable on CRAN and can be installed with:
+The `hackeRnews` package is available on CRAN and can be installed with:
 
 ``` r
 install.packages("hackeRnews")
