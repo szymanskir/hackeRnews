@@ -15,7 +15,8 @@
 #' @noRd
 #'
 .send_request <- function(request_url) {
-  response <- httr2::request(request_url) |> httr2::req_perform()
+  request <- httr2::request(request_url)
+  response <- httr2::req_perform(request)
   hn_api_response <- create_hn_api_response(response)
   validate_hn_api_response(hn_api_response)
   get_content(hn_api_response)
