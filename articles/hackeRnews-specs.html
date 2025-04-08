@@ -64,7 +64,7 @@
       <img src="../logo.png" class="logo" alt=""><h1>HackeRnews - specification</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/szymanskir/hackeRnews/blob/main/vignettes/hackeRnews-specs.Rmd"><code>vignettes/hackeRnews-specs.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/szymanskir/hackeRnews/blob/v0.2.1/vignettes/hackeRnews-specs.Rmd"><code>vignettes/hackeRnews-specs.Rmd</code></a></small>
       <div class="d-none name"><code>hackeRnews-specs.Rmd</code></div>
     </div>
 
@@ -118,22 +118,22 @@ stories.</p>
 <code class="sourceCode R"><span><span class="va">best_stories</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_best_stories.html">get_best_stories</a></span><span class="op">(</span>max_items <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
 <span><span class="va">best_stories</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
 <span><span class="co">#&gt; List of 9</span></span>
-<span><span class="co">#&gt;  $ by         : chr "belter"</span></span>
-<span><span class="co">#&gt;  $ descendants: int 3574</span></span>
-<span><span class="co">#&gt;  $ id         : int 43561253</span></span>
-<span><span class="co">#&gt;  $ kids       : int [1:177] 43571614 43562363 43563625 43568725 43562878 43570277 43563538 43565994 43570551 43568692 ...</span></span>
-<span><span class="co">#&gt;  $ score      : int 1871</span></span>
-<span><span class="co">#&gt;  $ time       : POSIXct[1:1], format: "2025-04-02 20:39:06"</span></span>
-<span><span class="co">#&gt;  $ title      : chr "US Administration announces 34% tariffs on China, 20% on EU"</span></span>
+<span><span class="co">#&gt;  $ by         : chr "smnrg"</span></span>
+<span><span class="co">#&gt;  $ descendants: int 1353</span></span>
+<span><span class="co">#&gt;  $ id         : int 43595269</span></span>
+<span><span class="co">#&gt;  $ kids       : int [1:267] 43596485 43600039 43595394 43596326 43596158 43595524 43599675 43596393 43601623 43595404 ...</span></span>
+<span><span class="co">#&gt;  $ score      : int 1895</span></span>
+<span><span class="co">#&gt;  $ time       : POSIXct[1:1], format: "2025-04-05 17:57:46"</span></span>
+<span><span class="co">#&gt;  $ title      : chr "What if we made advertising illegal?"</span></span>
 <span><span class="co">#&gt;  $ type       : chr "story"</span></span>
-<span><span class="co">#&gt;  $ url        : chr "https://www.bbc.com/news/live/c1dr7vy39eet"</span></span>
+<span><span class="co">#&gt;  $ url        : chr "https://simone.org/advertising/"</span></span>
 <span><span class="co">#&gt;  - attr(*, "class")= chr "hn_item"</span></span></code></pre></div>
 <p>There is a method that allows to fetch just raw ids of best/new/top
 stories as well <code>get_*_stories_ids()</code></p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">best_stories_ids</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_best_stories_ids.html">get_best_stories_ids</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">best_stories_ids</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span> <span class="co"># output truncated for legibility</span></span>
-<span><span class="co">#&gt; [1] 43561253 43595269 43558671 43573156 43595585</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 43595269 43561253 43558671 43615912 43573156</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="ask-job-show-stories">ask / job / show stories<a class="anchor" aria-label="anchor" href="#ask-job-show-stories"></a>
@@ -146,14 +146,14 @@ that returns latest * stories ids.</p>
 <code class="sourceCode R"><span><span class="va">ask_stories</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_latest_ask_stories.html">get_latest_ask_stories</a></span><span class="op">(</span>max_items <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
 <span><span class="va">ask_stories</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
 <span><span class="co">#&gt; List of 9</span></span>
-<span><span class="co">#&gt;  $ by         : chr "thawawaycold"</span></span>
-<span><span class="co">#&gt;  $ descendants: int 2</span></span>
-<span><span class="co">#&gt;  $ id         : int 43618710</span></span>
-<span><span class="co">#&gt;  $ kids       : int 43618829</span></span>
-<span><span class="co">#&gt;  $ score      : int 3</span></span>
-<span><span class="co">#&gt;  $ text       : chr "Hi HN,&lt;p&gt;this is a follow-up post to https:&amp;#x2F;&amp;#x2F;news.ycombinator.com&amp;#x2F;item?id=43282410&lt;p&gt;TLDR of tha"| __truncated__</span></span>
-<span><span class="co">#&gt;  $ time       : POSIXct[1:1], format: "2025-04-08 05:51:42"</span></span>
-<span><span class="co">#&gt;  $ title      : chr "Ask HN: Pigeonholed into role with no coding, what do I do?"</span></span>
+<span><span class="co">#&gt;  $ by         : chr "davidkuennen"</span></span>
+<span><span class="co">#&gt;  $ descendants: int 225</span></span>
+<span><span class="co">#&gt;  $ id         : int 43619768</span></span>
+<span><span class="co">#&gt;  $ kids       : int [1:138] 43624991 43622046 43625709 43625280 43625989 43624877 43626090 43625372 43626179 43626072 ...</span></span>
+<span><span class="co">#&gt;  $ score      : int 80</span></span>
+<span><span class="co">#&gt;  $ text       : chr "Today, I noticed that my behavior has shifted over the past few months. Right now, I exclusively use ChatGPT fo"| __truncated__</span></span>
+<span><span class="co">#&gt;  $ time       : POSIXct[1:1], format: "2025-04-08 09:23:18"</span></span>
+<span><span class="co">#&gt;  $ title      : chr "Ask HN: Do you still use search engines?"</span></span>
 <span><span class="co">#&gt;  $ type       : chr "story"</span></span>
 <span><span class="co">#&gt;  - attr(*, "class")= chr "hn_item"</span></span></code></pre></div>
 </div>
@@ -169,22 +169,20 @@ retrieve all of the comments of a specific story, just use the
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">top_story</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_top_stories.html">get_top_stories</a></span><span class="op">(</span>max_items <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
 <span><span class="fu"><a href="../reference/get_comments.html">get_comments</a></span><span class="op">(</span><span class="va">top_story</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [working] (28 + 0) -&gt; 10 -&gt; 2 | <span style="color: #00BB00;">■■■                             </span>   5%</span></span>
-<span><span class="co">#&gt; [working] (0 + 0) -&gt; 0 -&gt; 40 | <span style="color: #00BB00;">■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ </span> 100%</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 180 × 7</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 91 × 7</span></span></span>
 <span><span class="co">#&gt;          id deleted by          time                text            dead  parent</span></span>
 <span><span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 43<span style="text-decoration: underline;">616</span>592 FALSE   mrexroad    2025-04-07 <span style="color: #949494;">22:22:34</span> <span style="color: #949494;">"</span>I clicked the… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 43<span style="text-decoration: underline;">616</span>226 FALSE   pelagic_sky 2025-04-07 <span style="color: #949494;">21:38:13</span> <span style="color: #949494;">"</span>Reminds me of… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 43<span style="text-decoration: underline;">618</span>907 FALSE   blixt       2025-04-08 <span style="color: #949494;">06:31:00</span> <span style="color: #949494;">"</span>I remember as… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 43<span style="text-decoration: underline;">616</span>302 FALSE   zoogeny     2025-04-07 <span style="color: #949494;">21:47:23</span> <span style="color: #949494;">"</span>I still remem… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 43<span style="text-decoration: underline;">616</span>136 FALSE   NickC25     2025-04-07 <span style="color: #949494;">21:26:29</span> <span style="color: #949494;">"</span>That&amp;#x27;s a… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 43<span style="text-decoration: underline;">616</span>100 FALSE   1317        2025-04-07 <span style="color: #949494;">21:23:11</span> <span style="color: #949494;">"</span>Original vide… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 43<span style="text-decoration: underline;">616</span>097 FALSE   uneoneuno   2025-04-07 <span style="color: #949494;">21:22:34</span> <span style="color: #949494;">"</span>Reminds me of… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 43<span style="text-decoration: underline;">616</span>567 FALSE   mosura      2025-04-07 <span style="color: #949494;">22:18:52</span> <span style="color: #949494;">"</span>This is a sup… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 43<span style="text-decoration: underline;">618</span>261 FALSE   xyzal       2025-04-08 <span style="color: #949494;">04:07:00</span> <span style="color: #949494;">"</span>&amp;gt; Kids hav… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 43<span style="text-decoration: underline;">616</span>067 FALSE   bangaroo    2025-04-07 <span style="color: #949494;">21:19:47</span> <span style="color: #949494;">"</span>i needed an &amp;… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 170 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 43<span style="text-decoration: underline;">625</span>519 FALSE   neomantra   2025-04-08 <span style="color: #949494;">19:19:22</span> <span style="color: #949494;">"</span>I&amp;#x27;ll tos… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 43<span style="text-decoration: underline;">625</span>428 FALSE   evaneykelen 2025-04-08 <span style="color: #949494;">19:09:15</span> <span style="color: #949494;">"</span>After many tr… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 43<span style="text-decoration: underline;">625</span>094 FALSE   rorylaitila 2025-04-08 <span style="color: #949494;">18:36:15</span> <span style="color: #949494;">"</span>ECharts is in… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 43<span style="text-decoration: underline;">624</span>471 FALSE   FredPret    2025-04-08 <span style="color: #949494;">17:44:22</span> <span style="color: #949494;">"</span>The line race… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 43<span style="text-decoration: underline;">625</span>691 FALSE   miiiiiike   2025-04-08 <span style="color: #949494;">19:40:50</span> <span style="color: #949494;">"</span>I’d keep it.&lt;… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 43<span style="text-decoration: underline;">624</span>701 FALSE   simlevesque 2025-04-08 <span style="color: #949494;">18:03:45</span> <span style="color: #949494;">"</span>If you&amp;#x27;r… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 43<span style="text-decoration: underline;">625</span>213 FALSE   smjburton   2025-04-08 <span style="color: #949494;">18:47:47</span> <span style="color: #949494;">"</span>I was just lo… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 43<span style="text-decoration: underline;">624</span>496 FALSE   JacobiX     2025-04-08 <span style="color: #949494;">17:46:23</span> <span style="color: #949494;">"</span>In a quick we… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 43<span style="text-decoration: underline;">624</span>773 FALSE   paulirish   2025-04-08 <span style="color: #949494;">18:10:08</span> <span style="color: #949494;">"</span>Impressive wo… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 43<span style="text-decoration: underline;">624</span>954 FALSE   lxe         2025-04-08 <span style="color: #949494;">18:27:02</span> <span style="color: #949494;">"</span>What a comple… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 81 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="user">user<a class="anchor" aria-label="anchor" href="#user"></a>
@@ -222,9 +220,10 @@ possible to fetch all items on Hacker News.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">updates</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_updates.html">get_updates</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">updates</span><span class="op">$</span><span class="va">profiles</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span> <span class="co"># output truncated for legibility</span></span>
-<span><span class="co">#&gt; [1] "ffsm8"    "gwbas1c"  "autoexec" "munchler" "pjmlp"</span></span>
+<span><span class="co">#&gt; [1] "PaulHoule"     "pointlessone"  "wavemode"      "theamk"       </span></span>
+<span><span class="co">#&gt; [5] "tomtomistaken"</span></span>
 <span><span class="va">updates</span><span class="op">$</span><span class="va">items</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span>    <span class="co"># output truncated for legibility</span></span>
-<span><span class="co">#&gt; [1] 43613762 43609916 43616729 43618407 43612731</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 43626104 43623968 43623219 43625818 43624991</span></span></code></pre></div>
 </div>
 </div>
 </div>

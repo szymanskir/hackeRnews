@@ -32,7 +32,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Hacker News latest ask stories</h1>
-      <small class="dont-index">Source: <a href="https://github.com/szymanskir/hackeRnews/blob/main/R/api.R"><code>R/api.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/szymanskir/hackeRnews/blob/v0.2.1/R/api.R"><code>R/api.R</code></a></small>
       <div class="d-none name"><code>get_latest_ask_stories.Rd</code></div>
     </div>
 
@@ -68,14 +68,14 @@ If max_items = NULL, returns all available</p></dd>
 <span class="r-in"><span><span class="va">latest_ask_story</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "thawawaycold"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43618710</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int 43618829</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Hi HN,&lt;p&gt;this is a follow-up post to https:&amp;#x2F;&amp;#x2F;news.ycombinator.com&amp;#x2F;item?id=43282410&lt;p&gt;TLDR of tha"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 05:51:42"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Pigeonholed into role with no coding, what do I do?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "davidkuennen"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 224</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43619768</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:138] 43624991 43622046 43625709 43625280 43625989 43624877 43626090 43625372 43626179 43626072 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 79</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Today, I noticed that my behavior has shifted over the past few months. Right now, I exclusively use ChatGPT fo"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 09:23:18"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Do you still use search engines?"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -85,49 +85,87 @@ If max_items = NULL, returns all available</p></dd>
 <span class="r-in"><span><span class="va">latest_10_ask_stories</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "thawawaycold"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43618710</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int 43618829</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Hi HN,&lt;p&gt;this is a follow-up post to https:&amp;#x2F;&amp;#x2F;news.ycombinator.com&amp;#x2F;item?id=43282410&lt;p&gt;TLDR of tha"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 05:51:42"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Pigeonholed into role with no coding, what do I do?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "davidkuennen"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 224</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43619768</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:138] 43624991 43622046 43625709 43625280 43625989 43624877 43626090 43625372 43626179 43626072 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 79</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Today, I noticed that my behavior has shifted over the past few months. Right now, I exclusively use ChatGPT fo"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 09:23:18"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Do you still use search engines?"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> List of 8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "dlivingston"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43625200</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Assuming Pres. Trump&amp;#x27;s tariffs are not repealed or significantly altered, what does this mean for startups"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 18:46:37"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: How will the tariffs affect investor funding?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "NewUser76312"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43623236</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:3] 43625598 43624131 43624891</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "I saw this post from YC: &amp;quot;From OpenAI’s DeepResearch to xAI’s DeepSearch, we’re seeing the first real push"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 15:56:22"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Who is getting actual value from 'AI Agents'?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "vitalmixofntrnt"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43622711</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int 43623298</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Or would that go against the monolithic kernel paradigm of the Linux kernel?&lt;p&gt;Edit: There&amp;#x27;s this flag in "| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 15:11:02"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Can Linux have \"transfer data structures to new kernel\" rebooting like Minix?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "MITthrow123"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 121</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 174</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43612448</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:61] 43612547 43613413 43613606 43618831 43612947 43613487 43613389 43618762 43617367 43613559 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 96</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:79] 43612547 43613413 43625515 43622881 43613606 43625787 43612947 43625703 43620030 43621858 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 147</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "I&amp;#x27;m a senior at MIT studying Course 6 (EECS), and I&amp;#x27;m graduating soon with no job lined up. I&amp;#x27;ve"| __truncated__</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-07 15:12:59"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: I'm an MIT senior and still unemployed – and so are most of my friends"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "whoishiring"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 428</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 442</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43547611</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:293] 43616989 43617118 43615681 43614891 43615637 43612652 43548465 43564151 43566287 43555467 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 274</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:302] 43625117 43623590 43622766 43624019 43616989 43615681 43548465 43619727 43619518 43564151 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 275</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Please state the location and include REMOTE for remote work, REMOTE (US)\nor similar if the country is restric"| __truncated__</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-01 15:01:11"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Who is hiring? (April 2025)"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "whoishiring"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 283</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 288</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43547609</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:295] 43618774 43615655 43615370 43614843 43615395 43615857 43615630 43615951 43612305 43613870 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:303] 43625035 43624439 43624685 43618774 43619432 43615655 43620016 43614843 43615370 43619561 ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 78</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Share your information if you are looking for work. Please use this format:&lt;p&gt;&lt;pre&gt;&lt;code&gt;  Location:\n  Remote:"| __truncated__</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-01 15:01:11"</span>
@@ -135,81 +173,42 @@ If max_items = NULL, returns all available</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[8]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "dang"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 463</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43558671</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:124] 43560481 43559535 43559609 43561038 43565390 43560360 43559266 43561913 43564571 43559244 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 1810</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 1813</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Hi all,&lt;p&gt;Tom Howard is going public as HN moderator today. He has been doing HN moderation work for years alre"| __truncated__</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-02 16:49:56"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Tell HN: Announcing tomhow as a public moderator"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "caspercrf"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43613922</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:2] 43616161 43616634</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "I was recently laid off and have been considering a career change.  I&amp;#x27;m 46 and have been in software testi"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-07 17:34:51"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Is anyone here an Insurance Risk Engineer?"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "muddi900"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43603574</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:13] 43610955 43605685 43605144 43605680 43605032 43604562 43611751 43605228 43609590 43606245 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "The issue I have had with llms since the start has been the slop. Contrary to popular belief, the open web was "| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-06 18:17:51"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: How to Use \"Deep Research\"?"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[8]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "herberh2"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43604299</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:3] 43608459 43604625 43609394</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "What are the best AI tools out there that can help take a product idea and refine it to get it to an MVP?&lt;p&gt;Not"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-06 19:41:48"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "What are the best AI tools to turn an idea into MVP?"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[9]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "bavarianbob"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 36</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43548589</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:12] 43548817 43548695 43550246 43548950 43553438 43550191 43550012 43550236 43549804 43565416 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "EDIT: Back online?!&lt;p&gt;NPM discussion: &lt;a href=\"https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;npm&amp;#x2F;cli&amp;#x2F;issues&amp;#x2F"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-01 16:19:28"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Tell HN: Camelgate NPM Outage (Cloudflare)"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "dhorthy"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43623589</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int 43623633</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 23</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Howdy HN - I&amp;#x27;m Dex from HumanLayer (YC F24), and I&amp;#x27;ve been building AI agents for a while. After tryi"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 16:29:44"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "12-Factor Agents: Patterns of Great LLM Applications"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[10]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "zigmig"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43617601</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:3] 43617746 43617766 43617765</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "I&amp;#x27;m curious if there&amp;#x27;s a platform similar to Capitol Trades (capitoltrades.com) or AutoPilot but for "| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 01:36:59"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Is There a Crypto Equivalent to Tracking Politician's Transactions?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "thawawaycold"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43618710</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:4] 43619743 43618829 43622168 43619012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Hi HN,&lt;p&gt;this is a follow-up post to https:&amp;#x2F;&amp;#x2F;news.ycombinator.com&amp;#x2F;item?id=43282410&lt;p&gt;TLDR of tha"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 05:51:42"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Pigeonholed into role with no coding, what do I do?"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -219,49 +218,87 @@ If max_items = NULL, returns all available</p></dd>
 <span class="r-in"><span><span class="va">latest_ask_stories</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "thawawaycold"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43618710</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int 43618829</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Hi HN,&lt;p&gt;this is a follow-up post to https:&amp;#x2F;&amp;#x2F;news.ycombinator.com&amp;#x2F;item?id=43282410&lt;p&gt;TLDR of tha"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 05:51:42"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Pigeonholed into role with no coding, what do I do?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "davidkuennen"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 224</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43619768</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:138] 43624991 43622046 43625709 43625280 43625989 43624877 43626090 43625372 43626179 43626072 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 79</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Today, I noticed that my behavior has shifted over the past few months. Right now, I exclusively use ChatGPT fo"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 09:23:18"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Do you still use search engines?"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> List of 8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "dlivingston"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43625200</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Assuming Pres. Trump&amp;#x27;s tariffs are not repealed or significantly altered, what does this mean for startups"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 18:46:37"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: How will the tariffs affect investor funding?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "NewUser76312"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43623236</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:3] 43625598 43624131 43624891</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "I saw this post from YC: &amp;quot;From OpenAI’s DeepResearch to xAI’s DeepSearch, we’re seeing the first real push"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 15:56:22"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Who is getting actual value from 'AI Agents'?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "vitalmixofntrnt"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43622711</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int 43623298</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Or would that go against the monolithic kernel paradigm of the Linux kernel?&lt;p&gt;Edit: There&amp;#x27;s this flag in "| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 15:11:02"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Can Linux have \"transfer data structures to new kernel\" rebooting like Minix?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "MITthrow123"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 121</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 174</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43612448</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:61] 43612547 43613413 43613606 43618831 43612947 43613487 43613389 43618762 43617367 43613559 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 96</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:79] 43612547 43613413 43625515 43622881 43613606 43625787 43612947 43625703 43620030 43621858 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 147</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "I&amp;#x27;m a senior at MIT studying Course 6 (EECS), and I&amp;#x27;m graduating soon with no job lined up. I&amp;#x27;ve"| __truncated__</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-07 15:12:59"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: I'm an MIT senior and still unemployed – and so are most of my friends"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "whoishiring"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 428</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 442</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43547611</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:293] 43616989 43617118 43615681 43614891 43615637 43612652 43548465 43564151 43566287 43555467 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 274</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:302] 43625117 43623590 43622766 43624019 43616989 43615681 43548465 43619727 43619518 43564151 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 275</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Please state the location and include REMOTE for remote work, REMOTE (US)\nor similar if the country is restric"| __truncated__</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-01 15:01:11"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Who is hiring? (April 2025)"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "whoishiring"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 283</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 288</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43547609</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:295] 43618774 43615655 43615370 43614843 43615395 43615857 43615630 43615951 43612305 43613870 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:303] 43625035 43624439 43624685 43618774 43619432 43615655 43620016 43614843 43615370 43619561 ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 78</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Share your information if you are looking for work. Please use this format:&lt;p&gt;&lt;pre&gt;&lt;code&gt;  Location:\n  Remote:"| __truncated__</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-01 15:01:11"</span>
@@ -269,59 +306,46 @@ If max_items = NULL, returns all available</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[8]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "dang"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 463</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43558671</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:124] 43560481 43559535 43559609 43561038 43565390 43560360 43559266 43561913 43564571 43559244 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 1810</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 1813</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Hi all,&lt;p&gt;Tom Howard is going public as HN moderator today. He has been doing HN moderation work for years alre"| __truncated__</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-02 16:49:56"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Tell HN: Announcing tomhow as a public moderator"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "caspercrf"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43613922</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:2] 43616161 43616634</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "I was recently laid off and have been considering a career change.  I&amp;#x27;m 46 and have been in software testi"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-07 17:34:51"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Is anyone here an Insurance Risk Engineer?"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "muddi900"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43603574</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:13] 43610955 43605685 43605144 43605680 43605032 43604562 43611751 43605228 43609590 43606245 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "The issue I have had with llms since the start has been the slop. Contrary to popular belief, the open web was "| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-06 18:17:51"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: How to Use \"Deep Research\"?"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[8]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "herberh2"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43604299</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:3] 43608459 43604625 43609394</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "What are the best AI tools out there that can help take a product idea and refine it to get it to an MVP?&lt;p&gt;Not"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-06 19:41:48"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "What are the best AI tools to turn an idea into MVP?"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[9]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "dhorthy"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43623589</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int 43623633</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 23</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Howdy HN - I&amp;#x27;m Dex from HumanLayer (YC F24), and I&amp;#x27;ve been building AI agents for a while. After tryi"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 16:29:44"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "12-Factor Agents: Patterns of Great LLM Applications"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[10]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "thawawaycold"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43618710</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:4] 43619743 43618829 43622168 43619012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Hi HN,&lt;p&gt;this is a follow-up post to https:&amp;#x2F;&amp;#x2F;news.ycombinator.com&amp;#x2F;item?id=43282410&lt;p&gt;TLDR of tha"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 05:51:42"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Pigeonholed into role with no coding, what do I do?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[11]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "bavarianbob"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 36</span>
@@ -334,24 +358,51 @@ If max_items = NULL, returns all available</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[10]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[12]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "zigmig"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43617601</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:3] 43617746 43617766 43617765</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "I&amp;#x27;m curious if there&amp;#x27;s a platform similar to Capitol Trades (capitoltrades.com) or AutoPilot but for "| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 01:36:59"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Is There a Crypto Equivalent to Tracking Politician's Transactions?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "herberh2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43604299</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:6] 43621862 43608459 43619393 43604625 43619921 43609394</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "What are the best AI tools out there that can help take a product idea and refine it to get it to an MVP?&lt;p&gt;Not"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-06 19:41:48"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "What are the best AI tools to turn an idea into MVP?"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[11]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> List of 8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[13]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "muddi900"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 14</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43603574</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:13] 43610955 43605144 43605685 43605680 43605032 43604562 43605228 43611751 43609590 43606245 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 21</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "The issue I have had with llms since the start has been the slop. Contrary to popular belief, the open web was "| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-06 18:17:51"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: How to Use \"Deep Research\"?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[14]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "caspercrf"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43613922</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:2] 43616161 43616634</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "I was recently laid off and have been considering a career change.  I&amp;#x27;m 46 and have been in software testi"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-07 17:34:51"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Is anyone here an Insurance Risk Engineer?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[15]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "Haeuserschlucht"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43611088</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int 43622878</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "All I can find are those parroted, meaningless definitions of koc, not when to use them, how much to invest and"| __truncated__</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-07 13:21:55"</span>
@@ -359,64 +410,25 @@ If max_items = NULL, returns all available</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[12]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[16]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "nextn"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 13</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43609719</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:11] 43610019 43611441 43612171 43610410 43615799 43611355 43609862 43610054 43617456 43611556 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:12] 43610019 43621934 43611441 43612171 43610410 43615799 43611355 43609862 43610054 43617456 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 6</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Then the user would get paid for getting interrupted.&lt;p&gt;The user could configure the browser&amp;#x2F;email-client&amp;"| __truncated__</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-07 10:20:19"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "What if we made advertising pay the user?"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[13]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "pkdpic"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43615272</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:8] 43618525 43615364 43615465 43616275 43615298 43615484 43615296 43615276</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Just seems like if you knew when the tariffs were going to randomly be lifted you could buy super low and make "| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-07 19:56:29"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Could tariffs be used as a reverse pump and dump?"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[14]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "dvenHN"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43615756</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:4] 43615791 43615926 43616025 43615761</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "It happened to me yesterday and it happened to a friend of mine today.&lt;p&gt;We uploaded a file, we asked a questio"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-07 20:44:59"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Tell HN: ChatGPT is giving me other people's conversation when uploading files"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[15]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "LiamPowell"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43614260</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:7] 43615491 43614271 43614421 43615718 43614315 43614558 43614321</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Below is a link to a simple Gemini prompt where the LLM has been told it has access to a &amp;quot;launch_missiles&amp;"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-07 18:09:52"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Could you convince a LLM to launch a nuclear strike?"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[16]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[17]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "Brysonbw"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 68</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43559733</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:46] 43560914 43563603 43560923 43560393 43560318 43560388 43611378 43569894 43561195 43560492 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:46] 43560914 43563603 43560923 43560393 43560318 43560388 43569894 43561195 43611378 43560492 ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 84</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "How would one go about being a &amp;#x27;rogue&amp;#x27; OSS contributor so to speak? Live off of donations, bounties, "| __truncated__</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-02 18:24:51"</span>
@@ -424,7 +436,7 @@ If max_items = NULL, returns all available</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[17]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[18]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "OulaX"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 8</span>
@@ -434,19 +446,6 @@ If max_items = NULL, returns all available</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "I have a degree in Computer Science and currently work as a frontend web developer.&lt;p&gt;I live in a developing co"| __truncated__</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-05 07:38:13"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Looking to Break into Cybersecurity – Where Do I Start?"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[18]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "colesantiago"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43604753</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:2] 43606907 43605152</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "There was a time where there was frothy hype around LK-99, the superconductor that &amp;#x27;worked&amp;#x27; at room t"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-06 20:35:28"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: What happened after LK-99?"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -465,10 +464,10 @@ If max_items = NULL, returns all available</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[20]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "franczesko"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 19</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43593627</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:16] 43616761 43594001 43594367 43607177 43594038 43599256 43593990 43594530 43595384 43594050 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 14</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:21] 43624347 43624192 43620347 43594001 43594367 43607177 43616761 43594038 43619492 43599256 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 15</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "HN account for majority of my open tabs. With a very dynamic top submissions list, I struggle to keep up with a"| __truncated__</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-05 14:02:42"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: How do you consume HN?"</span>
@@ -477,31 +476,18 @@ If max_items = NULL, returns all available</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[21]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "pkkm"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43601341</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:3] 43613117 43606887 43610119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "There&amp;#x27;s a lot of options for concurrency. In Python alone, you can use threads with shared memory, threads"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-06 13:37:14"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Easiest and hardest concurrency models to use correctly?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "colesantiago"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43604753</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:2] 43606907 43605152</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "There was a time where there was frothy hype around LK-99, the superconductor that &amp;#x27;worked&amp;#x27; at room t"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-06 20:35:28"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: What happened after LK-99?"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[22]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "hsiYwko"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43596438</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:4] 43600699 43599954 43597727 43599081</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Hi HN!&lt;p&gt;This past weekend, I built a tool called GitSummarize, it&amp;#x27;s an open-source ai-powered documentati"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-05 20:09:39"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: As an eng leader, how useful is AI-generated internal documentation?"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[23]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "OrbitalShotput_"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 20</span>
@@ -514,24 +500,64 @@ If max_items = NULL, returns all available</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[23]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "hsiYwko"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43596438</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:4] 43600699 43599954 43597727 43599081</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Hi HN!&lt;p&gt;This past weekend, I built a tool called GitSummarize, it&amp;#x27;s an open-source ai-powered documentati"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-05 20:09:39"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: As an eng leader, how useful is AI-generated internal documentation?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[24]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> List of 8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "kevthecoder"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43592201</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Simon used to maintain the BCPL compiler at Warwick University and helped many people start their careers in Co"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-05 09:46:27"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Former BCPL compiler maintainer Simon Langley has died"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "zigmig"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43617601</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:3] 43617746 43617766 43617765</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "I&amp;#x27;m curious if there&amp;#x27;s a platform similar to Capitol Trades (capitoltrades.com) or AutoPilot but for "| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-08 01:36:59"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Is There a Crypto Equivalent to Tracking Politician's Transactions?"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[25]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "pkkm"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43601341</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:3] 43606887 43613117 43610119</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "There&amp;#x27;s a lot of options for concurrency. In Python alone, you can use threads with shared memory, threads"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-06 13:37:14"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Easiest and hardest concurrency models to use correctly?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[26]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "pkdpic"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43615272</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:8] 43615364 43618525 43616275 43615465 43615298 43615484 43615296 43615276</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Just seems like if you knew when the tariffs were going to randomly be lifted you could buy super low and make "| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-07 19:56:29"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Could tariffs be used as a reverse pump and dump?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[27]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "r_singh"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 14</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 17</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43572949</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:11] 43582622 43573331 43600647 43605512 43576099 43578085 43578048 43573578 43597277 43574111 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:14] 43624561 43620170 43582622 43621877 43573331 43600647 43605512 43576099 43578085 43578048 ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 17</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "I feel like talking about how to think is going to be a bigger topic of discussion going forward now that we ha"| __truncated__</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-03 17:35:48"</span>
@@ -539,7 +565,32 @@ If max_items = NULL, returns all available</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[26]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[28]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> List of 8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "kevthecoder"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43592201</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Simon used to maintain the BCPL compiler at Warwick University and helped many people start their careers in Co"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-05 09:46:27"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Former BCPL compiler maintainer Simon Langley has died"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[29]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "LiamPowell"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43614260</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:7] 43614421 43615491 43614271 43615718 43614315 43614558 43614321</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Below is a link to a simple Gemini prompt where the LLM has been told it has access to a &amp;quot;launch_missiles&amp;"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-07 18:09:52"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Could you convince a LLM to launch a nuclear strike?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[30]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "spacebanana7"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 187</span>
@@ -552,68 +603,29 @@ If max_items = NULL, returns all available</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[27]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[31]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "wiley1454"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43605775</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:3] 43605801 43609017 43605804</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Do you think OpenAI paid off Studio Ghibli, or If the Studio is plotting a massive lawsuit, as they&amp;#x27;ve been quiet."</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-06 23:15:11"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Is Studio Ghibli plotting a lawsuit"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "dvenHN"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43615756</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:4] 43615791 43615926 43616025 43615761</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "It happened to me yesterday and it happened to a friend of mine today.&lt;p&gt;We uploaded a file, we asked a questio"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-07 20:44:59"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Tell HN: ChatGPT is giving me other people's conversation when uploading files"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[28]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "Rooster61"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43611739</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:3] 43613269 43612168 43611744</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "After doing a bit of research and trying to get my head around MCP, I am eager to take advantage of the idea. H"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-07 14:11:13"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: Is MCP mature enough to use safely?"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[29]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[32]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "frabia"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 17</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43544254</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:19] 43545403 43544777 43610124 43594656 43549448 43549431 43597507 43561205 43550446 43549108 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:19] 43545403 43544777 43594656 43549448 43610124 43549431 43561205 43597507 43550446 43549108 ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 21</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "Between newsletters, podcasts, Youtube videos, (tech) news, articles, and (of course) books, how does one keep "| __truncated__</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-01 08:33:50"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "When so much knowledge is produced every day, how do you keep up?"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[30]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "jitbit"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43616838</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:4] 43616944 43616874 43617153 43616850</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "As of ~6 hours ago, the &amp;quot;C# Dev Kit&amp;quot; and &amp;quot;C&amp;#x2F;C++&amp;quot; extensions no longer work in Cursor.&lt;"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-07 22:56:45"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Tell HN: Microsoft bans its extensions from Cursor?"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[31]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> List of 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ by         : chr "sonderotis"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ descendants: int 6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ id         : int 43564410</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ kids       : int [1:4] 43614964 43594965 43564430 43575174</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ score      : int 13</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ text       : chr "I have a blog but it seems most people who are with my content hardly like it.\nI had a review recently that sa"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ time       : POSIXct[1:1], format: "2025-04-03 03:33:51"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ title      : chr "Ask HN: How to write better tech blogs"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ type       : chr "story"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  - attr(*, "class")= chr "hn_item"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
