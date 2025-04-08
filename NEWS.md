@@ -1,3 +1,5 @@
+# hackeRnews (development version)
+
 # hackeRnews 0.2.1
 
 * Provided direct imports in NAMESPACE.

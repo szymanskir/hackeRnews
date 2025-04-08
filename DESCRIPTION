@@ -1,6 +1,6 @@
 Package: hackeRnews
 Title: Wrapper for the 'Official Hacker News' API
-Version: 0.2.1
+Version: 0.2.1.9000
 Authors@R: c(
     person(given = "Ryszard",
            family = "Szymanski",
