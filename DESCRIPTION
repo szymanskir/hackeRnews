@@ -12,7 +12,7 @@ Authors@R: c(
     person(given = "Andrzej", family = "Nowikowski", role = c("aut"))
     )
 Maintainer: Ryszard Szymanski <ryszard.szymanski@outlook.com>
-Description: Use the <https://hacker-news.firebaseio.com/v0/> API through R. Retrieve
+Description: Use the Official Hacker News API through R. Retrieve
     posts, articles and other items in form of convenient R objects.
 License: MIT + file LICENSE
 Encoding: UTF-8
