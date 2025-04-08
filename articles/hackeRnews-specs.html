@@ -119,10 +119,10 @@ stories.</p>
 <span><span class="va">best_stories</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
 <span><span class="co">#&gt; List of 9</span></span>
 <span><span class="co">#&gt;  $ by         : chr "belter"</span></span>
-<span><span class="co">#&gt;  $ descendants: int 3572</span></span>
+<span><span class="co">#&gt;  $ descendants: int 3574</span></span>
 <span><span class="co">#&gt;  $ id         : int 43561253</span></span>
-<span><span class="co">#&gt;  $ kids       : int [1:176] 43571614 43562363 43563625 43568725 43562878 43570277 43563538 43565994 43570551 43568692 ...</span></span>
-<span><span class="co">#&gt;  $ score      : int 1870</span></span>
+<span><span class="co">#&gt;  $ kids       : int [1:177] 43571614 43562363 43563625 43568725 43562878 43570277 43563538 43565994 43570551 43568692 ...</span></span>
+<span><span class="co">#&gt;  $ score      : int 1871</span></span>
 <span><span class="co">#&gt;  $ time       : POSIXct[1:1], format: "2025-04-02 20:39:06"</span></span>
 <span><span class="co">#&gt;  $ title      : chr "US Administration announces 34% tariffs on China, 20% on EU"</span></span>
 <span><span class="co">#&gt;  $ type       : chr "story"</span></span>
@@ -145,14 +145,15 @@ that returns latest * stories ids.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ask_stories</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_latest_ask_stories.html">get_latest_ask_stories</a></span><span class="op">(</span>max_items <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
 <span><span class="va">ask_stories</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
-<span><span class="co">#&gt; List of 8</span></span>
-<span><span class="co">#&gt;  $ by         : chr "caspercrf"</span></span>
-<span><span class="co">#&gt;  $ descendants: int 0</span></span>
-<span><span class="co">#&gt;  $ id         : int 43613922</span></span>
+<span><span class="co">#&gt; List of 9</span></span>
+<span><span class="co">#&gt;  $ by         : chr "thawawaycold"</span></span>
+<span><span class="co">#&gt;  $ descendants: int 2</span></span>
+<span><span class="co">#&gt;  $ id         : int 43618710</span></span>
+<span><span class="co">#&gt;  $ kids       : int 43618829</span></span>
 <span><span class="co">#&gt;  $ score      : int 3</span></span>
-<span><span class="co">#&gt;  $ text       : chr "I was recently laid off and have been considering a career change.  I&amp;#x27;m 46 and have been in software testi"| __truncated__</span></span>
-<span><span class="co">#&gt;  $ time       : POSIXct[1:1], format: "2025-04-07 17:34:51"</span></span>
-<span><span class="co">#&gt;  $ title      : chr "Ask HN: Is anyone here an Insurance Risk Engineer?"</span></span>
+<span><span class="co">#&gt;  $ text       : chr "Hi HN,&lt;p&gt;this is a follow-up post to https:&amp;#x2F;&amp;#x2F;news.ycombinator.com&amp;#x2F;item?id=43282410&lt;p&gt;TLDR of tha"| __truncated__</span></span>
+<span><span class="co">#&gt;  $ time       : POSIXct[1:1], format: "2025-04-08 05:51:42"</span></span>
+<span><span class="co">#&gt;  $ title      : chr "Ask HN: Pigeonholed into role with no coding, what do I do?"</span></span>
 <span><span class="co">#&gt;  $ type       : chr "story"</span></span>
 <span><span class="co">#&gt;  - attr(*, "class")= chr "hn_item"</span></span></code></pre></div>
 </div>
@@ -168,27 +169,22 @@ retrieve all of the comments of a specific story, just use the
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">top_story</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_top_stories.html">get_top_stories</a></span><span class="op">(</span>max_items <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
 <span><span class="fu"><a href="../reference/get_comments.html">get_comments</a></span><span class="op">(</span><span class="va">top_story</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 18 × 7</span></span></span>
-<span><span class="co">#&gt;          id deleted by              time                text        dead  parent</span></span>
-<span><span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 43<span style="text-decoration: underline;">614</span>947 FALSE   debugnik        2025-04-07 <span style="color: #949494;">19:26:25</span> <span style="color: #949494;">"</span>I&amp;#x27;m … FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 43<span style="text-decoration: underline;">614</span>951 FALSE   Arch485         2025-04-07 <span style="color: #949494;">19:26:53</span> <span style="color: #949494;">"</span>Why not u… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 43<span style="text-decoration: underline;">614</span>814 FALSE   jjtech          2025-04-07 <span style="color: #949494;">19:11:56</span> <span style="color: #949494;">"</span>I know so… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 43<span style="text-decoration: underline;">614</span>541 FALSE   nerflad         2025-04-07 <span style="color: #949494;">18:38:14</span> <span style="color: #949494;">"</span>Execution… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 43<span style="text-decoration: underline;">614</span>509 FALSE   rcarmo          2025-04-07 <span style="color: #949494;">18:34:57</span> <span style="color: #949494;">"</span>I like th… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 43<span style="text-decoration: underline;">614</span>360 FALSE   andrewmcwatters 2025-04-07 <span style="color: #949494;">18:20:43</span> <span style="color: #949494;">"</span>I don&amp;#x2… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 43<span style="text-decoration: underline;">614</span>476 FALSE   zaruvi          2025-04-07 <span style="color: #949494;">18:32:09</span> <span style="color: #949494;">"</span>This look… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 43<span style="text-decoration: underline;">614</span>624 FALSE   opem            2025-04-07 <span style="color: #949494;">18:49:28</span> <span style="color: #949494;">"</span>finally, … FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 43<span style="text-decoration: underline;">614</span>442 FALSE   johnea          2025-04-07 <span style="color: #949494;">18:28:44</span> <span style="color: #949494;">"</span>[flagged]<span style="color: #949494;">"</span> TRUE  4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 43<span style="text-decoration: underline;">614</span>622 FALSE   nickandbro      2025-04-07 <span style="color: #949494;">18:49:22</span> <span style="color: #949494;">"</span>Pretty co… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> 43<span style="text-decoration: underline;">615</span>038 FALSE   VWWHFSfQ        2025-04-07 <span style="color: #949494;">19:35:34</span> <span style="color: #949494;">"</span>I strongl… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> 43<span style="text-decoration: underline;">614</span>440 FALSE   mrcjkb          2025-04-07 <span style="color: #949494;">18:28:33</span> <span style="color: #949494;">"</span>1. The co… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> 43<span style="text-decoration: underline;">614</span>540 FALSE   andrewmcwatters 2025-04-07 <span style="color: #949494;">18:38:10</span> <span style="color: #949494;">"</span>In my exp… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> 43<span style="text-decoration: underline;">614</span>705 FALSE   VWWHFSfQ        2025-04-07 <span style="color: #949494;">18:58:51</span> <span style="color: #949494;">"</span>&amp;gt; one … FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> 43<span style="text-decoration: underline;">614</span>797 TRUE    <span style="color: #BB0000;">NA</span>              2025-04-07 <span style="color: #949494;">19:09:43</span>  <span style="color: #BB0000;">NA</span>         FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> 43<span style="text-decoration: underline;">614</span>793 TRUE    <span style="color: #BB0000;">NA</span>              2025-04-07 <span style="color: #949494;">19:09:18</span>  <span style="color: #BB0000;">NA</span>         FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">17</span> 43<span style="text-decoration: underline;">614</span>767 FALSE   acureau         2025-04-07 <span style="color: #949494;">19:07:02</span> <span style="color: #949494;">"</span>Lua fills… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">18</span> 43<span style="text-decoration: underline;">615</span>008 FALSE   VWWHFSfQ        2025-04-07 <span style="color: #949494;">19:32:04</span> <span style="color: #949494;">"</span>Oh certai… FALSE 4.36<span style="color: #949494;">e</span>7</span></span></code></pre></div>
+<span><span class="co">#&gt; [working] (28 + 0) -&gt; 10 -&gt; 2 | <span style="color: #00BB00;">■■■                             </span>   5%</span></span>
+<span><span class="co">#&gt; [working] (0 + 0) -&gt; 0 -&gt; 40 | <span style="color: #00BB00;">■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ </span> 100%</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 180 × 7</span></span></span>
+<span><span class="co">#&gt;          id deleted by          time                text            dead  parent</span></span>
+<span><span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 43<span style="text-decoration: underline;">616</span>592 FALSE   mrexroad    2025-04-07 <span style="color: #949494;">22:22:34</span> <span style="color: #949494;">"</span>I clicked the… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 43<span style="text-decoration: underline;">616</span>226 FALSE   pelagic_sky 2025-04-07 <span style="color: #949494;">21:38:13</span> <span style="color: #949494;">"</span>Reminds me of… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 43<span style="text-decoration: underline;">618</span>907 FALSE   blixt       2025-04-08 <span style="color: #949494;">06:31:00</span> <span style="color: #949494;">"</span>I remember as… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 43<span style="text-decoration: underline;">616</span>302 FALSE   zoogeny     2025-04-07 <span style="color: #949494;">21:47:23</span> <span style="color: #949494;">"</span>I still remem… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 43<span style="text-decoration: underline;">616</span>136 FALSE   NickC25     2025-04-07 <span style="color: #949494;">21:26:29</span> <span style="color: #949494;">"</span>That&amp;#x27;s a… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 43<span style="text-decoration: underline;">616</span>100 FALSE   1317        2025-04-07 <span style="color: #949494;">21:23:11</span> <span style="color: #949494;">"</span>Original vide… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 43<span style="text-decoration: underline;">616</span>097 FALSE   uneoneuno   2025-04-07 <span style="color: #949494;">21:22:34</span> <span style="color: #949494;">"</span>Reminds me of… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 43<span style="text-decoration: underline;">616</span>567 FALSE   mosura      2025-04-07 <span style="color: #949494;">22:18:52</span> <span style="color: #949494;">"</span>This is a sup… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 43<span style="text-decoration: underline;">618</span>261 FALSE   xyzal       2025-04-08 <span style="color: #949494;">04:07:00</span> <span style="color: #949494;">"</span>&amp;gt; Kids hav… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 43<span style="text-decoration: underline;">616</span>067 FALSE   bangaroo    2025-04-07 <span style="color: #949494;">21:19:47</span> <span style="color: #949494;">"</span>i needed an &amp;… FALSE 4.36<span style="color: #949494;">e</span>7</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 170 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="user">user<a class="anchor" aria-label="anchor" href="#user"></a>
@@ -226,10 +222,9 @@ possible to fetch all items on Hacker News.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">updates</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_updates.html">get_updates</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">updates</span><span class="op">$</span><span class="va">profiles</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span> <span class="co"># output truncated for legibility</span></span>
-<span><span class="co">#&gt; [1] "gnabgib"       "oyashirochama" "diggan"        "justswim"     </span></span>
-<span><span class="co">#&gt; [5] "johnisgood"</span></span>
+<span><span class="co">#&gt; [1] "ffsm8"    "gwbas1c"  "autoexec" "munchler" "pjmlp"</span></span>
 <span><span class="va">updates</span><span class="op">$</span><span class="va">items</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span>    <span class="co"># output truncated for legibility</span></span>
-<span><span class="co">#&gt; [1] 43615024 43615149 43614059 43611074 43615136</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 43613762 43609916 43616729 43618407 43612731</span></span></code></pre></div>
 </div>
 </div>
 </div>
