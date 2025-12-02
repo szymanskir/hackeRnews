@@ -1,5 +1,3 @@
-# hackeRnews (development version)
-
 # hackeRnews 0.2.2
 
 * Updated vignettes to not evaluate code chunks that make API requests.
