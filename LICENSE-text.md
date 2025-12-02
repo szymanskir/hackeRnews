@@ -1,0 +1,4 @@
+# License
+
+    YEAR: 2019
+    COPYRIGHT HOLDER: Piotr Janus, Zuzanna Magierska, Rafał Muszyński, Andrzej Nowikowski, Ryszard Szymański
