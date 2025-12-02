@@ -39,16 +39,16 @@ To fetch best/new/top stories the user can use the `get_*_stories` function. Eac
 
 For example to fetch the top 5 best stories:
 
-```{r}
+```{r, eval=FALSE}
 best_stories <- get_best_stories(max_items = 5)
 best_stories[[1]]
 ```
 
 There is a method that allows to fetch just raw ids of best/new/top stories as well `get_*_stories_ids()`
 
-```{r}
+```{r, eval=FALSE}
 best_stories_ids <- get_best_stories_ids()
-best_stories_ids[1:5] # output truncated for legibility
+best_stories_ids
 ```
 
 ### ask / job / show stories
@@ -57,7 +57,7 @@ Similar to news stories. There are `get_latest_*_stories` that returns latest * 
 
 For example to fetch the 3 latest ask stories:
 
-```{r}
+```{r, eval=FALSE}
 ask_stories <- get_latest_ask_stories(max_items = 3)
 ask_stories[[1]]
 ```
@@ -66,7 +66,7 @@ ask_stories[[1]]
 ### comments
 The discussion in story threads is represented as system of comments. Each story has top level comments ids stored under the `kids` property. Each comment post can have it's own set of comments ids under `kids` property (sub-comments) and so on. In order to retrieve all of the comments of a specific story, just use the `get_comments` function.
 
-```{r}
+```{r, eval=FALSE}
 top_story <- get_top_stories(max_items = 1)[[1]]
 get_comments(top_story)
 ```
@@ -75,7 +75,7 @@ get_comments(top_story)
 
 To fetch data about user 'jl' just use the `get_user_by_username` function:
 
-```{r}
+```{r, eval=FALSE}
 user <- get_user_by_username("jl")
 user
 ```
@@ -95,8 +95,8 @@ latest_items <- get_items_by_ids(seq(max_item_id, max_item_id - 10))
 
 Latest items and profile changes can be retrieved using `get_updates`
 
-```{r}
+```{r, eval=FALSE}
 updates <- get_updates()
-updates$profiles[1:5] # output truncated for legibility
-updates$items[1:5]    # output truncated for legibility
+updates$profiles
+updates$items
 ```
